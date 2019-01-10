@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ExerciceRepository")
@@ -20,6 +22,13 @@ class Exercice
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     * min = 2,
+     * max = 15,
+     * minMessage = "Le Titre de l'exercice doit faire minimum 2 caractere",
+     * maxMessage = "Le Titre de l'exercice doit faire 15 caractères maximum"
+     * )
      */
     private $libelle;
 
@@ -37,6 +46,12 @@ class Exercice
      * @ORM\OneToMany(targetEntity="App\Entity\UserHasExercices", mappedBy="exercices", orphanRemoval=true)
      */
     private $userHasExercices;
+
+    /**
+     * @Gedmo\Slug(fields={"libelle"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -114,6 +129,11 @@ class Exercice
         }
 
         return $this;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
 }

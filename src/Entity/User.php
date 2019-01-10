@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -21,6 +22,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     * min = 2,
+     * max = 15,
+     * minMessage = "Le Pseudo doit faire plus de 2 caractères",
+     * maxMessage = "Le Pseudo doit faire 15 caractères maximum"
+     * )
      */
     private $username;
 
