@@ -1,0 +1,38 @@
+{% block title %}
+Page d'accueil
+{%endblock%}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Page d'Accueil</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                <div class="toast-header">
+                    <strong class="mr-auto">Administrateur</strong>
+                    <small>Welcome!</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    Bienvenue sur notre site test de Symfony !
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% block javascripts %}
+<script>
+    $(function() {
+
+        $('.toast').toast('show');
+    });
+</script>
+
+{% endblock %}
