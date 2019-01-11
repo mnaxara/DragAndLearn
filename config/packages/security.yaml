@@ -20,8 +20,8 @@ security:
                 authenticators:
                     - App\Security\LoginAuthenticator
             form_login:
-                login_path: login
-                check_path: login
+                login_path: app_login
+                check_path: app_login
             logout:
                 path: /logout
                 target: /app_login
