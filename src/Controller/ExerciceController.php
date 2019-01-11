@@ -25,4 +25,12 @@ class ExerciceController extends AbstractController
     {
         return $this->render('exercice/tuto.html.twig');
     }
+
+    /**
+     * @Route("/exercice/levelChoice", name="levelChoice")
+     */
+    public function levelChoice()
+    {
+        return $this->render('exercice/levelChoice.html.twig');
+    }
 }
