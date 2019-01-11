@@ -25,6 +25,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+            $user->setTheme('White');
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
