@@ -17,4 +17,12 @@ class ExerciceController extends AbstractController
             'controller_name' => 'ExerciceController',
         ]);
     }
+
+    /**
+     * @Route("/exercice/tutoriel", name="tutoriel")
+     */
+    public function tutoriel()
+    {
+        return $this->render('exercice/tuto.html.twig');
+    }
 }
