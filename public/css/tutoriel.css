@@ -84,8 +84,13 @@ footer {
 .solution1, .solution2, .solution3{
   color: #FFF;
 }
+@font-face {
+  font-family: "Amarillo";
+  src: url('../font/Amarillo.ttf');
+}
 
 #success{
+  font-family: "Amarillo", Helvetica, Arial, sans-serif;
   width: 500px;
   height: 700px;
 
