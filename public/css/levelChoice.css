@@ -3,34 +3,27 @@ h1, h2{
     width: 100%;
 }
 i.fab.fa-html5 {
-    font-size: 4em;
+    font-size: 7em;
     color: orangered;
-    position: absolute;
-    z-index: 2;
-    padding: 50px 5%;
     background: white;
 }
 i.fab.fa-css3-alt {
-    font-size: 4em;
+    font-size: 7em;
     color: #007bff;
-    position: absolute;
-    z-index: 2;
-    padding: 50px 5%;
     background: white;
 }
 i.fab.fa-js-square {
-    font-size: 4em;
+    font-size: 7em;
     color: #e8e853;
-    position: absolute;
-    z-index: 2;
-    padding: 50px 5%;
     background: white;
+}
+.code-name {
+    border-right: 1px solid black;
+    box-shadow: 6px 0 16px -12px #000000, -8px 0 11px -8px #000000;
 }
 .swiper-container {
     width: 100%;
-    height: 20vh;
-    position: relative;
-    z-index: 1;
+    height: 30vh;
 }
 .swiper-slide {
     text-align: center;
@@ -50,4 +43,14 @@ i.fab.fa-js-square {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+.gif-slide {
+    border: 1px solid black;
+    padding: 65px;
+    background: darkgrey;
+    opacity: 0.8;
+    color: white;
+}
+.level{
+    height: 40vh;
 }
