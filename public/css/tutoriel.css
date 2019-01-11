@@ -1,0 +1,90 @@
+.baliseCss {
+  color: #41b638;
+}
+
+.baliseTxt {
+  color: #d6d600;
+}
+
+#game, #look {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.progress {
+  width: 50%;
+}
+
+.fa-trophy {
+  color: gold;
+  margin-left: -100px;
+}
+
+#lesson {
+  border: 1px solid #999999;
+  height: 30%;
+}
+
+#dragdrop{
+  height: 70%;
+}
+
+#tips {
+  height: 40px;
+  width: 200px;
+}
+
+input {
+  width: 100px;
+  background: transparent;
+  height: 2em;
+  border: none;
+  border-bottom: #5c6068;
+  color: #FFF;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#drag-zone, #drop-zone {
+  border: 1px solid #999999;
+  background: #393b3f;
+}
+
+.droppable {
+  border: 0.5px solid grey;
+  width: 200px;
+  height: 2em;
+}
+
+.draggable {
+  background: transparent;
+  color: #FFF;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.draggable:hover {
+  cursor: pointer;
+}
+
+.balise {
+  color: #ff7242;
+}
+
+footer {
+  height: 50px;
+}
+
+.hide{
+  display: none;
+}
+
+.solution1, .solution2, .solution3{
+  color: #FFF;
+}
+
+/*.ui-droppable-active{
+  background: #757982;
+}*/
+
+/*# sourceMappingURL=style.css.map */
