@@ -14,6 +14,7 @@ div h1{
 .part_two{
 	margin-top:5%;
 	margin-left: 20%;
+	font-weight: 600;
 	
 }
 .video_player{
@@ -27,7 +28,29 @@ div h1{
 	border-right:2px solid #6d6c6c;
 }
 .bg_light_custom{
-	background: white;
-	font-style: 800;
+	background: #ffffff70;
+	margin-left: 30%;
+	padding: 1%;
+}
+.container_perso_1{
+	width: 40%;
+}
 
+#loginContainer{
+	width: 1280px;
+}
+
+@media (min-width: 1200px)
+.container {
+    max-width: 1280px !important
+}
+.opacity_custom{
+	background: #ffffff70;
+}
+.account_log{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-top: 2%;
+	padding-right: 2%;
 }
