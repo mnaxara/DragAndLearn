@@ -1,0 +1,33 @@
+body{
+	background-image: url('../img/background_codev2.png');
+
+}
+div h1{
+	margin-bottom: 10%;
+	margin-top: 5%;
+	font-family: "Amarillo", Helvetica, Arial, sans-serif;
+}
+.part_one{
+	margin-top: 5%;
+	margin-right:20%;
+}
+.part_two{
+	margin-top:5%;
+	margin-left: 20%;
+	
+}
+.video_player{
+	margin-bottom: 5%;
+}
+@font-face {
+	font-family: "Amarillo";
+	src: url('../font/Amarillo.ttf');
+}
+.border_custom_1{
+	border-right:2px solid #6d6c6c;
+}
+.bg_light_custom{
+	background: white;
+	font-style: 800;
+
+}
