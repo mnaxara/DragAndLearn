@@ -50,6 +50,7 @@ $( function() {
                         $('.solution3').show('explode', 800);
                     }, 2400);
                     setTimeout(() =>{
+                        $('#success').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', '35%'); // Augmentation de la jauge.
                     }, 3200);
