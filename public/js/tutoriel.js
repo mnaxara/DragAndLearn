@@ -31,14 +31,29 @@ $( function() {
                 if ($(this).attr('id') === 'droppable9'){ // Cellule speciale necessitant un traitement d'input
                     pcontent = $("#p1").val();
                     $('#success9').html(pcontent);
+                    $('#pSolution').html(pcontent);
                 }
                 let check = ($.inArray("#droppable"+id, finish));
                 if(check < 0){
                     finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
                 }
                 if (finish.length === 9){// Verification de la fin de l'exercice.
-                    $('#next').removeAttr('hidden'); // Apparition du boutton suivant
-                    $('#bar').css('width', '35%'); // Augmentation de la jauge.
+                    $(".droppable").hide('clip', 800);
+                    $(".draggable").hide('clip', 800);
+                    setTimeout(()=>{
+                        $('.solution1').show('explode', 800);
+                    }, 800);
+                    setTimeout(()=>{
+                        $('.solution2').show('explode', 800);
+                    }, 1600);
+                    setTimeout(()=>{
+                        $('.solution3').show('explode', 800);
+                    }, 2400);
+                    setTimeout(() =>{
+                        $('#next').removeAttr('hidden'); // Apparition du boutton suivant
+                        $('#bar').css('width', '35%'); // Augmentation de la jauge.
+                    }, 3200);
+
                 }
             }
         });
