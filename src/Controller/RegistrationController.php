@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Theme;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\LoginAuthenticator;
@@ -23,9 +24,12 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
+        $repository = $this->getDoctrine()->getRepository(Theme::class);
+        $defaultTheme = $repository->find(1);
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            $user->setTheme('White');
+            $user->setTheme($defaultTheme);
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
