@@ -107,14 +107,20 @@
             </div>
         </div>
         <div id="success">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center mt-4">
-                <img style="width: 30%; height: 100%" src="{{ asset('uploads/image/success.png') }}" alt="">
-            </div>
-        </div>
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center mt-4">
-                    <p></p>
+            <div class="row h-100">
+                <div class="col-12 d-flex flex-column align-items-center justify-content-between h-100">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center mt-4">
+                            <img style="width: 30%; height: 80%" src="{{ asset('uploads/image/success.png') }}" alt="">
+                        </div>
+                        <div class="col-12 d-flex align-items-center flex-column mt-5">
+                            <p>Bravo !</p>
+                            <p>Vous avez passez le tutoriel !</p>
+                        </div>
+                    </div>
+                    <div class="row hide" id="sucess">
+                        <p>Succés débloqué : Ready To Rumble</p>
+                    </div>
                 </div>
             </div>
         </div>
