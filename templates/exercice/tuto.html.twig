@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div id="success" class="">
+        <div id="success" class="hide">
             <div class="row h-100">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-between h-100">
                     <div class="row">
@@ -147,4 +147,6 @@
 
 {% endblock %}
 
-{% block javascripts %}<script src={{ asset('js/tutoriel.js')}}></script>{% endblock %}
+{% block javascripts %}
+    <script src={{ asset('js/tutoriel.js')}}></script>
+{% endblock %}

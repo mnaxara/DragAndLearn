@@ -2,7 +2,6 @@ $( function() {
 
     let datacontent;
     let pcontent;
-
     let finish = [];
 
     // Devra etre modifier si le contenu est généré dynamiquement au niveau de l'ecoute d'evenement.
@@ -42,12 +41,15 @@ $( function() {
                     $(".draggable").hide('clip', 800);
                     setTimeout(()=>{
                         $('.solution1').show('explode', 800);
+                        finishAudio.play()
                     }, 800);
                     setTimeout(()=>{
                         $('.solution2').show('explode', 800);
+                        finishAudio.play()
                     }, 1600);
                     setTimeout(()=>{
                         $('.solution3').show('explode', 800);
+                        finishAudio.play()
                     }, 2400);
                     setTimeout(() =>{
                         $('#success').show();

@@ -21,7 +21,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
         parent::__construct($registry, UserHasExercices::class);
     }
 
-    public function getSave(User $user, Exercice $exercice): UserHasExercices
+    public function getSave(User $user, Exercice $exercice)
     {
         return $this->createQueryBuilder('u')
             ->andWhere('u.users = :user')

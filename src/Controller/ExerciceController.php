@@ -29,13 +29,18 @@ class ExerciceController extends AbstractController
     }
 
     /**
-     * @Route("/exercice/{slug}", name="tutoriel", requirements={"slug" = "[a-z0-9-]"})
+     * @Route("/exercice/{slug}", name="exercice", requirements={"slug" = "[a-z0-9-]+"})
      */
     public function generateExercice(Request $request, Exercice $exercice)
     {
-        $user = $this->getUser();
-        $save = $this->getDoctrine()->getRepository(UserHasExercices::class);
-
+        $this->denyAccessUnlessGranted('view', $exercice);
+//        $user = $this->getUser();
+//        dump($exercice, $user);
+//        $save = $this
+//            ->getDoctrine()
+//                ->getRepository(UserHasExercices::class)
+//                    ->getSave($user, $exercice);
+//        dump($save);
 
         return $this->render('exercice/tuto.html.twig');
     }
