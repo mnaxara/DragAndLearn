@@ -2,6 +2,8 @@
 
 namespace App\Repository;
 
+use App\Entity\Exercice;
+use App\Entity\User;
 use App\Entity\UserHasExercices;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -17,6 +19,37 @@ class UserHasExercicesRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, UserHasExercices::class);
+    }
+
+    public function getSave(User $user, Exercice $exercice): UserHasExercices
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.users = :user')
+            ->setParameter('user', $user)
+            ->andWhere('u.exercices = :exercice')
+            ->setParameter('exercice', $exercice)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+    public function getLastSave(User $user, Array $levels)
+    {
+        $lastSaves = [];
+
+        foreach ($levels as $level) {
+
+            $save = $this->createQueryBuilder('u')
+                ->innerJoin('u.exercices', 'e')
+                ->select('MAX(e.number)')
+                ->andWhere('e.level = :level')
+                ->setParameter('level', $level)
+                ->getQuery()
+                ->getOneOrNullResult();
+
+            $lastSaves[$level->getNumber()]=$save;
+        }
+
+        return $lastSaves;
     }
 
     // /**

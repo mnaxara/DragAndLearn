@@ -33,11 +33,6 @@ class UserHasExercices
      */
     private $time;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $save;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -75,18 +70,6 @@ class UserHasExercices
     public function setTime(\DateTimeInterface $time): self
     {
         $this->time = $time;
-
-        return $this;
-    }
-
-    public function getSave(): ?bool
-    {
-        return $this->save;
-    }
-
-    public function setSave(bool $save): self
-    {
-        $this->save = $save;
 
         return $this;
     }
