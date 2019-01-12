@@ -3,6 +3,12 @@ $( function() {
     let datacontent;
     let pcontent;
     let finish = [];
+    let finishAudio = new Audio('../audio/finish1.mp3');
+    let finishAudio2 = new Audio('../audio/finish2.mp3');
+    let endLevel = new Audio('../audio/endLevel.mp3');
+    let dropSound = new Audio('../audio/drop.mp3');
+    dropSound.preload = 'auto';
+    dropSound.load();
 
     // Devra etre modifier si le contenu est généré dynamiquement au niveau de l'ecoute d'evenement.
     // Au survol, active le drag&drop et rempli la variabe de contenu avec l'attribu data-content
@@ -22,6 +28,7 @@ $( function() {
             },*/
             accept: "#draggable"+id,    // Chaque zone n'accueil que la cellule qui lui est attribué
             drop: function( event, ui ) { // Lorque la cellule est dropé
+                playSound();
                 $('#success'+id).html(datacontent); // Rempli la zone du contenu du drag
                 $( this ).addClass( "ui-state-highlight" ); // Mise en forme
                 $( this ).addClass('finish')/* // Compte comme terminé pour l'exercice
@@ -37,32 +44,38 @@ $( function() {
                     finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
                 }
                 if (finish.length === 9){// Verification de la fin de l'exercice.
-                    $(".droppable").hide('clip', 800);
-                    $(".draggable").hide('clip', 800);
+                    $(".droppable").hide('clip', 1000);
+                    $(".draggable").hide('clip', 1000);
                     setTimeout(()=>{
-                        $('.solution1').show('explode', 800);
+                        $('.solution1').show('explode', 1000);
                         finishAudio.play()
-                    }, 800);
+                    }, 1000);
                     setTimeout(()=>{
-                        $('.solution2').show('explode', 800);
+                        $('.solution2').show('explode', 1000);
                         finishAudio.play()
-                    }, 1600);
+                    }, 2000);
                     setTimeout(()=>{
-                        $('.solution3').show('explode', 800);
+                        $('.solution3').show('explode', 1000);
                         finishAudio.play()
-                    }, 2400);
+                    }, 3000);
                     setTimeout(() =>{
                         $('#success').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
-                        $('#bar').css('width', '35%'); // Augmentation de la jauge.
-                    }, 3200);
+                        $('#bar').css('width', '35%');// Augmentation de la jauge.
+                        endLevel.play();
+                    }, 4000);
 
                 }
             }
         });
 
     });
+
+    function playSound() {
+        var sound=dropSound.cloneNode();
+        sound.play();
+    }
     
 
 
-} );
+});
