@@ -43,6 +43,7 @@ class AppFixtures extends Fixture
         $encodedPassword = $this->encoder->encodePassword($user, $plainPassword);
         $user->setPassword($encodedPassword);
         $user->setTheme($themes[0]);
+        $user->setAvatar('default.png');
 
         $manager->persist($user);
 

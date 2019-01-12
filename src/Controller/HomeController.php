@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         $user = $this->getUser();
 
         $repository = $this->getDoctrine()->getRepository(Exercice::class);
-        $exercice = $repository->find(121);
+        $exercice = $repository->find(151);
 
         $repositoryL = $this->getDoctrine()->getRepository(Level::class);
         $levels = $repositoryL->findAll();
