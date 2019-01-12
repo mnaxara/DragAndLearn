@@ -61,7 +61,7 @@ class AppFixtures extends Fixture
         foreach ($levels as $level) {
             for ($i = 1; $i < 11; $i++){
                 $exercice = new Exercice();
-                $exercice->setLibelle('exercice'.$i);
+                $exercice->setLibelle('Niveau :'. $level->getNumber().' exercice'.$i);
                 $exercice->setHelp('help'.$i);
                 $exercice->setSolution('solution'.$i);
                 $exercice->setNumber($i);

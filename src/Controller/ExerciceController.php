@@ -33,7 +33,7 @@ class ExerciceController extends AbstractController
      */
     public function generateExercice(Request $request, Exercice $exercice)
     {
-        $this->denyAccessUnlessGranted('view', $exercice);
+        $this->denyAccessUnlessGranted('view', $exercice, 'Veuillez terminer les exercices précédents, petit tricheur !');
 //        $user = $this->getUser();
 //        dump($exercice, $user);
 //        $save = $this
