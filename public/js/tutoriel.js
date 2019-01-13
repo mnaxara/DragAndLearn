@@ -9,6 +9,8 @@ $( function() {
     let dropSound = new Audio('../audio/drop.mp3');
     dropSound.preload = 'auto';
     dropSound.load();
+    let $progress = parseInt($('#progress').css('width'))*10/100;
+    let $bar = parseInt($('#bar').css('width')) + $progress;
 
     // Devra etre modifier si le contenu est généré dynamiquement au niveau de l'ecoute d'evenement.
     // Au survol, active le drag&drop et rempli la variabe de contenu avec l'attribu data-content
@@ -61,7 +63,7 @@ $( function() {
                     setTimeout(() =>{
                         $('#success').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
-                        $('#bar').css('width', '35%');// Augmentation de la jauge.
+                        $('#bar').css('width', $bar);// Augmentation de la jauge.
                         endLevel.play();
                     }, 4000);
                     // recupération de la hauteur de la fenetre en cours

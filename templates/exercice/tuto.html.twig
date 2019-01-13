@@ -16,9 +16,10 @@
             </div>
             <div class="row bg-dark text-white">
                 <div class="col-12 d-flex justify-content-around align-items-center">
-                    <p class="my-2">Nom : <span class="px-2">Kiki</span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">2/14</span></p>
-                    <div class="progress">
-                        <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    {% set progress = exercice.number * 10 -10 %}
+                    <p class="my-2">Nom : <span class="px-2">Kiki</span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">{{ exercice.number }}/14</span></p>
+                    <div class="progress" id="progress">
+                        <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <i class="fas fa-trophy"></i>
                 </div>
@@ -120,7 +121,7 @@
                             <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}" method="post">
                                 <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
                                 <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-                                <button class="btn p-4" id="next">Niveau suivant -></button>
+                                <button class="btn p-4" id="next">Exercice suivant -></button>
                             </form>
                         </div>
                     </div>
