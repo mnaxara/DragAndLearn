@@ -41,7 +41,7 @@ class ExerciceVoter extends Voter
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case 'view':
-                if(($this->canView($user, $subject))!== null){
+                if(($this->canView($user, $subject))){
                     return true;
                 }
                 else{
@@ -57,11 +57,31 @@ class ExerciceVoter extends Voter
 
     private function canView(User $user, Exercice $exercice){
 
+        // Niveau en cours
+        $level = $exercice->getLevel();
+        // Valeur de l'exercice en cours
+        $number = $exercice->getNumber();
+
+        // Derniere sauvegarde du niveau en cours
         $save = $this->em
             ->getRepository(UserHasExercices::class)
-                ->getSave($user, $exercice);
+                ->getLastSave($user, [$level]);
 
-        return $save;
+        // Valeur du niveau en cours
+        $level = $level->getNumber();
+
+        //Valeur de l'exercice de la derniere sauvegarde du niveau en cours
+        $searchNumber = $save[1][$level];
+
+
+        // Si la valeur du dernier exercice sauvegardé est superieur ou egale à la valeur de l'exercice demandé - 1
+        // On autorise.
+        if ($searchNumber >= ($number - 1)){
+            return true;
+        }
+
+        return false;
+
 
     }
 }
