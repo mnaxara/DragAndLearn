@@ -41,36 +41,63 @@
                 </div>
                 <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
             </div>
+            <div class="row">
+                <div class="col-4 ml-1 py-2">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link text-success active" id="lecon-tab" data-toggle="tab" href="#lecon" role="tab" aria-controls="lecon" aria-selected="true">Leçon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" id="morceaux-tab" data-toggle="tab" href="#morceaux" role="tab" aria-controls="morceaux" aria-selected="false">Eléments</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="row" id="dragdrop">
                 <div class="col-4" id="drag-zone">
-                    <h3 class="text-center text-white">Morceaux</h3>
-                    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-                    <div class="draggable text-center" data-id="3" id="draggable3">
-                        <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="1" id="draggable1">
-                        <span class="balise">&lt;html&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="8" id="draggable8" >
-                        <span class="balise">&lt;/html&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="5" id="draggable5">
-                        <span class="balise">&lt;body&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="4" id="draggable4">
-                        <span class="balise">&lt;/head&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="2" id="draggable2">
-                        <span class="balise">&lt;head&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="9" id="draggable9">
-                        <span class="balise">&lt;p&gt;<input id ="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>" id="draggable6">
-                        <span class="balise">&lt;h1&gt;</span>Reussi !<span class="balise">&lt;/h1&gt;</span>
-                    </div>
-                    <div class="draggable text-center" data-id="7" id="draggable7">
-                        <span class="balise">&lt;/body&gt;</span>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="lecon" role="tabpanel" aria-labelledby="lecon-tab">
+                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
+                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
+                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
+                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
+                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
+                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
+                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                            <button class="btn btn-success" id="start">Démarrer !</button>
+                        </div>
+                        <div class="tab-pane fade" id="morceaux" role="tabpanel" aria-labelledby="morceaux-tab">
+                            <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+                            <div class="draggable text-center" data-id="3" id="draggable3">
+                                <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="1" id="draggable1">
+                                <span class="balise">&lt;html&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="8" id="draggable8" >
+                                <span class="balise">&lt;/html&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="5" id="draggable5">
+                                <span class="balise">&lt;body&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="4" id="draggable4">
+                                <span class="balise">&lt;/head&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="2" id="draggable2">
+                                <span class="balise">&lt;head&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="9" id="draggable9">
+                                <span class="balise">&lt;p&gt;<input id ="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>" id="draggable6">
+                                <span class="balise">&lt;h1&gt;</span>Reussi !<span class="balise">&lt;/h1&gt;</span>
+                            </div>
+                            <div class="draggable text-center" data-id="7" id="draggable7">
+                                <span class="balise">&lt;/body&gt;</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-8" id="drop-zone">
@@ -143,16 +170,22 @@
     </div>
 </main>
 
-    <footer style="height: 100px" class="bg-dark">
-        <div class="row">
-            <div class="col-12 text-center">
-                <p class="text-white">Kikoo Footer</p>
-            </div>
-        </div>
-    </footer>
+    {#<footer style="height: 100px" class="bg-dark">#}
+        {#<div class="row">#}
+            {#<div class="col-12 text-center">#}
+                {#<p class="text-white">Kikoo Footer</p>#}
+            {#</div>#}
+        {#</div>#}
+    {#</footer>#}
 
 {% endblock %}
 
 {% block javascripts %}
+    <script>
+        $('#start').click(() => {
+            $('#morceaux-tab').removeClass('disabled');
+        })
+    </script>
+
     <script src={{ asset('js/tutoriel.js')}}></script>
 {% endblock %}
