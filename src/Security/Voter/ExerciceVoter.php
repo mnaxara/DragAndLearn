@@ -38,6 +38,8 @@ class ExerciceVoter extends Voter
             return false;
         }
 
+        //TODO auto accept pour niveau 1-1
+
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case 'view':
