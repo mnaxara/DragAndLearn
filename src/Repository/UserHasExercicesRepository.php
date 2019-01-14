@@ -40,7 +40,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
-    public function getLastSave(User $user, Array $levels)
+    public function getLastSaves(User $user, Array $levels)
     {
         $lastSaves = [];
 
@@ -59,6 +59,23 @@ class UserHasExercicesRepository extends ServiceEntityRepository
         }
 
         return $lastSaves;
+    }
+
+    public function getLastSave(User $user)
+    {
+
+        $save = $this->createQueryBuilder('u')
+            ->innerJoin('u.exercices', 'e')
+            ->innerJoin('e.level', 'l')
+            ->select('(l.number)', '(e.number)')
+            ->andWhere('u.finish = true')
+            ->orderBy('u.value', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+
+        return $save;
     }
 
     // /**

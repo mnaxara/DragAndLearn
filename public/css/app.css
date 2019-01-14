@@ -47,3 +47,7 @@ footer ul{
 	color: #1DA1F2;
 	font-size: 2rem;
 }
+
+.progress {
+    width: 50%;
+}

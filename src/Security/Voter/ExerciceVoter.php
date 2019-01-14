@@ -67,7 +67,7 @@ class ExerciceVoter extends Voter
         // Derniere sauvegarde du niveau en cours
         $save = $this->em
             ->getRepository(UserHasExercices::class)
-                ->getLastSave($user, [$level]);
+                ->getLastSaves($user, [$level]);
 
         // Valeur du niveau en cours
         $level = $level->getNumber();

@@ -38,6 +38,11 @@ class UserHasExercices
      */
     private $finish;
 
+    /**
+     * @ORM\Column(type="string", length=5)
+     */
+    private $value;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class UserHasExercices
     public function setFinish(?bool $finish): self
     {
         $this->finish = $finish;
+
+        return $this;
+    }
+
+    public function getValue(): ?string
+    {
+        return $this->value;
+    }
+
+    public function setValue(string $value): self
+    {
+        $this->value = $value;
 
         return $this;
     }

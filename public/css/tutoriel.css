@@ -11,10 +11,6 @@
   overflow: scroll;
 }
 
-.progress {
-  width: 50%;
-}
-
 .fa-trophy {
   color: gold;
   margin-left: -100px;
@@ -89,7 +85,7 @@ footer {
   src: url('../font/Amarillo.ttf');
 }
 
-#success{
+#successEnd{
   font-family: "Amarillo", Helvetica, Arial, sans-serif;
   width: 400px;
   height: 550px;

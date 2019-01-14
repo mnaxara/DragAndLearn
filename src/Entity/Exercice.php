@@ -64,6 +64,11 @@ class Exercice
      */
     private $number;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $instruction;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -167,6 +172,18 @@ class Exercice
     public function setNumber(int $number): self
     {
         $this->number = $number;
+
+        return $this;
+    }
+
+    public function getInstruction(): ?string
+    {
+        return $this->instruction;
+    }
+
+    public function setInstruction(string $instruction): self
+    {
+        $this->instruction = $instruction;
 
         return $this;
     }
