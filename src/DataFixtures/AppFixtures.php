@@ -65,7 +65,8 @@ class AppFixtures extends Fixture
                 $exercice->setLibelle('Niveau :'. $level->getNumber().' exercice'.$i);
                 $exercice->setHelp('help'.$i);
                 $exercice->setSolution('solution'.$i);
-                $exercice->setNumber($i);
+                $exercice->setNumber(($i-1));
+                $exercice->setInstruction('instruction'.$i);
                 $exercice->setLevel($level);
 
                 $exercices[]=$exercice;
@@ -74,11 +75,15 @@ class AppFixtures extends Fixture
             }
         }
 
+
         for ($i = 0; $i < 3; $i++){
+            $number = $exercices[$i]->getNumber();
+            $value = '1'.$number;
             $save = new UserHasExercices();
             $save->setExercices($exercices[$i]);
             $save->setUsers($user);
             $save->setFinish(true);
+            $save->setValue($value);
             $save->setTime(new \DateTime(date('Y-m-d H:i:s')));;
             $manager->persist($save);
         }

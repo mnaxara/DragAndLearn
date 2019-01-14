@@ -16,23 +16,7 @@ class HomeController extends AbstractController
      */
     public function home (){
 
-        $user = $this->getUser();
-
-        $repository = $this->getDoctrine()->getRepository(Exercice::class);
-        $exercice = $repository->find(151);
-
-        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
-        $levels = $repositoryL->findAll();
-
-
-        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
-        $lastSave = $repositoryU->getLastSave($user, $levels);
-
-        $save = $repositoryU->getSave($user, $exercice);
-
-        dump($lastSave, $save);
-
-        return $this->render('index.html.twig', ['save' => $save, 'last_save' => $lastSave]);
+        return $this->redirectToRoute('app_login');
 
     }
 
@@ -41,8 +25,12 @@ class HomeController extends AbstractController
      */
     public function levelChoice()
     {
+        $user = $this->getUser();
 
-        return $this->render('home/levelChoice.html.twig');
+        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
+        $lastSave = $repositoryU->getLastSave($user);
+
+        return $this->render('home/levelChoice.html.twig', ['last_exercice' => $lastSave]);
     }
 
 }

@@ -43,7 +43,7 @@ class ExerciceController extends AbstractController
         if ($this->isCsrfTokenValid('next-token', $submittedToken)) {
 
             // On recupere l'exercice terminé
-            $finishExercice     = $this->getDoctrine()->getRepository(Exercice::class)->find($finishId);
+            $finishExercice = $this->getDoctrine()->getRepository(Exercice::class)->find($finishId);
 
             $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
             // On verifie si une sauvegarde existe
@@ -54,6 +54,10 @@ class ExerciceController extends AbstractController
                 $save->setExercices($finishExercice);
                 $save->setTime(new \DateTime(date('Y-m-d H:i:s')));
                 $save->setFinish(true);
+                $number = $finishExercice->getNumber();
+                $level = $finishExercice->getLevel()->getNumber();
+                $value = $level.$number;
+                $save->setValue($value);
                 // On save dans la base
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($save);
