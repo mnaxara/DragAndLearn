@@ -18,3 +18,5 @@
 ###< symfony/web-server-bundle ###
 
 /.idea/*
+src/Migrations/Version20190110165035.php
+src/Migrations/Version20190110170906.php

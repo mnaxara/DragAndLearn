@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Exercice;
+use App\Entity\Level;
+use App\Entity\User;
+use App\Entity\UserHasExercices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,7 +16,23 @@ class HomeController extends AbstractController
      */
     public function home (){
 
-        return $this->render('index.html.twig');
+        $user = $this->getUser();
+
+        $repository = $this->getDoctrine()->getRepository(Exercice::class);
+        $exercice = $repository->find(151);
+
+        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
+        $levels = $repositoryL->findAll();
+
+
+        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
+        $lastSave = $repositoryU->getLastSave($user, $levels);
+
+        $save = $repositoryU->getSave($user, $exercice);
+
+        dump($lastSave, $save);
+
+        return $this->render('index.html.twig', ['save' => $save, 'last_save' => $lastSave]);
 
     }
 

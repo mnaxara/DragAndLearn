@@ -1,5 +1,5 @@
 body{
-	background-image: url('../img/background_codev2.png');
+	background-image: url('../uploads/image/background_codev2.png');
 
 }
 div h1{
@@ -40,10 +40,6 @@ div h1{
 	width: 1280px;
 }
 
-@media (min-width: 1200px)
-.container {
-    max-width: 1280px !important
-}
 .opacity_custom{
 	background: #ffffff70;
 	padding: 1%;

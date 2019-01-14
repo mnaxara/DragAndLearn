@@ -1,5 +1,3 @@
-
-
 .baliseCss {
   color: #41b638;
 }
@@ -28,7 +26,7 @@
 }
 
 #dragdrop{
-  height: 70%;
+  height: 100%;
 }
 
 #tips {
@@ -91,20 +89,27 @@ footer {
 
 #success{
   font-family: "Amarillo", Helvetica, Arial, sans-serif;
-  width: 500px;
-  height: 700px;
+  width: 400px;
+  height: 550px;
 
   padding: 10px;
   margin: 10px 5px 20px;
 
   border-top: 1px solid #f4f4f2;
-  box-shadow: 0px 0px 10px 10px #ffeb0075;
+  box-shadow:inset 0px 0px 10px 10px #ffeb0075;
   border-radius: 8px;
 
   position : absolute;
   left : 50%;
   margin-left: -250px;
-  background: rgba(255, 245, 184, 0.8);
+  background: rgba(162, 162, 148, 0.9);
+}
+
+#next{
+  background-color: #d39e00;
+  box-shadow: 4px 5px 6px 2px #50505085;
+  height: 2em;
+  line-height: 0.5em;
 }
 
 /*.ui-droppable-active{

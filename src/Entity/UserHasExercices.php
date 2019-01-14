@@ -34,9 +34,9 @@ class UserHasExercices
     private $time;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
-    private $save;
+    private $finish;
 
     public function getId(): ?int
     {
@@ -79,14 +79,14 @@ class UserHasExercices
         return $this;
     }
 
-    public function getSave(): ?bool
+    public function getFinish(): ?bool
     {
-        return $this->save;
+        return $this->finish;
     }
 
-    public function setSave(bool $save): self
+    public function setFinish(?bool $finish): self
     {
-        $this->save = $save;
+        $this->finish = $finish;
 
         return $this;
     }

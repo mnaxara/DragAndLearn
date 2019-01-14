@@ -53,6 +53,17 @@ class Exercice
      */
     private $slug;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Level", inversedBy="exercices")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $level;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $number;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -134,6 +145,30 @@ class Exercice
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    public function getLevel(): ?Level
+    {
+        return $this->level;
+    }
+
+    public function setLevel(?Level $level): self
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(int $number): self
+    {
+        $this->number = $number;
+
+        return $this;
     }
 
 }
