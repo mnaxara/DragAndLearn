@@ -3,29 +3,17 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">{% endblock %}
 {% block title %}Tutoriel{% endblock %}
 
-{% block header %}
-    <header>
-        <div class="container-fluid">
-            <div class="row bg-light">
-                <div class="col-12 col-md-6 offset-md-3 text-center">
-                    <h1>DRAG & LEARN - prototype v0.1.1</h1>
-                </div>
-                <div class="col-md-1 offset-md-2 d-flex justify-content-around align-items-center">
-                    <a href="">Deconnexion</a>
-                </div>
-            </div>
-            <div class="row bg-dark text-white">
-                <div class="col-12 d-flex justify-content-around align-items-center">
-                    {% set progress = exercice.number * 10 -10 %}
-                    <p class="my-2">Nom : <span class="px-2">Kiki</span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">{{ exercice.number }}/14</span></p>
-                    <div class="progress" id="progress">
-                        <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
+{% block progress %}
+<div class="row bg-dark text-white">
+    <div class="col-12 d-flex justify-content-around align-items-center">
+        {% set progress = exercice.number * 10 -10 %}
+        <p class="my-2">Nom : <span class="px-2">{{ app.user.username }}</span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">{{ exercice.number }}/10</span></p>
+        <div class="progress" id="progress">
+            <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-    </header>
+        <i class="fas fa-trophy"></i>
+    </div>
+</div>
 {% endblock %}
 
 {% block body %}
