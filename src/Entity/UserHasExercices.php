@@ -33,6 +33,11 @@ class UserHasExercices
      */
     private $time;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $finish;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class UserHasExercices
     public function setTime(\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    public function getFinish(): ?bool
+    {
+        return $this->finish;
+    }
+
+    public function setFinish(?bool $finish): self
+    {
+        $this->finish = $finish;
 
         return $this;
     }

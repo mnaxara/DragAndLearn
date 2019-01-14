@@ -78,6 +78,7 @@ class AppFixtures extends Fixture
             $save = new UserHasExercices();
             $save->setExercices($exercices[$i]);
             $save->setUsers($user);
+            $save->setFinish(true);
             $save->setTime(new \DateTime(date('Y-m-d H:i:s')));;
             $manager->persist($save);
         }

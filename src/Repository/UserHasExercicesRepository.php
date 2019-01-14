@@ -42,6 +42,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
                 ->innerJoin('u.exercices', 'e')
                 ->select('MAX(e.number)')
                 ->andWhere('e.level = :level')
+                ->andWhere('u.finish = true')
                 ->setParameter('level', $level)
                 ->getQuery()
                 ->getOneOrNullResult();
