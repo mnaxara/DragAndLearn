@@ -29,6 +29,7 @@ i.fab.fa-js-square {
     text-align: center;
     font-size: 18px;
     background: #fff;
+    background-color: transparent;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -56,4 +57,8 @@ i.fab.fa-js-square {
 }
 .levelChoice {
     margin-top: 50px;
+}
+body{
+    background: url('../uploads/image/background_general.png') ;
+    background-size: cover;
 }
