@@ -52,9 +52,10 @@
                         {{ form_row(registrationForm.username) }}
                         {{ form_row(registrationForm.plainPassword) }}
                         {{ form_row(registrationForm.email) }}
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-around">
                                 <button class="btn btn-primary">S'inscrire</button>
-                            </div> 
+                                <a href="{{ path('tutoriel') }}" class="btn btn-success">Essayer le tutoriel</a>
+                            </div>
                         {{ form_end(registrationForm) }}
                     </div>
                 </div>                                   

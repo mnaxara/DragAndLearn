@@ -10,15 +10,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ExerciceController extends AbstractController
 {
-    /**
-     * @Route("/exercice", name="exercice")
-     */
-    public function index()
-    {
-        return $this->render('exercice/index.html.twig', [
-            'controller_name' => 'ExerciceController',
-        ]);
-    }
+//    /**
+//     * @Route("/exercice", name="exercice")
+//     */
+//    public function index()
+//    {
+//        return $this->render('exercice/index.html.twig', [
+//            'controller_name' => 'ExerciceController',
+//        ]);
+//    }
 
     /**
      * @Route("/exercice/tutoriel", name="tutoriel")
