@@ -21,7 +21,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, UserHasExercices::class);
     }
-    // TODO rajouter level
+
     public function getSave(User $user, Exercice $exercice)
     {
         $level = $exercice->getLevel();

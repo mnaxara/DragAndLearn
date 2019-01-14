@@ -46,7 +46,7 @@ class ExerciceController extends AbstractController
             $finishExercice     = $this->getDoctrine()->getRepository(Exercice::class)->find($finishId);
 
             $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
-            // On verifie si une sauvegarde existe TODO : level
+            // On verifie si une sauvegarde existe
             if(($saveRepository->getSave($user, $finishExercice)) === null){
                 // Si non, on sauvegarde
                 $save = new UserHasExercices();
