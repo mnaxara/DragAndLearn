@@ -9,11 +9,11 @@ div h1{
 }
 .part_one{
 	margin-top: 5%;
-	margin-right:20%;
+	margin-right:10%;
 }
 .part_two{
 	margin-top:5%;
-	margin-left: 20%;
+	margin-left: 10%;
 	font-weight: 600;
 	
 }
@@ -51,4 +51,7 @@ div h1{
 	right: 0;
 	padding-top: 2%;
 	padding-right: 2%;
+}
+img.rounded-circle.z-depth-0 {
+    height: 3.5em;
 }

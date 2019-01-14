@@ -1,0 +1,34 @@
+.square{
+    width: 200px;
+    height: 200px;
+}
+
+.red{
+    background-color : tomato;
+    text-align: center;
+    color: white;
+}
+
+.blue{
+    background-color : #40739e;
+    color: white;
+}
+
+.green{
+    background-color : #4cd137;
+    text-align: center;
+    color: white;
+}
+
+.violet{
+    background-color: #8c7ae6;
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+#droppable3{
+    width: 50%;
+}

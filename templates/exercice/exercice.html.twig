@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">{% endblock %}
 {% block title %}Tutoriel{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">
+    {% block perso_css %}{% endblock %}
+
+{% endblock %}
 
 {% block progressBar %}
     <div class="col12">
@@ -112,14 +115,17 @@
 
 {% endblock %}
 
+{% block footer %}
+    {#TODO footer toggle#}
+{% endblock %}
+
 {% block javascripts %}
+    {% block javascriptsExt %}
+    {% endblock %}
+    {#TODO Lancé le timer#}
     <script>
         $('#start').click(() => {
             $('#morceaux-tab').removeClass('disabled');
         })
     </script>
-
-    <script src={{ asset('js/tutoriel.js')}}></script>
-{% endblock %}
-{% block javascriptsExt %}
 {% endblock %}
