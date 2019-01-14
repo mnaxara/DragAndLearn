@@ -21,7 +21,6 @@ class HomeController extends AbstractController
      */
     public function levelChoice()
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         return $this->render('home/levelChoice.html.twig');
     }
