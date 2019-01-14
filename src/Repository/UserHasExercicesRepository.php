@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Exercice;
+use App\Entity\Level;
 use App\Entity\User;
 use App\Entity\UserHasExercices;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -20,13 +21,20 @@ class UserHasExercicesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, UserHasExercices::class);
     }
-
+    // TODO rajouter level
     public function getSave(User $user, Exercice $exercice)
     {
+        $level = $exercice->getLevel();
+        $levelNumber = $level->getNumber();
+
         return $this->createQueryBuilder('u')
-            ->andWhere('u.users = :user')
+            ->innerJoin('u.exercices', 'e')
+            ->andWhere('u.users = :level')
+            ->setParameter('level', $levelNumber)
+            ->andWhere('e.level = :user')
             ->setParameter('user', $user)
             ->andWhere('u.exercices = :exercice')
+            ->andWhere('u.finish = true')
             ->setParameter('exercice', $exercice)
             ->getQuery()
             ->getOneOrNullResult();

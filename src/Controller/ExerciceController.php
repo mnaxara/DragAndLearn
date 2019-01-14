@@ -20,13 +20,13 @@ class ExerciceController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/exercice/tutoriel", name="tutoriel")
-     */
-    public function tutoriel()
-    {
-        return $this->render('exercice/tuto.html.twig');
-    }
+//    /**
+//     * @Route("/exercice/tutoriel", name="tutoriel")
+//     */
+//    public function tutoriel()
+//    {
+//        return $this->render('exercice/tuto.html.twig');
+//    }
 
     /**
      * @Route("/exercice/{slug}", name="exercice", requirements={"slug" = "[a-z0-9-]+"})
@@ -46,13 +46,14 @@ class ExerciceController extends AbstractController
             $finishExercice     = $this->getDoctrine()->getRepository(Exercice::class)->find($finishId);
 
             $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
-            // On verifie si une sauvegarde existe
+            // On verifie si une sauvegarde existe TODO : level
             if(($saveRepository->getSave($user, $finishExercice)) === null){
                 // Si non, on sauvegarde
                 $save = new UserHasExercices();
                 $save->setUsers($user);
                 $save->setExercices($finishExercice);
                 $save->setTime(new \DateTime(date('Y-m-d H:i:s')));
+                $save->setFinish(true);
                 // On save dans la base
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($save);
