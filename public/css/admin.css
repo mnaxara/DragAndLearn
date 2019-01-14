@@ -1,0 +1,15 @@
+.panel{
+    list-style: none;
+    width: 30%;
+    display: flex;
+    padding: 0;
+    margin: 0 auto;
+    border: 2px solid lightgrey;
+}
+.panel li{
+    cursor: pointer;
+    font-weight: bolder;
+}
+.main {
+    height: 90vh;
+}
