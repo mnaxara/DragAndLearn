@@ -55,8 +55,7 @@
                     {% set progress = last_exercice.1 * 10 %}
                     <p class="my-2">
                         Nom : <span class="px-2">{{ app.user.username }}</span>
-                        <span class="px-2"> Niveau : </span>
-                        <span class="px-2">{{ last_exercice.2 }}</span>
+                        <span class="px-2"> Niveau : </span><span class="px-2">{{ last_exercice.1 }}</span>
                         Exercice : <span class="px-2">{{ last_exercice.2 + 1 }}/10</span>
                     </p>
                     <div class="progress" id="progress">
