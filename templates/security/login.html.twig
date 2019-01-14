@@ -23,13 +23,15 @@
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item avatar">
                     <a class="nav-link p-0" href="#">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                        <img src="uploads/image/avatar/default2.png" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"></a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                        {# TODO affiche si ocnnexion #}
+                        <a class="dropdown-item" href="#">Accueil</a>
                         <a class="dropdown-item" href="#">Profil</a>
                         <a class="dropdown-item" href="#">Classement</a>
                         <a class="dropdown-item" href="#">Deconnexion</a>
@@ -49,14 +51,18 @@
 
                         {{ form_row(registrationForm.username) }}
                         {{ form_row(registrationForm.plainPassword) }}
+                        {{ form_row(registrationForm.email) }}
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-primary">S'inscrire</button>
+                            </div> 
                         {{ form_end(registrationForm) }}
                     </div>
                 </div>                                   
             </div>
-            <div class="col-12 col-md-6 ">
+            <div class="col-12 col-md-6">
                 <div class="part_two">
                     <div class="">
-                            <p id="aupif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum architecto, sapiente quae autem veniam.</p>
+                            <p id="aupif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum architecto, sapiente quae autem  dolor sit amet, consectetur adipisicing elit. Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum architecto, sapiente quae autveniam.</p>
                         </div>
                 </div>
             </div>
