@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Drag & Learn{% endblock %}</title>
+    {# FONT AWESOME #}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href={{ asset("css/app.css") }}>
     {% block stylesheets %}{% endblock %}
@@ -10,15 +12,15 @@
 </head>
 
 {% block header %}
-
+<header>
     <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <div class="collapse navbar-collapse pt-3" id="navbarSupportedContent-333">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a id="siteName" class="nav-link" href="#">Drag & Learn
@@ -45,11 +47,24 @@
             </ul>
         </div>
     </nav>
-    <!--/.Navbar -->
+    <div class="container-fluid">
+        <div class="col12">
+            <div class="row bg-dark text-white">
+                <div class="col-12 d-flex justify-content-around align-items-center">
+                    {% set progress = exercice.number * 10 -10 %}
+                    <p class="my-2">Nom : <span class="px-2">{{ app.user.username }}</span><span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">{{ exercice.number }}/10</span></p>
+                    <div class="progress" id="progress">
+                        <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <i class="fas fa-trophy"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 {% endblock %}
-{% block progress %}
-{% endblock %}
+
 <body>
 
 {% block body %}

@@ -3,155 +3,174 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">{% endblock %}
 {% block title %}Tutoriel{% endblock %}
 
-{% block progress %}
-<div class="row bg-dark text-white">
-    <div class="col-12 d-flex justify-content-around align-items-center">
-        {% set progress = exercice.number * 10 -10 %}
-        <p class="my-2">Nom : <span class="px-2">{{ app.user.username }}</span><span class="px-2"> Niveau : <span class="px-2">Facile</span> Exercice : <span class="px-2">{{ exercice.number }}/10</span></p>
-        <div class="progress" id="progress">
-            <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <i class="fas fa-trophy"></i>
-    </div>
-</div>
-{% endblock %}
-
 {% block body %}
 <main>
-    <div class="row">
-        <div class="col-12 col-md-8 border" id="game">
-            <div class="row" id="lesson">
-                <div class="col-12">
-                    <h2 class="text-center">Instructions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum, eaque excepturi
-                        expedita mollitia nesciunt quibusdam reiciendis rerum sed temporibus. Consectetur cupiditate
-                        eligendi illum quae? Ea ipsa nostrum obcaecati quo.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 border" id="game">
+                <div class="row" id="lesson">
+                    <div class="col-12">
+                        <h2 class="text-center">Instructions</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum, eaque excepturi
+                            expedita mollitia nesciunt quibusdam reiciendis rerum sed temporibus. Consectetur cupiditate
+                            eligendi illum quae? Ea ipsa nostrum obcaecati quo.</p>
+                    </div>
+                    <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
                 </div>
-                <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
-            </div>
-            <div class="row">
-                <div class="col-4 ml-1 py-2">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link text-success active" id="lecon-tab" data-toggle="tab" href="#lecon" role="tab" aria-controls="lecon" aria-selected="true">Leçon</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" id="morceaux-tab" data-toggle="tab" href="#morceaux" role="tab" aria-controls="morceaux" aria-selected="false">Eléments</a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-4 ml-1 py-2">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link text-success active" id="lecon-tab" data-toggle="tab" href="#lecon"
+                                   role="tab" aria-controls="lecon" aria-selected="true">Leçon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" id="morceaux-tab" data-toggle="tab" href="#morceaux"
+                                   role="tab" aria-controls="morceaux" aria-selected="false">Eléments</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="row" id="dragdrop">
-                <div class="col-4" id="drag-zone">
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="lecon" role="tabpanel" aria-labelledby="lecon-tab">
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
-                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
-                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
-                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
-                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores aspernatur
-                                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil, nobis
-                                officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                            <button class="btn btn-success" id="start">Démarrer !</button>
-                        </div>
-                        <div class="tab-pane fade" id="morceaux" role="tabpanel" aria-labelledby="morceaux-tab">
-                            <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-                            <div class="draggable text-center" data-id="3" id="draggable3">
-                                <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+                <div class="row" id="dragdrop">
+                    <div class="col-4" id="drag-zone">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="lecon" role="tabpanel"
+                                 aria-labelledby="lecon-tab">
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                    asperiores aspernatur
+                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                                    nobis
+                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <button class="btn btn-success" id="start">Démarrer !</button>
                             </div>
-                            <div class="draggable text-center" data-id="1" id="draggable1">
-                                <span class="balise">&lt;html&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="8" id="draggable8" >
-                                <span class="balise">&lt;/html&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="5" id="draggable5">
-                                <span class="balise">&lt;body&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="4" id="draggable4">
-                                <span class="balise">&lt;/head&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="2" id="draggable2">
-                                <span class="balise">&lt;head&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="9" id="draggable9">
-                                <span class="balise">&lt;p&gt;<input id ="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>" id="draggable6">
-                                <span class="balise">&lt;h1&gt;</span>Reussi !<span class="balise">&lt;/h1&gt;</span>
-                            </div>
-                            <div class="draggable text-center" data-id="7" id="draggable7">
-                                <span class="balise">&lt;/body&gt;</span>
+                            <div class="tab-pane fade" id="morceaux" role="tabpanel" aria-labelledby="morceaux-tab">
+                                <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+                                <div class="draggable text-center" data-id="3" id="draggable3">
+                                    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="1" id="draggable1">
+                                    <span class="balise">&lt;html&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="8" id="draggable8">
+                                    <span class="balise">&lt;/html&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="5" id="draggable5">
+                                    <span class="balise">&lt;body&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="4" id="draggable4">
+                                    <span class="balise">&lt;/head&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="2" id="draggable2">
+                                    <span class="balise">&lt;head&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="9" id="draggable9">
+                                    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
+                                     id="draggable6">
+                                    <span class="balise">&lt;h1&gt;</span>Reussi !<span
+                                            class="balise">&lt;/h1&gt;</span>
+                                </div>
+                                <div class="draggable text-center" data-id="7" id="draggable7">
+                                    <span class="balise">&lt;/body&gt;</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-8" id="drop-zone">
-                    <h3 class="text-center text-white">Code</h3>
-                    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
-                    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-                    <div class="droppable my-3" id="droppable1"></div>
-                    <div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
+                    <div class="col-8" id="drop-zone">
+                        <h3 class="text-center text-white">Code</h3>
+                        <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+                        <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+                        <div class="droppable my-3" id="droppable1"></div>
+                        <div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-                    <div class="droppable ml-3 my-3" id="droppable2"></div>
-                    <div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
+                        <div class="droppable ml-3 my-3" id="droppable2"></div>
+                        <div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
 
-                    <div class="droppable ml-5 my-3" id="droppable3"></div>
-                    <div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span></div>
+                        <div class="droppable ml-5 my-3" id="droppable3"></div>
+                        <div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
+                                    class="balise">&lt;/title&gt;</span></div>
 
-                    <div class="droppable ml-3 my-3" id="droppable4"></div>
-                    <div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+                        <div class="droppable ml-3 my-3" id="droppable4"></div>
+                        <div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
 
-                    <div class="droppable ml-3 my-3" id="droppable5"></div>
-                    <div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+                        <div class="droppable ml-3 my-3" id="droppable5"></div>
+                        <div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
 
-                    <div class="droppable ml-5 my-3" id="droppable6"></div>
-                    <div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span class="balise">&lt;/h1&gt;</span></div>
+                        <div class="droppable ml-5 my-3" id="droppable6"></div>
+                        <div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
+                                    class="balise">&lt;/h1&gt;</span></div>
 
-                    <div class="droppable ml-5 my-3" id="droppable9"></div>
-                    <div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+                        <div class="droppable ml-5 my-3" id="droppable9"></div>
+                        <div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
 
-                    <div class="droppable ml-3 my-3" id="droppable7"></div>
-                    <div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+                        <div class="droppable ml-3 my-3" id="droppable7"></div>
+                        <div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
 
-                    <div class="droppable my-3" id="droppable8"></div>
-                    <div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+                        <div class="droppable my-3" id="droppable8"></div>
+                        <div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
 
-                </div>
-            </div>
-        </div>
-        <div id="success" class="hide">
-            <div class="row h-100">
-                <div class="col-12 d-flex flex-column align-items-center justify-content-between h-100">
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center mt-4">
-                            <img style="width: 30%; height: 80%" src="{{ asset('uploads/image/success.png') }}" alt="">
-                        </div>
-                        <div class="col-12 d-flex align-items-center flex-column mt-5">
-                            <p>Félicitation !</p>
-                            <p>Vous avez passez le tutoriel !</p>
-                            {% set next = exercice.number+1 %}
-                            <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}" method="post">
-                                <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-                                <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-                                <button class="btn p-4" id="next">Exercice suivant -></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row" id="sucess">
-                        <p>Succés débloqué : Ready To Rumble</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4 border" id="look">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center">Aperçu</h2>
-                    <div id="success6" class="text-center"></div>
-                    <div id="success9"></div>
+            <div id="success" class="hide">
+                <div class="row h-100">
+                    <div class="col-12 d-flex flex-column align-items-center justify-content-between h-100">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center mt-4">
+                                <img style="width: 30%; height: 80%" src="{{ asset('uploads/image/success.png') }}"
+                                     alt="">
+                            </div>
+                            <div class="col-12 d-flex align-items-center flex-column mt-5">
+                                <p>Félicitation !</p>
+                                <p>Vous avez passez le tutoriel !</p>
+                                {% set next = exercice.number+1 %}
+                                <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+                                      method="post">
+                                    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+                                    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+                                    <button class="btn p-4" id="next">Exercice suivant -></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row" id="sucess">
+                            <p>Succés débloqué : Ready To Rumble</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 border" id="look">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Aperçu</h2>
+                        <div id="success6" class="text-center"></div>
+                        <div id="success9"></div>
+                    </div>
                 </div>
             </div>
         </div>
