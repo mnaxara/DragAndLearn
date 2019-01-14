@@ -61,7 +61,7 @@ $( function() {
                         finishAudio.play()
                     }, 3000);
                     setTimeout(() =>{
-                        $('#success').show();
+                        $('#successEnd').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', $bar);// Augmentation de la jauge.
                         endLevel.play();
@@ -69,12 +69,12 @@ $( function() {
                     // recupération de la hauteur de la fenetre en cours
                     let $height = window.innerHeight;
                     // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative
-                    let $menuHeight = parseInt($('#success').css('height'));
+                    let $menuHeight = parseInt($('#successEnd').css('height'));
                     // calcul position top, 50% de la hauteur de la fenetre + la valeur d'un eventuel scroll
-                    $('#success').css('top',  $height/2 + window.pageYOffset);
+                    $('#successEnd').css('top',  $height/2 + window.pageYOffset);
                     // Calcul de la marge negative : hauteur de la div / 2 ||| Si la hauteur de la fenetre ne permet pas d'appliquer cette marge
                     // la marge est de 0 pour permettre d'avoir le menu toujours accessible (division ecran dans la hauteur, ouverture console ..)
-                    parseInt($('#success').css('top')) > $menuHeight/2 ? $('#success').css('margin-top', -$menuHeight/2) : $('#success').css('margin-top', 0)
+                    parseInt($('#successEnd').css('top')) > $menuHeight/2 ? $('#successEnd').css('margin-top', -$menuHeight/2) : $('#successEnd').css('margin-top', 0)
 
                 }
             }

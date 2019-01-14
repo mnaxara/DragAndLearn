@@ -63,9 +63,11 @@ class ExerciceController extends AbstractController
 
         }
 
+        $page = $exercice->getSlug();
+
         $this->denyAccessUnlessGranted('view', $exercice, 'Veuillez terminer les exercices précédents, petit tricheur !');
 
-        return $this->render('exercice/tuto.html.twig', ['exercice' => $exercice]);
+        return $this->render('exercice/'.$page.'.html.twig', ['exercice' => $exercice]);
     }
 
 
