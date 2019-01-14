@@ -6,3 +6,18 @@
     font-family: "Amarillo";
     src: url('../font/Amarillo.ttf');
 }
+footer{
+	background-color: #797979;
+}
+footer ul{
+	list-style: none;
+	padding-top: 5%;
+}
+.fa-facebook-square{
+	color: #395693;
+	font-size: 2rem;
+}
+.fa-twitter-square{
+	color: #1DA1F2;
+	font-size: 2rem;
+}
