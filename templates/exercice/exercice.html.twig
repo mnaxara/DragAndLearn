@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tutoriel{% endblock %}
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">
+{% block title %}{{ exercice.slug }}{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/exercice.css') }}">
     {% block perso_css %}{% endblock %}
 
 {% endblock %}

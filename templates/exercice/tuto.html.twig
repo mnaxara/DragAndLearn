@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/tutoriel.css') }}">{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/exercice.css') }}">{% endblock %}
 {% block title %}Tutoriel{% endblock %}
 
 {% block body %}
+    {% block progressBar %}
+    {% endblock %}
 <main>
     <div class="container-fluid">
         <div class="row">
@@ -36,16 +38,6 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="lecon" role="tabpanel"
                                  aria-labelledby="lecon-tab">
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
                                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
                                     asperiores aspernatur
                                     cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
@@ -140,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div id="success" class="hide">
+            <div id="successEnd" class="hide">
                 <div class="row h-100">
                     <div class="col-12 d-flex flex-column align-items-center justify-content-between h-100">
                         <div class="row">
@@ -151,16 +143,14 @@
                             <div class="col-12 d-flex align-items-center flex-column mt-5">
                                 <p>Félicitation !</p>
                                 <p>Vous avez passez le tutoriel !</p>
-                                {% set next = exercice.number+1 %}
-                                <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-                                      method="post">
-                                    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-                                    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-                                    <button class="btn p-4" id="next">Exercice suivant -></button>
-                                </form>
+                                {% if app.user == null %}
+                                    <a href="{{ path('app_login') }}" class="btn p-4">S'inscrire !</a>
+                                {% else %}
+                                    <a href="{{ path('exercice', {slug : 'niveau-1-exercice1'}) }} class="btn p-4">Niveau 1</a>
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="row" id="sucess">
+                        <div class="row" id="trophy">
                             <p>Succés débloqué : Ready To Rumble</p>
                         </div>
                     </div>

@@ -20,13 +20,14 @@ class ExerciceController extends AbstractController
         ]);
     }
 
-//    /**
-//     * @Route("/exercice/tutoriel", name="tutoriel")
-//     */
-//    public function tutoriel()
-//    {
-//        return $this->render('exercice/tuto.html.twig');
-//    }
+    /**
+     * @Route("/exercice/tutoriel", name="tutoriel")
+     */
+    public function tutoriel()
+    {
+//        $exercice = $this->getDoctrine()->getRepository(Exercice::class)->findByNumber(1, 1);
+        return $this->render('exercice/tuto.html.twig');
+    }
 
     /**
      * @Route("/exercice/{slug}", name="exercice", requirements={"slug" = "[a-z0-9-]+"})

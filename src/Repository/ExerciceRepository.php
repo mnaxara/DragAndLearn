@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Exercice;
+use App\Entity\Level;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -17,6 +18,18 @@ class ExerciceRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Exercice::class);
+    }
+
+    public function findByNumber($number, $level){
+
+        return $this->createQueryBuilder('e')
+            ->innerJoin('e.level', 'l')
+            ->andWhere('e.number = :number')
+            ->setParameter('number', $number)
+            ->andWhere('l.number = :level')
+            ->setParameter('level', $level)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 
 
