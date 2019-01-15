@@ -1,21 +1,9 @@
 {% extends 'exercice/exercice.html.twig' %}
 
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e8.css') }}">{% endblock %}
+
 {% block lecons %}
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    {# TODO A noter: La mise en forme se fait automatiquement en bootstrap sur cet exercice #}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
     asperiores aspernatur
     cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
@@ -70,34 +58,304 @@
 {% block code %}
 <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-<div class="droppable my-3" id="droppable1"></div>
-<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable2"></div>
-<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
+    <div><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable3"></div>
-<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
-            class="balise">&lt;/title&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable4"></div>
-<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+    <div class="ml-5">
+        <span class="balise">&lt;title&gt;</span>
+        <span class="text-white">Exercice 8</span>
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable5"></div>
-<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable6"></div>
-<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
-            class="balise">&lt;/h1&gt;</span></div>
+    {# BODY #}
+    <div><span class="balise">&lt;body&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable9"></div>
-<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+                         {# DIV HEADER #}
+<div class="droppable ml-3 my-3" id="droppable6"></div>
+<div class="solution1 hide"><span class="balise">&lt;header&gt;</span></div>
 
+    {# IMG #}
 <div class="droppable ml-3 my-3" id="droppable7"></div>
-<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+<div class="solution1 hide"><span class="balise">&lt;img&gt;</span></div>
 
-<div class="droppable my-3" id="droppable8"></div>
-<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+    {# H2 #}
+<div class="ml-5">
+    <span class="balise">&lt;h2&gt;</span>
+    Mon Header
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+    {# A(lien) #}
+<div class="droppable ml-3 my-3 p-5" id="droppable8"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;a&gt;</span>
+    Se connecter
+    <span class="balise">&lt;/a&gt;</span>
+</div>
+
+    {# /DIV #}
+<div class="droppable ml-3 my-3" id="droppable9"></div>
+<div class="solution1 hide"><span class="balise">&lt;/header&gt;</span></div>
+
+    {# HR #}
+<div class="droppable ml-3 my-3" id="droppable10"></div>
+<div class="solution1 hide"><span class="balise">&lt;hr&gt;</span></div>
+
+                        {# DIV MAIN #}
+<div class="droppable ml-3 my-3" id="droppable11"></div>
+<div class="solution1 hide"><span class="balise">&lt;main&gt;</span></div>
+
+    {# H2 #}
+<div class="droppable ml-3 my-3 p-5" id="droppable12"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;h2&gt;</span>
+    Mon Main
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+    {# DIV #}
+<div class="droppable ml-3 my-3" id="droppable13"></div>
+<div class="solution1 hide"><span class="balise">&lt;div&gt;</span></div>
+
+    {# H3 #}
+<div class="droppable ml-3 my-3 p-5" id="droppable14"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;h3&gt;</span>
+    Mon Tableau
+    <span class="balise">&lt;/h3&gt;</span>
+</div>
+
+    {# TABLE #}
+<div class="droppable ml-3 my-3" id="droppable15"></div>
+<div class="solution1 hide"><span class="balise">&lt;table&gt;</span></div>
+
+    {# THEAD #}
+<div class="droppable ml-3 my-3" id="droppable15"></div>
+<div class="solution1 hide"><span class="balise">&lt;thead&gt;</span></div>
+
+    {# TR #}
+<div class="droppable ml-3 my-3" id="droppable16"></div>
+<div class="solution1 hide"><span class="balise">&lt;tr&gt;</span></div>
+
+        {# TH #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;th&gt;</span>
+    colonne 1
+    <span class="balise">&lt;/th&gt;</span>
+</div>
+
+        {# TH #}
+<div class="droppable ml-3 my-3 p-5" id="droppable18"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;th&gt;</span>
+    colonne 2
+    <span class="balise">&lt;/th&gt;</span>
+</div>
+
+        {# TH #}
+<div class="droppable ml-3 my-3 p-5" id="droppable19"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;th&gt;</span>
+    colonne 3
+    <span class="balise">&lt;/th&gt;</span>
+</div>
+
+        {# TH #}
+<div class="droppable ml-3 my-3 p-5" id="droppable20"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;th&gt;</span>
+    colonne 4
+    <span class="balise">&lt;/th&gt;</span>
+</div>
+
+    {# /TR #}
+<div class="droppable ml-3 my-3" id="droppable21"></div>
+<div class="solution1 hide"><span class="balise">&lt;/tr&gt;</span></div>
+
+    {# THEAD #}
+<div class="droppable ml-3 my-3" id="droppable22"></div>
+<div class="solution1 hide"><span class="balise">&lt;/thead&gt;</span></div>
+
+    {# TBODY #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;tbody&gt;</span></div>
+
+    {# TR #}
+<div class="droppable ml-3 my-3" id="droppable16"></div>
+<div class="solution1 hide"><span class="balise">&lt;tr&gt;</span></div>
+
+        {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 1
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+        {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 2
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+        {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 3
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+        {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 4
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# /TR #}
+<div class="droppable ml-3 my-3" id="droppable21"></div>
+<div class="solution1 hide"><span class="balise">&lt;/tr&gt;</span></div>
+
+    {# TR #}
+<div class="droppable ml-3 my-3" id="droppable16"></div>
+<div class="solution1 hide"><span class="balise">&lt;tr&gt;</span></div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 5
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 6
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 7
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 8
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# /TR #}
+<div class="droppable ml-3 my-3" id="droppable21"></div>
+<div class="solution1 hide"><span class="balise">&lt;/tr&gt;</span></div>
+
+    {# TR #}
+<div class="droppable ml-3 my-3" id="droppable16"></div>
+<div class="solution1 hide"><span class="balise">&lt;tr&gt;</span></div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 9
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 10
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 11
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# TD #}
+<div class="droppable ml-3 my-3 p-5" id="droppable17"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;td&gt;</span>
+    case 12
+    <span class="balise">&lt;/td&gt;</span>
+</div>
+
+    {# /TR #}
+<div class="droppable ml-3 my-3" id="droppable21"></div>
+<div class="solution1 hide"><span class="balise">&lt;/tr&gt;</span></div>
+
+    {# /TBODY #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;/tbody&gt;</span></div>
+
+    {# /TABLE #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;/table&gt;</span></div>
+
+    {# /DIV #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;/div&gt;</span></div>
+
+    {# /DIV #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;/main&gt;</span></div>
+
+    {# HR #}
+<div class="droppable ml-3 my-3" id="droppable10"></div>
+<div class="solution1 hide"><span class="balise">&lt;hr&gt;</span></div>
+
+                        {# DIV FOOTER #}
+<div class="droppable ml-3 my-3" id="droppable11"></div>
+<div class="solution1 hide"><span class="balise">&lt;footer&gt;</span></div>
+
+    {# H2 #}
+<div class="droppable ml-3 my-3 p-5" id="droppable12"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;h2&gt;</span>
+    Mon Footer
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+    {# P #}
+<div class="droppable ml-3 my-3 p-5" id="droppable12"></div>
+<div class="solution2 hide ml-3 my-3">
+    <span class="balise">&lt;p&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad animi beatae
+    consequuntur, deleniti dolor dolore dolorem doloremque fugit in itaque nemo
+    nihil officia quam reiciendis rerum, sint veniam voluptatem.
+    <span class="balise">&lt;/p&gt;</span>
+</div>
+
+    {# /DIV #}
+<div class="droppable ml-3 my-3" id="droppable23"></div>
+<div class="solution1 hide"><span class="balise">&lt;/footer&gt;</span></div>
+
+    {# /BODY #}
+<div><span class="balise">&lt;/body&gt;</span></div>
+
+    {# /HTML #}
+<div><span class="balise">&lt;/html&gt;</span></div>
 {% endblock %}
 
 
@@ -105,8 +363,61 @@
 {% endblock %}
 
 {% block apercu %}
-<div id="success6" class="text-center"></div>
-<div id="success9"></div>
+<div class="header d-flex justify-content-between align-items-center my-5">
+    <img src="https://via.placeholder.com/150">
+    <h2 class="titre-header">Mon Header</h2>
+    <a href="#">Se connecter</a>
+</div>
+
+    <hr>
+
+<div class="main my-5">
+    <h2 class="text-center">Mon Main</h2>
+
+    <div class="my-5">
+        <h3>Mon tableau</h3>
+        <table >
+            <thead>
+                <tr>
+                    <th>colonne 1</th>
+                    <th>colonne 2</th>
+                    <th>colonne 3</th>
+                    <th>colonne 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>case 1</td>
+                    <td>case 2</td>
+                    <td>case 3</td>
+                    <td>case 4</td>
+                </tr>
+                <tr>
+                    <td>case 5</td>
+                    <td>case 6</td>
+                    <td>case 7</td>
+                    <td>case 8</td>
+                </tr>
+                <tr>
+                    <td>case 9</td>
+                    <td>case 10</td>
+                    <td>case 11</td>
+                    <td>case 12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+    <hr>
+    
+<div class="footer mt-5">
+    <h2 class="text-center">Mon Footer</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio
+        id nesciunt quisquam soluta tenetur voluptate? Aspernatur corporis, cupiditate
+        dolores eum facere in incidunt ipsam iste rem, ut voluptatem voluptatum!</p>
+</div>    
 {% endblock %}
 
 
