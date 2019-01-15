@@ -1,0 +1,38 @@
+.hide{
+    display: none;
+}
+
+#droppable18{
+    width: 50%;
+    height: 8rem;
+}
+#droppable21{
+    width: 50%;
+    height: 6rem;
+}
+#droppable22{
+    width: 50%;
+    height: 6rem;
+}
+input:not(.cleaner_input) {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    color:black;
+    width: 10rem;
+}
+.cleaner_input{
+	height: 1rem;
+}
+#dragdrop {
+   height: 165%;
+}
+.droppable{
+    width: 50%
+}

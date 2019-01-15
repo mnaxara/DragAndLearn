@@ -76,9 +76,8 @@
                             </div>
                             <div class="col-12 d-flex align-items-center flex-column mt-5">
                                 <p>Félicitations !</p>
-                                <p>Vous avez passé le tutoriel !</p>
                                 {% set next = exercice.number+2 %}
-                                <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+                                <form action="{{ path('exercice', {slug : 'html-exercice'~next}) }}"
                                       method="post">
                                     <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
                                     <input type="hidden" name='exFinish' value="{{ exercice.id }}">
