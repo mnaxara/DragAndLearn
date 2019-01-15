@@ -1,5 +1,9 @@
 {% extends 'exercice/exercice.html.twig' %}
 
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e4.css') }}">{% endblock %}
+
+
+
 {% block lecons %}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
     asperiores aspernatur
@@ -16,107 +20,211 @@
     cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
     nobis
     officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+
 {% endblock %}
 
 
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+
+    {# false #}
     <div class="draggable text-center" data-id="3" id="draggable3">
-    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+        <span class="balise">&lt;img  
+            <span class="baliseCss">src</span>=<span class="baliseTxt">"placehold.it/250x250"</span><span class="baliseCss"> titre</span>=<span class="baliseTxt">"image source externe"</span><span class="baliseCss"> alt</span>=<span class="baliseTxt">"image avec source externe"</span>&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="1" id="draggable1">
-    <span class="balise">&lt;html&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="8" id="draggable8">
-    <span class="balise">&lt;/html&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="5" id="draggable5">
-    <span class="balise">&lt;body&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="4" id="draggable4">
-    <span class="balise">&lt;/head&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="2" id="draggable2">
-    <span class="balise">&lt;head&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="9" id="draggable9">
-    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
-    id="draggable6">
-    <span class="balise">&lt;h1&gt;</span>Reussi !<span
-    class="balise">&lt;/h1&gt;</span>
-    </div>
+    <br>
+    
+    {# true custom #}
     <div class="draggable text-center" data-id="7" id="draggable7">
-    <span class="balise">&lt;/body&gt;</span>
+        <span class="balise">&lt;img <span class="baliseCss">src</span>=<span class="baliseTxt">"<input id="src" type="text" placeholder="taper ici...">" </span><span class="baliseCss"> title</span>=<span class="baliseTxt">"image avec source interne"</span><span class="baliseCss"> alt</span>=<span class="baliseTxt">"image avec source interne"</span>&gt;</span>
     </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="balise">&lt;image  <span class="baliseCss">source</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image source externe"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"image avec source externe"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false custom #}
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span class="balise">&lt;img <span class="baliseCss">src</span>=<span class="baliseTxt">"<input id="p1" type="text" placeholder="taper ici...">"</span> <span class="baliseCss"> src</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image avec source interne"</span> <span class="baliseCss">alt</span>=<span class="baliseTxt">"image avec source interne"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="balise">&lt;img  <span class="baliseCss">src</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss">title</span>=<span class="baliseTxt">"image avec source interne"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="balise">&lt;img  <span class="baliseCss">src</span>=<span class="baliseTxt">"https://plcehld.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image avec une erreur dans la source"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"la source de cette image ne fonctionne pas"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="balise">&lt;img  <span class="baliseCss">src</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image avec une erreur dans la source"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"la source de cette image ne fonctionne pas"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="6" id="draggable6">
+        <span class="balise">&lt;img  <span class="baliseCss">src</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image source externe"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"image avec source externe"</span>&gt;</span>
+    </div>
+    <br>    
+    <img src="" alt="">
+
+    
+
+
+    
 {% endblock %}
 
 {% block code %}
+
 <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-<div class="droppable my-3" id="droppable1"></div>
-<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable2"></div>
-<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable3"></div>
-<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
-            class="balise">&lt;/title&gt;</span></div>
+    <div>
+        <span class="balise">&lt;html&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise">&lt;head&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable4"></div>
-<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+    <div class="ml-5 text-white">
+        <span class="balise">&lt;title&gt;</span>
+        Exercice n°4
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise">&lt;/head&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable5"></div>
-<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+    <div>
+        <span class="balise">&lt;body&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise ml-5">&lt;div&gt;</span>
+    </div>
 
-<div class="droppable ml-5 my-3" id="droppable6"></div>
-<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
-            class="balise">&lt;/h1&gt;</span></div>
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;span&gt;</span>
+        Une image avec une source externe :
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
 
-<div class="droppable ml-5 my-3" id="droppable9"></div>
-<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+    <div class="ml-6">
+        <span class="balise">&lt;div&gt;</span><br>
+            <div class="droppable ml-4" id="droppable6"></div>        
+            <div class="solution1 hide ml-5"><span class="balise">&lt;img <span class="baliseCss"> src</span>=<span class="baliseTxt">"https://placehold.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image source externe"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"image avec source externe"</span>&gt;</span></div>
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable7"></div>
-<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+    <div>
+        <span class="balise ml-5">&lt;/div&gt;</span>
+    </div>
 
-<div class="droppable my-3" id="droppable8"></div>
-<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+    <div>
+        <span class="balise ml-5">&lt;hr&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;div&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;span&gt;</span>
+        La source de celle ci comporte une erreur, regarde ce qu'il se passe :
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    <div class="ml-6">
+        <span class="balise">&lt;div&gt;</span><br>
+            <div class="droppable ml-4" id="droppable8"></div> 
+            <div class="solution2 hide ml-5"><span class="balise">&lt;img <span class="baliseCss"> src</span>=<span class="baliseTxt">"https://placehld.it/250x250"</span> <span class="baliseCss"> title</span>=<span class="baliseTxt">"image avec une erreur dans la source"</span> <span class="baliseCss"> alt</span>=<span class="baliseTxt">"la source de cette image ne fonctionne pas"</span>&gt;</span></div>       
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;/div&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;hr&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;div&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;span&gt;</span>
+        Ton image avec le chemin du fichier correspondant :
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    <div class="ml-6">
+        <span class="balise">&lt;div&gt;</span><br>
+            <div class="droppable ml-4" id="droppable7"></div>
+            <div class="solution3 hide ml-5"><span class="balise">&lt;img <span class="baliseCss">src</span>=<span class="baliseTxt">"<span id="srcSolution"></span>"</span> <span class="baliseCss">title</span>=<span class="baliseTxt">"image avec source interne"</span> <span class="baliseCss">alt</span>=<span class="baliseTxt">"image avec source interne"</span>&gt;</span></div>         
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;/div&gt;</span>
+    </div>
+
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
 {% endblock %}
 
-{% block nextlevel %}
-<form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-      method="post">
-    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-    <button class="btn p-4" id="next">Exercice suivant -></button>
-</form>
-{% endblock %}
+
 
 {% block trophy %}
 {% endblock %}
 
 {% block apercu %}
-<div id="success6" class="text-center"></div>
-<div id="success9"></div>
+
+
+
+<div class="row">
+    <div class="col-12 col-md-12 p-3">
+        <span>Une image avec une source externe :</span>
+        <div class="justify-content-center d-flex p-3">
+            <img id="success6" class="hide" src="https://placehold.it/250x250" title="image source externe" alt="image avec source externe">
+        </div>
+        <hr>
+        <span>La source de celle ci comporte une erreur, regarde ce qu'il se passe :</span>
+        <div class="justify-content-center d-flex p-3">
+            <img id="success8" class="hide" src="https://placehld.it/250x250" title="image avec une erreur dans la source" alt="la source de cette image ne fonctionne pas">
+        </div>
+        <hr>
+        <span>Ton image avec le chemin du fichier correspondant :</span>
+        <div class="justify-content-center d-flex p-3">
+            <img id="success7" class="hide" src="" title="image avec source interne" alt="image avec source interne">
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
 {% endblock %}
 
 
 {% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/1/n1e4.js')}}></script>
 {% endblock %}

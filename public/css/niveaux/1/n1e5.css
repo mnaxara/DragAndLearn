@@ -1,0 +1,35 @@
+
+.noOrdo{
+    margin-top: 10%;
+}
+
+.ordo{
+    margin-top: 17%;
+}
+
+.titre3{
+    margin-top: 7%;
+}
+
+#dragdrop {
+    height: 164%;
+}
+
+#droppable11, #droppable12{
+    width: 48%;
+    height: 7%;
+}
+
+#droppable13, #droppable14{
+    width: 48%;
+    height: 5%;
+}
+
+#droppable2, #droppable3, #droppable4, #droppable5{
+    width: 48%;
+    height: 4%;
+}
+
+#droppable1, #droppable6, #droppable7, #droppable15{
+    width: 10%;
+}
