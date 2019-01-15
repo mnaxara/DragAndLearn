@@ -24,6 +24,20 @@ $( function() {
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
 
+        // Multi li accepté
+        $("#droppable2").droppable({
+            accept: ".liClass",
+        });
+        $("#droppable3").droppable({
+            accept: ".liClass",
+        });
+        $("#droppable4").droppable({
+            accept: ".liClass",
+        });
+        $("#droppable5").droppable({
+            accept: ".liClass",
+        });
+
         $( "#droppable"+id ).droppable({
             /*classes: {
                 "ui-droppable-active": "ui-state-default"
