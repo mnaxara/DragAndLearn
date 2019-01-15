@@ -62,7 +62,21 @@ class AppFixtures extends Fixture
         foreach ($levels as $level) {
             for ($i = 1; $i < 11; $i++){
                 $exercice = new Exercice();
-                $exercice->setLibelle('Niveau :'. $level->getNumber().' exercice'.$i);
+                switch ($level->getNumber()) {
+                    case 1:
+                        $exercice->setLibelle('html'.' exercice'.$i);
+                        break;
+                    case 2:
+                        $exercice->setLibelle('html/css'.' exercice'.$i);
+                        break;
+                    case 3:
+                        $exercice->setLibelle('html/css/js'.' exercice'.$i);
+                        break;
+
+                    default:
+                        # code...
+                        break;
+                }
                 $exercice->setHelp('help'.$i);
                 $exercice->setSolution('solution'.$i);
                 $exercice->setNumber(($i-1));

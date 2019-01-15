@@ -1,0 +1,140 @@
+{% extends 'exercice/exercice.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e1.css') }}">{% endblock %}
+
+{% block lecons %}
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div class="draggable text-center my-1" data-id="1" id="draggable1">
+        <span class="balise">&lt;head&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="5" id="draggable5">
+        <span class="balise">&lt;p&gt;</span>Je suis un paragraphe, je reste seul sur ma ligne !<span class="balise">&lt;/p&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="2" id="draggable2">
+        <span class="balise">&lt;/head&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="3" id="draggable3">
+        <span class="balise">&lt;div&gt;</span>Je suis une Div à la ligne car ma copine rouge prend toute la place<span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="4" id="draggable4">
+        <span class="balise">&lt;span&gt;</span>Merci !<span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="9" id="draggable9">
+        <span class="balise">&lt;heat&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="10" id="draggable10">
+        <span class="balise">&lt;/heat&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="11" id="draggable11">
+        <span class="balise">&lt;:head&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="12" id="draggable12">
+        <span class="balise">&lt;\head&gt;</span>
+    </div>
+
+{% endblock %}
+
+{% block code %}
+<p class="text-white">&lt;!DOCTYPE html&gt;</p>
+<!--Devra etre généré si possible en php depuis la BDD des exercice-->
+
+
+    <div><span class="balise">&lt;html&gt;</span></div>
+
+    <div class="droppable" id="droppable1"></div>
+    <div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
+
+    <div class="pl-4 text-white"><span class="balise">&lt;title&gt;</span>Premier exercice<span class="balise">&lt;/title&gt;</span></div>
+
+    <div class="droppable" id="droppable2"></div>
+    <div class="solution1 hide"><span class="balise">&lt;/head&gt;</span></div>
+
+    <div><span class="balise">&lt;body&gt;</span></div>
+
+    <div class="ml-3 my-3">
+        <span class="balise">&lt;div&gt;</span>
+        <span class="text-white">Je suis une div qui en impose !</span>
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div class="droppable ml-3 my-3 p-5" id="droppable3"></div>
+    <div class="solution2 hide ml-3 my-3">
+        <span class="balise">&lt;div&gt;</span>
+        Je suis une Div à la ligne car ma copine rouge prend toute la place
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div class="ml-3 my-3">
+        <span class="balise">&lt;span&gt;</span>
+        <span class="text-white">Je suis une span, je te laisse de la place !</span>
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    <div class="droppable ml-3 my-3 p-3 w-25" id="droppable4"></div>
+    <div class="solution2 hide ml-3 my-3">
+        <span class="balise">&lt;span&gt;</span>
+            Merci !
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+
+    <div class="droppable ml-3 my-3 w-50 p-5" id="droppable5"></div>
+    <div class="solution2 hide ml-3 my-3">
+        <span class="balise">&lt;p&gt;</span>
+            Je suis un paragraphe, je reste seul sur ma ligne !
+        <span class="balise">&lt;/p&gt;</span>
+    </div>
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+
+
+{% endblock %}
+
+{% block nextlevel %}
+<form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+      method="post">
+    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+    <button class="btn p-4" id="next">Exercice suivant -></button>
+</form>
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+<div class="square red">Je suis une Div, attention j'en impose !</div>
+<div class="square green hide" id="success3">Je suis une Div à la ligne car ma copine rouge prend toute la place</div>
+<span class="square blue" id="blue">Je suis une span, je te laisse de la place !</span><span class="square hide violet" id="success4">Merci !</span>
+<p class="hide p" id="success5">Je suis un paragraphe, je reste seul sur ma ligne !</p>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/1/n1e1.js')}}></script>
+{% endblock %}

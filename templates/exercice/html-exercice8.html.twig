@@ -1,0 +1,114 @@
+{% extends 'exercice/exercice.html.twig' %}
+
+{% block lecons %}
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+    asperiores aspernatur
+    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+    nobis
+    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div class="draggable text-center" data-id="3" id="draggable3">
+    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="1" id="draggable1">
+    <span class="balise">&lt;html&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="8" id="draggable8">
+    <span class="balise">&lt;/html&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="5" id="draggable5">
+    <span class="balise">&lt;body&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="4" id="draggable4">
+    <span class="balise">&lt;/head&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="2" id="draggable2">
+    <span class="balise">&lt;head&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="9" id="draggable9">
+    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
+    id="draggable6">
+    <span class="balise">&lt;h1&gt;</span>Reussi !<span
+    class="balise">&lt;/h1&gt;</span>
+    </div>
+    <div class="draggable text-center" data-id="7" id="draggable7">
+    <span class="balise">&lt;/body&gt;</span>
+    </div>
+{% endblock %}
+
+{% block code %}
+<p class="text-white">&lt;!DOCTYPE html&gt;</p>
+<!--Devra etre généré si possible en php depuis la BDD des exercice-->
+<div class="droppable my-3" id="droppable1"></div>
+<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
+
+<div class="droppable ml-3 my-3" id="droppable2"></div>
+<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
+
+<div class="droppable ml-5 my-3" id="droppable3"></div>
+<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
+            class="balise">&lt;/title&gt;</span></div>
+
+<div class="droppable ml-3 my-3" id="droppable4"></div>
+<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+
+<div class="droppable ml-3 my-3" id="droppable5"></div>
+<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+
+<div class="droppable ml-5 my-3" id="droppable6"></div>
+<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
+            class="balise">&lt;/h1&gt;</span></div>
+
+<div class="droppable ml-5 my-3" id="droppable9"></div>
+<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+
+<div class="droppable ml-3 my-3" id="droppable7"></div>
+<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+
+<div class="droppable my-3" id="droppable8"></div>
+<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+{% endblock %}
+
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+<div id="success6" class="text-center"></div>
+<div id="success9"></div>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+{% endblock %}
