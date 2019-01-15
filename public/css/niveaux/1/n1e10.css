@@ -11,9 +11,24 @@
 }
 
 .droppable{
-    width: 30%;
+    width: 45%;
+    height: 3rem;
 }
 
 #dragdrop {
-    height: 250%;
+    height: 310%;
+}
+
+#success17{
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    color:black;
+    width: 10rem;
 }
