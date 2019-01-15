@@ -19,27 +19,27 @@ class AjaxController extends AbstractController
     }
 
     /**
-     * @Route("/ajax/user", name="user", requirements={"id"="\d+"})
+     * @Route("/ajax/user", name="ajaxUser", requirements={"id"="\d+"})
      */
     public function selectAllUsers()
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
 
-        $results = [];
+//        $results = [];
 
-        foreach($users as $user){
+//        foreach($users as $user){
+//
+//            $results[] = [
+//                'username' => $user->getUsername(),
+//                'email'    => $user->getEmail(),
+//                'avatar'   => $user->getAvatar(),
+//                'theme'    => $user->getTheme(),
+//                'role'     => $user->getRoles()
+//            ];
+//
+//        }
 
-            $results[] = [
-                'username' => $user->getUsername(),
-                'email'    => $user->getEmail(),
-                'avatar'   => $user->getAvatar(),
-                'theme'    => $user->getTheme(),
-                'role'     => $user->getRoles()
-            ];
-
-        }
-
-        return $this->json(array('status' => 'ok', '$users' => $results));
+        return $this->render('ajax/user.html.twig', [ 'users' => $users ]);
 
     }
 

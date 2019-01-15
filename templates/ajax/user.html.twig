@@ -1,0 +1,18 @@
+{#TODO : barre de recherche + boutton + div caché avec all user + bouton mouton modifier + ajax pour apparaition form prerempli#}
+
+<div class="col-12">
+    <table>
+        {% for user in users %}
+
+            <tr>
+                <td>{{ user.avatar }}</td>
+                <td>{{ user.username }}</td>
+                <td><i class="fas fa-edit"></i></td>
+                <td><i class="fas fa-trash-alt"></i></td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+
