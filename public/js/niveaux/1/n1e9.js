@@ -24,28 +24,6 @@ $( function() {
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
 
-        // Multi tr accepté
-        $("#droppable6").droppable({
-            accept: ".trClass",
-        });
-        $("#droppable15").droppable({
-            accept: ".trClass"
-        });
-        $("#droppable17").droppable({
-            accept: ".trClass"
-        });
-
-        // Multi /tr accepté
-        $("#droppable14").droppable({
-            accept: ".endTrClass",
-        });
-        $("#droppable16").droppable({
-            accept: ".endTrClass"
-        });
-        $("#droppable19").droppable({
-            accept: ".endTrClass"
-        });
-
         $( "#droppable"+id ).droppable({
             /*classes: {
                 "ui-droppable-active": "ui-state-default"
@@ -56,6 +34,11 @@ $( function() {
             drop: function() { // Lorsque la cellule est dropé
                 playSound();
                 $('#success'+id).show(); // Affiche la bonne div
+
+                if ($(this).attr('id') === 'droppable3'){ // Cellule speciale necessitant un traitement d'input
+                    $(".liste").css('display', 'flex');
+                }
+
                 $( this ).addClass( "ui-state-highlight" ); // Mise en forme
                 $( this ).addClass('finish')/* // Compte comme terminé pour l'exercice
                 .find( "p" )
@@ -67,7 +50,7 @@ $( function() {
                     finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
                 }
                 //TODO Modifier la longueur necessaire a la victoire
-                if (finish.length === 25){// Verification de la fin de l'exercice.
+                if (finish.length === 15){// Verification de la fin de l'exercice.
                     $(".droppable").hide('clip', 1000);
                     $(".draggable").hide('clip', 1000);
                     setTimeout(()=>{
