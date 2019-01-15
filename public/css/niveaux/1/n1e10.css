@@ -32,3 +32,7 @@
     color:black;
     width: 10rem;
 }
+
+.solution1, .solution2, .solution3, .solution4, .solution5{
+    display: none;
+}

@@ -111,8 +111,7 @@ footer {
   border-radius: 8px;
 
   position : absolute;
-  left : 50%;
-  margin-left: -200px;
+  left : 20px;
   background: rgba(162, 162, 148, 0.9);
 }
 

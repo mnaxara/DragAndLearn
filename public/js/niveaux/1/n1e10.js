@@ -113,7 +113,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 31){// Verification de la fin de l'exercice.
+        if (finish.length === 1){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
@@ -123,13 +123,25 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 finishAudio.play()
-            }, 2000);
+            }, 1000);
+            setTimeout(()=>{
+                $('.solution3').show('explode', 1000);
+                finishAudio.play()
+            }, 1000);
+            setTimeout(()=>{
+                $('.solution4').show('explode', 1000);
+                finishAudio.play()
+            }, 1000);
+            setTimeout(()=>{
+                $('.solution5').show('explode', 1000);
+                finishAudio.play()
+            }, 1000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 endLevel.play();
-            }, 3000);
+            }, 10000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative
