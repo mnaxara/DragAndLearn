@@ -1,5 +1,9 @@
 {% extends 'exercice/exercice.html.twig' %}
 
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e7.css') }}">{% endblock %}
+
+
+
 {% block lecons %}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
     asperiores aspernatur
@@ -16,107 +20,495 @@
     cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
     nobis
     officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+
 {% endblock %}
 
 
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-    <div class="draggable text-center" data-id="3" id="draggable3">
-    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
-    </div>
+
+    
+
+    {# false #}
     <div class="draggable text-center" data-id="1" id="draggable1">
-    <span class="balise">&lt;html&gt;</span>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"text"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"text"</span>&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="8" id="draggable8">
-    <span class="balise">&lt;/html&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="5" id="draggable5">
-    <span class="balise">&lt;body&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="4" id="draggable4">
-    <span class="balise">&lt;/head&gt;</span>
-    </div>
+    <br>
+
+    {# true #}
     <div class="draggable text-center" data-id="2" id="draggable2">
-    <span class="balise">&lt;head&gt;</span>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"texte"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"text"</span>&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="9" id="draggable9">
-    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"texte"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"texte"</span>&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
-    id="draggable6">
-    <span class="balise">&lt;h1&gt;</span>Reussi !<span
-    class="balise">&lt;/h1&gt;</span>
+    <br>    
+
+    {# false #}
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span class="balise">&lt;input  <span class="baliseCss">nom</span>=<span class="baliseTxt">"email"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"email"</span>&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="7" id="draggable7">
-    <span class="balise">&lt;/body&gt;</span>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"email"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"mail"</span>&gt;</span>
     </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="6" id="draggable6">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"email"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"email"</span>&gt;</span>
+    </div>
+    <br>    
+
+    
+
+    {# true #}
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="balise">&lt;textarea  <span class="baliseCss">name</span>=<span class="baliseTxt">"zone_de_texte"</span>&gt;</span>
+        <span class="balise">&lt;/textarea&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="balise">&lt;textzone  <span class="baliseCss">name</span>=<span class="baliseTxt">"zone_de_texte"</span>&gt;</span>
+        <span class="balise">&lt;/textzone&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="balise">&lt;textarea  <span class="baliseCss">name</span><span class="baliseTxt">"zone_de_texte"</span>&gt;</span>
+        <span class="balise">&lt;/textarea&gt;</span>
+    </div>
+    <br>
+
+    
+
+    {# true #}
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"date"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"date"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="11" id="draggable11">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"date"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"dates"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="12" id="draggable12">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"dates"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"date"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="13" id="draggable13">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"mot_de_passe"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"password"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="14" id="draggable14">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"password"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"password"</span>&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="15" id="draggable15">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"mot_de_passe"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"passeword"</span>&gt;</span>
+    </div>
+    <br>    
+
+    {# false #}
+    <div class="draggable text-center" data-id="16" id="draggable16">
+        <span class="balise">&lt;select <span class="baliseCss">name</span>=<span class="baliseTxt">"selecteur"</span>&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°1</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°2</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°3</span>    
+            <span class="balise">&lt;/option&gt;</span><br>
+
+        <span class="balise">&lt;/select&gt;</span>
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="17" id="draggable17">
+        <span class="balise">&lt;select <span class="baliseCss">name</span>=<span class="baliseTxt">"select"</span>&gt;</span><br>
+            <span class="balise">&lt;options&gt;</span>
+            <span>option n°1</span>
+            <span class="balise">&lt;/options&gt;</span><br>
+            <span class="balise">&lt;options&gt;</span>
+            <span>option n°2</span>
+            <span class="balise">&lt;/options&gt;</span><br>
+            <span class="balise">&lt;options&gt;</span>
+            <span>option n°3</span>    
+            <span class="balise">&lt;/options&gt;</span><br>
+
+        <span class="balise">&lt;/select&gt;</span>
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="18" id="draggable18">
+        <span class="balise">&lt;select <span class="baliseCss">name</span>=<span class="baliseTxt">"selecteur"</span>&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°1</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°2</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°3</span>    
+            <span class="balise">&lt;/option&gt;</span><br>
+
+        <span class="balise">&lt;/select&gt;</span>
+    </div>
+    <br>    
+
+    {# false #}
+    <div class="draggable text-center" data-id="19" id="draggable19">
+        <span class="balise">&lt;input  <span class="baliseCss">nom</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span>        
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="20" id="draggable20">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"case"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"case"</span>&gt;</span>        
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="21" id="draggable21">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span>        
+    </div>
+    <br>
+
+    {# true #}
+    <div class="draggable text-center" data-id="22" id="draggable22">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiple"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiple"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span>        
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="23" id="draggable23">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiples"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiples"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span>        
+    </div>
+    <br>
+
+    {# false #}
+    <div class="draggable text-center" data-id="24" id="draggable24">
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiples"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"check"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiples"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"check"</span>&gt;</span>        
+    </div>
+    <br>  
+    
 {% endblock %}
 
 {% block code %}
+
 <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-<div class="droppable my-3" id="droppable1"></div>
-<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable2"></div>
-<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable3"></div>
-<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
-            class="balise">&lt;/title&gt;</span></div>
+    <div>
+        <span class="balise">&lt;html&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise">&lt;head&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable4"></div>
-<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+    <div class="ml-5 text-white">
+        <span class="balise">&lt;title&gt;</span>
+        Exercice n°7
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise">&lt;/head&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable5"></div>
-<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+    <div>
+        <span class="balise">&lt;body&gt;</span>
+    </div>
+    
+    <div>
+        <span class="balise ml-5">&lt;form&gt;</span>
+    </div>
 
-<div class="droppable ml-5 my-3" id="droppable6"></div>
-<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
-            class="balise">&lt;/h1&gt;</span></div>
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"texte"</span>&gt;</span>
+    Texte
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
 
-<div class="droppable ml-5 my-3" id="droppable9"></div>
-<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
 
-<div class="droppable ml-3 my-3" id="droppable7"></div>
-<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable2"></div>
+    </div>
+    <div class="solution1 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"texte"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"text"</span>&gt;</span></div> 
 
-<div class="droppable my-3" id="droppable8"></div>
-<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"email"</span>&gt;</span>
+    Email
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable6"></div>
+    </div>
+    <div class="solution2 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"email"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"email"</span>&gt;</span></div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"zone_de_texte"</span>&gt;</span>
+    Zone de texte
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable8"></div>
+    </div>
+    <div class="solution3 hide ml-6"><span class="balise">&lt;textarea  <span class="baliseCss">name</span>=<span class="baliseTxt">"zone_de_texte"</span>&gt;</span>
+        <span class="balise">&lt;/textarea&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"date"</span>&gt;</span>
+    Date
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable10"></div>
+    </div>
+    <div class="solution4 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"date"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"date"</span>&gt;</span></div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"mot_de_passe"</span>&gt;</span>
+    Mot de passe
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable13"></div>
+    </div>
+    <div class="solution5 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"mot_de_passe"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"password"</span>&gt;</span></div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"selecteur"</span>&gt;</span>
+    Liste déroulante
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>   
+
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable18"></div>
+    </div>
+    <div class="solution6 hide ml-6"><span class="balise">&lt;select <span class="baliseCss">name</span>=<span class="baliseTxt">"selecteur"</span>&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°1</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°2</span>
+            <span class="balise">&lt;/option&gt;</span><br>
+            <span class="balise">&lt;option&gt;</span>
+            <span>option n°3</span>    
+            <span class="balise">&lt;/option&gt;</span><br>
+
+        <span class="balise">&lt;/select&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+     <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"choix_unique"</span>&gt;</span>
+    Choix unique
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable21"></div>
+    </div>
+    <div class="solution7 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_unique"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"radio"</span>&gt;</span> 
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;label <span class="baliseCss">for</span>=<span class="baliseTxt">"choix_multiple"</span>&gt;</span>
+    Choix multiple
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;br&gt;</span>
+    </div>
+
+    <div class="ml-6">        
+        <div class="droppable ml-4" id="droppable22"></div>
+    </div>
+    <div class="solution8 hide ml-6"><span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiple"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span><br>
+        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"choix_multiple"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"checkbox"</span>&gt;</span> 
+    </div>
+
+    <div>
+        <span class="balise ml-6">&lt;hr&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;button&gt;</span>
+        Envoyer
+        <span class="balise">&lt;/button&gt;</span>
+    </div>
+
+    <div>
+        <span class="balise ml-5">&lt;/form&gt;</span>
+    </div>
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
 {% endblock %}
 
-{% block nextlevel %}
-<form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-      method="post">
-    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-    <button class="btn p-4" id="next">Exercice suivant -></button>
-</form>
-{% endblock %}
+
 
 {% block trophy %}
 {% endblock %}
 
 {% block apercu %}
-<div id="success6" class="text-center"></div>
-<div id="success9"></div>
+
+
+
+<div class="row">
+    <div class="col-12 col-md-12 p-3">
+        {# <form action="#" method="#"> #}
+            <label for="texte">Texte</label>
+            <br>
+            <input id="success2" class="hide" name="texte" type="text">
+            <hr>
+            <label for="email">Email</label>
+            <br>
+            <input id="success6" class="hide" name="email" type="email">
+            <hr>
+            <label for="zone_de_texte">Zone de texte</label>
+            <br>            
+            <textarea id="success8" class="hide" name="zone_de_texte" ></textarea>
+            <hr>
+            <label for="date">Date</label>
+            <br>
+            <input id="success10" class="hide" name="date" type="date">
+            <hr>
+            <label for="mot_de_passe">Mot de passe</label>
+            <br>
+            <input id="success13" class="hide" name="mot_de_passe" type="password">
+            <hr>
+            <label for="selecteur">Liste déroulante</label>
+            <br>
+            <select id="success18" class="hide" name="selecteur">
+                <option>option n°1</option>
+                <option>option n°2</option>
+                <option>option n°3</option>
+            </select>
+            <hr>
+            <label for="choix_unique">Case choix unique</label>
+            <br>
+            <div id="success21" class="hide">
+                <input class="cleaner_input" name="choix_unique" type="radio">
+                <input class="cleaner_input" name="choix_unique" type="radio">                
+            </div>
+            
+            <hr>
+            <label for="choix_multiple">Case choix multiple</label>
+            <br>
+            <div  id="success22" class="hide">                
+                <input class="cleaner_input" name="choix_multiple" type="checkbox">
+                <input class="cleaner_input" name="choix_multiple" type="checkbox">
+            </div>
+            
+            <br>
+            <button>Envoyer</button>
+        {# </form> #}
+    </div>
+</div>
+
+    
+
+
+
+
 {% endblock %}
 
 
 {% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/1/n1e7.js')}}></script>
 {% endblock %}
