@@ -1,0 +1,7 @@
+.liste{
+    list-style: none;
+    justify-content: space-between;
+}
+#dragdrop {
+    height: 205%;
+}

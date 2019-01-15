@@ -1,0 +1,11 @@
+table, td, tr, th{
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 35%;
+    margin-left: 30%;
+    font-size: 120%;
+}
+
+#dragdrop {
+    height: 145%;
+}
