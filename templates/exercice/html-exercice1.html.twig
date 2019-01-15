@@ -3,16 +3,16 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e1.css') }}">{% endblock %}
 
 {% block lecons %}
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
 {% endblock %}
 
 
@@ -57,8 +57,8 @@
 {% endblock %}
 
 {% block code %}
-<p class="text-white">&lt;!DOCTYPE html&gt;</p>
-<!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
 
 
     <div><span class="balise">&lt;html&gt;</span></div>
@@ -95,7 +95,7 @@
     <div class="droppable ml-3 my-3 p-3 w-25" id="droppable4"></div>
     <div class="solution2 hide ml-3 my-3">
         <span class="balise">&lt;span&gt;</span>
-            Merci !
+        Merci !
         <span class="balise">&lt;/span&gt;</span>
     </div>
 
@@ -103,7 +103,7 @@
     <div class="droppable ml-3 my-3 w-50 p-5" id="droppable5"></div>
     <div class="solution2 hide ml-3 my-3">
         <span class="balise">&lt;p&gt;</span>
-            Je suis un paragraphe, je reste seul sur ma ligne !
+        Je suis un paragraphe, je reste seul sur ma ligne !
         <span class="balise">&lt;/p&gt;</span>
     </div>
 
@@ -116,22 +116,22 @@
 {% endblock %}
 
 {% block nextlevel %}
-<form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-      method="post">
-    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-    <button class="btn p-4" id="next">Exercice suivant -></button>
-</form>
+    <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+          method="post">
+        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+        <button class="btn p-4" id="next">Exercice suivant -></button>
+    </form>
 {% endblock %}
 
 {% block trophy %}
 {% endblock %}
 
 {% block apercu %}
-<div class="square red">Je suis une Div, attention j'en impose !</div>
-<div class="square green hide" id="success3">Je suis une Div à la ligne car ma copine rouge prend toute la place</div>
-<span class="square blue" id="blue">Je suis une span, je te laisse de la place !</span><span class="square hide violet" id="success4">Merci !</span>
-<p class="hide p" id="success5">Je suis un paragraphe, je reste seul sur ma ligne !</p>
+    <div class="square red">Je suis une Div, attention j'en impose !</div>
+    <div class="square green hide" id="success3">Je suis une Div à la ligne car ma copine rouge prend toute la place</div>
+    <span class="square blue" id="blue">Je suis une span, je te laisse de la place !</span><span class="square hide violet" id="success4">Merci !</span>
+    <p class="hide p" id="success5">Je suis un paragraphe, je reste seul sur ma ligne !</p>
 {% endblock %}
 
 

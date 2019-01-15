@@ -1,5 +1,7 @@
 {% extends 'exercice/exercice.html.twig' %}
 
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e5.css') }}">{% endblock %}
+
 {% block lecons %}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
     asperiores aspernatur
@@ -36,68 +38,169 @@
 
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-    <div class="draggable text-center" data-id="3" id="draggable3">
-    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+
+
+    <div class="draggable text-center my-1" data-id="20" id="draggable20">
+        <span class="balise">&lt;lo&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="1" id="draggable1">
-    <span class="balise">&lt;html&gt;</span>
+
+    <div class="draggable text-center my-1" data-id="6" id="draggable6">
+        <span class="balise">&lt;/ul&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="8" id="draggable8">
-    <span class="balise">&lt;/html&gt;</span>
+
+
+
+    <div class="draggable text-center my-1 liClass" data-id="2" id="draggable2">
+        <span class="balise free">&lt;li&gt;</span>de mon meilleur éditeur de texte<span class="balise">&lt;/li&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="5" id="draggable5">
-    <span class="balise">&lt;body&gt;</span>
+
+    <div class="draggable text-center my-1" data-id="11" id="draggable11">
+        <span class="balise">&lt;li&gt;</span>apprendre le HTML pour structurer et donner du sens à son contenu<span class="balise">&lt;/li&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="4" id="draggable4">
-    <span class="balise">&lt;/head&gt;</span>
+
+
+
+
+    <div class="draggable text-center my-1" data-id="13" id="draggable13">
+        <span class="balise">&lt;li&gt;</span>plus tard, apprendre le Javascript pour rendre mon application dynamique<span class="balise">&lt;/li&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="2" id="draggable2">
-    <span class="balise">&lt;head&gt;</span>
+
+    <div class="draggable text-center my-1" data-id="14" id="draggable14">
+        <span class="balise">&lt;li&gt;</span>Et apprendre un langage Back tel que PHP pour pouvoir intéragir avec les visiteurs<span class="balise">&lt;/li&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="9" id="draggable9">
-    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+
+    <div class="draggable text-center my-1" data-id="15" id="draggable15">
+       <span class="balise">&lt;/ol&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
-    id="draggable6">
-    <span class="balise">&lt;h1&gt;</span>Reussi !<span
-    class="balise">&lt;/h1&gt;</span>
+
+
+
+    <div class="draggable text-center my-1 liClass" data-id="3" id="draggable3">
+        <span class="balise">&lt;li&gt;</span>d'une connexion à Internet<span class="balise">&lt;/li&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="7" id="draggable7">
-    <span class="balise">&lt;/body&gt;</span>
+
+    <div class="draggable text-center my-1 liClass" data-id="5" id="draggable5">
+        <span class="balise">&lt;li&gt;</span>de faire les exercices sur Drag&Learn, mon site préféré<span class="balise">&lt;/li&gt;</span>
     </div>
+
+
+    <div class="draggable text-center my-1" data-id="1" id="draggable1">
+       <span class="balise">&lt;ul&gt;</span>
+    </div>
+
+
+    <div class="draggable text-center my-1 liClass" data-id="4" id="draggable4">
+        <span class="balise">&lt;li&gt;</span>de mon pc chéri<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="7" id="draggable7">
+        <span class="balise">&lt;ol&gt;</span>
+    </div>
+
+    <div class="draggable text-center my-1" data-id="12" id="draggable12">
+        <span class="balise">&lt;li&gt;</span>apprendre le css pour pouvoir mettre en forme mon contenu (couleur, positionnement, police, taille des caractères...)<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+
+
 {% endblock %}
 
 {% block code %}
 <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-<div class="droppable my-3" id="droppable1"></div>
-<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable2"></div>
-<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable3"></div>
-<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
-            class="balise">&lt;/title&gt;</span></div>
+    <div><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable4"></div>
-<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable5"></div>
-<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+    <div class="pl-4 text-white"><span class="balise">&lt;title&gt;</span>Les listes<span class="balise">&lt;/title&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable6"></div>
-<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
-            class="balise">&lt;/h1&gt;</span></div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
 
-<div class="droppable ml-5 my-3" id="droppable9"></div>
-<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+    <div><span class="balise">&lt;body&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable7"></div>
-<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+    {#dur#}
+    <div class="pl-2 text-white titre3"><span class="balise">&lt;h3&gt;</span>Pour coder comme un pro, j'ai besoin :<span class="balise">&lt;/h3&gt;</span></div>
 
-<div class="droppable my-3" id="droppable8"></div>
-<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+
+    {#1er trou, balise ul#}
+    <div class="droppable ml-5 my-3" id="droppable1"></div>
+    <div class="solution1 ml-5 hide"><span class="balise">&lt;ul&gt;</span></div>
+
+
+    {#Eléments de liste ul#}
+    {#edit text#}
+
+    <div class="droppable ml-6 my-3" id="droppable2"></div>
+    <div class="solution1 ml-6 hide">
+        <span class="balise">&lt;li&gt;</span>de mon pc chéri<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    {#connec#}
+    <div class="droppable ml-6 my-3" id="droppable3"></div>
+    <div class="solution1 ml-6 hide">
+        <span class="balise">&lt;li&gt;</span>d'une connexion à Internet<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    {#mon pc#}
+    <div class="droppable ml-6 my-3" id="droppable4"></div>
+    <div class="solution1 ml-6 hide">
+        <span class="balise">&lt;li&gt;</span>de mon meilleur éditeur de texte<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    {#exo d&l#}
+    <div class="droppable ml-6 my-3" id="droppable5"></div>
+    <div class="solution1 ml-6 hide">
+        <span class="balise">&lt;li&gt;</span>de faire les exercices sur Drag&Learn, mon site préféré<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    {#fermeture balise ul#}
+    <div class="droppable ml-5 my-3" id="droppable6"></div>
+    <div class="solution1 ml-5 hide"><span class="balise">&lt;/ul&gt;</span></div>
+
+    <div class="pl-2 text-white titre3"><span class="balise">&lt;h3&gt;</span>Pour apprendre à concevoir des sites web, je devrais, dans cet ordre:<span class="balise">&lt;/h3&gt;</span></div>
+
+
+
+
+    {#balise ouverture ol#}
+    <div class="droppable ml-5 my-3" id="droppable7"></div>
+    <div class="solution2 ml-5 hide"><span class="balise">&lt;ol&gt;</span></div>
+
+
+    {# éléments liste ordo#}
+
+
+    <div class="droppable ml-6 my-3" id="droppable11"></div>
+    <div class="solution2 ml-6 hide">
+            <span class="balise">&lt;li&gt;</span>apprendre le HTML pour structurer et donner du sens à son contenu<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="droppable ml-6 my-3" id="droppable12"></div>
+    <div class="solution2 ml-6 hide">
+            <span class="balise">&lt;li&gt;</span>apprendre le css pour pouvoir mettre en forme mon contenu (couleur, positionnement, police, taille des caractères...)<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="droppable ml-6 my-3" id="droppable13"></div>
+    <div class="solution2 ml-6 hide">
+            <span class="balise">&lt;li&gt;</span>plus tard, apprendre le Javascript pour rendre mon application dynamique<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="droppable ml-6 my-3" id="droppable14"></div>
+    <div class="solution2 ml-6 hide">
+            <span class="balise">&lt;li&gt;</span>Et apprendre un langage Back tel que PHP pour pouvoir intéragir avec les visiteurs<span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    {#balise fermeture ol#}
+    <div class="droppable ml-5 my-3" id="droppable15"></div>
+    <div class="solution2 ml-5 hide"><span class="balise">&lt;/ol&gt;</span></div><br>
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+
 {% endblock %}
 
 {% block nextlevel %}
@@ -113,10 +216,31 @@
 {% endblock %}
 
 {% block apercu %}
+
+           <h3 class="text-center noOrdo">Pour coder comme un pro, j'ai besoin :</h3>
+               <ul>
+                   <li class="hide" id="success4">de mon pc chéri</li>
+                   <li class="hide" id="success3">d'une connexion à Internet</li>
+                   <li class="hide" id="success2">de mon meilleur éditeur de texte</li>
+                   <li class="hide" id="success5">de faire les exercices sur Drag&Learn, mon site préféré</li>
+               </ul>
+
+
+
+           <h3 class="text-center ordo">Pour apprendre à concevoir des sites web, je devrais, dans cet ordre: </h3>
+                <ol>
+
+                   <li class="hide" id="success11">apprendre le HTML pour structurer et donner du sens à son contenu</li>
+                   <li class="hide" id="success12">apprendre le css pour pouvoir mettre en forme mon contenu (couleur, positionnement, police, taille des caractères...)</li>
+                   <li class="hide" id="success13">plus tard, apprendre le Javascript pour rendre mon application dynamique</li>
+                   <li class="hide" id="success14">Et apprendre un langage Back tel que PHP pour pouvoir intéragir avec les visiteurs</li>
+                </ol>
+
 <div id="success6" class="text-center"></div>
 <div id="success9"></div>
 {% endblock %}
 
 
 {% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/1/n1e5.js')}}></script>
 {% endblock %}
