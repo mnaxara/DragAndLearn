@@ -1,0 +1,29 @@
+#dragdrop {
+    height: 135%;
+}
+.header_color{
+    background: linear-gradient(#e66465, #9198e5);
+}
+.main_color{
+    background-color: #9198e5;
+}
+.footer_color{
+    background: linear-gradient(#9198e5, #e66465);
+}
+.lion, .gorille , .elephant, .loup{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+}
+.lion{
+    background: url('../../../uploads/image/exercice8css/lion.jpg');
+}
+.gorille{
+    background: url('../../../uploads/image/exercice8css/gorille.jpeg');
+}
+.elephant{
+    background: url('../../../uploads/image/exercice8css/elephant.jpg');
+}
+.loup{
+    background: url('../../../uploads/image/exercice8css/loup.jpg');
+}

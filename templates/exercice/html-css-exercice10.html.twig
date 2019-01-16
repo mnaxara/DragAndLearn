@@ -1,0 +1,324 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e10.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="baliseCss">class=</span><span class="baliseTxt">".title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="2" id="draggable2">
+                        <span class="baliseCss">class.</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="3" id="draggable3" >
+                        <span class="baliseCss">class:</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="4" id="draggable4">
+                        <span class="baliseCss">class</span><span class="baliseTxt">(.title2)</span>
+    </div>
+    <div class="draggable text-center" data-id="5" data-content="title2" id="draggable5">
+                        <span class="baliseCss">class=</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="6" id="draggable6">
+                        <span class="baliseCss">class=</span><span class="baliseTxt">title2</span>
+    </div>
+    <div class="draggable text-center" data-id="7" id="draggable7">
+                        <span class="baliseCss">class:</span><span class="baliseTxt">.title2</span>
+    </div>
+    <hr>
+    <div class="draggable text-center" data-id="9" id="draggable9">
+        <span>color : <input id ="input9" type="text" placeholder="Valeur"></span>
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
+    <div>
+        <span class="balise">&lt;title&gt;</span>
+        Ma page
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
+    <div><span class="balise">&lt;body&gt;</span></div>
+    <div class="d-flex align-items-center" id="blockA">
+        <span class="balise">&lt;h1&nbsp;</span>
+        <span class="baliseCss hide" id="block5">class=<span class="baliseTxt">"title2"</span></span>
+        <span class="droppable" id="droppable5"></span>
+        &gt;Ma page
+        <span class="balise">&lt;/h1&gt;</span><i class="fas fa-check hide baliseCss" id="check5"></i>
+    </div>
+    <div>
+        <span class="balise">&lt;p <span class="baliseCss">id=<span class="baliseTxt">"pRed"</span></span>&gt;</span>
+        Mon paragraphe rouge
+        <span class="balise">&lt;/p&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <pre class="text-white">
+
+<i class="fas fa-check hide baliseCss" id="check9"></i><span class="baliseCss">.title2</span>{
+    <div class="hide" id="block9"></div>
+    <div class="droppable" id="droppable9"></div>
+}
+
+<span class="baliseCss">#pRed</span>{
+    color : red;
+}
+
+    </pre>
+
+{% endblock %}
+
+{% block nextlevel %}
+    <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+          method="post">
+        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+        <button class="btn p-4" id="next">Exercice suivant -></button>
+    </form>
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+
+<div class="row">
+    <div class="col-12">
+        <div id="header">
+            <div id="title">
+                <h1>BATMAN</h1>
+                <p>Bruce Wayne</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div id="info" class="section">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+                <h2 class="litTitle">Infos</h2>
+            </div>
+            <p class="p">
+                Afin de lutter activement contre le crime, Bruce Wayne devient un justicier masqué qui agit principalement la nuit. Il est reconnaissable grâce à son costume constitué d'une cape en forme d'ailes de chauve-souris et d'un
+                masque aux oreilles pointues. S'il ne possède pas de super-pouvoirs, il compense par une grande dextérité dans les arts martiaux et par son équipement technologique ultra-sophistiqué (exemple : la Batmobile).<br>
+                <span id="hist">Historique du personnage<span> : <a href="https://fr.wikipedia.org/wiki/Batman">ici</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div id="capa" class="section">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+                <h2 class="litTitle">Capacités</h2>
+            </div>
+
+            <ul>
+                <li>Excellente condition physique</li>
+                <li>détective de génie</li>
+                <li>maître en arts martiaux</li>
+                <li>accès à un équipement de très haute technologie</li>
+                <li>expert en technologie et en informatique</li>
+                <li>multilingue</li>
+                <li>maître en évasion et en camouflage</li>
+                <li>condition mentale supérieure.</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+        <table>
+            <tr>
+                <th class="amis">Amis connus</th>
+                <th class="vs">Ennemis connus</th>
+            </tr>
+            <tr>
+                <td class="amis">Robin</td>
+                <td class="vs">Bane</td>
+            </tr>
+            <tr>
+                <td class="amis">Alfred Pennyworth </td>
+                <td class="vs">Black Mask</td>
+            </tr>
+            <tr>
+                <td class="amis">Red Hood</td>
+                <td class="vs">Double-Face</td>
+            </tr>
+            <tr>
+                <td class="amis">Lucius Fox </td>
+                <td class="vs">Harley Quinn</td>
+            </tr>
+            <tr>
+                <td class="amis">Commissaire James Gordon</td>
+                <td class="vs">Pingouin</td>
+            </tr>
+
+            <tr>
+                <td class="amis">Catwoman</td>
+                <td class="vs">Mr Freeze</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+                <h2 class="litTitle">Caracteristiques</h2>
+            </div>
+
+            <div id="can" style="width: 400px; height: 400px;">
+                <canvas id="myChart" width="300" height="300"></canvas>
+            </div>
+
+            <form  method="post" action="#">
+                <div class="row-form">
+
+                    <div class="sectForm">
+                        <label id="force">Force</label><br>
+                        <input id="for" type="number" name="force" class="inputBatman" max="100" min="0">
+                    </div>
+
+                    <div class="sectForm">
+                        <label>Endurance</label><br>
+                        <input id="endu" type="number" name="endurance" class="inputBatman" max="100" min="0">
+                    </div>
+
+                    <div class="sectForm">
+                        <label>Intelligence</label><br>
+                        <input id="int" type="number" name="intelligence" class="inputBatman" max="100" min="0">
+                    </div>
+
+                    <div class="sectForm">
+                        <label id="sagesse">Sagesse</label><br>
+                        <input id="sag" type="number" name="sagesse" class="inputBatman" max="100" min="0">
+                    </div>
+                </div><br>
+
+                <div class="row-form">
+                    <div class="sectForm" id="agi">
+                        <label id="agil">Agilité</label><br>
+                        <input id="agilite" type="number" name="agilite" class="inputBatman" max="100" min="0">
+                    </div>
+
+                    <div class="sectForm">
+                        <label>Charisme</label><br>
+                        <input id="cha" type="number" name="charisme" class="inputBatman" max="100" min="0">
+                    </div>
+
+                    <div class="sectForm">
+                        <label>Vitesse</label><br>
+                        <input id="vit" type="number" name="vitesse" class="inputBatman" max="100" min="0">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script>
+        let force = 50;
+        let endu = 50;
+        let vit = 50;
+        let int = 50;
+        let agi = 50;
+        let sag = 50;
+        let cha = 50;
+
+        $('#for').change(()=>{
+            force = $('#for').val();
+        });
+        $('#endu').change(()=>{
+            endu = $('#endu').val();
+        });
+        $('#vit').change(()=>{
+            vit = $('#vit').val();
+        });
+        $('#int').change(()=>{
+            int = $('#int').val();
+        });
+        $('#agilite').change(()=>{
+            agi = $('#agilite').val();
+        });
+        $('#sag').change(()=>{
+            sag = $('#sag').val();
+        });
+        $('#cha').change(()=>{
+            cha = $('#cha').val();
+        });
+        $('.inputBatman').change(()=>{
+            createChart (force, endu, vit, int, agi, sag, cha);
+        });
+
+
+
+
+
+        function createChart (force, endu, vit, int, agi, sag, cha){
+            new Chart(document.getElementById("myChart"), {
+                "type":"radar", "data": {
+                    "labels":["Force", "Endurance", "Vitesse", "Intelligence", "Agilité", "Sagesse", "Charisme"], "datasets":[{
+                        "label": "Stats du hero", "data": [force, endu, vit, int, agi, sag, cha],
+                        "fill": true, "backgroundColor": "rgba(255, 99, 132, 0.2)",
+                        "borderColor": "rgb(255, 99, 132)",
+                        "pointBackgroundColor": "rgb(255, 99, 132)",
+                        "pointBorderColor": "#fff",
+                        "pointHoverBackgroundColor": "#fff",
+                        "pointHoverBorderColor": "rgb(255, 99, 132)"
+                    }]
+                }
+                , "options": {
+                    scale: {
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart (force, endu, vit, int, agi, sag, cha);
+
+    </script>
+
+    <script src={{ asset('js/niveaux/2/n2e10.js')}}></script>
+{% endblock %}
