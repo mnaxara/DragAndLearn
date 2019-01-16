@@ -73,7 +73,7 @@ class ExerciceVoter extends Voter
         $level = $level->getNumber();
 
         //Valeur de l'exercice de la derniere sauvegarde du niveau en cours
-        $searchNumber = $save[1][$level];
+        $searchNumber = $save[$level][1];
 
 
         // Si la valeur du dernier exercice sauvegardé est superieur ou egale à la valeur de l'exercice demandé - 1

@@ -1,4 +1,6 @@
-{% extends 'exercice/exercice.html.twig' %}
+{% extends 'exercice/html.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e3.css') }}">{% endblock %}
 
 {% block lecons %}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
@@ -36,68 +38,168 @@
 
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div class="draggable text-center" data-id="7" id="draggable7">
+    <span class="balise">&lt;br&gt;</span>
+    </div>
+    <br>
     <div class="draggable text-center" data-id="3" id="draggable3">
-    <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
+    <span class="balise">&lt;a href="mailto:drag@learn.com"&gt;</span>Envoyer un mail<span class="balise">&lt;/a&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="1" id="draggable1">
-    <span class="balise">&lt;html&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="8" id="draggable8">
-    <span class="balise">&lt;/html&gt;</span>
-    </div>
-    <div class="draggable text-center" data-id="5" id="draggable5">
-    <span class="balise">&lt;body&gt;</span>
-    </div>
+    <br>
     <div class="draggable text-center" data-id="4" id="draggable4">
-    <span class="balise">&lt;/head&gt;</span>
+    <span class="balise">&lt;br&gt;</span>
     </div>
+    <br>
     <div class="draggable text-center" data-id="2" id="draggable2">
-    <span class="balise">&lt;head&gt;</span>
+    <span class="balise">&lt;p&gt;</span>Vous pouvez me joindre :<span class="balise">&lt;/p&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="9" id="draggable9">
-    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
+    <br>
+    <div class="draggable text-center" data-id="8" id="draggable8">
+    <span class="balise">&lt;button type="button"&gt;</span>Envoyer
+    <span class="balise">&lt;/button&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="6" data-content="<h3>Reussi !</h3>"
-    id="draggable6">
-    <span class="balise">&lt;h1&gt;</span>Reussi !<span
+    <br>
+    <div class="draggable text-center" data-id="5" id="draggable5">
+    <span class="balise">&lt;a href="tel:+123456789"&gt;</span>Telephone<span class="balise">&lt;/a&gt;</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="6"  id="draggable6">
+    <span class="balise">&lt;a href="https://developer.mozilla.org/fr/docs/Web/HTTP"&gt;</span>Lien vers mon site<span
+    class="balise">&lt;/a&gt;</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="1" id="draggable1">
+    <span class="balise">&lt;h1&gt;</span>Page de contact<span
     class="balise">&lt;/h1&gt;</span>
     </div>
-    <div class="draggable text-center" data-id="7" id="draggable7">
-    <span class="balise">&lt;/body&gt;</span>
+    <br>
+    <div class="draggable text-center" data-id="9" id="draggable9">
+    <span class="balise">&lt;button type="bouton"&gt;</span>Envoyer
+    <span class="balise">&lt;/button&gt;</span>
+    </div>
+
+
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <span class="balise">&lt;a href:"google.com"&gt;</span>Lien vers mon site</span class="balise">&lt;/a&gt;</span>
     </div>
 {% endblock %}
 
 {% block code %}
 <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-<div class="droppable my-3" id="droppable1"></div>
-<div class="solution1 hide"><span class="balise">&lt;html&gt;</span></div>
 
-<div class="droppable ml-3 my-3" id="droppable2"></div>
-<div class="solution1 hide"><span class="balise">&lt;head&gt;</span></div>
+{# HTML #}
+<div>
+    <span class="balise">&lt;html&gt;</span>
+</div>
 
-<div class="droppable ml-5 my-3" id="droppable3"></div>
-<div class="solution1 hide pl-4"><span class="balise">&lt;title&gt;</span>Exercice 2<span
-            class="balise">&lt;/title&gt;</span></div>
+{# HEAD #}
+<div>
+    <span class="balise">&lt;head&gt;</span>
+</div>
 
-<div class="droppable ml-3 my-3" id="droppable4"></div>
-<div class="solution2 hide"><span class="balise">&lt;/head&gt;</span></div>
+{# TITRE #}
+<div class="pl-4 text-white">
+    <span class="balise">&lt;title&gt;</span>Exercice 3
+    <span class="balise">&lt;/title&gt;</span>
+</div>
 
-<div class="droppable ml-3 my-3" id="droppable5"></div>
-<div class="solution2 hide"><span class="balise">&lt;body&gt;</span></div>
+{# /HEAD #}
+<div>
+    <span class="balise">&lt;/head&gt;</span>
+</div>
 
-<div class="droppable ml-5 my-3" id="droppable6"></div>
-<div class="solution2 hide pl-4"><span class="balise">&lt;h1&gt;</span>Reussi !<span
-            class="balise">&lt;/h1&gt;</span></div>
+{# BODY #}
+<div class="solution1 hide ml-3">
+    <span class="balise">&lt;body&gt;</span>
+</div>
 
-<div class="droppable ml-5 my-3" id="droppable9"></div>
-<div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+{# DIV #}
+<div class="solution1 hide ml-5">
+    <span class="balise">&lt;div&gt;</span>
+</div>
 
-<div class="droppable ml-3 my-3" id="droppable7"></div>
-<div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+{# PAGE DE CONTACT #}
+<div class="droppable text-center ml-4" id="droppable1">
+</div>
+<div class="solution1 hide ml-7">
+      <span class="balise">&lt;h1&gt;</span>Page de contact<span
+        class="balise">&lt;/h1&gt;</span>
+</div>
 
-<div class="droppable my-3" id="droppable8"></div>
-<div class="solution3 hide"><span class="balise">&lt;/html&gt;</span></div>
+
+{# <p> VOUS POUVEZ ME JOINDRE #}
+<div class="droppable ml-4" id="droppable2">
+</div>
+    <div class="solution2 hide ml-6">
+      <span class="balise">&lt;p&gt;</span>Vous pouvez me joindre :<span class="balise">&lt;/p&gt;</span>
+    </div>
+
+{# MAIl #}
+<div class="droppable ml-6" id="droppable3">  
+</div>
+<div class="solution2 hide ml-6">
+    <span class="balise">&lt;a href="mailto:drag@learn.com"&gt;</span>Envoyer un mail<span class="balise">&lt;/a&gt;</span>
+</div>
+
+{# BR #}
+<div class="droppable my-3" id="droppable4">  
+</div>
+<div class="solution2 hide">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+{# TELEPHONE #}
+<div class="droppable ml-6" id="droppable5">
+</div>
+<div class="solution2 hide ml-6"> 
+    <span class="balise">&lt;a href="tel:+123456789"&gt;</span>Telephone<span class="balise">&lt;/a&gt;</span>
+</div>
+
+
+{# BR #}
+<div class="droppable my-3" id="droppable7">
+</div>
+<div class="solution3 hide my-3">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+{# HR #}
+<div class="solution3 hide">
+    <span class="balise">&lt;hr&gt;</span>
+</div>
+
+{# MON SITE #}
+<div class="droppable ml-6" id="droppable6"> 
+</div>
+<div class="solution4 hide ml-6 text-white">
+    <span class="balise">&lt;a href="https://developer.mozilla.org/fr/docs/Web/HTTP"&gt;</span>Lien vers mon site<span class="balise">&lt;/a&gt;</span>
+</div>
+
+{# BOUTON #}
+<div class="droppable ml-6" id="droppable8">   
+</div>
+<div class="solution4 hide text-white ml-6">
+     <span class="balise">&lt;button type="button"&gt;</span>Envoyer
+    <span class="balise">&lt;/button&gt;</span>
+</div>
+
+{# /DIV #}
+<div class="solution4 hide ml-5">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+{# /BODY #}
+<div class="solution4 hide">
+    <span class="balise">&lt;/body&gt;</span>
+</div>
+
+{# /HTML #}
+<div class="solution4 hide">
+    <span class="balise">&lt;/html&gt;</span>
+</div>
+
+
 {% endblock %}
 
 
@@ -105,10 +207,41 @@
 {% endblock %}
 
 {% block apercu %}
-<div id="success6" class="text-center"></div>
-<div id="success9"></div>
+
+<html>
+    <head>
+        <title>Exercice 3</title>
+    </head>
+<body>
+    <div>
+        <h1 class="hide" id="success1">Page de contact</h1>
+
+        <p class="hide" id="success2"> Vous pouvez me joindre :</p>
+    
+        <a class="hide" id="success3" href="mailto:drag@learn.com">Envoyer un mail</a>
+
+        <br class="hide" id="success4">
+  
+        <a class="hide" id="success5" href="tel:+123456789">Telephone</a>
+
+        <br>
+
+        <hr>
+
+        <a  class="hide" id="success6"href="https://drag_learn.com">Lien vers mon site</a>
+        
+        <br class="hide" id="success7">
+
+    <button class="hide" id="success8" type="button"> Envoyer</button>
+
+    </div>
+</body>
+</html>
+
+
 {% endblock %}
 
 
 {% block javascriptsExt %}
+     <script src={{ asset('js/niveaux/1/n1e3.js')}}></script>
 {% endblock %}

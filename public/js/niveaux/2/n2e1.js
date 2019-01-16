@@ -1,6 +1,6 @@
 $( function() {
 
-    let datacontent;
+    let datacontent
     let finish = [];
     let finishAudio = new Audio('../audio/finish1.mp3');
     let finishAudio2 = new Audio('../audio/finish2.mp3');
@@ -18,92 +18,42 @@ $( function() {
 
     $(".draggable" ).mouseover(function () { // Au survol d'un element
 
-        let datacontent = $(this).data('content');  // remplissage de la variable data
+        datacontent = $(this).data('content');  // remplissage de la variable data
         let id = $(this).data('id'); // recupération de l'id drag
+        let val = $("#input"+id).val(); // variable recuperant la valeur saisi
+        console.log(datacontent, id, $('#success'+id));
 
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
 
-        // Color
-        $("#droppable7").droppable({
-            accept: ".color",
-            drop: function() { // Lorsque la cellule est dropé
+
+        $("#droppable" + id).droppable({
+
+            accept: "#draggable" + id,    // Chaque zone n'accueil que la cellule qui lui est attribué
+
+            drop: function () { // Lorsque la cellule est dropé
                 playSound();
-                $('#success7').css('color', '#1d8dc0');
-                check(id);
-            }
-        });
-        $("#droppable15").droppable({
-            accept: ".color",
-            drop: function() { // Lorsque la cellule est dropé
-                playSound();
-                $('#success15').css('color', '#1d8dc0');
-                check(id);
-            }
-        });
-        $("#droppable19").droppable({
-            accept: ".color",
-            drop: function() { // Lorsque la cellule est dropé
-                playSound();
-                $('#success19').css('color', '#1d8dc0');
-                check(id);
-            }
-        });
-        $("#droppable26").droppable({
-            accept: ".color",
-            drop: function() { // Lorsque la cellule est dropé
-                playSound();
-                $('#success26').css('color', '#1d8dc0');
-                check(id);
-            }
-        });
-
-        if (
-            $(this).attr('id') !== "draggable7" &&
-            $(this).attr('id') !== "draggable15" &&
-            $(this).attr('id') !== "draggable19" &&
-            $(this).attr('id') !== "draggable26"
-        )
-        {
-            $("#droppable" + id).droppable({
-
-                accept: "#draggable" + id,    // Chaque zone n'accueil que la cellule qui lui est attribué
-
-                drop: function () { // Lorsque la cellule est dropé
-                    playSound();
-                    $('#success' + id).show(); // Affiche la bonne div
-                    $(this).addClass("ui-state-highlight"); // Mise en forme
-                    $(this).addClass('finish');/* // Compte comme terminé pour l'exercice*/
+                $(this).addClass("ui-state-highlight"); // Mise en forme
+                $(this).addClass('finish');/* // Compte comme terminé pour l'exercice*/
 
 
-                    if ($(this).attr('id') === 'droppable3') {
-                        pcontent = $("#nameUser").val();
-                        $('#success3').html(pcontent);
-                        $('#nameSolution').html(pcontent);
-                    }
+                $('#success'+id).addClass(datacontent);
 
-                    if ($(this).attr('id') === 'droppable5') {
-                        pcontent = $("#dateUser").val();
-                        $('#success5').html(pcontent);
-                        $('#dateSolution').html(pcontent);
-                    }
 
-                    if ($(this).attr('id') === 'droppable4') {
-                        $('#success4').attr('href', 'http://google.fr');
-                    }
-
-                    if ($(this).attr('id') === 'droppable1') {
-                        $('#success1').css('font-size', '50px');
-                    }
-
-                    check(id);
-
-                    console.log('finish',finish);
-
+                /*TODO Faire un if de se genre pour tout les droppable css
+                  TODO remplacer prop par la propriété en dur ('color') ou val par la valeur en dur ('red')
+                  TODO Mettre val a la place de la valeur manquante
+                */
+                if ($(this).attr('id') === 'droppable9'){
+                    $('.title2').css('color', val); // Cibler l'element a modifier
                 }
-            });
-        }
 
+                check(id);
+
+                console.log('finish',finish);
+
+            }
+        });
     });
 
     function check (id){
@@ -113,7 +63,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 1){// Verification de la fin de l'exercice.
+        if (finish.length === 2){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
@@ -159,7 +109,5 @@ $( function() {
         var sound=dropSound.cloneNode();
         sound.play();
     }
-    
-
-
 });
+

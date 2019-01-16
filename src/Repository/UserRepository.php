@@ -4,7 +4,9 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +49,20 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function lookForUser()
+    {
+        return New Response('kiki');
+
+//        return $this->createQueryBuilder('u')
+//            ->andWhere($this->createQueryBuilder('u')->expr()->orX(
+//                $this->createQueryBuilder('u')->expr()->like('u.username',
+//                $this->createQueryBuilder('u')->expr()->literal('%u.username%'))
+//            ))
+//            ->orderBy('u.username', 'ASC')
+//            ->getQuery()
+//            ->getResult();
+
+    }
+
 }

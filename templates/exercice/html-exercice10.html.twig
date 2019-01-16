@@ -1,4 +1,4 @@
-{% extends 'exercice/exercice.html.twig' %}
+{% extends 'exercice/html.html.twig' %}
 
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e10.css') }}">{% endblock %}
 
@@ -19,7 +19,7 @@
 
 {% block elements %}
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="baliseCss">style=</span><span class="baliseTxt">"font-size:50px"</span>
+        <span class="baliseCss">style=</span><span class="propCss">"font-size:50px"</span>
     </div>
 
     <div class="draggable text-center" data-id="2" id="draggable2">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="draggable text-center" data-id="5" id="draggable5">
-        <span class="balise">&lt;span&gt;<input id="nameDate" type="text" placeholder="date">&lt;/span&gt;</span>
+        <span class="balise">&lt;span&gt;<input id="dateUser" type="text" placeholder="date">&lt;/span&gt;</span>
     </div>
 
     <div class="draggable text-center" data-id="6" id="draggable6">
@@ -52,8 +52,8 @@
         dacourt.brice@gmail.com <span class="balise">&lt;/p&gt;</span>
     </div>
 
-    <div class="draggable text-center" data-id="7" id="draggable7">
-        <span class="baliseCss">style=</span><span class="baliseTxt">"color:#1d8dc0"</span>
+    <div class="draggable text-center color" data-id="7" id="draggable7">
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
     </div>
 
     <div class="draggable text-center" data-id="8" id="draggable8">
@@ -84,33 +84,120 @@
         <span class="balise">&lt;/ul&gt;</span>
     </div>
 
+    <div class="draggable text-center" data-id="30" id="draggable30">
+        <span class="balise">&lt;header&gt;</span>
+    </div>
 
+    <div class="draggable text-center" data-id="31" id="draggable31">
+        <span class="balise">&lt;/header&gt;</span>
+    </div>
 
+    <div class="draggable text-center color" data-id="15" id="draggable15">
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
+    </div>
+
+    <div class="draggable text-center" data-id="16" id="draggable16">
+        <span class="balise">&lt;label&gt;
+        <span class="baliseCss">for=</span><span class="baliseTxt">"name"</span>
+        </span>Ajouter une expérience professionnelle :
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="17" id="draggable17">
+        <span class="balise">&lt;input</span>
+        <span class="baliseCss">type=</span><span class="baliseTxt">"text"</span>
+        <span class="baliseCss">name=</span><span class="baliseTxt">"name"</span>
+        <span class="balise">&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="18" id="draggable18">
+        <span class="balise">&lt;button&gt;</span>
+        <span class="baliseCss">type=</span><span class="baliseTxt">"submit"</span>
+        <span class="balise">&lt;/button&gt;</span>
+    </div>
+
+    <div class="draggable text-center color" data-id="19" id="draggable19">
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
+    </div>
+
+    <div class="draggable text-center" data-id="20" id="draggable20">
+        <span class="balise">&lt;th</span>
+        <span class="baliseCss">style=</span><span class="propCss">"width:50%"</span>
+        <span class="balise">&gt;</span>
+        Langues parlées<span class="balise">&lt;th&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="21" id="draggable21">
+        <span class="balise">&lt;th</span>
+        <span class="baliseCss">style=</span><span class="propCss">"width:50%"</span>
+        <span class="balise">&gt;</span>
+        Compétences<span class="balise">&lt;th&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="22" id="draggable22">
+        <span class="balise">&lt;tr&gt;</span>
+            Anglais : pratique professionnelle
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="23" id="draggable23">
+        <span class="balise">&lt;tr&gt;</span>
+            Systèmes d'exploitation : Dos, Windows NT, logiciels IAO
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="24" id="draggable24">
+        <span class="balise">&lt;tr&gt;</span>
+            Italien : pratique occasionnelle
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="25" id="draggable25">
+        <span class="balise">&lt;tr&gt;</span>
+            Maîtrise des logiciels Excel , PowerPoint, Word, Autocad Civil 3D
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+
+    <div class="draggable text-center color" data-id="26" id="draggable26">
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
+    </div>
+
+    <div class="draggable text-center" data-id="27" id="draggable27">
+        <span class="balise">&lt;li&gt;</span>Juillet-Août 2013 : Stage au cinéma d'arts et d'essais le Cratère à Toulouse(2 mois)<span class="balise">&lt;li&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="28" id="draggable28">
+        <span class="balise">&lt;li&gt;</span>2012-2013 : Bénévolat au refuge des Batignolles de Toulouse<span class="balise">&lt;li&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="29" id="draggable29">
+        <span class="balise">&lt;li&gt;</span>Intérêts : Rugby, Cinéma, Informatique<span class="balise">&lt;li&gt;</span>
+    </div>
 
 
     {#************** MODELE *************************#}
 
-    <div class="draggable text-center" data-id="3" id="draggable3">
-        <span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>
-    </div>
+    {#<div class="draggable text-center" data-id="3" id="draggable3">#}
+        {#<span class="balise">&lt;title&gt;</span>Exercice 2<span class="balise">&lt;/title&gt;</span>#}
+    {#</div>#}
 
-    <div class="draggable text-center" data-id="x" id="draggablex">
-        <span class="balise">&lt;html&gt;</span>
-    </div>
+    {#<div class="draggable text-center" data-id="x" id="draggablex">#}
+        {#<span class="balise">&lt;html&gt;</span>#}
+    {#</div>#}
 
-    <div class="draggable text-center" data-id="x" id="draggablex">
-    <span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>
-    </div>
+    {#<div class="draggable text-center" data-id="x" id="draggablex">#}
+    {#<span class="balise">&lt;p&gt;<input id="p1" type="text" placeholder="taper ici...">&lt;/p&gt;</span>#}
+    {#</div>#}
 
-    <div class="draggable text-center" data-id="x" data-content="<h3>Reussi !</h3>"
-    id="draggablex">
-    <span class="balise">&lt;h1&gt;</span>Reussi !<span
-    class="balise">&lt;/h1&gt;</span>
-    </div>
+    {#<div class="draggable text-center" data-id="x" data-content="<h3>Reussi !</h3>"#}
+    {#id="draggablex">#}
+    {#<span class="balise">&lt;h1&gt;</span>Reussi !<span#}
+    {#class="balise">&lt;/h1&gt;</span>#}
+    {#</div>#}
 
-    <div class="draggable text-center" data-id="x" id="draggablex">
-    <span class="balise">&lt;/body&gt;</span>
-    </div>
+    {#<div class="draggable text-center" data-id="x" id="draggablex">#}
+    {#<span class="balise">&lt;/body&gt;</span>#}
+    {#</div>#}
 {% endblock %}
 
 {% block code %}
@@ -153,7 +240,7 @@
     </div>
 
     {#HEADER#}
-    <div class="droppable ml-5" id="droppable30"></div>
+    <div class="droppable ml-5 py-1" id="droppable30"></div>
     <div class="solution1 hide">
         <span class="balise">&lt;/header&gt;</span>
     </div>
@@ -161,48 +248,81 @@
     {#DUR#}
     <div class="ml-6"><span class="balise">&lt;div&gt;</span></div>
 
-    <div class="d-flex align-items-center ml-7 py-1">
+    {#H1#}
+    <div class="d-flex align-items-center ml-7 my-1">
         <span class="balise">&lt;h1&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block1">style=<span class="propCss">"color : #1d8dc0"</span></span>
-
         <span class="droppable" id="droppable1"></span>
         <span class="balise">&gt;</span>
         <span class="text-white">Mon CV</span>
         <span class="balise">&lt;/h1&gt;</span>
     </div>
-
+    <div class="solution1">
+        <div class="d-flex align-items-center ml-7 my-1">
+            <span class="balise">&lt;h1&nbsp;</span>
+            <span class="baliseCss hide" id="block1">style=<span class="propCss">"color : #1d8dc0"</span></span>
+            <span class="baliseCss">style=</span><span class="propCss">"font-size:50px"</span>
+            <span class="balise">&gt;</span>
+            <span class="text-white">Mon CV</span>
+            <span class="balise">&lt;/h1&gt;</span>
+        </div>
+    </div>
     {#IMAGE#}
-    <div class="droppable ml-7" id="droppable2"></div>
-
+    <div class="droppable ml-7 my-1" id="droppable2"></div>
+    <div class="solution1 ml-7">
+        <span class="balise">&lt;img
+            <span class="baliseCss">src=</span>
+            <span class="baliseTxt">"image/photocv.jpg"</span>
+            <span class="baliseCss">alt=</span>
+            <span class="baliseTxt">"photoCv"</span>
+            <span class="balise">&gt;</span>
+        </span>
+    </div>
+    {#DUR#}
     <div>
         <span class="balise ml-7">&lt;p&gt;</span>
     </div>
 
     {#NOM#}
-    <div class="droppable ml-8" id="droppable3"></div>
-
+    <div class="droppable ml-8 my-1" id="droppable3"></div>
+    <div class="solution1 ml-8">
+        <span class="balise">&lt;span&gt;<span class="text-white" id="nameSolution"></span>&lt;/span&gt;</span>
+    </div>
     {#LIEN#}
-    <div class="d-flex align-items-center ml-8 py-1">
+    <div class="d-flex align-items-center ml-8 my-1">
         <span class="balise">&lt;a&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block1">style=<span class="propCss">"color : #1d8dc0"</span></span>
-
-        <span class="droppable" id="droppable4"></span>
+        <span class="droppable my-1" id="droppable4"></span>
         <span class="balise">&gt;</span>
         <span class="text-white">Mon site</span>
         <span class="balise">&lt;/a&gt;</span>
     </div>
-
+    <div class="solution1 ml-8">
+        <span class="balise">&lt;a&nbsp;</span>
+        <span class="baliseCss hide" id="block1">style=<span class="propCss">"color : #1d8dc0"</span></span>
+        <span class="baliseCss">href=</span><span class="baliseTxt">"www.google.fr"</span>
+        <span class="balise">&gt;</span>
+        <span class="text-white">Mon site</span>
+        <span class="balise">&lt;/a&gt;</span>
+    </div>
     {#Née le#}
-    <div class="droppable ml-8" id="droppable5"></div>
-    <div class="solution hide ml-8"><span class="balise"><p id="BornSolution"></p></span></div>
+    <div class="droppable ml-8 my-1" id="droppable5"></div>
+    <div class="solution1 ml-8">
+        <span class="balise">&lt;span&gt;<span class="text-white" id="dateSolution"></span>&lt;/span&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-7"><span class="balise">&lt;/p&gt;</span></div>
 
     {#ADRESSE#}
-    <div style="height:5%" class="droppable ml-7" id="droppable6"></div>
+    <div style="height:5%" class="droppable ml-7 my-1" id="droppable6"></div>
+    <div class="solution2 ml-7">
+        <span class="balise">&lt;p&gt;</span>Avenue des Peupliers - 31000 TOULOUSE
+        <span class="balise">&lt;br&gt;</span>
+        06 53 26 59 85
+        <span class="balise">&lt;br&gt;</span>
+        dacourt.brice@gmail.com <span class="balise">&lt;/p&gt;</span>
+    </div>
     {#DUR#}
     <div class="ml-6">
         <span class="balise">&lt;/div&gt;</span>
@@ -210,11 +330,9 @@
     <div class="ml-6">
         <span class="balise">&lt;div&gt;</span>
     </div>
-
     {#Titre couleur personalisable#}
-    <div class="d-flex align-items-center ml-7 py-1">
+    <div class="d-flex align-items-center ml-7 my-1">
         <span class="balise">&lt;h2&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block7">style=<span class="propCss">"color : #1d8dc0"</span></span>
 
         <span class="droppable" id="droppable7"></span>
@@ -225,32 +343,65 @@
             <span class="balise">&lt;/u&gt;&nbsp;</span>
         <span class="balise">&lt;/h2&gt;</span>
     </div>
+    <div class="solution2 ml-7">
+        <span class="balise">&lt;h2&nbsp;</span>
+        <span class="baliseCss hide" id="block7">style=<span class="propCss">"color : #1d8dc0"</span></span>
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
+        <span class="balise">&gt;</span>
+        <span class="text-white">
+            <span class="balise">&nbsp;&lt;u&gt;
+            </span>Études et Formations : </span>
+        <span class="balise">&lt;/u&gt;&nbsp;</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
     {#Ul#}
-    <div class="droppable ml-7" id="droppable8"></div>
+    <div class="droppable ml-7 my-1" id="droppable8"></div>
+    <div class="solution2 ml-7">
+        <span class="balise">&lt;ul&gt;</span>
+    </div>
     {#li et BR#}
-    <div class="droppable ml-8" id="droppable9"></div>
-    <div class="droppable ml-8" id="droppable10"></div>
-    <div class="droppable ml-8" id="droppable11"></div>
-    <div class="droppable ml-8" id="droppable12"></div>
-    <div class="droppable ml-8" id="droppable13"></div>
+    <div class="droppable ml-8 my-1" id="droppable9"></div>
+    <div class="solution2 ml-8">
+        <span class="balise">&lt;li&gt;</span>2014-2016 : BSC Construction Management à la Sheffield University<span class="balise">&lt;li&gt;</span>
+    </div>
+    <div class="droppable ml-8 my-1" id="droppable10"></div>
+    <div class="solution2 ml-8">
+        <span class="balise">&lt;br&gt;</span>
+    </div>
+    <div class="droppable ml-8 my-1" id="droppable11"></div>
+    <div class="solution2 ml-8">
+        <span class="balise">&lt;li&gt;</span>2012-2014 : DUT génie civil à l'IUT Michel Montaigne de Montpellier<span class="balise">&lt;li&gt;</span>
+    </div>
+    <div class="droppable ml-8 my-1" id="droppable12"></div>
+    <div class="solution2 ml-8">
+        <span class="balise">&lt;br&gt;</span>
+    </div>
+    <div class="droppable ml-8 my-1" id="droppable13"></div>
+    <div class="solution2 ml-8">
+        <span class="balise">&lt;li&gt;</span>2008-2012 : Bac scientifique section internationale anglais<span class="balise">&lt;li&gt;</span>
+    </div>
     {#Ul#}
-    <div class="droppable ml-7" id="droppable14"></div>
+    <div class="droppable ml-7 my-1" id="droppable14"></div>
+    <div class="solution2 ml-7">
+        <span class="balise">&lt;/ul&gt;</span>
+    </div>
     {#DUR#}
     <div class="ml-6"><span class="balise">&lt;/div&gt;</span></div>
     <div class="ml-6"><span class="balise">&lt;br&gt;</span></div>
     <div class="ml-7"><span class="balise">&lt;hr&gt;</span></div>
     {#/header#}
-    <div class="droppable ml-5" id="droppable31"></div>
+    <div class="droppable ml-5 my-1" id="droppable31"></div>
+    <div class="solution3 ml-5">
+        <span class="balise">&lt;/header&gt;</span>
+    </div>
     {#DUR#}
     <div class="ml-5"><span class="balise">&lt;main&gt;</span></div>
     <div class="ml-6"><span class="balise">&lt;div&gt;</span></div>
 
     {#Expériences professionnelles : couleur personalisable#}
-    <div class="d-flex align-items-center ml-7 py-1">
+    <div class="d-flex align-items-center ml-7 my-1">
         <span class="balise">&lt;h2&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block15">style=<span class="propCss">"color : #1d8dc0"</span></span>
-
         <span class="droppable" id="droppable15"></span>
         <span class="balise">&gt;</span>
         <span class="text-white">
@@ -259,7 +410,17 @@
         <span class="balise">&lt;/u&gt;&nbsp;</span>
         <span class="balise">&lt;/h2&gt;</span>
     </div>
-
+    <div class="solution3 ml-7">
+        <span class="balise">&lt;h2&nbsp;</span>
+        <span class="baliseCss hide" id="block15">style=<span class="propCss">"color : #1d8dc0"</span></span>
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
+        <span class="balise">&gt;</span>
+        <span class="text-white">
+            <span class="balise">&nbsp;&lt;u&gt;
+            </span>Expériences professionnelles : </span>
+        <span class="balise">&lt;/u&gt;&nbsp;</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
     {#DUR#}
     <div class="ml-7"><span class="balise">&lt;ul&gt;</span></div>
     <div class="ml-8">
@@ -270,9 +431,26 @@
     <div class="ml-8"><span class="balise">&lt;form&gt;</span></div>
 
     {#label input button#}
-    <div class="droppable ml-9" id="droppable16"></div>
-    <div class="droppable ml-9" id="droppable17"></div>
-    <div class="droppable ml-9" id="droppable18"></div>
+    <div class="droppable ml-9 my-1" id="droppable16"></div>
+    <div class="solution3 ml-9">
+        <span class="balise">&lt;label&gt;
+        <span class="baliseCss">for=</span><span class="baliseTxt">"name"</span>
+        </span>Ajouter une expérience professionnelle :
+        <span class="balise">&lt;/label&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable17"></div>
+    <div class="solution3 ml-9">
+        <span class="balise">&lt;input</span>
+        <span class="baliseCss">type=</span><span class="baliseTxt">"text"</span>
+        <span class="baliseCss">name=</span><span class="baliseTxt">"name"</span>
+        <span class="balise">&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable18"></div>
+    <div class="solution3 ml-9">
+        <span class="balise">&lt;button&gt;</span>
+        <span class="baliseCss">type=</span><span class="baliseTxt">"submit"</span>
+        <span class="balise">&lt;/button&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;/form&gt;</span></div>
@@ -282,12 +460,21 @@
     <div class="ml-6"><span class="balise">&lt;div&gt;</span></div>
 
     {#Langues parlées et compétences : couleur personalisable#}
-    <div class="d-flex align-items-center ml-7 py-1">
+    <div class="d-flex align-items-center ml-7 my-1">
         <span class="balise">&lt;h2&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block19">style=<span class="propCss">"color : #1d8dc0"</span></span>
-
         <span class="droppable" id="droppable19"></span>
+        <span class="balise">&gt;</span>
+        <span class="text-white">
+            <span class="balise">&nbsp;&lt;u&gt;
+            </span>Langues parlées et compétences : </span>
+        <span class="balise">&lt;/u&gt;&nbsp;</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+    <div class="solution4 ml-7">
+        <span class="balise">&lt;h2&nbsp;</span>
+        <span class="baliseCss hide" id="block19">style=<span class="propCss">"color : #1d8dc0"</span></span>
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
         <span class="balise">&gt;</span>
         <span class="text-white">
             <span class="balise">&nbsp;&lt;u&gt;
@@ -306,22 +493,57 @@
     </div>
     <div class="ml-8"><span class="balise">&lt;tr&gt;</span></div>
 
-    <div class="droppable ml-9" id="droppable20"></div>
-    <div class="droppable ml-9" id="droppable21"></div>
+    {#TH#}
+    <div class="droppable ml-9 my-1" id="droppable20"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;th</span>
+        <span class="baliseCss">style=</span><span class="propCss">"width:50%"</span>
+        <span class="balise">&gt;</span>
+        Langues parlées<span class="balise">&lt;th&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable21"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;th</span>
+        <span class="baliseCss">style=</span><span class="propCss">"width:50%"</span>
+        <span class="balise">&gt;</span>
+        Compétences<span class="balise">&lt;th&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;/tr&gt;</span></div>
     <div class="ml-8"><span class="balise">&lt;tr&gt;</span></div>
 
-    <div class="droppable ml-9" id="droppable22"></div>
-    <div class="droppable ml-9" id="droppable23"></div>
+    {#TD#}
+    <div class="droppable ml-9 my-1" id="droppable22"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;tr&gt;</span>
+        Anglais : pratique professionnelle
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable23"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;tr&gt;</span>
+        Systèmes d'exploitation : Dos, Windows NT, logiciels IAO
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;/tr&gt;</span></div>
     <div class="ml-8"><span class="balise">&lt;tr&gt;</span></div>
 
-    <div class="droppable ml-9" id="droppable24"></div>
-    <div class="droppable ml-9" id="droppable25"></div>
+    {#TD#}
+    <div class="droppable ml-9 my-1" id="droppable24"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;tr&gt;</span>
+        Italien : pratique occasionnelle
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable25"></div>
+    <div class="solution4 ml-9">
+        <span class="balise">&lt;tr&gt;</span>
+        Maîtrise des logiciels Excel , PowerPoint, Word, Autocad Civil 3D
+        <span class="balise">&lt;tr&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;/tr&gt;</span></div>
@@ -330,12 +552,21 @@
     <div class="ml-7"><span class="balise">&lt;div&gt;</span></div>
 
     {#Langues parlées et compétences : couleur personalisable#}
-    <div class="d-flex align-items-center ml-8 py-1">
+    <div class="d-flex align-items-center ml-8 my-1">
         <span class="balise">&lt;h2&nbsp;</span>
-        {#Solution#}
         <span class="baliseCss hide" id="block26">style=<span class="propCss">"color : #1d8dc0"</span></span>
-
         <span class="droppable" id="droppable26"></span>
+        <span class="balise">&gt;</span>
+        <span class="text-white">
+            <span class="balise">&nbsp;&lt;u&gt;
+            </span>Centres d'intérêts :</span>
+        <span class="balise">&lt;/u&gt;&nbsp;</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+    <div class="solution5 ml-8">
+        <span class="balise">&lt;h2&nbsp;</span>
+        <span class="baliseCss hide" id="block26">style=<span class="propCss">"color : #1d8dc0"</span></span>
+        <span class="baliseCss">style=</span><span class="propCss">"color:#1d8dc0"</span>
         <span class="balise">&gt;</span>
         <span class="text-white">
             <span class="balise">&nbsp;&lt;u&gt;
@@ -346,9 +577,18 @@
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;ul&gt;</span></div>
 
-    <div class="droppable ml-9" id="droppable27"></div>
-    <div class="droppable ml-9" id="droppable28"></div>
-    <div class="droppable ml-9" id="droppable29"></div>
+    <div class="droppable ml-9 my-1" id="droppable27"></div>
+    <div class="solution5 ml-9">
+        <span class="balise">&lt;li&gt;</span>Juillet-Août 2013 : Stage au cinéma d'arts et d'essais le Cratère à Toulouse(2 mois)<span class="balise">&lt;li&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable28"></div>
+    <div class="solution5 ml-9">
+        <span class="balise">&lt;li&gt;</span>2012-2013 : Bénévolat au refuge des Batignolles de Toulouse<span class="balise">&lt;li&gt;</span>
+    </div>
+    <div class="droppable ml-9 my-1" id="droppable29"></div>
+    <div class="solution5 ml-9">
+        <span class="balise">&lt;li&gt;</span>Intérêts : Rugby, Cinéma, Informatique<span class="balise">&lt;li&gt;</span>
+    </div>
 
     {#DUR#}
     <div class="ml-8"><span class="balise">&lt;/ul&gt;</span></div>
@@ -402,9 +642,7 @@
             <form>
                 <label class="hide" id="success16" for="name">Ajouter une expérience professionnelle :  </label>
                 <input class="hide" id="success17" type="text" name="name">
-                <button type="button" class="hide" id="success18">
-                    Ajouter
-                </button>
+                <button type="button" class="hide" id="success18">Ajouter</button>
             </form>
         </ul>
     </div>

@@ -23,22 +23,15 @@ $( function() {
 
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
-
         $( "#droppable"+id ).droppable({
             /*classes: {
                 "ui-droppable-active": "ui-state-default"
             },*/
-
             accept: "#draggable"+id,    // Chaque zone n'accueil que la cellule qui lui est attribué
 
             drop: function() { // Lorsque la cellule est dropé
                 playSound();
                 $('#success'+id).show(); // Affiche la bonne div
-
-                if ($(this).attr('id') === 'droppable3'){ // Cellule speciale necessitant un traitement d'input
-                    $(".liste").css('display', 'flex');
-                }
-
                 $( this ).addClass( "ui-state-highlight" ); // Mise en forme
                 $( this ).addClass('finish')/* // Compte comme terminé pour l'exercice
                 .find( "p" )
@@ -50,7 +43,7 @@ $( function() {
                     finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
                 }
                 //TODO Modifier la longueur necessaire a la victoire
-                if (finish.length === 15){// Verification de la fin de l'exercice.
+                if (finish.length === 8){// Verification de la fin de l'exercice.
                     $(".droppable").hide('clip', 1000);
                     $(".draggable").hide('clip', 1000);
                     setTimeout(()=>{
@@ -65,12 +58,16 @@ $( function() {
                         $('.solution3').show('explode', 1000);
                         finishAudio.play()
                     }, 3000);
+                    setTimeout(()=>{
+                        $('.solution4').show('explode', 1000);
+                        finishAudio.play()
+                    }, 4000);
                     setTimeout(() =>{
                         $('#successEnd').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', $bar);// Augmentation de la jauge.
                         endLevel.play();
-                    }, 4000);
+                    }, 5000);
                     // recupération de la hauteur de la fenetre en cours
                     let $height = window.innerHeight;
                     // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative
@@ -91,7 +88,7 @@ $( function() {
         var sound=dropSound.cloneNode();
         sound.play();
     }
-
+    
 
 
 });

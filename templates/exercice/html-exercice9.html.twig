@@ -1,8 +1,9 @@
-{% extends 'exercice/exercice.html.twig' %}
+{% extends 'exercice/html.html.twig' %}
 
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e9.css') }}">{% endblock %}
 
 {% block lecons %}
+    {# TODO le formulaire est mis en forme par bootstrap #}
 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
     asperiores aspernatur
     cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
@@ -20,27 +21,431 @@
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
 
+    <div class="draggable text-center" data-id="13" id="draggable13">
+        <span class="balise">&lt;li&gt;</span>
+        <span class="text-white">ligne 7</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="balise">&lt;ul&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="15" id="draggable15">
+        <span class="balise">&lt;/body&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="balise">&lt;main&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="balise">&lt;hr&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="6" id="draggable6">
+        <span class="balise">&lt;form&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="balise">&lt;h2&gt;</span>
+        <span class="text-white">Mon Header</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="balise">&lt;input
+            <span class="baliseCss">type=</span>
+            <span class="baliseTxt">"email"</span>
+            <span class="baliseCss"> placeholder=</span>
+            <span class="baliseTxt">"Email"</span>
+            &gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="14" id="draggable14">
+        <span class="balise">&lt;li&gt;</span>
+        <span class="text-white">ligne 8</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="12" id="draggable12">
+        <span class="balise">&lt;ol&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="9" id="draggable9">
+        <span class="balise">&lt;/main&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <span class="balise">&lt;footer&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="7" id="draggable7">
+        <span class="balise">&lt;label
+            <span class="baliseCss">for=</span>
+            <span class="baliseTxt">"email"</span>
+            &gt;
+        </span>
+        Email
+        <span class="balise">&lt;label&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="11" id="draggable11">
+        <span class="balise">&lt;div&gt;</span>
+    </div>
+
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span class="balise">&lt;/ul&gt;</span>
+    </div>
+
 {% endblock %}
 
 {% block code %}
 
-{% endblock %}
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
 
-{% block nextlevel %}
-<form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-      method="post">
-    <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-    <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-    <button class="btn p-4" id="next">Exercice suivant -></button>
-</form>
+    <div><span class="balise">&lt;html&gt;</span></div>
+
+    <div><span class="balise">&lt;head&gt;</span></div>
+
+    <div class="ml-5">
+        <span class="balise">&lt;title&gt;</span>
+        <span class="text-white">Exercice 9</span>
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+
+    <div><span class="balise">&lt;/head&gt;</span></div>
+
+    {# BODY #}
+    <div><span class="balise">&lt;body&gt;</span></div>
+
+    {# DIV HEADER #}
+    <div class="ml-4"><span class="balise">&lt;header&gt;</span></div>
+
+    {# H2 #}
+    <div class="droppable ml-5 my-3" id="droppable1"></div>
+    <div class="solution1 hide ml-5">
+        <span class="balise">&lt;h2&gt;</span>
+        <span class="text-white">Mon Header</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    {# H3 #}
+    <div class="ml-5">
+        <span class="balise">&lt;h3&gt;</span>
+        <span class="text-white">Ma liste en forme Navbar</span>
+        <span class="balise">&lt;/h3&gt;</span>
+    </div>
+
+    {# HR #}
+    <div class="droppable ml-5 my-3" id="droppable2"></div>
+    <div class="solution1 hide ml-5"><span class="balise">&lt;hr&gt;</span></div>
+
+    {# UL #}
+    <div class="droppable ml-5 my-3" id="droppable3"></div>
+    <div class="solution1 hide ml-5"><span class="balise">&lt;ul&gt;</span></div>
+
+        {# LI #}
+        <div class="ml-6">
+            <span class="balise">&lt;li&gt;</span>
+            <span class="text-white">Home</span>
+            <span class="balise">&lt;/li&gt;</span>
+        </div>
+
+        {# LI #}
+        <div class="ml-6">
+            <span class="balise">&lt;li&gt;</span>
+            <span class="text-white">Favorites</span>
+            <span class="balise">&lt;/li&gt;</span>
+        </div>
+
+        {# LI #}
+        <div class="ml-6">
+            <span class="balise">&lt;li&gt;</span>
+            <span class="text-white">Music</span>
+            <span class="balise">&lt;/li&gt;</span>
+        </div>
+
+        {# LI #}
+        <div class="ml-6">
+            <span class="balise">&lt;li&gt;</span>
+            <span class="text-white">Pictures</span>
+            <span class="balise">&lt;/li&gt;</span>
+        </div>
+
+    {# /UL #}
+    <div class="droppable ml-5 my-3" id="droppable4"></div>
+    <div class="solution1 hide ml-5"><span class="balise">&lt;/ul&gt;</span></div>
+
+    {# HR #}
+    <div class="ml-5"><span class="balise">&lt;hr&gt;</span></div>
+
+    {# DIV /HEADER #}
+    <div class="ml-4"><span class="balise">&lt;/header&gt;</span></div>
+
+    {# DIV MAIN #}
+    <div class="droppable ml-4 my-3" id="droppable5"></div>
+    <div class="solution2 hide ml-4"><span class="balise">&lt;main&gt;</span></div>
+
+    {# H2 #}
+    <div class="ml-5">
+        <span class="balise">&lt;h2&gt;</span>
+        <span class="text-white">Mon Main</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    {# FORM #}
+    <div class="droppable ml-4 my-3" id="droppable6"></div>
+    <div class="solution2 hide ml-4"><span class="balise">&lt;form&gt;</span></div>
+
+        {# LABEL #}
+        <div class="ml-6">
+            <span class="balise">&lt;label
+            <span class="baliseCss">for=</span>
+            <span class="baliseTxt">"Nom"</span>
+            &gt;
+            </span>
+            <span class="text-white">Nom</span>
+            <span class="balise">&lt;label&gt;</span>
+        </div>
+
+        {# INPUT #}
+        <div class="ml-6"><span class="balise">&lt;input
+            <span class="baliseCss">type=</span>
+            <span class="baliseTxt">"text"</span>
+            <span class="baliseCss"> placeholder=</span>
+            <span class="baliseTxt">"Nom"</span>
+            &gt;</span>
+        </div>
+
+        {# LABEL #}
+        <div class="ml-6"><span class="balise">&lt;label
+            <span class="baliseCss">for=</span>
+            <span class="baliseTxt">"Prenom"</span>
+            &gt;
+            </span>
+            <span class="text-white">Prenom</span>
+            <span class="balise">&lt;label&gt;</span>
+        </div>
+
+        {# INPUT #}
+    <div class="ml-6"><span class="balise">&lt;input
+            <span class="baliseCss">type=</span>
+            <span class="baliseTxt">"text"</span>
+            <span class="baliseCss"> placeholder=</span>
+            <span class="baliseTxt">"Prenom"</span>
+            &gt;</span>
+    </div>
+
+        {# LABEL #}
+        <div class="droppable ml-6 my-3" id="droppable7"></div>
+        <div class="solution2 hide ml-6"><span class="balise">&lt;label&gt;</span></div>
+
+        {# INPUT #}
+        <div class="droppable ml-6 my-3" id="droppable8"></div>
+        <div class="solution2 hide ml-6"><span class="balise">&lt;input&gt;</span></div>
+
+        {# BUTTON #}
+        <div class="ml-6">
+            <span class="balise">&lt;button
+                <span class="baliseCss">type=</span>
+                <span class="baliseTxt">"submit"</span>
+            &gt;
+            </span>
+            <span class="text-white">Enregistrer</span>
+            <span class="balise">&lt;/button&gt;</span>
+        </div>
+
+    {# /FORM #}
+    <div class="ml-5"><span class="balise">&lt;/form&gt;</span></div>
+
+    {# /MAIN #}
+    <div class="droppable ml-4 my-3" id="droppable9"></div>
+    <div class="solution2 hide ml-4"><span class="balise">&lt;/main&gt;</span></div>
+
+    {# HR #}
+    <div class="ml-5"><span class="balise">&lt;hr&gt;</span></div>
+
+    {# DIV FOOTER #}
+    <div class="droppable ml-4 my-3" id="droppable10"></div>
+    <div class="solution3 hide ml-4"><span class="balise">&lt;footer&gt;</span></div>
+
+    {# H2 #}
+    <div class="ml-5">
+        <span class="balise">&lt;h2&gt;</span>
+        <span class="text-white">Mon Footer</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    {# DIV #}
+    <div class="droppable ml-5 my-3" id="droppable11"></div>
+    <div class="solution3 hide ml-5"><span class="balise">&lt;div&gt;</span></div>
+
+        {# OL #}
+        <div class="ml-6"><span class="balise">&lt;ol&gt;</span></div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 1</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 2</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+        {# /OL #}
+        <div class="ml-6"><span class="balise">&lt;/ol&gt;</span></div>
+
+        {# OL #}
+        <div class="droppable ml-6 my-3" id="droppable12"></div>
+        <div class="solution3 hide ml-6"><span class="balise">&lt;ol&gt;</span></div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 3</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 4</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+        {# /OL #}
+        <div class="ml-6"><span class="balise">&lt;/ol&gt;</span></div>
+
+        {# OL #}
+        <div class="ml-6"><span class="balise">&lt;ol&gt;</span></div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 5</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+            {# LI #}
+            <div class="ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 6</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+        {# /OL #}
+        <div class="ml-6"><span class="balise">&lt;/ol&gt;</span></div>
+
+        {# OL #}
+        <div class="ml-6"><span class="balise">&lt;ol&gt;</span></div>
+
+            {# LI #}
+            <div class="droppable ml-7 my-3" id="droppable13"></div>
+            <div class="solution3 hide ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 7</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+            {# LI #}
+            <div class="droppable ml-7 my-3" id="droppable14"></div>
+            <div class="solution3 hide ml-7">
+                <span class="balise">&lt;li&gt;</span>
+                <span class="text-white">ligne 8</span>
+                <span class="balise">&lt;/li&gt;</span>
+            </div>
+
+        {# /OL #}
+        <div class="ml-6"><span class="balise">&lt;/ol&gt;</span></div>
+
+    {# /DIV #}
+    <div class="ml-5"><span class="balise">&lt;/div&gt;</span></div>
+
+    {# /FOOTER #}
+    <div class="ml-4"><span class="balise">&lt;/footer&gt;</span></div>
+
+    {# /BODY #}
+    <div class="droppable my-3" id="droppable15"></div>
+    <div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
+
+    {# /HTML #}
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
 {% endblock %}
 
 {% block trophy %}
 {% endblock %}
 
 {% block apercu %}
-<div id="success6" class="text-center"></div>
-<div id="success9"></div>
+    <div class="header my-5">
+        <h2 class="hide text-center w-100" id="success1">Mon Header</h2>
+        <h3 class="text-center w-100">Ma liste en forme Navbar</h3>
+        <hr class="hide" id="success2">
+        <ul class="hide liste my-3">
+            <li>Home</li>
+            <li>Favorites</li>
+            <li>Music</li>
+            <li>Pictures</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="main hide" id="success5">
+        <h2 class="text-center">Mon Main</h2>
+        <form class="my-5 hide" id="success6">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" placeholder="Nom">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" placeholder="Prenom">
+            </div>
+            <div class="form-group">
+                <label class="hide" id="success7" for="email">Email</label>
+                <input type="email" class="form-control hide" id="success8" placeholder="Email">
+            </div>
+            <button class="btn btn-primary mb-2">Enregistrer</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="footer hide" id="success10">
+        <h2 class="text-center my-3">Mon Footer</h2>
+        <div class="d-flex hide" id="success11">
+            <div class="w-25">
+                <ol>
+                    <li>ligne 1</li>
+                    <li>ligne 2</li>
+                </ol>
+            </div>
+            <div class="w-25">
+                <ol class="hide" id="success12">
+                    <li>ligne 3</li>
+                    <li>ligne 4</li>
+                </ol>
+            </div>
+            <div class="w-25">
+                <ol>
+                    <li>ligne 5</li>
+                    <li>ligne 6</li>
+                </ol>
+            </div>
+            <div class="w-25">
+                <ol>
+                    <li class="hide" id="success13">ligne 7</li>
+                    <li class="hide" id="success14">ligne 8</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 
