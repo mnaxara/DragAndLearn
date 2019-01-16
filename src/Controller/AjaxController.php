@@ -23,7 +23,7 @@ class AjaxController extends AbstractController
      */
     public function selectAllUsers()
     {
-        $users = $this->getDoctrine()->getRepository(User::class)->lookForUser();
+        $users = $this->getDoctrine()->getRepository(User::class)->lookForUser('ki');
 
 //        $results = [];
 

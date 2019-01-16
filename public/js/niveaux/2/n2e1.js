@@ -51,8 +51,9 @@ $( function() {
                 if ($(this).attr('id') === 'droppableA'){
                     $('.title2').css(val, '1px solid black');
                 }
-                if ($(this).attr('id') === 'droppableB'){
+                if ($(this).attr('id') === 'droppableB') {
                     $('div').css('background-image', 'url("erererr")');
+                }
 
                 check(id);
 
