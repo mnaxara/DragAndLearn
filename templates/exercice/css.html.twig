@@ -62,7 +62,18 @@
                     </div>
                     <div class="col-8" id="drop-zone">
                         <h3 class="text-center text-white">Code</h3>
-                        {% block code %}{% endblock %}
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="text-center">HTML</h2>
+                                {% block code_html %}{% endblock %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 border-top">
+                                <h2 class="text-center">CSS</h2>
+                                {% block code_css %}{% endblock %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

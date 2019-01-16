@@ -90,9 +90,10 @@ class AppFixtures extends Fixture
         }
 
 
-        for ($i = 0; $i < 10; $i++){
+        for ($i = 0; $i < 20; $i++){
             $number = $exercices[$i]->getNumber();
-            $value = '1'.$number;
+            $level= $exercices[$i]->getLevel()->getNumber();
+            $value = $level.$number;
             $save = new UserHasExercices();
             $save->setExercices($exercices[$i]);
             $save->setUsers($user);
