@@ -44,7 +44,7 @@
     </div>
 
     <div class="container" id="loginContainer">
-        <div class="row opacity_custom">
+        <div class="row opacity_custom bg-dark text-white">
             <div class="col-12 col-md-6 border_custom_1">
                 <div class="part_one">
                     <div class="">
@@ -55,18 +55,26 @@
                         {{ form_row(registrationForm.plainPassword) }}
                         {{ form_row(registrationForm.email) }}
                             <div class="d-flex justify-content-around">
-                                <button class="btn btn-primary">S'inscrire</button>
-                                <a href="{{ path('tutoriel') }}" class="btn btn-success">Essayer le tutoriel</a>
+                                <button class="border border-danger btn btn-dark">S'inscrire</button>
+                                {# a #}
                             </div>
                         {{ form_end(registrationForm) }}
                     </div>
                 </div>                                   
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 col-12 col-md-6 d-flex flex-column justify-content-between">
                 <div class="part_two">
                     <div class="">
-                            <p id="aupif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum architecto, sapiente quae autem  dolor sit amet, consectetur adipisicing elit. Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum architecto, sapiente quae autveniam.</p>
-                        </div>
+                        <p id="aupif"><span class="text-danger">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores,
+                            commodi quis quae. Earum architecto, sapiente quae autem  dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum
+                            architecto, sapiente quae autveniam.<span class="text-danger">&lt;/p&gt;</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <a href="{{ path('tutoriel') }}" class="border border-danger btn btn-dark">Essayer le tutoriel</a>
                 </div>
             </div>
         </div>

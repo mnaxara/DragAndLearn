@@ -1,5 +1,6 @@
 body{
-	background-image: url('../uploads/image/background_codev2.png');
+	background-image: url('../uploads/image/background_general.png');
+	background-size: cover;
 
 }
 div h1{
