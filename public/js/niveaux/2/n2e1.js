@@ -40,13 +40,19 @@ $( function() {
                 $('#success'+id).addClass(datacontent);
 
 
-                /*TODO Faire un if de se genre pour tout les droppable css
+                /*TODO Faire un if de se genre pour tout les droppable css de Value
                   TODO remplacer prop par la propriété en dur ('color') ou val par la valeur en dur ('red')
                   TODO Mettre val a la place de la valeur manquante
+                  TODO Modifier la classe, selecteur ou id affecté
                 */
                 if ($(this).attr('id') === 'droppable9'){
-                    $('.title2').css('color', val); // Cibler l'element a modifier
+                    $('.title2').css('border', val);
                 }
+                if ($(this).attr('id') === 'droppableA'){
+                    $('.title2').css(val, '1px solid black');
+                }
+                if ($(this).attr('id') === 'droppableB'){
+                    $('div').css('background-image', 'url("erererr")');
 
                 check(id);
 
@@ -63,7 +69,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 2){// Verification de la fin de l'exercice.
+        if (finish.length === 3){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
