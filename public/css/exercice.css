@@ -122,6 +122,10 @@ footer {
   line-height: 0.5em;
 }
 
+.propCss{
+  color : #61e9ff;
+}
+
 /*.ui-droppable-active{
   background: #757982;
 }*/
