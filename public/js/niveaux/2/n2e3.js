@@ -66,7 +66,7 @@ $( function() {
                 // }
                 check(id);
 
-                console.log('finish',finish);
+                
 
             }
         });
