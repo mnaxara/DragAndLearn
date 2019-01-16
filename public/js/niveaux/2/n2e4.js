@@ -55,6 +55,7 @@ $( function() {
                 }
                 if ($(this).attr('id') === 'droppable9'){
                     $('.span').css('font-family', val);
+                    $('#paragraphe').css('color', 'blue');
                     $('#solInput3').html(val);
                 }
 
