@@ -1,0 +1,164 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e3.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+        {# TODO lien documentation vers proprieter existante voir avec Rémi
+                -faire mettre le titre en couleur 
+                -faire modif le style de la list 
+                -faire souligner un element de la liste
+         #}
+{% endblock %}
+
+
+{% block elements %}    
+
+    {# true #}
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span>color : <input id ="input1" type="text" placeholder="Valeur"></span>
+    </div>
+
+    {# true #}
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span>text-decoration : <input id ="input2" type="text" placeholder="Valeur"></span>
+    </div>
+    
+    {# true #}
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span>list-style : <input id ="input3" type="text" placeholder="Valeur"></span>
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div>
+        <span class="balise">&lt;html&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;head&gt;</span>
+    </div>
+    <div class="ml-5 text-white">
+        <span class="balise">&lt;title&gt;</span>
+        Exercice n°3
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;/head&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;body&gt;</span>
+    </div>
+    {# --------------------------------------------------------------- #}
+    <div class="d-flex align-items-center ml-5 text-white" id="blockA">
+        <span class="balise">&lt;h3&nbsp;</span>
+        <span class="baliseCss" >class=<span class="baliseTxt">"title"</span></span>
+        
+        <span class="balise">&gt;</span>Ma liste de course
+        <span class="balise">&lt;/h3&gt;</span>
+    </div>
+
+    <div class="ml-5">
+        <span class="balise">&lt;ul <span class="baliseCss" id="block5">class=<span class="baliseTxt">"list"</span></span> &gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;li&gt;</span>
+        <span>lait</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;li&gt;</span>
+        <span>Farine</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="d-flex align-items-center ml-6 text-white" id="blockA">
+        <span class="balise">&lt;li &nbsp;</span>
+        <span class="baliseCss">id=<span class="baliseTxt">"t-decoration"</span></span>        
+        <span class="balise">&gt;</span>
+        <span>Yahourt</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="ml-6 text-white">
+        <span class="balise">&lt;li&gt;</span>
+        <span>Bouteille d'eau</span>
+        <span class="balise">&lt;/li&gt;</span>
+    </div>
+
+    <div class="ml-5">
+        <span class="balise">&lt;/ul&gt;</span>
+    </div>
+
+    {# -------------------------------------------------- #}
+    <div>
+        <span class="balise">&lt;/body&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;/html&gt;</span>
+    </div>
+
+{% endblock %}
+
+{% block code_css %}
+
+<div class="text-white">
+    <span class="baliseCss">.title</span>{
+    <div class="droppable ml-4" id="droppable1"></div>
+    <span>}</span>    
+
+    <br><br>
+    <span class="baliseCss">#t-decoration</span>{
+    <div class="droppable ml-4" id="droppable2"></div>
+    <span>}</span>
+
+    <br><br>
+    <span class="baliseCss">.list</span>{
+    <div class="droppable ml-4" id="droppable3"></div>
+    <span>}</span>
+</div>
+
+    
+
+{% endblock %}
+
+{% block nextlevel %}
+    <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+          method="post">
+        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+        <button class="btn p-4" id="next">Exercice suivant -></button>
+    </form>
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h3 class="title">Ma liste de course</h3>
+    <ul class="list">
+        <li>Lait</li>
+        <li>Farine</li>
+        <li id="t-decoration">Yahourt</li>
+        <li>Bouteille d'eau</li>
+    </ul>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/2/n2e3.js')}}></script>
+{% endblock %}

@@ -21,7 +21,6 @@ $( function() {
         datacontent = $(this).data('content');  // remplissage de la variable data
         let id = $(this).data('id'); // recupération de l'id drag
         let val = $("#input"+id).val(); // variable recuperant la valeur saisi
-        console.log(datacontent, id, $('#success'+id));
 
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
@@ -39,25 +38,35 @@ $( function() {
 
                 $('#success'+id).addClass(datacontent);
 
-
                 /*TODO Faire un if de se genre pour tout les droppable css de Value
                   TODO remplacer prop par la propriété en dur ('color') ou val par la valeur en dur ('red')
                   TODO Mettre val a la place de la valeur manquante
                   TODO Modifier la classe, selecteur ou id affecté
                 */
-                if ($(this).attr('id') === 'droppable9'){
-                    $('.title2').css('border', val);
+                if ($(this).attr('id') === 'droppable1'){
+                    $('.header_color').css('background', 'linear-gradient(#e66465, #9198e5)');
                 }
-                if ($(this).attr('id') === 'droppableA'){
-                    $('.title2').css(val, '1px solid black');
+                if ($(this).attr('id') === 'droppable2'){
+                    $('.main_color').css('background-color', '#9198e5');
                 }
-                if ($(this).attr('id') === 'droppableB') {
-                    $('div').css('background-image', 'url("erererr")');
+                if ($(this).attr('id') === 'droppable3') {
+                    $('.footer_color').css('background', 'linear-gradient(#9198e5, #e66465)');
+                }
+                if ($(this).attr('id') === 'droppable4'){
+                    $('.lion').css('background', "url('../../../uploads/image/exercice8css/lion.jpg')");
+                }
+                if ($(this).attr('id') === 'droppable5'){
+                    $('.gorille').css('background', "url('../../../uploads/image/exercice8css/gorille.jpeg')");
+                }
+                if ($(this).attr('id') === 'droppable6') {
+                    $('.elephant').css('background', "url('../../../uploads/image/exercice8css/elephant.jpg')");
+                }
+                if ($(this).attr('id') === 'droppable7') {
+                    $('.loup').css('background', "url('../../../uploads/image/exercice8css/loup.jpg')");
                 }
 
                 check(id);
 
-                console.log('finish',finish);
 
             }
         });
@@ -70,7 +79,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 3){// Verification de la fin de l'exercice.
+        if (finish.length === 7){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{

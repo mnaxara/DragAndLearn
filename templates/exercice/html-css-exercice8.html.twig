@@ -1,0 +1,253 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e8.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="propCss">background: </span>
+        linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="propCss">background-color: </span>
+        <span class="valueCss"> #9198e5</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="propCss">background: </span>
+        linear-gradient(<span class="valueCss">#9198e5</span>,<span class="valueCss"> #e66465</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'lion.jpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'gorille.jpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="6" id="draggable6">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'elephant.jpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="7" id="draggable7">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'loup.jpg'</span>);
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
+    <div>
+        <span class="balise">&lt;title&gt;</span>
+        <span class="text-white">Ma page</span>
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
+    <div><span class="balise">&lt;body&gt;</span></div>
+
+    {# HEADER #}
+    <div class="ml-5">
+            <span class="balise">&lt;header
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"header_color"</span>&gt;
+            </span>
+    </div>
+        <div class="ml-6">
+            <span class="balise">&lt;h3&gt;</span>
+            <span class="text-white">Background</span>
+            <span class="balise">&lt;/h3&gt;</span>
+        </div>
+        <div class="ml-6">
+            <span class="balise">&lt;h4&gt;</span>
+            <span class="text-white">Mon header</span>
+            <span class="balise">&lt;/h4&gt;</span>
+        </div>
+    <div class="ml-5"><span class="balise">&lt;/header&gt;</span></div>
+
+    {# MAIN #}
+    <div class="ml-5">
+            <span class="balise">&lt;main
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"main_color"</span>&gt;
+            </span>
+    </div>
+        <div class="ml-6">
+            <span class="balise">&lt;h4&gt;</span>
+            <span class="text-white">Mon main</span>
+            <span class="balise">&lt;/h4&gt;</span>
+        </div>
+        <div class="ml-6">
+            <span class="balise">&lt;div
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"lion"</span>&gt;
+                <span class="text-white">Lion</span>
+            </span>
+            <span class="balise">&lt;/div&gt;</span>
+        </div>
+        <div class="ml-6">
+                <span class="balise">&lt;div
+                    <span class="baliseCss">class=</span>
+                    <span class="baliseTxt">"gorille"</span>&gt;
+                    <span class="text-white">Gorille</span>
+                </span>
+            <span class="balise">&lt;/div&gt;</span>
+        </div>
+        <div class="ml-6">
+                <span class="balise">&lt;div
+                    <span class="baliseCss">class=</span>
+                    <span class="baliseTxt">"elephant"</span>&gt;
+                    <span class="text-white">Elephant</span>
+                </span>
+            <span class="balise">&lt;/div&gt;</span>
+        </div>
+        <div class="ml-6">
+                <span class="balise">&lt;div
+                    <span class="baliseCss">class=</span>
+                    <span class="baliseTxt">"loup"</span>&gt;
+                    <span class="text-white">Loup</span>
+                </span>
+            <span class="balise">&lt;/div&gt;</span>
+        </div>
+    <div class="ml-5"><span class="balise">&lt;/main&gt;</span></div>
+
+    {# FOOTER #}
+    <div class="ml-5">
+            <span class="balise">&lt;footer
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"footer_color"</span>&gt;
+            </span>
+    </div>
+        <div class="ml-6">
+            <span class="balise">&lt;h4&gt;</span>
+            <span class="text-white">Mon footer</span>
+            <span class="balise">&lt;/h4&gt;</span>
+        </div>
+    <div class="ml-5"><span class="balise">&lt;/footer&gt;</span></div>
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+   <div class="text-white">
+       <div>
+           <span class="baliseCss">.header_color</span>{
+               <div class="solution1 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable1"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.main_color</span>{
+               <div class="solution2 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable2"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.footer_color</span>{
+               <div class="solution3 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable3"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.lion</span>{
+               <div class="solution4 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable4"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.gorille</span>{
+               <div class="solution5 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable5"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.elephant</span>{
+               <div class="solution6 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable6"></div>
+           }
+       </div>
+
+       <div>
+           <span class="baliseCss">.loup</span>{
+               <div class="solution7 hide ml-5"></div>
+               <div class="droppable ml-5" id="droppable7"></div>
+           }
+       </div>
+
+   </div>
+
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <header class="header_color py-5">
+        <h3 id="success5" class="text-center">Background</h3>
+        <h4 class="text-center">Mon header</h4>
+    </header>
+    <main class="main_color">
+        <h4 class="text-center">Mon main</h4>
+        <div class="row d-flex justify-content-around">
+            <div class="text-danger lion my-5">
+                Lion
+            </div>
+            <div class="text-danger gorille my-5">
+                Gorille
+            </div>
+        </div>
+        <div class="row d-flex justify-content-around">
+            <div class="text-danger elephant mb-5">
+                Elephant
+            </div>
+            <div class="text-danger loup mb-5">
+                Loup
+            </div>
+        </div>
+    </main>
+    <footer class="footer_color py-5">
+        <h4 class="text-center">Mon footer</h4>
+
+    </footer>
+    <button id="next" hidden>Niveau suivant -></button>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/2/n2e8.js')}}></script>
+{% endblock %}

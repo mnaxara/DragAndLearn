@@ -45,16 +45,22 @@ $( function() {
                   TODO Mettre val a la place de la valeur manquante
                   TODO Modifier la classe, selecteur ou id affecté
                 */
-                if ($(this).attr('id') === 'droppable9'){
-                    $('.title2').css('border', val);
+                if ($(this).attr('id') === 'droppable1'){
+                    $('.title').css('color', val);
                 }
-                if ($(this).attr('id') === 'droppableA'){
-                    $('.title2').css(val, '1px solid black');
+                if ($(this).attr('id') === 'droppable2'){
+                    $('#t-decoration').css('text-decoration', val);
                 }
-                if ($(this).attr('id') === 'droppableB') {
-                    $('div').css('background-image', 'url("erererr")');
+                if ($(this).attr('id') === 'droppable3'){
+                    $('.list').css('list-style', val);
                 }
 
+                // if ($(this).attr('id') === 'droppableA'){
+                //     $('.title2').css(val, '1px solid black');
+                // }
+                // if ($(this).attr('id') === 'droppableB'){
+                //     $('div').css('background-image', 'url("erererr")');
+                // }
                 check(id);
 
                 console.log('finish',finish);
@@ -80,25 +86,17 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 finishAudio.play()
-            }, 1000);
+            }, 2000);
             setTimeout(()=>{
                 $('.solution3').show('explode', 1000);
                 finishAudio.play()
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution4').show('explode', 1000);
-                finishAudio.play()
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution5').show('explode', 1000);
-                finishAudio.play()
-            }, 1000);
+            }, 3000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 endLevel.play();
-            }, 10000);
+            }, 4000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative

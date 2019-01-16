@@ -1,0 +1,8 @@
+#dragdrop {
+    height: 135%;
+}
+.lion, .gorille , .elephant, .loup{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+}
