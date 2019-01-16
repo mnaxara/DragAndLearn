@@ -18,13 +18,14 @@
 
 {% block elements %}
 
-    <div class="draggable text-center" data-id="1" id="draggable1">
+    <div class="draggable text-center" data-id="12" id="draggable12">
         <span class="propCss">background: </span>
-        linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'gorille.zip'</span>);
     </div>
 
-    <div class="draggable text-center" data-id="2" id="draggable2">
-        <span class="propCss">background-color: </span>
+    <div class="draggable text-center" data-id="9" id="draggable9">
+        <span class="propCss">backgroundColor: </span>
         <span class="valueCss"> #9198e5</span>;
     </div>
 
@@ -39,10 +40,9 @@
         (<span class="baliseTxt">'lion.jpg'</span>);
     </div>
 
-    <div class="draggable text-center" data-id="5" id="draggable5">
+    <div class="draggable text-center" data-id="1" id="draggable1">
         <span class="propCss">background: </span>
-        <span class="valueCss"> url</span>
-        (<span class="baliseTxt">'gorille.jpg'</span>);
+        linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
     </div>
 
     <div class="draggable text-center" data-id="6" id="draggable6">
@@ -51,9 +51,48 @@
         (<span class="baliseTxt">'elephant.jpg'</span>);
     </div>
 
+    <div class="draggable text-center" data-id="11" id="draggable11">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> ulr</span>
+        (<span class="baliseTxt">lion.jpg</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="propCss">background= </span>
+        linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="13" id="draggable13">
+        <span class="propCss">backgroond: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'elephantjpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="propCss">background-color: </span>
+        <span class="valueCss"> #9198e5</span>;
+    </div>
+
     <div class="draggable text-center" data-id="7" id="draggable7">
         <span class="propCss">background: </span>
         <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'loup.jpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'gorille.jpg'</span>);
+    </div>
+
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <span class="propCss">background: </span>
+        linear-gradient<span class="valueCss">#9198e5</span>,<span class="valueCss"> #e66465</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="14" id="draggable14">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url=</span>
         (<span class="baliseTxt">'loup.jpg'</span>);
     </div>
 
@@ -162,49 +201,74 @@
    <div class="text-white">
        <div>
            <span class="baliseCss">.header_color</span>{
-               <div class="solution1 hide ml-5"></div>
+               <div class="solution1 hide ml-5">
+                   <span class="propCss">background: </span>
+                   linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
+               </div>
                <div class="droppable ml-5" id="droppable1"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.main_color</span>{
-               <div class="solution2 hide ml-5"></div>
+               <div class="solution1 hide ml-5">
+                   <span class="propCss">background-color: </span>
+                   <span class="valueCss"> #9198e5</span>;
+               </div>
                <div class="droppable ml-5" id="droppable2"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.footer_color</span>{
-               <div class="solution3 hide ml-5"></div>
+               <div class="solution1 hide ml-5">
+                   <span class="propCss">background: </span>
+                   linear-gradient(<span class="valueCss">#9198e5</span>,<span class="valueCss"> #e66465</span>);
+               </div>
                <div class="droppable ml-5" id="droppable3"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.lion</span>{
-               <div class="solution4 hide ml-5"></div>
+               <div class="solution2 hide ml-5">
+                   <span class="propCss">background: </span>
+                   <span class="valueCss"> url</span>
+                   (<span class="baliseTxt">'lion.jpg'</span>);
+               </div>
                <div class="droppable ml-5" id="droppable4"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.gorille</span>{
-               <div class="solution5 hide ml-5"></div>
+               <div class="solution2 hide ml-5">
+                   <span class="propCss">background: </span>
+                   <span class="valueCss"> url</span>
+                   (<span class="baliseTxt">'gorille.jpg'</span>);
+               </div>
                <div class="droppable ml-5" id="droppable5"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.elephant</span>{
-               <div class="solution6 hide ml-5"></div>
+               <div class="solution2 hide ml-5">
+                   <span class="propCss">background: </span>
+                   <span class="valueCss"> url</span>
+                   (<span class="baliseTxt">'elephant.jpg'</span>);
+               </div>
                <div class="droppable ml-5" id="droppable6"></div>
            }
        </div>
 
        <div>
            <span class="baliseCss">.loup</span>{
-               <div class="solution7 hide ml-5"></div>
+               <div class="solution2 hide ml-5">
+                   <span class="propCss">background: </span>
+                   <span class="valueCss"> url</span>
+                   (<span class="baliseTxt">'loup.jpg'</span>);
+               </div>
                <div class="droppable ml-5" id="droppable7"></div>
            }
        </div>

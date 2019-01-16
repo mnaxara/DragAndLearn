@@ -25,6 +25,16 @@ $( function() {
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
 
+        //Multi absolute accepté
+        $("#droppable4").droppable({
+            accept: ".absoluteClass",
+        });
+        $("#droppable5").droppable({
+            accept: ".absoluteClass",
+        });
+        $("#droppable6").droppable({
+            accept: ".absoluteClass",
+        });
 
         $("#droppable" + id).droppable({
 
@@ -44,25 +54,22 @@ $( function() {
                   TODO Modifier la classe, selecteur ou id affecté
                 */
                 if ($(this).attr('id') === 'droppable1'){
-                    $('.header_color').css('background', 'linear-gradient(#e66465, #9198e5)');
+                    $('.gauche').css('float', 'left');
                 }
                 if ($(this).attr('id') === 'droppable2'){
-                    $('.main_color').css('background-color', '#9198e5');
+                    $('.droite').css('float', 'right');
                 }
                 if ($(this).attr('id') === 'droppable3') {
-                    $('.footer_color').css('background', 'linear-gradient(#9198e5, #e66465)');
+                    $('.zone').css('position', 'relative');
                 }
                 if ($(this).attr('id') === 'droppable4'){
-                    $('.lion').css('background', "url('../../../uploads/image/exercice8css/lion.jpg')");
+                    $('.oreille_gauche').css('position', 'absolute');
                 }
                 if ($(this).attr('id') === 'droppable5'){
-                    $('.gorille').css('background', "url('../../../uploads/image/exercice8css/gorille.jpeg')");
+                    $('.oreille_droite').css('position', 'absolute');
                 }
-                if ($(this).attr('id') === 'droppable6') {
-                    $('.elephant').css('background', "url('../../../uploads/image/exercice8css/elephant.jpg')");
-                }
-                if ($(this).attr('id') === 'droppable7') {
-                    $('.loup').css('background', "url('../../../uploads/image/exercice8css/loup.jpg')");
+                if ($(this).attr('id') === 'droppable6'){
+                    $('.tete').css('position', 'absolute');
                 }
 
                 check(id);
@@ -79,7 +86,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 7){// Verification de la fin de l'exercice.
+        if (finish.length === 6){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
