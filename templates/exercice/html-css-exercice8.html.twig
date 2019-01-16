@@ -19,29 +19,42 @@
 {% block elements %}
 
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="propCss">background : </span>li
+        <span class="propCss">background: </span>
+        linear-gradient(<span class="valueCss">#e66465</span>,<span class="valueCss"> #9198e5</span>);
     </div>
+
     <div class="draggable text-center" data-id="2" id="draggable2">
-        <span class="baliseCss">class.</span><span class="baliseTxt">"title2"</span>
+        <span class="propCss">background-color: </span>
+        <span class="valueCss"> #9198e5</span>;
     </div>
-    <div class="draggable text-center" data-id="3" id="draggable3" >
-        <span class="baliseCss">class:</span><span class="baliseTxt">"title2"</span>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="propCss">background: </span>
+        linear-gradient(<span class="valueCss">#9198e5</span>,<span class="valueCss"> #e66465</span>);
     </div>
+
     <div class="draggable text-center" data-id="4" id="draggable4">
-        <span class="baliseCss">class</span><span class="baliseTxt">(.title2)</span>
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'lion.jpg'</span>);
     </div>
-    <div class="draggable text-center" data-id="5" data-content="title2" id="draggable5">
-        <span class="baliseCss">class=</span><span class="baliseTxt">"title2"</span>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'gorille.jpg'</span>);
     </div>
+
     <div class="draggable text-center" data-id="6" id="draggable6">
-        <span class="baliseCss">class=</span><span class="baliseTxt">title2</span>
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'elephant.jpg'</span>);
     </div>
+
     <div class="draggable text-center" data-id="7" id="draggable7">
-        <span class="baliseCss">class:</span><span class="baliseTxt">.title2</span>
-    </div>
-    <hr>
-    <div class="draggable text-center" data-id="9" id="draggable9">
-        <span>color : <input id ="input9" type="text" placeholder="Valeur"></span>
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'loup.jpg'</span>);
     </div>
 
 {% endblock %}
