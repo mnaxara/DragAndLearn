@@ -182,14 +182,6 @@
 
 
 {% block javascriptsExt %}
-    <script>
-        $('#hover').mouseenter('.hover',() =>{
-            $('.hover').css('color','red')
-        })
 
-        $('#hover').mouseout('.hover',() =>{
-            $('.hover').css('color','black')
-        })
-    </script>
     <script src={{ asset('js/niveaux/2/n2e6.js')}}></script>
 {% endblock %}
