@@ -1,0 +1,190 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e5.css') }}">{% endblock %}
+
+{% block lecons %}
+    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</span>
+    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</span>
+{% endblock %}
+
+
+{% block elements %}
+    
+    <br>
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="baliseCss">colour</span><span>"=blue"</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="2" id="draggable2">
+      <span class="baliseCss">border</span><span>":black"</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="5" id="draggable5">
+     <span class="propcss">border-image: linear-gradient(#f6b73c, #4d9f0c) 30;</span></span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="6" id="draggable6">
+     <span class="propcss">border: 25px solid;</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="7" id="draggable7">
+    <span class="baliseCss">h1</span>
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span>border: 1px dashed black;</span>
+    </div>
+    <br>
+     <div class="draggable text-center" data-id="9" id="draggable9">
+        <span>border: 1rem solid ;</span>
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <span class="text-white">&lt;!DOCTYPE html&gt;</span>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div class="text-white">
+        <span class="balise">&lt;html&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;head&gt;</span>
+    </div>
+    <div class="text-white">
+        <span class="balise">&lt;title&gt;</span>
+        Niveau 2 - Exercice 5
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;/head&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;body&gt;</span>
+    </div>
+    <div class="text-white ml-5">
+        <span class="balise">&lt;h1&gt;</span> DOT DOT DOT<span class="balise">&lt;/h1&gt;</span>
+    </div>
+    <div class="d-flex align-items-center text-white ml-5">
+        <span class="balise">&lt;div&nbsp;</span> 
+        <span class="baliseCss"> class=</span>
+        <span class="baliseTxt">"brd"</span>
+        <span class="balise">&gt;</span>
+    </div>
+    <div class="text-white ml-6">
+        
+        <span class="balise">&lt;p1&gt;</span>Je suis bien entouré !<span class="balise">&lt;/p1"&gt;</span>
+    </div>
+
+    <div class="ml-5" >
+        <span class="balise">&lt;/div&gt;</span><i class="d-flex align-items-center text-white"></i>
+   </div>
+   <div class="d-flex align-items-center text-white ml-5">
+        <span class="balise">&lt;div&nbsp;</span> 
+        <span class="baliseCss"> id=</span>
+        <span class="baliseTxt">"rainbow"</span>
+        <span class="balise">&gt;</span>
+    </div>
+    <div class="text-white ml-5">
+          <span class="balise">&lt;span&gt;</span>
+        La Palette de couleurs
+            <span class="balise">&lt;/span&gt;</span>
+    </div>
+      <div class="ml-5">
+        <span class="balise">&lt;/div&gt;</span><i class="d-flex align-items-center text-white"></i>
+   </div>
+  
+    <div>
+        <span class="balise">&lt;/body&gt;</span>
+    </div>
+    <div>
+        <span class="balise">&lt;/html&gt;</span>
+    </div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <div class="text-white">
+
+            <span class="baliseCss ml-5">.brd</span>{
+                <div class="hide">
+                border: 1rem solid;
+                 </div>
+                <div class="droppable" id="droppable9"></div>
+                <div class="solution1 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1rem solid;</span></div>
+            }
+<br>        
+            <span class="ValueCss ml-5">
+                <div class="hide">
+                    h1
+                </div>
+                </span>
+                <div class="droppable" id="droppable7"> </div>
+                <div class="solution2 hide ml-5"><span class="baliseCss">h1</span></div>
+             {<br><span class="baliseCss ml-5 propCss">border-style:</span><span class="valueCss"> dotted;</span>
+             <br>
+            }
+
+<br>
+
+        <span class="baliseCss ml-5">p</span>{
+                <div class="hide">
+                 border: 1px dashed black;
+                </div>
+                <div class="droppable" id="droppable8"> </div>
+                 <div class="solution3 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1rem solid;</span></div>
+            }
+        
+
+<br>
+            <span class="baliseCss ml-5">#rainbow</span>{
+                <div class="hide" id="block">
+                border: 25px solid;
+                 </div>
+                <div class="droppable" id="droppable6"></div>
+                <div class="solution4 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 25px solid;</span></div>
+                <div class="hide" id="block">
+                border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+                </div>
+                <div class="droppable" id="droppable5"></div>
+                <div class="solution4 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> border-image: linear-gradient(#f6b73c, #4d9f0c) 30;</span></div>
+
+{#     border : 25px solid;
+    border-image: linear-gradient(#f6b73c, #4d9f0c) 30; #}
+}
+
+    </div>
+
+{% endblock %}
+
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h3 id="success5" class="text-center">Bordures CSS</h3>
+    <h1 id="h1"> DOT DOT DOT </h1>
+    <div class="brd">
+    <p>Je suis bien entouré !</p>
+    </div>
+    <div id="rainbow">
+        <span>
+        La palette de couleur
+        </span>
+    </div>
+    <button id="next" hidden>Niveau suivant -></button>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/2/n2e5.js')}}></script>
+{% endblock %}
