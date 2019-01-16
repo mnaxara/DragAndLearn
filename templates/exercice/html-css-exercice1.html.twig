@@ -1,0 +1,117 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e1.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="baliseCss">class=</span><span class="baliseTxt">".title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="2" id="draggable2">
+                        <span class="baliseCss">class.</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="3" id="draggable3" >
+                        <span class="baliseCss">class:</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="4" id="draggable4">
+                        <span class="baliseCss">class</span><span class="baliseTxt">(.title2)</span>
+    </div>
+    <div class="draggable text-center" data-id="5" data-content="title2" id="draggable5">
+                        <span class="baliseCss">class=</span><span class="baliseTxt">"title2"</span>
+    </div>
+    <div class="draggable text-center" data-id="6" id="draggable6">
+                        <span class="baliseCss">class=</span><span class="baliseTxt">title2</span>
+    </div>
+    <div class="draggable text-center" data-id="7" id="draggable7">
+                        <span class="baliseCss">class:</span><span class="baliseTxt">.title2</span>
+    </div>
+    <hr>
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span>color : <input id ="input8" type="text" placeholder="Valeur"></span>
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
+    <div>
+        <span class="balise">&lt;title&gt;</span>
+        Ma page
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
+    <div><span class="balise">&lt;body&gt;</span></div>
+    <div class="d-flex align-items-center" id="blockA">
+        <span class="balise">&lt;h1&nbsp;</span>
+        <span class="baliseCss hide" id="block5">class=<span class="baliseTxt">"title2"</span></span>
+        <span class="droppable" id="droppable5"></span>
+        &gt;Ma page
+        <span class="balise">&lt;/h1&gt;</span><i class="fas fa-check hide baliseCss" id="check5"></i>
+    </div>
+    <div>
+        <span class="balise">&lt;p <span class="baliseCss">id=<span class="baliseTxt">"pRed"</span></span>&gt;</span>
+        Mon paragraphe rouge
+        <span class="balise">&lt;/p&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <pre class="text-white">
+
+<i class="fas fa-check hide baliseCss" id="check9"></i><span class="baliseCss">.title2</span>{
+    <div class="hide" id="block9"></div>
+    <div class="droppable" id="droppable9"></div>
+}
+
+<span class="baliseCss">#pRed</span>{
+    color : red;
+}
+
+    </pre>
+
+{% endblock %}
+
+{% block nextlevel %}
+    <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
+          method="post">
+        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+        <button class="btn p-4" id="next">Exercice suivant -></button>
+    </form>
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h3 id="success5" class="text-center">Ma Page</h3>
+    <p style="color: red">Mon paragraphe rouge</p>
+    <button id="next" hidden>Niveau suivant -></button>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/2/n2e1.js')}}></script>
+{% endblock %}
