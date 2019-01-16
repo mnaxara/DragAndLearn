@@ -1,0 +1,277 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e9.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> inherit</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> relative</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="14" id="draggable14">
+        <span class="propCss">float: </span>
+        <span class="valueCss"> droite</span>;
+    </div>
+
+    <div class="draggable absoluteClass text-center" data-id="5" id="draggable5">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> absolute</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="7" id="draggable7">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> fixed</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="9" id="draggable9">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> initial</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="13" id="draggable13">
+        <span class="propCss">float: </span>
+        <span class="valueCss"> gauche</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="propCss">float: </span>
+        <span class="valueCss"> right</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> static</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="11" id="draggable11">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> sticky</span>;
+    </div>
+
+    <div class="draggable absoluteClass text-center" data-id="4" id="draggable4">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> absolute</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="12" id="draggable12">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> unset</span>;
+    </div>
+
+    <div class="draggable absoluteClass text-center" data-id="6" id="draggable6">
+        <span class="propCss">position: </span>
+        <span class="valueCss"> absolute</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="propCss">float: </span>
+        <span class="valueCss"> left</span>;
+    </div>
+
+{% endblock %}
+
+{% block code_html %}
+
+    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div><span class="balise">&lt;head&gt;</span></div>
+    <div>
+        <span class="balise">&lt;title&gt;</span>
+        <span class="text-white">Ma page</span>
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div><span class="balise">&lt;/head&gt;</span></div>
+    <div><span class="balise">&lt;body&gt;</span></div>
+
+    <div class="ml-5">
+        <span class="balise">&lt;h2&gt;</span>
+        <span class="text-white">Mickey</span>
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    {# CARRE GAUCHE #}
+    <div class="ml-5">
+        <span class="balise">&lt;div
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"gauche"</span>&gt;
+        </span>
+    </div>
+
+    <div class="ml-6">
+        <span class="balise">&lt;div
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"carre_gauche"</span>&gt;
+        </span>
+    </div>
+
+    <div class="ml-5"><span class="balise">&lt;/div&gt;</span></div>
+
+    {# CARRE DROITE #}
+
+    <div class="ml-5">
+        <span class="balise">&lt;div
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"droite"</span>&gt;
+        </span>
+    </div>
+
+    <div class="ml-6">
+        <span class="balise">&lt;div
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"carre_droite"</span>&gt;
+        </span>
+    </div>
+
+    <div class="ml-5"><span class="balise">&lt;/div&gt;</span></div>
+
+
+    {# ZONE #}
+    <div class="ml-5">
+            <span class="balise">&lt;div
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"zone"</span>&gt;
+            </span>
+    </div>
+
+    <div class="ml-6">
+            <span class="balise">&lt;div
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"oreille_gauche"</span>&gt;
+            </span>
+    </div>
+
+    <div class="ml-6">
+            <span class="balise">&lt;div
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"oreille_droite"</span>&gt;
+            </span>
+    </div>
+
+    <div class="ml-6">
+            <span class="balise">&lt;div
+                <span class="baliseCss">class=</span>
+                <span class="baliseTxt">"tete"</span>&gt;
+            </span>
+    </div>
+
+    <div class="ml-5"><span class="balise">&lt;/div&gt;</span></div>
+
+    <div><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <div class="text-white">
+        <div>
+            <span class="baliseCss">.gauche</span>{
+            <div class="solution1 hide ml-5">
+                <span class="propCss">float: </span>
+                <span class="valueCss">left </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable1"></div>
+            }
+        </div>
+
+        <div>
+            <span class="baliseCss">.droite</span>{
+            <div class="solution1 hide ml-5">
+                <span class="propCss">float: </span>
+                <span class="valueCss">right </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable2"></div>
+            }
+        </div>
+
+        <div>
+            <span class="baliseCss">.zone</span>{
+            <div class="solution1 hide ml-5">
+                <span class="propCss">position:</span>
+                <span class="valueCss">relative </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable3"></div>
+            }
+        </div>
+
+        <div>
+            <span class="baliseCss">.oreiller_gauche</span>{
+            <div class="solution2 hide ml-5">
+                <span class="propCss">position: </span>
+                <span class="valueCss">absolute </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable4"></div>
+            }
+        </div>
+
+        <div>
+            <span class="baliseCss">.oreiller_droite</span>{
+            <div class="solution2 hide ml-5">
+                <span class="propCss">position: </span>
+                <span class="valueCss">absolute </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable5"></div>
+            }
+        </div>
+
+        <div>
+            <span class="baliseCss">.tete</span>{
+            <div class="solution2 hide ml-5">
+                <span class="propCss">position: </span>
+                <span class="valueCss">absolute </span>;
+            </div>
+            <div class="droppable ml-5" id="droppable6"></div>
+            }
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h2 class="text-center py-5 text-danger">Mickey</h2>
+
+    <div class="gauche d-flex justify-content-center">
+        <div class="carre_gauche"></div>
+    </div>
+    <div class="droite d-flex justify-content-center">
+        <div class="carre_droite"></div>
+    </div>
+
+    <div class="zone">
+        <div class="oreille_gauche"></div>
+        <div class="oreille_droite"></div>
+        <div class="tete"></div>
+    </div>
+
+    <button id="next" hidden>Niveau suivant -></button>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script src={{ asset('js/niveaux/2/n2e9.js')}}></script>
+{% endblock %}
