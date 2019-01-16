@@ -1,0 +1,25 @@
+#myTit{
+    margin-bottom: 10%;
+    margin-top: 8%;
+
+}
+
+p{
+    margin-bottom: 10%;
+}
+
+#dragdrop {
+    height: 175%;
+}
+
+#droppable1{
+    width: 8%;
+}
+
+#droppable4{
+    width: 25%;
+}
+
+#droppable5 {
+    width: 15%;
+}

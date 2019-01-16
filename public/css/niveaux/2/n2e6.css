@@ -1,0 +1,28 @@
+#div1{
+    width: 100%;
+    height: 75%;
+    border: 1px solid black;
+    font-size: 18px;
+    padding-left: 5%;
+}
+
+#div2{
+    width: 100%;
+    height: 90%;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+#auto{
+    width: 50%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#dragdrop {
+    height: 125%;
+}
+
+#droppable1{
+    width: 10%;
+}
