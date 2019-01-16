@@ -21,11 +21,20 @@ $( function() {
         datacontent = $(this).data('content');  // remplissage de la variable data
         let id = $(this).data('id'); // recupération de l'id drag
         let val = $("#input"+id).val(); // variable recuperant la valeur saisi
-        console.log(datacontent, id, $('#success'+id));
 
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
 
+        //Multi absolute accepté
+        $("#droppable4").droppable({
+            accept: ".absoluteClass",
+        });
+        $("#droppable5").droppable({
+            accept: ".absoluteClass",
+        });
+        $("#droppable6").droppable({
+            accept: ".absoluteClass",
+        });
 
         $("#droppable" + id).droppable({
 
@@ -39,34 +48,32 @@ $( function() {
 
                 $('#success'+id).addClass(datacontent);
 
-
                 /*TODO Faire un if de se genre pour tout les droppable css de Value
                   TODO remplacer prop par la propriété en dur ('color') ou val par la valeur en dur ('red')
                   TODO Mettre val a la place de la valeur manquante
                   TODO Modifier la classe, selecteur ou id affecté
                 */
-                if ($(this).attr('id') === 'droppable3'){
-                    $('.title').css('color', val);
-                    $('#solInput1').html(val);
+                if ($(this).attr('id') === 'droppable1'){
+                    $('.gauche').css('float', 'left');
+                }
+                if ($(this).attr('id') === 'droppable2'){
+                    $('.droite').css('float', 'right');
+                }
+                if ($(this).attr('id') === 'droppable3') {
+                    $('.zone').css('position', 'relative');
                 }
                 if ($(this).attr('id') === 'droppable4'){
-                    $('#t-decoration').css('text-decoration', val);
-                    $('#solInput2').html(val);
+                    $('.oreille_gauche').css('position', 'absolute');
                 }
-                if ($(this).attr('id') === 'droppable9'){
-                    $('.list').css('list-style', val);
-                    $('#solInput3').html(val);
+                if ($(this).attr('id') === 'droppable5'){
+                    $('.oreille_droite').css('position', 'absolute');
+                }
+                if ($(this).attr('id') === 'droppable6'){
+                    $('.tete').css('position', 'absolute');
                 }
 
-                // if ($(this).attr('id') === 'droppableA'){
-                //     $('.title2').css(val, '1px solid black');
-                // }
-                // if ($(this).attr('id') === 'droppableB'){
-                //     $('div').css('background-image', 'url("erererr")');
-                // }
                 check(id);
 
-                console.log('finish',finish);
 
             }
         });
@@ -79,7 +86,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 3){// Verification de la fin de l'exercice.
+        if (finish.length === 6){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
@@ -89,17 +96,13 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 finishAudio.play()
-            }, 2000);
-            setTimeout(()=>{
-                $('.solution3').show('explode', 1000);
-                finishAudio.play()
-            }, 3000);
+            }, 1000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 endLevel.play();
-            }, 4000);
+            }, 3000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative

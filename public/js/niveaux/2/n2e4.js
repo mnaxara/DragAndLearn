@@ -45,16 +45,16 @@ $( function() {
                   TODO Mettre val a la place de la valeur manquante
                   TODO Modifier la classe, selecteur ou id affecté
                 */
-                if ($(this).attr('id') === 'droppable3'){
-                    $('.title').css('color', val);
+                if ($(this).attr('id') === 'droppable2'){
+                    $('.title').css('font-size', val);
                     $('#solInput1').html(val);
                 }
-                if ($(this).attr('id') === 'droppable4'){
-                    $('#t-decoration').css('text-decoration', val);
+                if ($(this).attr('id') === 'droppable5'){
+                    $('#paragraphe').css('font-weight', val);
                     $('#solInput2').html(val);
                 }
                 if ($(this).attr('id') === 'droppable9'){
-                    $('.list').css('list-style', val);
+                    $('.span').css('font-family', val);
                     $('#solInput3').html(val);
                 }
 
