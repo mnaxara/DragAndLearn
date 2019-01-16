@@ -2,55 +2,62 @@
 
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e7.css') }}">{% endblock %}
 
-{% block lecons %}
-    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</span>
-    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</span>
-{% endblock %}
+    {% block lecons %}
+        <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+            asperiores aspernatur
+            cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+            nobis
+            officia officiis quas, repellat saepe suscipit voluptatem!</span>
+            <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                asperiores aspernatur
+                cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+                nobis
+                officia officiis quas, repellat saepe suscipit voluptatem!</span>
+            {% endblock %}
 
 
-{% block elements %}
-    
-    <br>
-    <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="propCss">width:</span><span> 50px;</span>
-    </div>
-    <br>
-    <div class="draggable text-center" data-id="2" id="draggable2">
-      <span class="propCss">height:</span><span> 50px;</span>
-    </div>
-    <br>
-    <div class="draggable text-center" data-id="3" id="draggable3">
-     <span class="propCss">background-color: </span><span class="valueCss">red;</span>
-    </div>
-    <br>
-    <div class="draggable text-center" data-id="4" id="draggable4">
-     <span class="propCss">height:</span><span> 100%;</span>
-    </div>
-    <br>
-    <div class="draggable text-center" data-id="5" id="draggable5">
-    <span class="propCss">width:</span><span> 50%;</span>
-    </div>
-    <br>
-    <div class="draggable text-center" data-id="6" id="draggable6">
-        <span class="propCss">background-color: </span><span class="valueCss">green;</span>
-    </div>
-    <br>
-     <div class="draggable text-center" data-id="9" id="draggable9">
-        <span class="propCss">width:</span><span> 50%px;</span>
-    </div>
-   
+            {% block elements %}
 
-{% endblock %}
 
-{% block code_html %}
+                <br>
+                <div class="draggable text-center" data-id="3" id="draggable3">
+                 <span class="propCss">background-color: </span><span class="valueCss">red;</span>
+             </div>
+             <br>
+             <div class="draggable text-center" data-id="4" id="draggable4">
+         <span class="propCss">height:</span><span> 50%;</span>
+            </div>
+          <br>
+          <div class="draggable text-center" data-id="10" id="draggable10">
+            <span class="propCss">with:</span><span> 100%;</span>
+        </div>
+        <br>
+        <div class="draggable text-center" data-id="6" id="draggable6">
+            <span class="propCss">background-color: </span><span class="valueCss">green;</span>
+        </div>
+        <br>
+         <div class="draggable text-center" data-id="1" id="draggable1">
+                    <span class="propCss">width:</span><span> 200px;</span>
+          </div>
+        <br>
+        <div class="draggable text-center" data-id="9" id="draggable9">
+            <span class="propCss">width:</span><span> 50%px;</span>
+        </div>
+        <br>
+        <div class="draggable text-center" data-id="5" id="draggable5">
+            <span class="propCss">width:</span><span> 100%;</span>
+        </div>
+        <br>
+        <div class="draggable text-center" data-id="2" id="draggable2">
+              <span class="propCss">height:</span><span> 100px;</span>
+          </div>
+
+
+     
+
+ {% endblock %}
+
+ {% block code_html %}
 
     <span class="text-white">&lt;!DOCTYPE html&gt;</span>
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
@@ -80,7 +87,7 @@
     <div class="ml-5">
         <span class="balise">&lt;/div&gt;</span>
     </div>
-    
+
     <div class="ml-5">
         <span class="balise">&lt;div</span>
         <span class="baliseCss">id=</span>
@@ -99,7 +106,7 @@
     <div class="ml-5">
         <span class="balise">&lt;/div&gt;</span>
     </div>
-    
+
     <div>
         <span class="balise">&lt;/body&gt;</span>
     </div>
@@ -113,68 +120,68 @@
 
     <div class="text-white">
 
-            <span class="baliseCss ml-5">#red</span>{
-                <div class="hide">
-                width: 50px;
-                 </div>
-                <div class="droppable" id="droppable1"></div>
-                <div class="solution1 hide ml-5"><span class="propCss">width:</span><span class="valueCss"> 50px;</span>
-                </div>
-             
-           
-                <div class="hide">
-                height: 50px;
-                 </div>
-                <div class="droppable" id="droppable2"></div>
-                <div class="solution1 hide ml-5"><span class="propCss">height:</span><span class="valueCss"> 50px;</span>
-                </div>
+        <span class="baliseCss ml-5">#red</span>{
+        <div class="hide">
+            width: 50px;
+        </div>
+        <div class="droppable" id="droppable1"></div>
+        <div class="solution1 hide ml-5"><span class="propCss">width:</span><span class="valueCss"> 50px;</span>
+        </div>
 
-           
-                <div class="hide">
-                background-color: red;
-                 </div>
-                <div class="droppable" id="droppable3"></div>
-                <div class="solution1 hide ml-5"><span class="propCss">background-color: red;</span>
-                </div>
-            
-}<br>       
-             <span class="baliseCss ml-5">#green</span>{
-                <div class="hide">
-               height: 100%;
-                 </div>
-                <div class="droppable" id="droppable4"></div>
-                <div class="solution2 hide ml-5"><span class="propCss">height: 100%;</span>
-                </div>
-            
 
-                <div class="hide">
-                width: 50%;
-                 </div>
-                <div class="droppable" id="droppable5"></div>
-                <div class="solution2 hide ml-5"><span class="propCss">width: 50%;</span>
-                </div>
-  
-                <div class="hide">
-                background-color: red;
-                 </div>
-                <div class="droppable" id="droppable6"></div>
-                <div class="solution2 hide ml-5"><span class="propCss">background-color:</span><span class="valueCss"> red;</span>
-                </div>
+        <div class="hide">
+            height: 50px;
+        </div>
+        <div class="droppable" id="droppable2"></div>
+        <div class="solution1 hide ml-5"><span class="propCss">height:</span><span class="valueCss"> 50px;</span>
+        </div>
+
+
+        <div class="hide">
+            background-color: red;
+        </div>
+        <div class="droppable" id="droppable3"></div>
+        <div class="solution1 hide ml-5"><span class="propCss">background-color:</span><span class="valueCss"> red;</span>
+        </div>
+
+    }<br>       
+    <span class="baliseCss ml-5">#green</span>{
+    <div class="hide">
+       height: 100%;
+   </div>
+   <div class="droppable" id="droppable4"></div>
+   <div class="solution2 hide ml-5"><span class="propCss">height:</span><span class="valueCss"> 100%;</span>
+   </div>
+
+
+   <div class="hide">
+    width: 50%;
+</div>
+<div class="droppable" id="droppable5"></div>
+<div class="solution2 hide ml-5"><span class="propCss">width: </span><span class="valueCss">50%;</span>
+</div>
+
+<div class="hide">
+    background-color: green;
+</div>
+<div class="droppable" id="droppable6"></div>
+<div class="solution2 hide ml-5"><span class="propCss">background-color:</span><span class="valueCss"> green;</span>
+</div>
 } 
 
 <br>
-        <span class="baliseCss ml-5">#container</span>{
-        <div class="ml-5">
-            <span class="propCss">width:</span><span class="valueCss">200px;</span>
-            <br>
-            <span class="propCss">height:</span><span class="valueCss">200px;</span><br>
-            <span class="propCss">border:</span><span class="valueCss">2px</span>
-            <span class="propCss"> solid black;</span>
-        </div>
-    }
-        
+<span class="baliseCss ml-5">#container</span>{
+<div class="ml-5">
+    <span class="propCss">width:</span><span class="valueCss">200px;</span>
+    <br>
+    <span class="propCss">height:</span><span class="valueCss">200px;</span><br>
+    <span class="propCss">border:</span><span class="valueCss">2px</span>
+    <span class="propCss"> solid black;</span>
+</div>
+}
 
-    </div>
+
+</div>
 
 {% endblock %}
 
@@ -183,16 +190,16 @@
 {% endblock %}
 
 {% block apercu %}
-   
+
     <div id="red">
-    
+
     </div>
     <div id="container">
        <div id="green">
        </div>
-    </div>
+   </div>
 
-    <button id="next" hidden>Niveau suivant -></button>
+   <button id="next" hidden>Niveau suivant -></button>
 {% endblock %}
 
 

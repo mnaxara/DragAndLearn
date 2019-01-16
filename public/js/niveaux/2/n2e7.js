@@ -46,19 +46,19 @@ $( function() {
                   TODO Modifier la classe, selecteur ou id affecté
                 */
                 if ($(this).attr('id') === 'droppable1'){
-                    $('#red').css('width','50px');
+                    $('#red').css('width','200px');
                 }
                 if ($(this).attr('id') === 'droppable2'){
-                    $('#red').css('height', '50px');
+                    $('#red').css('height', '100px');
                 }
                 if ($(this).attr('id') === 'droppable3'){
                     $('#red').css('background-color', 'red');
                 } 
                 if ($(this).attr('id') === 'droppable4'){
-                    $('#green').css('height', '100%');
+                    $('#green').css('height', '50%');
                 }
                 if ($(this).attr('id') === 'droppable5'){
-                    $('#green').css('width', '50%');
+                    $('#green').css('width', '100%');
                 } 
                 if ($(this).attr('id') === 'droppable6'){
                     $('#green').css('background-color', 'green');
