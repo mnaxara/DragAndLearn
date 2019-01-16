@@ -90,24 +90,12 @@ $( function() {
                 $('.solution2').show('explode', 1000);
                 finishAudio.play()
             }, 1000);
-            setTimeout(()=>{
-                $('.solution3').show('explode', 1000);
-                finishAudio.play()
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution4').show('explode', 1000);
-                finishAudio.play()
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution5').show('explode', 1000);
-                finishAudio.play()
-            }, 1000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 endLevel.play();
-            }, 10000);
+            }, 3000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative
