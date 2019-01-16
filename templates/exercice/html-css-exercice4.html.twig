@@ -1,6 +1,6 @@
 {% extends 'exercice/css.html.twig' %}
 
-{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e3.css') }}">{% endblock %}
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e4.css') }}">{% endblock %}
 
 {% block lecons %}
     <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
@@ -14,58 +14,63 @@
         nobis
         officia officiis quas, repellat saepe suscipit voluptatem!</p>
         {# TODO lien documentation vers proprieter existante voir avec Rémi
-                -faire mettre le titre en couleur 
-                -faire modif le style de la list 
-                -faire souligner un element de la liste
-         #}
+                -specifier que la typo choisie doit etre une de base de windows
+                -mettre fontsize sur titre
+                -mettre fontweight sur p
+                -mettre font family sur span
+         #} 
 {% endblock %}
 
 
-{% block elements %}    
+{% block elements %} 
 
     {# false #}
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span>colore : <input id ="input1" type="text" placeholder="Valeur"></span>
+        <span>fonte-size : <input id ="input1" type="text" placeholder="Valeur"></span>
+    </div>   
+
+    {# true #}
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span>font-size : <input id ="input2" type="text" placeholder="Valeur"></span>
     </div>
 
     {# false #}
-    <div class="draggable text-center" data-id="2" id="draggable2">
-        <span>coloration : <input id ="input2" type="text" placeholder="Valeur"></span>
-    </div>
-
-    {# true #}
     <div class="draggable text-center" data-id="3" id="draggable3">
-        <span>color : <input id ="input3" type="text" placeholder="Valeur"></span>
+        <span>fontsize : <input id ="input3" type="text" placeholder="Valeur"></span>
+    </div>
+
+    {# false #}
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span>font-wieght : <input id ="input4" type="text" placeholder="Valeur"></span>
     </div>
 
     {# true #}
-    <div class="draggable text-center" data-id="4" id="draggable4">
-        <span>text-decoration : <input id ="input4" type="text" placeholder="Valeur"></span>
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span>font-weight : <input id ="input5" type="text" placeholder="Valeur"></span>
     </div>
 
-    {#false #}
-    <div class="draggable text-center" data-id="5" id="draggable5">
-        <span>texte-decoration : <input id ="input5" type="text" placeholder="Valeur"></span>
-    </div>
+    
 
     {# false #}
     <div class="draggable text-center" data-id="6" id="draggable6">
-        <span>text-deco : <input id ="input6" type="text" placeholder="Valeur"></span>
+        <span>fonteweight : <input id ="input6" type="text" placeholder="Valeur"></span>
     </div>
     
+    
+
     {# false #}
     <div class="draggable text-center" data-id="7" id="draggable7">
-        <span>list : <input id ="input7" type="text" placeholder="Valeur"></span>
+        <span>fonte-family : <input id ="input7" type="text" placeholder="Valeur"></span>
     </div>
 
     {# false #}
     <div class="draggable text-center" data-id="8" id="draggable8">
-        <span>liste-style : <input id ="input8" type="text" placeholder="Valeur"></span>
+        <span>font-famille : <input id ="input8" type="text" placeholder="Valeur"></span>
     </div>
 
     {# true #}
     <div class="draggable text-center" data-id="9" id="draggable9">
-        <span>list-style : <input id ="input9" type="text" placeholder="Valeur"></span>
+        <span>font-family : <input id ="input9" type="text" placeholder="Valeur"></span>
     </div>
 
 {% endblock %}
@@ -82,7 +87,7 @@
     </div>
     <div class="ml-5 text-white">
         <span class="balise">&lt;title&gt;</span>
-        Exercice n°3
+        Exercice n°4
         <span class="balise">&lt;/title&gt;</span>
     </div>
     <div>
@@ -93,51 +98,34 @@
     </div>
     {# --------------------------------------------------------------- #}
     <div class="d-flex align-items-center ml-5 text-white" id="blockA">
-        <span class="balise">&lt;h3&nbsp;</span>
-        <span class="baliseCss" >class=<span class="baliseTxt">"title"</span></span>
-        
-        <span class="balise">&gt;</span>Ma liste de course
-        <span class="balise">&lt;/h3&gt;</span>
-    </div>
-
-    <div class="ml-5">
-        <span class="balise">&lt;ul <span class="baliseCss">class=<span class="baliseTxt">"list"</span></span> &gt;</span>
-    </div>
-
-    <div class="ml-6 text-white">
-        <span class="balise">&lt;li&gt;</span>
-        <span>lait</span>
-        <span class="balise">&lt;/li&gt;</span>
-    </div>
-
-    <div class="ml-6 text-white">
-        <span class="balise">&lt;li&gt;</span>
-        <span>Farine</span>
-        <span class="balise">&lt;/li&gt;</span>
-    </div>
-
-    <div class="d-flex align-items-center ml-6 text-white" id="blockA">
-        <span class="balise">&lt;li &nbsp;</span>
-        <span class="baliseCss">id=<span class="baliseTxt">"t-decoration"</span></span>        
+        <span class="balise">&lt;h2&nbsp;</span>
+        <span class="baliseCss" >class=<span class="baliseTxt">"title"</span></span>        
         <span class="balise">&gt;</span>
-        <span>Yahourt</span>
-        <span class="balise">&lt;/li&gt;</span>
-    </div>
-
-    <div class="ml-6 text-white">
-        <span class="balise">&lt;li&gt;</span>
-        <span>Bouteille d'eau</span>
-        <span class="balise">&lt;/li&gt;</span>
+        <span class="text-white">Mon super titre</span>
+        <span class="balise">&lt;/h2&gt;</span>
     </div>
 
     <div class="ml-5">
-        <span class="balise">&lt;/ul&gt;</span>
+        <span class="balise">&lt;p <span class="baliseCss">id=<span class="baliseTxt">"paragraphe"</span></span> &gt;</span>
+        <p class="text-white paragraphe">Ceci est un super paragraphe ,lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nihil a totam ullam ab ipsam odio aliquam placeat quibusdam voluptatibus quia similique veritatis deleniti, in, omnis harum corporis optio quae.</p>
+        <span class="balise">&lt;/p&gt;</span>
     </div>
+
+    <div class="ml-5">
+        <span class="balise">&lt;span
+        <span class="baliseCss" >class=<span class="baliseTxt">"span"</span></span> 
+        <span class="balise">&gt;</span>
+        <span class="text-white">Span de haute qualité</span>
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    
 
     {# -------------------------------------------------- #}
     <div>
         <span class="balise">&lt;/body&gt;</span>
     </div>
+
     <div>
         <span class="balise">&lt;/html&gt;</span>
     </div>
@@ -148,25 +136,25 @@
 
 <div class="text-white">
     <span class="baliseCss">.title</span>{
-    <div class="droppable ml-4" id="droppable3"></div>
+    <div class="droppable ml-4" id="droppable2"></div>
     <div class="solution1 hide ml-4">
-        <span class="propCss">color : <span class="valueCss" id="solInput1" ></span> ;</span>        
+        <span class="propCss">font-size : <span class="valueCss" id="solInput1" ></span> ;</span>        
     </div>
     <span>}</span>    
 
     <br><br>
-    <span class="baliseCss">#t-decoration</span>{
-    <div class="droppable ml-4" id="droppable4"></div>
+    <span class="baliseCss">#paragraphe</span>{
+    <div class="droppable ml-4" id="droppable5"></div>
     <div class="solution2 hide ml-4">
-        <span class="propCss">text-decoration : <span class="valueCss" id="solInput2" ></span> ;</span>        
+        <span class="propCss">font-weight : <span class="valueCss" id="solInput2" ></span> ;</span>       
     </div>
     <span>}</span>
 
     <br><br>
-    <span class="baliseCss">.list</span>{
+    <span class="baliseCss">.span</span>{
     <div class="droppable ml-4" id="droppable9"></div>
     <div class="solution3 hide ml-4">
-         <span class="propCss">list-style : <span class="valueCss" id="solInput3" ></span> ;</span>        
+         <span class="propCss">font-family : <span class="valueCss" id="solInput3" ></span> ;</span>        
     </div>
     <span>}</span>
 </div>
@@ -188,16 +176,12 @@
 {% endblock %}
 
 {% block apercu %}
-    <h3 class="title">Ma liste de course</h3>
-    <ul class="list">
-        <li>Lait</li>
-        <li>Farine</li>
-        <li id="t-decoration">Yahourt</li>
-        <li>Bouteille d'eau</li>
-    </ul>
+    <h2 class="title">Mon super titre</h2><br>
+    <p id="paragraphe">Ceci est un super paragraphe ,lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nihil a totam ullam ab ipsam odio aliquam placeat quibusdam voluptatibus quia similique veritatis deleniti, in, omnis harum corporis optio quae.</p><br>
+    <span class="span">Span de haute qualité.</span>
 {% endblock %}
 
 
 {% block javascriptsExt %}
-    <script src={{ asset('js/niveaux/2/n2e3.js')}}></script>
+    <script src={{ asset('js/niveaux/2/n2e4.js')}}></script>
 {% endblock %}

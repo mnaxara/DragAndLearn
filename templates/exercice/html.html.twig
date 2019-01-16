@@ -22,6 +22,14 @@
 {% endblock %}
 
 {% block body %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <main>
     <div class="container-fluid">
         <div class="row">
@@ -84,10 +92,14 @@
                                     <button class="btn p-4" id="next">Exercice suivant -></button>
                                 </form>
                             </div>
+                            <div class="fb-share-button" data-href="//TODO mettre le bon lien " data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
                         </div>
+
                         <div class="row" id="trophy">
                             {# TODO Inserer les succes globaux ici#}
-                            {% block trophy %}{% endblock %}
+                            {% block trophy %}
+                                
+                            {% endblock %}
                         </div>
                     </div>
                 </div>
@@ -118,13 +130,24 @@
     {#TODO footer toggle#}
 {% endblock %}
 
+
 {% block javascripts %}
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     {% block javascriptsExt %}
     {% endblock %}
     {#TODO Lancé le timer#}
     <script>
         $('#start').click(() => {
             $('#morceaux-tab').removeClass('disabled');
-        })
+        });
     </script>
 {% endblock %}
