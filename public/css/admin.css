@@ -19,10 +19,24 @@
 #result1 {
     margin: 0 auto;
 }
-#result2 {
-    margin: 0 auto;
+#result2{
+    display: flex;
+}
+#result2_1 {
+    width: 50%;
+}
+#result2_2 {
     width: 50%;
 }
 
-tr:nth-child(even) {background: #FFF}
-tr:nth-child(odd) {background: #CCC}
+/*TABLE*/
+table{
+    width: 70%;
+    margin: 0 auto;
+}
+td{
+    padding: 2%;
+}
+.fa-edit{
+    cursor: pointer;
+}
