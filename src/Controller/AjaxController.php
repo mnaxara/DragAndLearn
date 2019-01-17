@@ -54,15 +54,11 @@ class AjaxController extends AbstractController
     {
 
         //je stocke le nom du fichier image
-        $filename = $user->getAvatar();
-
         //on remplace le nom du fichier par un objet de classe File
         //pour pouvoir générer le formulaire
-        if($user->getAvatar()){
 
-            $user->setAvatar(new File($this->getParameter('upload_directory') . $this->getParameter('user_image_directory') . '/' . $filename ));
-        }
-        //dd($user);
+        $entityManager = $this->getDoctrine()->getManager();
+
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
@@ -72,20 +68,18 @@ class AjaxController extends AbstractController
             $user = $form->getData();
 
             //je ne fais le traitement que si une image a été envoyée
-            if($user->getImage()){
-                //je récupère le fichier
-                $file = $user->getImage();
+//            if($user->getAvatar()){
+//                //je récupère le fichier
+//                $file = $user->getAvatar();
+//
+//                $filename = $fileuploader->upload($file, $this->getParameter('user_image_directory'), $filename);
+//            }
 
-                $filename = $fileuploader->upload($file, $this->getParameter('user_image_directory'), $filename);
-            }
-
-            $user->setAvatar($filename);
-
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
+
             $entityManager->flush();
 
-            $this->addFlash('success', 'Profil modifié');
+            return new Response('<div class="alert alert-success">Profil modifié</div>');
 
         }
 

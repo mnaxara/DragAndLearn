@@ -79,7 +79,9 @@
 
 {% block javascripts %}
     <script>
+
         $(function(){
+            //RESULT1
             $("#user").on('click', function(e){
                 e.preventDefault();
                 $.ajax({
@@ -96,6 +98,7 @@
 
             })
 
+            //RESULT2_1
             $(".main").keyup('#search', function(){
 
                 let search = ($('#search').val());
@@ -116,6 +119,7 @@
 
             })
 
+            //RESULT2_2
             $(".main").on('click', '.update', function(e){
                 e.preventDefault();
 
@@ -129,6 +133,29 @@
                     type:'get',
                     url: url,
                     dataType: 'html',
+                    success: function(data){
+                        $('#result2_2').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
+
+            $(".main").on('click', '.btn_update', function(e){
+                e.preventDefault();
+
+                let url = "{{ path('ajaxUpdateUser', {id: '0'}) }}";
+                url = url.replace('0', $(this).attr('data-id'));
+
+                let datas = $('#form_update').serialize();
+                console.log( datas );
+
+                $.ajax({
+                    type:'post',
+                    url: url,
+                    data: datas,
                     success: function(data){
                         $('#result2_2').html(data);
                     },
