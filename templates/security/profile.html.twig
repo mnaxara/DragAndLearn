@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/profile/profile.css') }}">{% endblock %}
+
+
+
+{% block body %}
+<h2 class="text-center">Mon profil</h2>
+
+
+<div class="container-fluid">
+
+    {# grosse row principale #}
+    <div class="row" id="bigRow">
+
+        {# colonne trophés #}
+        <div class="col-12 col-md-8" id="gain">
+
+            {# user #}
+            <div class="row" id="userTitle">
+                <h3>
+                {{ user.avatar }}
+                {{ user.username }}
+                </h3>
+            </div>
+
+            {# trophées #}
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+            </div>
+
+            <div class="row my-5">
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+                <div class="col-md-2">
+                    <div class="trophy"></div>
+                </div>
+            </div>
+
+        </div>
+
+        {# colonne formulaire modif #}
+        <div class="col-12 col-md-4">
+
+            <div class="row" id="modifTitle">
+                <h3 class="m-auto">Modifier son profil</h3>
+            </div>
+
+            <form method="" action="">
+
+                <div class="form-group w-50 m-auto">
+                    <label>Mot de passe actuel</label>
+                    <input type="password" name="mdpActu" class="form-control">
+                </div>
+
+                <div class="form-group w-50 m-auto">
+                    <label>Nouveau mot de passe</label>
+                    <input type="password" name="newMdp" class="form-control">
+                </div>
+
+                <div class="form-group w-50 m-auto">
+                    <label>Répéter mot de passe</label>
+                    <input type="password" name="newMdp2" class="form-control">
+                </div>
+
+                <div class="text-center my-4">
+                   <button class="btn btn-lg btn-primary">Modifier</button>
+                </div>
+
+
+            </form>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+

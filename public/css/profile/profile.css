@@ -1,0 +1,30 @@
+body{
+    background-image: url('/uploads/image/background_general.png');
+    background-size: cover;
+}
+
+.trophy{
+    width: 110px;
+    height: 110px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin: auto;
+    background-color: rgba(186, 186, 195, 0.7);
+}
+
+#bigRow{
+    margin-top: 12%;
+}
+
+#userTitle{
+    margin-left: 15%;
+    margin-bottom: 8%;
+}
+
+#gain{
+    border-right: 1px solid #6c757d;
+}
+
+#modifTitle{
+    margin-bottom: 20%;
+}
