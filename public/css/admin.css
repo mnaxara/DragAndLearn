@@ -23,3 +23,6 @@
     margin: 0 auto;
     width: 50%;
 }
+
+tr:nth-child(even) {background: #FFF}
+tr:nth-child(odd) {background: #CCC}
