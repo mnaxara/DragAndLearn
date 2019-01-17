@@ -35,4 +35,14 @@ class HomeController extends AbstractController
         return $this->render('home/levelChoice.html.twig', ['last_exercice' => $lastSave]);
     }
 
+        /**
+     * @Route("/classement", name="classement")
+     * 
+     */
+    public function classement()
+    {
+        return $this->render('home/classement.html.twig');
+    }
+
+
 }
