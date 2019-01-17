@@ -19,8 +19,9 @@
             {# user #}
             <div class="row" id="userTitle">
                 <h3>
-                {{ user.avatar }}
-                {{ user.username }}
+                 <img src="{{ asset('uploads/image/avatar/' ~ user.avatar) }}" class="w-25">
+                    <span id="userName">{{ user.username }}</span>
+                    <i class="fas fa-pen"></i>
                 </h3>
             </div>
 
@@ -67,6 +68,10 @@
                 </div>
             </div>
 
+            <h3 id="perf">Performances</h3>
+
+
+
         </div>
 
         {# colonne formulaire modif #}
@@ -94,11 +99,26 @@
                 </div>
 
                 <div class="text-center my-4">
-                   <button class="btn btn-lg btn-primary">Modifier</button>
+                   <button class="balise border border-balise btn btn-dark" type="submit">Modifier</button>
                 </div>
 
 
             </form>
+            <hr>
+
+
+            <div id="theme" class="text-center">
+                <h3>Thème couleur</h3>
+
+                <div class="row justify-content-center mx-3">
+                    {% for choice in theme %}
+                        <div class="d-flex flex-column mx-3">
+                          <div id="choice" class="bg-{{ choice.color }} my-3"></div>
+                          <input type="radio" class="m-auto">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
 
 
 

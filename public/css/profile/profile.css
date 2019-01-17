@@ -13,12 +13,13 @@ body{
 }
 
 #bigRow{
-    margin-top: 12%;
+    margin-top: 1%;
+    margin-bottom: 5%;
 }
 
 #userTitle{
-    margin-left: 15%;
-    margin-bottom: 8%;
+    margin-left: 2%;
+    margin-bottom: 6%;
 }
 
 #gain{
@@ -26,5 +27,34 @@ body{
 }
 
 #modifTitle{
-    margin-bottom: 20%;
+    margin-top: 10%;
+    margin-bottom: 17%;
+}
+
+.balise {
+    color: #ff7242;
+}
+
+#theme{
+    margin-top: 10%;
+}
+
+#choice{
+    width: 70px;
+    height: 70px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+#perf{
+    margin-top: 8%;
+    margin-left: 16%;
+    margin-bottom: 6%;
+}
+
+#userName{
+    font-size: 50px;
+    padding-left: 30px;
+    padding-right: 20px;
 }

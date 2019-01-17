@@ -29,12 +29,11 @@ class UserHasExercicesRepository extends ServiceEntityRepository
 
         return $this->createQueryBuilder('u')
             ->innerJoin('u.exercices', 'e')
-            ->andWhere('u.users = :level')
-            ->setParameter('level', $levelNumber)
-            ->andWhere('e.level = :user')
+            ->andWhere('u.users = :user')
             ->setParameter('user', $user)
+            ->andWhere('e.level = :level')
+            ->setParameter('level', $level)
             ->andWhere('u.exercices = :exercice')
-            ->andWhere('u.finish = true')
             ->setParameter('exercice', $exercice)
             ->getQuery()
             ->getOneOrNullResult();
@@ -50,8 +49,10 @@ class UserHasExercicesRepository extends ServiceEntityRepository
                 ->innerJoin('u.exercices', 'e')
                 ->select('MAX(e.number)')
                 ->andWhere('e.level = :level')
+                ->andWhere('u.users = :user')
                 ->andWhere('u.finish = true')
                 ->setParameter('level', $level)
+                ->setParameter('user', $user)
                 ->getQuery()
                 ->getOneOrNullResult();
 

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/admin.css') }}">{% endblock %}
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}AdminController!{% endblock %}
 
 {# Header modifié car pas besoin de la navbar pour l'admin #}
 {% block header %}
@@ -32,9 +32,20 @@
                            aria-expanded="false">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                            <a class="dropdown-item" href="#">Profil</a>
-                            <a class="dropdown-item" href="#">Classement</a>
-                            <a class="dropdown-item" href="#">Deconnexion</a>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
+                                <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
+                                <a class="dropdown-item" href="#">Classement</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
+                            {% endif %}
+
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="dropdown-item" href="{{ path('logout') }}">Deconnexion</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{{ path('app_login') }}">connexion</a>
+                            {% endif %}
                         </div>
                     </li>
                 </ul>

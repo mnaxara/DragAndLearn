@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Theme;
 use App\Entity\User;
+use App\Entity\UserHasExercices;
+use App\Entity\Exercice;
 use App\Form\RegistrationFormType;
 use App\Security\LoginAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,6 +29,10 @@ class RegistrationController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Theme::class);
         $defaultTheme = $repository->findOneByName('defaut');
 
+        $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
+
+        $exercice1 = $this->getDoctrine()->getRepository(Exercice::class)->findOneBySlug('html-exercice1');
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setTheme($defaultTheme);
@@ -41,6 +47,22 @@ class RegistrationController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
+
+            // Creation 1ere sauvegarde
+
+            $save = new UserHasExercices();
+                $save->setUsers($user);
+                $save->setExercices($exercice1);
+                $save->setTime(new \DateTime('00:00:00'));
+                $save->setFinish(false);
+                $value = 10;
+                $save->setValue($value);
+
+                $entityManager->persist($save);
+               
+
+            // Flush et enregistrement
+
             $entityManager->flush();
 
             // do anything else you need here, like send an email

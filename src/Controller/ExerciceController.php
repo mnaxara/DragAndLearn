@@ -39,6 +39,10 @@ class ExerciceController extends AbstractController
         $finishId           = $request->request->get('exFinish');
 
         $user = $this->getUser();
+
+        $timer = $this->getDoctrine()->getRepository(UserHasExercices::class)->getSave($user, $exercice);
+        $timer = $timer->getTime();
+        $timer = $timer->format('H:i:s');
         // Si le token est bon
 
         if ($this->isCsrfTokenValid('next-token', $submittedToken)) {
@@ -53,7 +57,6 @@ class ExerciceController extends AbstractController
                 $save = new UserHasExercices();
                 $save->setUsers($user);
                 $save->setExercices($finishExercice);
-                $save->setTime(new \DateTime(date('Y-m-d H:i:s')));
                 $save->setFinish(true);
                 $number = $finishExercice->getNumber();
                 $level = $finishExercice->getLevel()->getNumber();
@@ -72,7 +75,7 @@ class ExerciceController extends AbstractController
 
         $this->denyAccessUnlessGranted('view', $exercice, 'Veuillez terminer les exercices précédents, petit tricheur !');
 
-        return $this->render('exercice/'.$page.'.html.twig', ['exercice' => $exercice]);
+        return $this->render('exercice/'.$page.'.html.twig', ['exercice' => $exercice, 'timer'=>$timer]);
     }
 
 

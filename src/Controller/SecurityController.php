@@ -49,7 +49,10 @@ class SecurityController extends AbstractController
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
         $lastSave = $repositoryU->getLastSave($user);
 
+
+
         return $this->render('security/profile.html.twig', ['user' => $user, 'theme' => $theme, 'last_exercice' => $lastSave]);
+
     }
 
     /**
@@ -91,7 +94,7 @@ class SecurityController extends AbstractController
                 ->setFrom('g.ponty@dev-web.io')
                 ->setTo($user->getEmail())
                 ->setBody(
-                    "blablabla voici le token pour reseter votre mot de passe : " . $url,
+                    "blablabla voici le token pour reseter votre mot de passe : <a href='". $url ."'>Cliquez ici !</a>",
                     'text/html'
                 );
 
@@ -119,7 +122,7 @@ class SecurityController extends AbstractController
  
             if ($user === null) {
                 $this->addFlash('danger', 'Token Inconnu');
-                return $this->redirectToRoute('homepage');
+                return $this->redirectToRoute('app_login');
             }
  
             $user->setResetToken(null);
@@ -128,7 +131,7 @@ class SecurityController extends AbstractController
  
             $this->addFlash('notice', 'Mot de passe mis à jour');
  
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('app_login');
         }else {
  
             return $this->render('security/reset_password.html.twig', ['token' => $token]);
