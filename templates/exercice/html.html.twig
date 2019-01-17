@@ -32,6 +32,12 @@
                         {{ exercice.instruction }}
                     </div>
                     <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
+    {# BOUTON TIMER A SUPPRIMER  #}
+                    <form name="chronoForm">
+  <input type="text" name="chronotime" id="chronotime" value="0:00:00"/>
+    <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
+    <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
+</form>
                 </div>
                 <div class="row">
                     <div class="col-4 ml-1 py-2">
@@ -130,13 +136,90 @@
 
 
 {% block javascripts %}
+    <script>
 
-    {% block javascriptsExt %}
-    {% endblock %}
-    {#TODO Lancé le timer#}
+    let startValue = false;
+
+    $('#start').click(() =>{
+        if(startValue === false){
+            chronoStart();
+            startValue = true;
+        }
+    })
+
+    $('#tips').click(() =>{
+        console.log($('#chronotime').val())
+    })
+
+
+
+var startTime = 0
+var start = 0
+var end = 0
+var diff = 0
+var timerID = 0
+
+function chrono(){
+    end = new Date()
+    diff = end - start
+    diff = new Date(diff)
+    var sec = diff.getSeconds()
+    var min = diff.getMinutes()
+    var hr = diff.getHours()-1
+    if (min < 10){
+        min = "0" + min
+    }
+    if (sec < 10){
+        sec = "0" + sec
+    }
+   
+    document.getElementById("chronotime").value = hr + ":" + min + ":" + sec 
+    timerID = setTimeout("chrono()", 10)
+}
+
+function chronoStart(){
+    start = new Date()
+    chrono()
+}
+
+function chronoStop(){
+    clearTimeout(timerID)
+}
+
+// Observe le passage de la div de victoire en show et coupe le timer
+    var observer = new MutationObserver(() =>{
+         chronoStop();
+         let finalTime = $('#chronotime').val();
+
+          $.ajax({
+                    type: 'POST',
+                    url: '{{ path("auteurIndex") }}',
+                    data: 'idUser='+id,
+                    timeout: 8000,
+                    dataType: 'html',
+                    success : function(data){
+                        $('#results').html(data)
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                });
+    });
+
+    observer.observe(successEnd, {attributes : true});
+
+//Fin observation
+
+
+    </script>
+
     <script>
         $('#start').click(() => {
             $('#morceaux-tab').removeClass('disabled');
         });
     </script>
+
+    {% block javascriptsExt %}
+    {% endblock %}
+
 {% endblock %}

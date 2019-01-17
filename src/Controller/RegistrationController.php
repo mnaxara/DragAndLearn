@@ -25,7 +25,7 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         $repository = $this->getDoctrine()->getRepository(Theme::class);
-        $defaultTheme = $repository->find(1);
+        $defaultTheme = $repository->findOneByName('defaut');
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
@@ -37,6 +37,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            $user->setRoles(['ROLE_USER']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
