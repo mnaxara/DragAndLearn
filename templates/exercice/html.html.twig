@@ -23,7 +23,7 @@
 
 {% block body %}
 <form name="chronoForm">
-  <input class="text-danger" type="text" name="chronotime" id="chronotime" value="0:00:00"/>
+  <input class="text-danger" type="text" name="chronotime" id="chronotime" value='00:00:00'>
     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
     <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
 </form>
@@ -177,14 +177,17 @@
 
 
 var startTime = 0
-var start = '{{timer}}'
+var start = 0
 var end = 0
 var diff = 0
 var timerID = 0
+var old_time = parseInt('{{timer}}');
+
+console.log(old_time);
 
 function chrono(){
-    end = new Date()
-    diff = end - start
+    end = new Date() 
+    diff = (end - start) + old_time
     diff = new Date(diff)
     var sec = diff.getSeconds()
     var min = diff.getMinutes()

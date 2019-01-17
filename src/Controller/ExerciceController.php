@@ -41,8 +41,20 @@ class ExerciceController extends AbstractController
         $user = $this->getUser();
 
         $timer = $this->getDoctrine()->getRepository(UserHasExercices::class)->getSave($user, $exercice);
-        $timer = $timer->getTime();
-        $timer = $timer->format('H:i:s');
+        if($timer !== null){
+            $timer = $timer->getTime();
+            $timer = $timer->format('H:i:s');
+            $explode = explode(':', $timer);
+            $heureToSec = $explode[0] * 3600;
+            $minToSec = $explode[1] * 60;
+            $sec = $explode[2];
+
+            $millsecTotale = ($heureToSec+$minToSec+$sec)*1000;
+            $timer = intval($millsecTotale);
+    
+
+        }
+
         // Si le token est bon
 
         if ($this->isCsrfTokenValid('next-token', $submittedToken)) {
