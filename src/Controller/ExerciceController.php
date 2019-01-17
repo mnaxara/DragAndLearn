@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Exercice;
+use App\Entity\Trophy;
 use App\Entity\UserHasExercices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -65,6 +66,19 @@ class ExerciceController extends AbstractController
                 // On save dans la base
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($save);
+
+                if($number === 9 && $level === 1){
+                    $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle('Niveau 1');
+                    $user->addTrophy($trophy);
+                    $entityManager->persist($user);
+                }
+
+                if($number === 9 && $level === 2){
+                    $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle('Niveau 2');
+                    $user->addTrophy($trophy);
+                    $entityManager->persist($user);
+                }
+
                 $entityManager->flush();
 
             }

@@ -82,27 +82,40 @@
                             <div class="col-12 d-flex align-items-center flex-column mt-5">
                                 <p>Félicitations !</p>
                                 {% set next = exercice.number+2 %}
+                                {% if next >= 10 %}
+                                    {% set nextLevel = true %}
+                                {% endif %}
+                                {% if nextLevel == true %}
+                                    <form action="{{ path('exercice', {slug : 'html-css-exercice1'}) }}"
+                                          method="post">
+                                        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
+                                        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
+                                        <button class="btn p-4" id="next">Exercice suivant -></button>
+                                    </form>
+                                {% else %}
                                 <form action="{{ path('exercice', {slug : 'html-exercice'~next}) }}"
                                       method="post">
                                     <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
                                     <input type="hidden" name='exFinish' value="{{ exercice.id }}">
                                     <button class="btn p-4" id="next">Exercice suivant -></button>
                                 </form>
+                                {% endif %}
                             </div>
                             
                                 
                         </div>
 
                         <div class="row" id="trophy">
-                            <div class="col-12 col-md-12">
-                                
+                            <div class="col-12 col-md-12 d-flex flex-column align-items-center">
+                                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.google.fr%2F&layout=button&size=large&mobile_iframe=true&width=89&height=28&appId" width="89" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                                {# TODO Inserer les succes globaux ici#}
+                                {% block trophy %}
+
+
+                                {% endblock %}
                             </div>
                             
-                            {# TODO Inserer les succes globaux ici#}
-                            {% block trophy %}
 
-
-                            {% endblock %}
                         </div>
                     </div>
                 </div>

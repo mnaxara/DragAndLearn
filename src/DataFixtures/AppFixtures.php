@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Exercice;
 use App\Entity\Level;
 use App\Entity\Theme;
+use App\Entity\Trophy;
 use App\Entity\User;
 use App\Entity\UserHasExercices;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -22,6 +23,33 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+
+        $trophyTab = [];
+
+
+            $trophy = new Trophy();
+            $trophy->setLibelle('Niveau 1');
+            $trophy->setIcone('trophy_one.png');
+            $trophy->setHidden(false);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
+
+            $trophy = new Trophy();
+            $trophy->setLibelle('Niveau 2');
+            $trophy->setIcone('trophy_two.png');
+            $trophy->setHidden(false);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
+
+            $trophy = new Trophy();
+            $trophy->setLibelle('F12');
+            $trophy->setIcone('trophy_three.png');
+            $trophy->setHidden(true);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
+
+
+
         $name = ['Defaut', 'Vert', 'Bleu', 'Rouge'];
         $color= ['dark', 'success', 'primary', 'alert'];
 
