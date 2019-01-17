@@ -22,6 +22,11 @@
 {% endblock %}
 
 {% block body %}
+<form name="chronoForm">
+  <input class="text-danger" type="text" name="chronotime" id="chronotime" value="0:00:00"/>
+    <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
+    <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
+</form>
 <main>
     <div class="container-fluid">
         <div class="row">
@@ -32,12 +37,6 @@
                         {{ exercice.instruction }}
                     </div>
                     <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
-    {# BOUTON TIMER A SUPPRIMER  #}
-                    <form name="chronoForm">
-  <input type="text" name="chronotime" id="chronotime" value="0:00:00"/>
-    <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
-    <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
-</form>
                 </div>
                 <div class="row">
                     <div class="col-4 ml-1 py-2">
@@ -137,6 +136,30 @@
 
 {% block javascripts %}
     <script>
+        window.addEventListener("beforeunload", function (e) {
+
+            e.preventDefault();
+            let finalTime = $('#chronotime').val();
+            let ex_id = '{{exercice.id}}';
+            let user = '{{app.user.id}}';
+
+            $.ajax({
+                type: 'POST',
+                url: '{{ path("ajaxTimer") }}',
+                data: {'timer' : finalTime, 'ex': ex_id, 'user' : user},
+                timeout: 8000,
+                dataType: 'html',
+                success : function(data){
+                    console.log(data);
+
+                },
+                error : function(error){
+                    console.log(error)
+                }
+            });
+        });
+    </script>
+    <script>
 
     let startValue = false;
 
@@ -154,7 +177,7 @@
 
 
 var startTime = 0
-var start = 0
+var start = '{{timer}}'
 var end = 0
 var diff = 0
 var timerID = 0
@@ -186,28 +209,34 @@ function chronoStop(){
     clearTimeout(timerID)
 }
 
+function chronoContinue(){
+    start = new Date()-diff
+    start = new Date(start)
+    chrono()
+}
+
 // Observe le passage de la div de victoire en show et coupe le timer
-    var observer = new MutationObserver(() =>{
-         chronoStop();
-         let finalTime = $('#chronotime').val();
-         let ex_id = '{{exercice.id}}';
-         let user = '{{app.user.id}}';
+var observer = new MutationObserver(() =>{
+     chronoStop();
+     let finalTime = $('#chronotime').val();
+     let ex_id = '{{exercice.id}}';
+     let user = '{{app.user.id}}';
 
-          $.ajax({
-                    type: 'POST',
-                    url: '{{ path("ajaxTimer") }}',
-                    data: {'timer' : finalTime, 'ex': ex_id, 'user' : user},
-                    timeout: 8000,
-                    dataType: 'html',
-                    success : function(data){
-                        console.log(data);
+      $.ajax({
+                type: 'POST',
+                url: '{{ path("ajaxTimer") }}',
+                data: {'timer' : finalTime, 'ex': ex_id, 'user' : user},
+                timeout: 8000,
+                dataType: 'html',
+                success : function(data){
+                    console.log(data);
 
-                    },
-                    error : function(error){
-                        console.log(error)
-                    }
-                });
-    });
+                },
+                error : function(error){
+                    console.log(error)
+                }
+            });
+});
 
     observer.observe(successEnd, {attributes : true});
 

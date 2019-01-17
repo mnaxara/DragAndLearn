@@ -53,7 +53,6 @@ class ExerciceController extends AbstractController
                 $save = new UserHasExercices();
                 $save->setUsers($user);
                 $save->setExercices($finishExercice);
-                $save->setTime(new \DateTime(date('Y-m-d H:i:s')));
                 $save->setFinish(true);
                 $number = $finishExercice->getNumber();
                 $level = $finishExercice->getLevel()->getNumber();
