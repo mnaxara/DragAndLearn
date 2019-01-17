@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Level;
 use App\Entity\UserHasExercices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\User;
@@ -48,10 +49,32 @@ class SecurityController extends AbstractController
         //Recuperation de la save pour barre de progression
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
         $lastSave = $repositoryU->getLastSave($user);
+        $results = $repositoryU->getResults($user);
+
+        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
+        $nbLevel = $repositoryL->countLevel();
+
+        $exerciceByLevel = [];
+        for ($i = 1; $i <= $nbLevel; $i++){
+            foreach ($results as $result) {
+                if ($result['levelNumber'] == $i)
+                    $exerciceByLevel[$i][$result['exoNumber']+1] = $result;
+            }
+        }
 
 
 
-        return $this->render('security/profile.html.twig', ['user' => $user, 'theme' => $theme, 'last_exercice' => $lastSave]);
+
+
+
+
+
+
+
+
+
+
+        return $this->render('security/profile.html.twig', ['user' => $user, 'theme' => $theme, 'last_exercice' => $lastSave, 'exerciceByLevel' => $exerciceByLevel]);
 
     }
 

@@ -79,6 +79,37 @@ class UserHasExercicesRepository extends ServiceEntityRepository
         return $save;
     }
 
+    public function getResults(User $user)
+    {/*return $this->createQueryBuilder('u')
+            ->innerJoin('u.exercices', 'e')
+            ->addselect('u.time, e.number')
+            ->innerJoin('e.level', 'l')
+            ->addSelect('l.number')
+            ->andWhere('u.users = :user')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->getResult()
+            ;
+    */
+
+        //on récupère l'équivalent de l'objet de connexion à pdo que l'on utilisait
+        $connexion = $this->getEntityManager()->getConnection();
+        //on stocke la requête dans une variable
+
+        $sql = '
+            SELECT u.time, e.number as exoNumber, l.number as levelNumber
+            FROM exercice e INNER JOIN user_has_exercices u ON e.id = u.exercices_id 
+            INNER JOIN level l ON e.level_id = l.id 
+            WHERE u.users_id = :id 
+          ';
+        $select = $connexion->prepare($sql);
+        $select->bindValue(':id', $user->getId());
+        $select->execute();
+
+        //je renvoie un tableau de tableaux d'articles
+        return $select->fetchAll();
+
+    }
     // /**
     //  * @return UserHasExercices[] Returns an array of UserHasExercices objects
     //  */
