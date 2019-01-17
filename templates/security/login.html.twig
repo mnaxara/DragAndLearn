@@ -55,7 +55,7 @@
                         {{ form_row(registrationForm.plainPassword) }}
                         {{ form_row(registrationForm.email) }}
                             <div class="d-flex justify-content-around">
-                                <button class="border border-danger btn btn-dark">S'inscrire</button>
+                                <button class="border border-balise btn btn-dark">S'inscrire</button>
                                 {# a #}
                             </div>
                         {{ form_end(registrationForm) }}
@@ -65,16 +65,21 @@
             <div class="col-12 col-md-6 col-12 col-md-6 d-flex flex-column justify-content-between">
                 <div class="part_two">
                     <div class="">
-                        <p id="aupif"><span class="text-danger">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Reprehenderit laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores,
-                            commodi quis quae. Earum architecto, sapiente quae autem  dolor sit amet, consectetur adipisicing elit. Reprehenderit
-                            laboriosam, eaque hic numquam, voluptate veritatis soluta enim id assumenda, asperiores maiores, commodi quis quae. Earum
-                            architecto, sapiente quae autveniam.<span class="text-danger">&lt;/p&gt;</span>
+                        <p id="aupif"><span class="balise">&lt;p&gt;</span>Avec Drag & Learn, <strong>apprenez</strong> les <strong>langages</strong> de base du dévelloppement Web !
+                            Structurez vos pages grâce au <strong>HTML5</strong>, donnez leurs du style grâce au <strong>CSS3</strong> et faites profitez à vos utilisateurs
+                            d'experiences ludiques et pratiques grâce au <strong>JAVASCRIPT</strong>
+                            <br>
+                            Plusieurs niveaux de 10 exercices où il suffit de faire glisser le bon morceau de code, au bon endroit, pour afficher immediatement le fruit
+                            de votre travail.
+                            <br>
+                            Pour vous accompagner, une leçon sur chaque thème abordé par les exercices, des liens vers une documentation et même une solution animé en cas de coup dur !
+                            <br>
+                            <strong>Apprenez</strong> en vous amusant et partagez vos succés et meilleurs temps avec vos amis ! Essayez, le tutoriel ne necessite pas d'inscription !<span class="balise">&lt;/p&gt;</span>
                         </p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-around">
-                    <a href="{{ path('tutoriel') }}" class="border border-danger btn btn-dark">Essayer le tutoriel</a>
+                    <a href="{{ path('tutoriel') }}" class="border border-balise btn btn-dark">Essayer le tutoriel</a>
                 </div>
             </div>
         </div>
