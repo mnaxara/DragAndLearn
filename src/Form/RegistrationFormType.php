@@ -19,13 +19,13 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class, array('label' => '<Email>', 'label_attr' => ['class' => 'text-danger']))
-            ->add('username', TextType::class, array('label' => '<Pseudo>', 'label_attr' => ['class' => 'text-danger']))
+            ->add('email', EmailType::class, array('label' => '<Email>', 'label_attr' => ['class' => 'balise']))
+            ->add('username', TextType::class, array('label' => '<Pseudo>', 'label_attr' => ['class' => 'balise']))
             ->add('plainPassword', RepeatedType::class, [
                 'type'              => PasswordType::class,
                 'invalid_message'   => 'Password non confirmé',
-                'first_options'      => ['label' => '<Mot de passe>', 'label_attr' => ['class' => 'text-danger']],
-                'second_options'     => ['label' => '<Confirmer le mot de passe>', 'label_attr' => ['class' => 'text-danger']],
+                'first_options'      => ['label' => '<Mot de passe>', 'label_attr' => ['class' => 'balise']],
+                'second_options'     => ['label' => '<Confirmer le mot de passe>', 'label_attr' => ['class' => 'balise']],
             ])
             // ->add('S\'inscrire', SubmitType::class)
         ;

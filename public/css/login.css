@@ -56,3 +56,20 @@ div h1{
 img.rounded-circle.z-depth-0 {
     height: 3.5em;
 }
+
+.balise {
+	color: #ff7242;
+}
+
+.border-balise{
+	color: #ff7242;
+}
+
+#aupif{
+	font-weight: normal;
+	text-align: center;
+}
+
+strong{
+	font-weight: normal;
+}
