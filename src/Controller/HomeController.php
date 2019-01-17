@@ -23,6 +23,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/accueil", name="levelChoice")
+     * 
      */
     public function levelChoice()
     {
