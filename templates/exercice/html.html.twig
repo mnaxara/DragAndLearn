@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block body %}
-<form name="chronoForm">
+<form name="chronoForm" class="hide">
   <input class="text-danger" type="text" name="chronotime" id="chronotime" value='00:00:00'>
     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
     <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
@@ -101,25 +101,39 @@
                                 </form>
                                 {% endif %}
                             </div>
-                            
-                                
                         </div>
-
                         <div class="row" id="trophy">
                             <div class="col-12 col-md-12 d-flex flex-column align-items-center">
                                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.google.fr%2F&layout=button&size=large&mobile_iframe=true&width=89&height=28&appId" width="89" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                                 {# TODO Inserer les succes globaux ici#}
                                 {% block trophy %}
-
-
                                 {% endblock %}
                             </div>
-                            
-
                         </div>
                     </div>
                 </div>
             </div>
+
+            {#DIV SUCCESS F12#}
+
+            <div id="successEnd" class="hide">
+                <div class="row h-100">
+                    <div class="col-12 p-4 col-md-12 d-flex flex-column align-items-center justify-content-between h-100">
+                        <div class="row">
+                            <h3>Felicitation vous avez débloquer le trophée secret</h3>
+
+                        </div>
+                        <div class="row" id="trophy">
+                            <div class="col-12 col-md-12 d-flex flex-column align-items-center">
+                                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.google.fr%2F&layout=button&size=large&mobile_iframe=true&width=89&height=28&appId" width="89" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#****************#}
             <div class="col-12 col-md-4 border" id="look">
                 <div class="row">
                     <div class="col-12">
@@ -148,6 +162,15 @@
 
 
 {% block javascripts %}
+    <script>
+        window.addEventListener('keydown',(e) => {
+           if(e['key'] === 'F12'){
+
+           }
+        })
+    </script>
+
+
     <script>
         window.addEventListener("beforeunload", function (e) {
 
@@ -226,8 +249,8 @@ function chronoStop(){
 }
 
 function chronoContinue(){
-    start = new Date()-diff
-    start = new Date(start)
+    start = new Date()-diff;
+    start = new Date(start);
     chrono()
 }
 

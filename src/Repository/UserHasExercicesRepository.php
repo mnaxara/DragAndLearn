@@ -39,6 +39,24 @@ class UserHasExercicesRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+    public function getFinishSave(User $user, Exercice $exercice)
+    {
+        $level = $exercice->getLevel();
+        $levelNumber = $level->getNumber();
+
+        return $this->createQueryBuilder('u')
+            ->innerJoin('u.exercices', 'e')
+            ->andWhere('u.users = :user')
+            ->setParameter('user', $user)
+            ->andWhere('e.level = :level')
+            ->setParameter('level', $level)
+            ->andWhere('u.exercices = :exercice')
+            ->setParameter('exercice', $exercice)
+            ->andWhere('u.finish = true')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     public function getLastSaves(User $user, Array $levels)
     {
         $lastSaves = [];

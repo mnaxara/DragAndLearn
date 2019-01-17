@@ -65,19 +65,15 @@ class ExerciceController extends AbstractController
 
             $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
             // On verifie si une sauvegarde existe
-            if(($saveRepository->getSave($user, $finishExercice)) === null){
+            if(($saveRepository->getFinishSave($user, $finishExercice)) === null){
                 // Si non, on sauvegarde
-                $save = new UserHasExercices();
-                $save->setUsers($user);
-                $save->setExercices($finishExercice);
+
+                $save = $saveRepository->getSave($user, $finishExercice);
                 $save->setFinish(true);
+
                 $number = $finishExercice->getNumber();
                 $level = $finishExercice->getLevel()->getNumber();
-                $value = $level.$number;
-                $save->setValue($value);
-                // On save dans la base
                 $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($save);
 
                 if($number === 9 && $level === 1){
                     $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle('Niveau 1');
