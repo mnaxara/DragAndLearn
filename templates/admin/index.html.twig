@@ -78,8 +78,8 @@
 {% endblock %}
 
 {% block javascripts %}
+    {#USER#}
     <script>
-
         $(function(){
             //RESULT1
             $("#user").on('click', function(e){
@@ -89,6 +89,8 @@
                     url: '{{ path('ajaxUser') }}',
                     dataType: 'html',
                     success: function(data){
+                        $('#result2_1').empty();
+                        $('#result2_2').empty();
                         $('#result1').html(data);
                     },
                     error : function(error){
@@ -165,7 +167,48 @@
                 })
 
             })
-        })
 
+    {#EXERCICE#}
+            //RESULT1
+            $("#exercice").on('click', function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:'get',
+                    url: '{{ path('ajaxExercice') }}',
+                    dataType: 'html',
+                    success: function(data){
+                        $('#result2_1').empty();
+                        $('#result2_2').empty();
+                        $('#result1').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
+
+            //RESULT2_1
+            $(".main").keyup('#search2', function(){
+
+                let search = ($('#search2').val());
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ path('ajaxExerciceSearch') }}',
+                    data: 'search='+search,
+                    timeout: 8000,
+                    dataType: 'html',
+                    success : function(data){
+                        $('#result2_1').html(data)
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                });
+
+            })
+
+        })
     </script>
 {% endblock %}

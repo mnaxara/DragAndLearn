@@ -8,7 +8,6 @@ use App\Entity\Exercice;
 use App\Entity\UserHasExercices;
 use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,6 +24,8 @@ class AjaxController extends AbstractController
         ]);
     }
 
+
+//                          USER
     /**
      * @Route("/ajax/user", name="ajaxUser")
      */
@@ -87,6 +88,7 @@ class AjaxController extends AbstractController
     }
 
 
+//                          TIMER
         /**
      * @Route("/ajax/timer", name="ajaxTimer")
      */
@@ -108,6 +110,30 @@ class AjaxController extends AbstractController
         $entityManager->flush();
 
         return new Response ('kiki');
+
+    }
+
+
+//                          EXERCICE
+    /**
+     * @Route("/ajax/exercice", name="ajaxExercice")
+     */
+    public function selectAllExercices()
+    {
+
+        return $this->render('ajax/exercice.html.twig');
+
+    }
+
+    /**
+     * @Route("/ajax/exercice/search", name="ajaxExerciceSearch")
+     */
+    public function searchExercice(Request $request)
+    {
+
+        $search = $request->request->get('search');
+        $exercices = $this->getDoctrine()->getRepository(Exercice::class)->lookForExercice($search);
+        return $this->render('ajax/exercice_search.html.twig', ['exercices'=>$exercices]);
 
     }
 
