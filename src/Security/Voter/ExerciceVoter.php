@@ -33,12 +33,19 @@ class ExerciceVoter extends Voter
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
+
+        $level = $subject->getLevel()->getNumber();
+        $exNumber = $subject->getNumber();
+
         // if the user is anonymous, do not grant access
         if (!$user instanceof UserInterface) {
             return false;
         }
 
-        //TODO auto accept pour niveau 1-1
+        if ($level === 1 && $exNumber === 0) {
+            return true;
+        }
+
 
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
@@ -61,24 +68,24 @@ class ExerciceVoter extends Voter
 
         // Niveau en cours
         $level = $exercice->getLevel();
-        // Valeur de l'exercice en cours
-        $number = $exercice->getNumber();
 
+        // numero de l'exercice en cours
+        $number = $exercice->getNumber();
+        
         // Derniere sauvegarde du niveau en cours
         $save = $this->em
             ->getRepository(UserHasExercices::class)
                 ->getLastSaves($user, [$level]);
 
         // Valeur du niveau en cours
-        $level = $level->getNumber();
+        $levelNumber = $level->getNumber();
 
         //Valeur de l'exercice de la derniere sauvegarde du niveau en cours
-        $searchNumber = $save[$level][1];
-
+        $searchNumber = $save[$levelNumber][1];
 
         // Si la valeur du dernier exercice sauvegardé est superieur ou egale à la valeur de l'exercice demandé - 1
         // On autorise.
-        if ($searchNumber >= ($number - 1)){
+        if (($searchNumber >= ($number - 1)) && $searchNumber !== null){
             return true;
         }
 

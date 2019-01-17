@@ -190,15 +190,18 @@ function chronoStop(){
     var observer = new MutationObserver(() =>{
          chronoStop();
          let finalTime = $('#chronotime').val();
+         let ex_id = '{{exercice.id}}';
+         let user = '{{app.user.id}}';
 
           $.ajax({
                     type: 'POST',
-                    url: '{{ path("auteurIndex") }}',
-                    data: 'idUser='+id,
+                    url: '{{ path("ajaxTimer") }}',
+                    data: {'timer' : finalTime, 'ex': ex_id, 'user' : user},
                     timeout: 8000,
                     dataType: 'html',
                     success : function(data){
-                        $('#results').html(data)
+                        console.log(data);
+
                     },
                     error : function(error){
                         console.log(error)

@@ -99,7 +99,7 @@ class AppFixtures extends Fixture
             $save->setUsers($user);
             $save->setFinish(true);
             $save->setValue($value);
-            $save->setTime(new \DateTime(date('Y-m-d H:i:s')));;
+            $save->setTime(new \DateTime('00:00:00'));
             $manager->persist($save);
         }
 
