@@ -1,0 +1,6 @@
+<h2>Modifier profil</h2>
+<img class="avatar" src="{{ asset('uploads/image/avatar/' ~ user.avatar.filename)}}">
+
+{{ form_start(userUpdateForm) }}
+        {{ form_row(userUpdateForm.username) }}
+{{ form_end(userUpdateForm) }}

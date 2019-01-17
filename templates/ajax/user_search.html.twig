@@ -1,9 +1,20 @@
 <table>
+    <thead>
+        <tr class="border-bottom border-dark text-center">
+            <th>Avatar</th>
+            <th>Pseudo</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
     <tbody>
     {% for user in users %}
 
-        <tr class="border-bottom border-dark">
+        <tr class="border-bottom border-dark text-center">
+            <td><img src="{{ user.avatar }}"></td>
             <td>{{ user.username }}</td>
+            <td class="update" data-id="{{ user.id }}"><i class="fas fa-edit"></i></td>
+            <td><i class="fas fa-trash"></i></td>
         </tr>
 
     {% endfor %}

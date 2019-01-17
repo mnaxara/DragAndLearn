@@ -278,12 +278,12 @@ class User implements UserInterface
         $this->plainPassword = $plainPassword;
     }
 
-    public function getAvatar(): ?string
+    public function getAvatar()
     {
         return $this->avatar;
     }
 
-    public function setAvatar(string $avatar): self
+    public function setAvatar($avatar): self
     {
         $this->avatar = $avatar;
 
