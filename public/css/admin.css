@@ -40,3 +40,10 @@ td{
 .fa-edit{
     cursor: pointer;
 }
+
+/*FORM*/
+.avatar{
+    width: 10%;
+    background: grey;
+    border-radius: 50%;
+}
