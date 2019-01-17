@@ -49,7 +49,10 @@ class SecurityController extends AbstractController
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
         $lastSave = $repositoryU->getLastSave($user);
 
+
+
         return $this->render('security/profile.html.twig', ['user' => $user, 'theme' => $theme, 'last_exercice' => $lastSave]);
+
     }
 
     /**
