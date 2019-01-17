@@ -1,13 +1,13 @@
 #header{
-    width: 100%;
-    background: url("/uploads/image/exercice10/batman.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    /*width: 100%;*/
+    /*background: url("/uploads/image/exercice10/batman.jpg");*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
     height: 8em;
 }
 
-.p{
-    font-family: Tahoma, Geneva, sans-serif;
+.p, #capa, #caracteristiques{
+    /*font-family: Tahoma, Geneva, sans-serif;*/
 }
 
 #title{
@@ -21,106 +21,53 @@
     text-align: center;
 }
 
-.section{
-    width: 60%;
-    margin-left: 15%;
-    margin-top: 35px;
-}
 
 .section h2{
-    font-family: Stencil, Arial;
-}
-
-#capa{
-    font-family: Tahoma, Geneva, sans-serif;
+    /*font-family: Stencil, Arial, sans-serif;*/
 }
 
 .w50{
     width: 50%;
 }
 
-.section h2:hover{
-    color: gray;
+.hover:hover{
+    /*color: gray;*/
     text-shadow: 2px 2px 100px yellow;
 }
 
-#caracteristiques{
-
-    font-family: Tahoma, Geneva, sans-serif;
-
-}
-
-#carac h2{
-    text-align: center;
-    font-size: 35px;
-
-
-}
-
-#form input{
-    height: 22px;
-    border-radius: 20px;
-    width: 33px;
-    margin-left: 80px;
-}
-
-
-
-
-.row-form{
-
-}
-
 .sectForm{
-    text-align: center;
-    padding: 10px;
-    float: left;
+    /*text-align: center;*/
+    /*padding: 10px;*/
+    /*float: left;*/
 }
 
-
-
-
-#form{
-
-    position: absolute;
-    left: 50%;
-    bottom: -50%;
-}
-
-.aside{
-    width: 940px;
-    height: 600px;
-    border: 1px solid gray;
-    position: absolute;
-    left: 78%;
-    top: 74%;
-    border-radius: 50%;
-    box-shadow: 1px 1px 4px gray;
-    background-color: #2F353B;
-
-}
 
 table th, table tr, table td{
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
 }
+
 table{
-    text-align: center;
-    box-shadow: 1px 1px 20px yellow;
-    text-shadow: 1px 1px 20px yellow;
-    margin: 10px 0;
+    /*text-align: center;*/
+    /*box-shadow: 1px 1px 20px yellow;*/
+    /*text-shadow: 1px 1px 20px yellow;*/
+    /*margin: 10px 0;*/
 }
 
 .vs{
-    background-color: gainsboro;
+    /*background-color: gainsboro;*/
 }
 
 #hist{
     color: gray;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 .amis{
-    color: #020202;
+    /*color: #020202;*/
+}
+
+.logo{
+    display: none;
 }
 
 .inputBatman{
@@ -139,3 +86,27 @@ table{
     text-align: center;
 }
 
+#dragdrop {
+    height: 330%;
+}
+
+.ml-8{
+    margin-left: 15rem;
+}
+
+.ml-9{
+    margin-left: 18rem;
+}
+
+.droppable{
+    width: 40%;
+    height: 3rem;
+}
+
+.draggable{
+    padding: 5px 0;
+}
+
+.hover2:hover{
+    color: gray;
+}

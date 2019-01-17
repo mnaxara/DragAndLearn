@@ -157,6 +157,14 @@
     {% endblock %}
     {#TODO Lancé le timer#}
     <script>
+        $('#html-tab').click(()=>{
+           $('.dropped').css('display','none');
+        });
+
+        $('#css-tab').click(()=>{
+            $('.dropped').css('display','block');
+        });
+
         $('#start').click(() => {
             $('#morceaux-tab').removeClass('disabled');
         })

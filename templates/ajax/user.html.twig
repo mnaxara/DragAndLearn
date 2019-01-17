@@ -1,19 +1,11 @@
 {#TODO : barre de recherche + boutton + div caché avec all user + bouton mouton modifier + ajax pour apparaition form prerempli#}
 
-<div class="col-12">
-    <table>
-        {{ dump(users) }}
-        {% for user in users %}
+<form>
+    <div class="form-group d-flex justify-content-center my-5">
+        <input type="text" id="search" class="form-control">
+        <button id="showAll" class="btn btn-info">Afficher tout</button>
+    </div>
+</form>
 
-            <tr>
-                <td>{{ user.avatar }}</td>
-                <td>{{ user.username }}</td>
-                <td><i class="fas fa-edit"></i></td>
-                <td><i class="fas fa-trash-alt"></i></td>
-            </tr>
-
-        {% endfor %}
-    </table>
-</div>
 
 

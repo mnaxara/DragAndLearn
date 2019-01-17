@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AjaxController extends AbstractController
@@ -19,27 +20,24 @@ class AjaxController extends AbstractController
     }
 
     /**
-     * @Route("/ajax/user", name="ajaxUser", requirements={"id"="\d+"})
+     * @Route("/ajax/user", name="ajaxUser")
      */
     public function selectAllUsers()
     {
-        $users = $this->getDoctrine()->getRepository(User::class)->lookForUser('ki');
 
-//        $results = [];
+        return $this->render('ajax/user.html.twig');
 
-//        foreach($users as $user){
-//
-//            $results[] = [
-//                'username' => $user->getUsername(),
-//                'email'    => $user->getEmail(),
-//                'avatar'   => $user->getAvatar(),
-//                'theme'    => $user->getTheme(),
-//                'role'     => $user->getRoles()
-//            ];
-//
-//        }
+    }
 
-        return $this->render('ajax/user.html.twig', [ 'users' => $users ]);
+    /**
+     * @Route("/ajax/user/search", name="ajaxUserSearch")
+     */
+    public function searchUsers(Request $request)
+    {
+
+        $search = $request->request->get('search');
+        $users = $this->getDoctrine()->getRepository(User::class)->lookForUser($search);
+        return $this->render('ajax/user_search.html.twig', ['users'=>$users]);
 
     }
 
