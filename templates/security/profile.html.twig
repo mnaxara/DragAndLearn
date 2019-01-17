@@ -70,6 +70,26 @@
 
             <h3 id="perf">Performances</h3>
 
+        <div class="row justify-content-around">
+            {% for tab in exerciceByLevel %}
+                <div class="col-4">
+                    <table class="table table-striped">
+                        <thead>
+                        <th class="text-center" scope="col">exercices</th>
+                        <th class="text-center" scope="col">Temps</th>
+                        </thead>
+                        <tbody>
+                        {% for exercice in tab %}
+                            <tr>
+                                <td class="text-center">{{ exercice.exoNumber + 1 }}</td>
+                                <td class="text-center">{{ exercice.time }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
 
 
         </div>

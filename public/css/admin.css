@@ -16,6 +16,9 @@
 #search {
     width: 23%;
 }
+#search2 {
+    width: 23%;
+}
 #result1 {
     margin: 0 auto;
 }
@@ -36,14 +39,20 @@ table{
 }
 td{
     padding: 2%;
+    width: 25%;
 }
 .fa-edit{
     cursor: pointer;
 }
 
 /*FORM*/
-.avatar{
+.avatar_update{
     width: 10%;
+    background: grey;
+    border-radius: 50%;
+}
+.avatar_table{
+    width: 21%;
     background: grey;
     border-radius: 50%;
 }

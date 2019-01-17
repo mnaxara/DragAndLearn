@@ -1,6 +1,7 @@
 <h2>Modifier profil</h2>
-<img class="avatar" src="{{ asset('uploads/image/avatar/' ~ user.avatar.filename)}}">
 
-{{ form_start(userUpdateForm) }}
+{{ form_start(userUpdateForm, {'attr' : {'id': 'form_update'}}) }}
+        <img class="avatar_update my-5" src="{{ asset('uploads/image/avatar/' ~ user.avatar)}}">
+        <button class="btn_update btn btn-dark mx-5" data-id="{{ user.id }}">Modifier</button>
         {{ form_row(userUpdateForm.username) }}
 {{ form_end(userUpdateForm) }}

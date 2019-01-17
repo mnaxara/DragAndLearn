@@ -61,4 +61,18 @@ class ExerciceRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function lookForExercice($valeur)
+    {
+
+        return $this->createQueryBuilder('e')
+            ->andWhere($this->createQueryBuilder('e')->expr()->orX(
+                $this->createQueryBuilder('e')->expr()->like('e.libelle',
+                    $this->createQueryBuilder('e')->expr()->literal('%'.$valeur.'%'))
+            ))
+            ->orderBy('e.libelle', 'ASC')
+            ->getQuery()
+            ->getResult();
+
+    }
 }

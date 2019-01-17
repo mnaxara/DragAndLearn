@@ -9,7 +9,6 @@ use App\Entity\Exercice;
 use App\Entity\UserHasExercices;
 use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,6 +25,8 @@ class AjaxController extends AbstractController
         ]);
     }
 
+
+//                          USER
     /**
      * @Route("/ajax/user", name="ajaxUser")
      */
@@ -55,15 +56,11 @@ class AjaxController extends AbstractController
     {
 
         //je stocke le nom du fichier image
-        $filename = $user->getAvatar();
-
         //on remplace le nom du fichier par un objet de classe File
         //pour pouvoir générer le formulaire
-        if($user->getAvatar()){
 
-            $user->setAvatar(new File($this->getParameter('upload_directory') . $this->getParameter('user_image_directory') . '/' . $filename ));
-        }
-        //dd($user);
+        $entityManager = $this->getDoctrine()->getManager();
+
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
@@ -73,20 +70,18 @@ class AjaxController extends AbstractController
             $user = $form->getData();
 
             //je ne fais le traitement que si une image a été envoyée
-            if($user->getImage()){
-                //je récupère le fichier
-                $file = $user->getImage();
+//            if($user->getAvatar()){
+//                //je récupère le fichier
+//                $file = $user->getAvatar();
+//
+//                $filename = $fileuploader->upload($file, $this->getParameter('user_image_directory'), $filename);
+//            }
 
-                $filename = $fileuploader->upload($file, $this->getParameter('user_image_directory'), $filename);
-            }
-
-            $user->setAvatar($filename);
-
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
+
             $entityManager->flush();
 
-            $this->addFlash('success', 'Profil modifié');
+            return new Response('<div class="alert alert-success">Profil modifié</div>');
 
         }
 
@@ -94,6 +89,11 @@ class AjaxController extends AbstractController
     }
 
 
+
+    /*
+    /                         TIMER
+    */
+    
     /**
      * @Route("/ajax/timer", name="ajaxTimer")
      */
@@ -118,6 +118,7 @@ class AjaxController extends AbstractController
 
     }
 
+
     /**
      * @Route("/ajax/trophy", name="ajaxTrophy")
      */
@@ -136,6 +137,29 @@ class AjaxController extends AbstractController
         $entityManager->flush();
 
         return new Response ('kiki trophy');
+
+
+//                          EXERCICE
+    /**
+     * @Route("/ajax/exercice", name="ajaxExercice")
+     */
+    public function selectAllExercices()
+    {
+
+        return $this->render('ajax/exercice.html.twig');
+
+    }
+
+    /**
+     * @Route("/ajax/exercice/search", name="ajaxExerciceSearch")
+     */
+    public function searchExercice(Request $request)
+    {
+
+        $search = $request->request->get('search');
+        $exercices = $this->getDoctrine()->getRepository(Exercice::class)->lookForExercice($search);
+        return $this->render('ajax/exercice_search.html.twig', ['exercices'=>$exercices]);
+
 
     }
 

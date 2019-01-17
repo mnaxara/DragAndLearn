@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Level;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\User;
 
 /**
  * @method Level|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +19,24 @@ class LevelRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Level::class);
     }
+
+    public function countLevel()
+    {
+        $connexion = $this->getEntityManager()->getConnection();
+        //on stocke la requête dans une variable
+
+        $sql = '
+            SELECT COUNT(l.id) 
+            FROM level l 
+          ';
+        $select = $connexion->prepare($sql);
+        $select->execute();
+
+        //je renvoie un tableau de tableaux d'articles
+        $count = $select->fetch();
+        return $count['COUNT(l.id)'];
+    }
+
 
     // /**
     //  * @return Level[] Returns an array of Level objects

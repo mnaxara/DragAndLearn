@@ -1,0 +1,20 @@
+<table>
+    <thead>
+    <tr class="border-bottom border-dark text-center">
+        <th>Libelle</th>
+        <th>Aide</th>
+        <th>Instruction</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for exercice in exercices %}
+
+        <tr class="border-bottom border-dark text-center">
+            <td>{{ exercice.libelle }}</td>
+            <td>{{ exercice.help }}</td>
+            <td>{{ exercice.instruction }}</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
