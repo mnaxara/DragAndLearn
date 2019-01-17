@@ -49,10 +49,55 @@
     <h1 class="text-center py-3">Panel administratif</h1>
 
     <ul class="panel justify-content-around bg-dark text-light">
-        <li class="py-3">Utilisateur</li>
-        <li class="py-3">Exercice</li>
-        <li class="py-3">Classement</li>
-        <li class="py-3">Admin. général</li>
+        <li id="user" class="py-3">Utilisateur</li>
+        <li id="exercice" class="py-3">Exercice</li>
+        <li id="class" class="py-3">Classement</li>
+        <li id="general" class="py-3">Admin. général</li>
     </ul>
+
+    <div id="main-change d-flex justify-content-center">
+        <div id="result1"></div>
+        <div id="result2"></div>
+    </div>
+
 </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+
+        $("#user").on('click', function(e){
+            e.preventDefault();
+           $.ajax({
+               type:'get',
+               url: '{{ path('ajaxUser') }}',
+               dataType: 'html',
+               success: function(data){
+                   $('#result1').html(data);
+               }
+           })
+
+        })
+
+        $(".main").keydown('#search', function(){
+
+            let search = ($('#search').val());
+
+            $.ajax({
+                type: 'POST',
+                url: '{{ path('ajaxUserSearch') }}',
+                data: 'search='+search,
+                timeout: 8000,
+                dataType: 'html',
+                success : function(data){
+                    $('#result2').html(data)
+                },
+                error : function(error){
+                    console.log(error)
+                }
+            });
+
+        })
+
+    </script>
 {% endblock %}

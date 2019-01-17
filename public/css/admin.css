@@ -13,3 +13,9 @@
 .main {
     height: 90vh;
 }
+#search {
+    width: 23%;
+}
+#result1 {
+    margin: 0 auto;
+}
