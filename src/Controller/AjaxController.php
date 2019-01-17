@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Exercice;
@@ -93,7 +94,7 @@ class AjaxController extends AbstractController
     }
 
 
-        /**
+    /**
      * @Route("/ajax/timer", name="ajaxTimer")
      */
     public function setTimer(Request $request)
@@ -114,6 +115,27 @@ class AjaxController extends AbstractController
         $entityManager->flush();
 
         return new Response ('kiki');
+
+    }
+
+    /**
+     * @Route("/ajax/trophy", name="ajaxTrophy")
+     */
+    public function setTrophy(Request $request)
+    {
+        $trophy = $request->request->get('trophy');
+        $userId = $request->request->get('user');
+
+        $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle($trophy);
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneById($userId);
+
+        $user->addTrophy($trophy);
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        return new Response ('kiki trophy');
 
     }
 

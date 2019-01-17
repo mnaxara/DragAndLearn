@@ -103,7 +103,7 @@ footer {
 }
 
 #successEnd{
-  font-family: "Amarillo", Helvetica, Arial, sans-serif;
+  font-family: "Arvo", Helvetica, Arial, sans-serif;
   width: 400px;
   height: 550px;
 
@@ -111,12 +111,30 @@ footer {
   margin: 10px 5px 20px;
 
   border-top: 1px solid #f4f4f2;
-  box-shadow:inset 0px 0px 10px 10px #ffeb0075;
+  box-shadow:inset 0px 0px 10px 10px gold;
   border-radius: 8px;
 
   position : absolute;
-  left : 20px;
-  background: rgba(162, 162, 148, 0.9);
+  left : 5px;
+}
+
+#f12Trophy{
+  font-family: "Arvo", Helvetica, Arial, sans-serif;
+  width: 400px;
+  height: 550px;
+
+  padding: 10px;
+  margin: 10px 5px 20px;
+
+  border-top: 1px solid #f4f4f2;
+  box-shadow:inset 0px 0px 10px 10px gold;
+  border-radius: 8px;
+
+  position : absolute;
+  left : 50%;
+  margin-left: -200px;
+  top : 50%;
+  margin-top : -275px;
 }
 
 #next{

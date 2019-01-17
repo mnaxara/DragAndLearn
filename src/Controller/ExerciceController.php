@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Exercice;
 use App\Entity\Trophy;
+use App\Entity\User;
 use App\Entity\UserHasExercices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -93,11 +94,24 @@ class ExerciceController extends AbstractController
 
         }
 
+        $trophies = $user->getTrophies();
+
+        $trophyLibelle = [];
+        foreach ($trophies as $trophy) {
+            $trophyLibelle[] = $trophy->getLibelle();
+        }
+
+        $f12 = false;
+
+        if (in_array('F12', $trophyLibelle)){
+            $f12 = true;
+        }
+
         $page = $exercice->getSlug();
 
         $this->denyAccessUnlessGranted('view', $exercice, 'Veuillez terminer les exercices précédents, petit tricheur !');
 
-        return $this->render('exercice/'.$page.'.html.twig', ['exercice' => $exercice, 'timer'=>$timer]);
+        return $this->render('exercice/'.$page.'.html.twig', ['exercice' => $exercice, 'timer'=>$timer, 'f12'=>$f12]);
     }
 
 
