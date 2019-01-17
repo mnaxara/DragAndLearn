@@ -74,6 +74,9 @@
                dataType: 'html',
                success: function(data){
                    $('#result1').html(data);
+               },
+               error : function(error){
+                   console.log(error)
                }
            })
 

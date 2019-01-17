@@ -56,7 +56,7 @@ class UserRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('u')
             ->andWhere($this->createQueryBuilder('u')->expr()->orX(
                 $this->createQueryBuilder('u')->expr()->like('u.username',
-                $this->createQueryBuilder('u')->expr()->literal('%'.$valeur.'%'))
+                $this->createQueryBuilder('u')->expr()->literal($valeur.'%'))
             ))
             ->orderBy('u.username', 'ASC')
             ->getQuery()
