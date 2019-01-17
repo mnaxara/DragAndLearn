@@ -20,19 +20,19 @@
     
     <br>
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="baliseCss">colour</span><span>"=blue"</span>
+        <span class="propCss">colour</span><span class="valueCss">"=blue";</span>
     </div>
     <br>
     <div class="draggable text-center" data-id="2" id="draggable2">
-      <span class="baliseCss">border</span><span>":black"</span>
+      <span class="propCss">border</span><span class="valueCss">":black"</span>
     </div>
     <br>
     <div class="draggable text-center" data-id="5" id="draggable5">
-     <span class="propcss">border-image: linear-gradient(#f6b73c, #4d9f0c) 30;</span></span>
+     <span class="propCss">border-image: linear-gradient</span><span class="valueCss"> (#f6b73c, #4d9f0c) 30;</span></span>
     </div>
     <br>
     <div class="draggable text-center" data-id="6" id="draggable6">
-     <span class="propcss">border: 25px solid;</span>
+        <span class="propCss">border:</span><span class="valueCss"> 25px </span><span class="propCss">solid;</span>
     </div>
     <br>
     <div class="draggable text-center" data-id="7" id="draggable7">
@@ -40,11 +40,11 @@
     </div>
     <br>
     <div class="draggable text-center" data-id="8" id="draggable8">
-        <span>border: 1px dashed black;</span>
+        <span class="propCss">border:</span><span class="valueCss"> 1px </span><span class="propCss">dashed black;</span>
     </div>
     <br>
      <div class="draggable text-center" data-id="9" id="draggable9">
-        <span>border: 1rem solid ;</span>
+        <span class="propCss">border: </span><span class="valueCss"> 1rem </span><span class="propCss">solid;</span>
     </div>
 
 {% endblock %}
@@ -81,7 +81,7 @@
     </div>
     <div class="text-white ml-6">
         
-        <span class="balise">&lt;p1&gt;</span>Je suis bien entouré !<span class="balise">&lt;/p1"&gt;</span>
+        <span class="balise">&lt;p&gt;</span>Je suis bien entouré !<span class="balise">&lt;/p&gt;</span>
     </div>
 
     <div class="ml-5" >
@@ -120,7 +120,7 @@
                 border: 1rem solid;
                  </div>
                 <div class="droppable" id="droppable9"></div>
-                <div class="solution1 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1rem solid;</span></div>
+                <div class="solution1 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1rem </span><span class="propCss">solid;</span></div>
             }
 <br>        
             <span class="ValueCss ml-5">
@@ -130,7 +130,7 @@
                 </span>
                 <div class="droppable" id="droppable7"> </div>
                 <div class="solution2 hide ml-5"><span class="baliseCss">h1</span></div>
-             {<br><span class="baliseCss ml-5 propCss">border-style:</span><span class="valueCss"> dotted;</span>
+             {<span class="baliseCss ml-5 propCss">border-style: dotted;</span>
              <br>
             }
 
@@ -141,7 +141,7 @@
                  border: 1px dashed black;
                 </div>
                 <div class="droppable" id="droppable8"> </div>
-                 <div class="solution3 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1rem solid;</span></div>
+                 <div class="solution3 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 1px</span><span class="propCss"> dashed black;</span></div>
             }
         
 
@@ -151,12 +151,12 @@
                 border: 25px solid;
                  </div>
                 <div class="droppable" id="droppable6"></div>
-                <div class="solution4 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 25px solid;</span></div>
+                <div class="solution4 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> 25px </span><span class="propCss">solid;</span></div>
                 <div class="hide" id="block">
                 border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
                 </div>
                 <div class="droppable" id="droppable5"></div>
-                <div class="solution4 hide ml-5"><span class="propCss">border:</span><span class="valueCss"> border-image: linear-gradient(#f6b73c, #4d9f0c) 30;</span></div>
+                <div class="solution4 hide ml-5"><span class="propCss"> border-image: linear-gradient</span><span class="valueCss"> (#f6b73c, #4d9f0c) 30;</span></div>
 
 {#     border : 25px solid;
     border-image: linear-gradient(#f6b73c, #4d9f0c) 30; #}

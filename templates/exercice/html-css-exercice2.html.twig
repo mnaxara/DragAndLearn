@@ -1,0 +1,222 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e2.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="text-white"><span class="propCss">font-size:</span><span class="valueCss"> 12px</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="4" id="draggable4">
+        <span class="baliseCss">#tomate</span>
+        <span class="text-white">:</span>
+        <span class="baliseTxt">hover</span>
+    </div>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="baliseCss">.myClass</span>
+    </div>
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="balise">h2</span>
+    </div>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="text-white"><span class="propCss">font-style:</span><span class="valueCss"> italic</span>;
+    </div>
+
+
+{% endblock %}
+
+{% block code_html %}
+
+    <span class="text-white">&lt;!DOCTYPE html&gt;</span>>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div class="ml-3"><span class="balise">&lt;head&gt;</span></div>
+    <div class="text-white ml-5">
+        <span class="balise">&lt;title&gt;</span>
+        Sélecteurs, attributs et propriétés CSS
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div class="ml-3"><span class="balise">&lt;/head&gt;</span></div>
+    <div class="ml-3"><span class="balise">&lt;body&gt;</span></div>
+
+    {#Element titre#}
+    <div class="text-white ml-5">
+    <span class="balise">&lt;h2&gt;</span>
+    Je suis un titre, si vous
+    vouliez bien me centrer!
+    <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+    {#Elements <p>#}
+
+    <div class="text-white ml-3">
+        <span class="balise">&lt;p
+            <span class="baliseCss">id=</span>
+            <span class="baliseCss">"monPremierParagraphe"</span>
+            &gt;
+        </span>
+        Je suis timide, j'aimerais me faire tout petit.
+        Rétrécissez-moi!
+        <span class="balise">&lt;/p&gt;</span>
+    </div>
+
+    <div class="text-white ml-3">
+        <span class="balise">&lt;span
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"myClass"</span>
+            &gt;
+        </span>
+    J'ai un léger coup de barre! Si je pouvais m'allonger un petit<br> peu, j'en serais ravi!
+    <span class="balise">&lt;/p&gt;</span>
+    </div>
+
+    <div class="text-white ml-3">
+        <span class="balise">&lt;span
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"myClass"</span>
+            <span class="baliseCss">id=</span>
+            <span class="baliseCss">"tomate"</span>
+            &gt;
+
+        </span>
+        Quand on me survole je rougis. Ne me fixez pas comme ça!
+        <span class="balise">&lt;/span&gt;</span>
+    </div>
+
+    <div class="text-white ml-3">
+        <span class="balise">&lt;span
+            <span class="baliseCss">class=</span>
+            <span class="baliseTxt">"myClass"</span>
+            &gt;
+        </span>
+    Mes potes paragraphes et moi, on aime bien être mis en valeur!
+    Voudriez-vous bien nous souligner?
+    <span class="balise">&lt;/p&gt;</span>
+    </div>
+
+    <div class="ml-3"><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <div class="text-white">
+
+        <div class="droppable" id="droppable1"></div>
+        <div class="solution1 hide">
+            <span class="balise">h2</span>
+        </div>
+
+        {
+        <br>
+        <span class="ml-5"><span class="propCss">text-align:</span><span class="valueCss"> center</span>;
+        <br>
+        }
+
+        <br><br><br>
+
+        </i><span class="baliseCss">#monPremierParagraphe<br></span>{
+        <div class="droppable ml-5" id="droppable2"></div>
+        <div class="solution1 hide ml-5">
+            <span class="propCss">font-size:</span><span class="valueCss"> 12px</span>;
+        </div>
+        }
+
+        <br><br><br>
+
+
+
+        </i><span class="baliseCss">#monSecondParagraphe<br></span>{
+             <div class="droppable ml-5" id="droppable3"></div>
+            <div class="solution1 hide ml-5">
+                <span class="text-white"><span class="propCss">font-style:</span><span class="valueCss"> italic</span>;
+            </div>
+}
+
+        <br><br><br>
+
+
+        <div class="droppable" id="droppable4"></div>
+        <div class="solution1 hide">
+            <span class="baliseCss">#tomate</span>
+            <span class="text-white">:</span>
+            <span class="baliseTxt">hover</span>
+        </div>
+        {
+        <br>
+        <span class="ml-5"><span class="propCss">color:</span><span class="valueCss"> red</span>;
+        <br>
+        }
+
+        <br><br><br>
+
+
+
+        <div class="droppable" id="droppable5"></div>
+        <div class="solution1 hide ml-5">
+            <span class="baliseCss">.myClass</span>
+        </div>
+        {
+        <br>
+        <span class="ml-5"><span class="propCss">text-decoration:</span><span class="valueCss"> underline</span>;
+        <br>
+        }
+
+
+
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h2 id="myTit">Je suis un titre, si vous<br> vouliez bien me centrer!</h2>
+
+    <p id="monPremierParagraphe">Je suis timide, j'aimerais me faire tout petit.<br>
+    Rétrécissez-moi!</p>
+
+    <p id="monSecondParagraphe" class="myClass">J'ai un léger coup de barre! Si je pouvais m'allonger un petit<br> peu, j'en serais ravi!</p>
+    <span id="hover">
+    <span id="tomate" class="myClass">Quand on me survole je rougis. Ne me fixez pas comme ça!</span><br><br>
+    </span>
+    <p class="myClass">Mes potes et moi, on aime bien être mis en valeur!<br>
+        Voudriez-vous bien nous souligner?</p>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+    <script>
+        $('#hover').mouseenter('.hover',() =>{
+            $('.hover').css('color','red')
+        })
+
+        $('#hover').mouseout('.hover',() =>{
+            $('.hover').css('color','black')
+        })
+    </script>
+    <script src={{ asset('js/niveaux/2/n2e2.js')}}></script>
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends 'exercice/css.html.twig' %}
+
+{% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e6.css') }}">{% endblock %}
+
+{% block lecons %}
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        asperiores aspernatur
+        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
+        nobis
+        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+{% endblock %}
+
+
+{% block elements %}
+
+
+    <div class="draggable text-center" data-id="1" id="draggable1">
+        <span class="baliseCss">#div2</span>
+    </div>
+
+    <div class="draggable text-center" data-id="25" id="draggable25">
+        <span class="propCss">paddang-top:</span><span class="valueCss"> 28%</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="propCss">padding-top:</span><span class="valueCss"> 28%</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="26" id="draggable26">
+        <span class="propCss">marging:</span><span class="valueCss"> auto</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="propCss">margin:</span><span class="valueCss"> auto</span>;
+    </div>
+
+
+{% endblock %}
+
+{% block code_html %}
+
+    <span class="text-white">&lt;!DOCTYPE html&gt;</span>>
+    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
+    <div><span class="balise">&lt;html&gt;</span></div>
+    <div class="ml-3"><span class="balise">&lt;head&gt;</span></div>
+    <div class="text-white ml-5">
+        <span class="balise">&lt;title&gt;</span>
+        Margin et padding
+        <span class="balise">&lt;/title&gt;</span>
+    </div>
+    <div class="ml-3"><span class="balise">&lt;/head&gt;</span></div>
+    <div class="ml-3"><span class="balise">&lt;body&gt;</span></div>
+
+    {#Element titre#}
+    <div class="text-white ml-4">
+        <span class="balise">&lt;h2&gt;</span>
+        "Ah qu'est ce qu'on est serrés au fond de cette boîte!"
+        <span class="balise">&lt;/h2&gt;</span>
+    </div>
+
+
+    <div class="text-white ml-5">
+        <span class="balise">&lt;div
+            <span class="baliseCss">id=</span>
+            <span class="baliseTxt">"auto"</span>
+            &gt;
+        </span>
+    </div>
+
+
+    <div class="text-white ml-6">
+        <span class="balise">&lt;div
+            <span class="baliseCss">id=</span>
+            <span class="baliseTxt">"div1"</span>
+            &gt;
+
+        </span>
+        Je suis une div qui a besoin d'espace, je suis un peut trop à l'étroit!
+        Mon texte se cogne au plafond, redescendez-le s'il vous plait!
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div class="text-white ml-6">
+        <span class="balise">&lt;div
+            <span class="baliseCss">id=</span>
+            <span class="baliseTxt">"div2"</span>
+            &gt;
+        </span>
+        Ma voisine prend de la place. J'aimerais tellement prendre le large!<br>
+        Si vous pouviez me décoller d'elle!
+        <span class="balise">&lt;/div&gt;</span>
+    </div>
+
+    <div class="ml-5"><span class="balise">&lt;div&gt;</span></div>
+
+
+    <div class="ml-3"><span class="balise">&lt;/body&gt;</span></div>
+    <div><span class="balise">&lt;/html&gt;</span></div>
+
+{% endblock %}
+
+{% block code_css %}
+
+    <div class="text-white">
+
+        <div class="droppable" id="droppable1"></div>
+        <div class="solution1 hide">
+            <span class="baliseCss">#div2</span>
+        </div>
+
+        {
+        <br>
+        <span class="ml-5"><span class="propCss">margin-top:</span><span class="valueCss"> 20%</span>;
+        <br>
+        }
+
+        <br><br><br>
+
+
+
+        </i><span class="balise">div<br></span>{
+        <div class="droppable ml-5" id="droppable2"></div>
+        <div class="solution2 hide ml-5">
+            <span class="propCss">margin:</span> <span class="valueCss">auto</span>;
+        </div>
+        }
+
+        <br><br><br>
+
+
+
+        <span class="baliseCss">#div1<br></span>{
+        <div class="droppable ml-5" id="droppable3"></div>
+        <div class="solution3 hide ml-5">
+            <span class="propCss">padding-top:</span><span class="valueCss"> 28%</span>;
+        </div>
+        <span class="ml-5"><span class="propCss">padding-left:</span><span class="valueCss"> 5%</span>;<br>
+        }
+        <br><br><br>
+
+
+
+        <span class="baliseCss">#auto<br></span>
+        {<br>
+        <span class="ml-5"><span class="propCss">padding:</span><span class="valueCss"> 20px</span>;<br>
+            <span class="ml-5"><span class="propCss">width:</span><span class="valueCss"> 50%</span>;<br>
+        <span class="ml-5"><span class="propCss">border:</span><span class="valueCss"> 1px solid black</span>;<br>
+        }
+
+
+
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block trophy %}
+{% endblock %}
+
+{% block apercu %}
+    <h2 class="text-center">"Ah qu'est ce qu'on est serrés au <br>fond de cette boîte!"</h2>
+
+<div id="auto">
+    <div id="div1" class="div">
+        Je suis une div qui a besoin d'espace, je suis un peut trop à l'étroit!<br>
+        Mon texte se cogne au plafond, redescendez-le s'il vous plait!
+    </div>
+
+    <div id="div2" class="div">
+        Ma voisine prend de la place. J'aimerais tellement prendre le large!<br>
+        Si vous pouviez me décoller d'elle!
+    </div>
+</div>
+{% endblock %}
+
+
+{% block javascriptsExt %}
+
+    <script src={{ asset('js/niveaux/2/n2e6.js')}}></script>
+{% endblock %}

@@ -17,89 +17,947 @@
 
 
 {% block elements %}
-
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="baliseCss">class=</span><span class="baliseTxt">".title2"</span>
+        <span class="propCss">width: </span>
+        <span class="valueCss">100%</span>;
     </div>
+
     <div class="draggable text-center" data-id="2" id="draggable2">
-                        <span class="baliseCss">class.</span><span class="baliseTxt">"title2"</span>
+        <span class="propCss">background: </span>
+        <span class="valueCss"> url</span>
+        (<span class="baliseTxt">'image/batman.jpg'</span>);
     </div>
-    <div class="draggable text-center" data-id="3" id="draggable3" >
-                        <span class="baliseCss">class:</span><span class="baliseTxt">"title2"</span>
+
+    <div class="draggable text-center" data-id="3" id="draggable3">
+        <span class="propCss">background-size: </span>
+        <span class="valueCss">contain</span>;
     </div>
+
     <div class="draggable text-center" data-id="4" id="draggable4">
-                        <span class="baliseCss">class</span><span class="baliseTxt">(.title2)</span>
+        <span class="propCss">background-repeat: </span>
+        <span class="valueCss"> no repeat</span>;
     </div>
-    <div class="draggable text-center" data-id="5" data-content="title2" id="draggable5">
-                        <span class="baliseCss">class=</span><span class="baliseTxt">"title2"</span>
+
+    <div class="draggable text-center" data-id="5" id="draggable5">
+        <span class="propCss">font-family: </span>
+        <span class="valueCss">Tahoma, Geneva, sans-serif</span>;
     </div>
+
     <div class="draggable text-center" data-id="6" id="draggable6">
-                        <span class="baliseCss">class=</span><span class="baliseTxt">title2</span>
+        <span class="propCss">font-family: </span>
+        <span class="valueCss">Stencil, Arial, sans-serif</span>;
     </div>
+
     <div class="draggable text-center" data-id="7" id="draggable7">
-                        <span class="baliseCss">class:</span><span class="baliseTxt">.title2</span>
+        <span class="propCss">color: </span>
+        <span class="valueCss">grey</span>;
     </div>
-    <hr>
+
+    <div class="draggable text-center" data-id="8" id="draggable8">
+        <span class="propCss">text-align: </span>
+        <span class="valueCss">center</span>;
+    </div>
+
     <div class="draggable text-center" data-id="9" id="draggable9">
-        <span>color : <input id ="input9" type="text" placeholder="Valeur"></span>
+        <span class="propCss">padding: </span>
+        <span class="valueCss">10%</span>;
     </div>
+
+    <div class="draggable text-center" data-id="10" id="draggable10">
+        <input id ="input10" type="text" placeholder="propriete" style="width: 40%">
+        <span class="propCss"> : </span>
+        <span class="valueCss">left</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="11" id="draggable11">
+        <span class="propCss">border: </span>
+        <span class="valueCss">1px solid grey</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="12" id="draggable12">
+        <span class="propCss">text-align: </span>
+        <span class="valueCss">center</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="13" id="draggable13">
+        <span class="propCss">box-shadow </span>
+        <span class="valueCss">1px 1px 20px yellow</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="14" id="draggable14">
+        <span class="propCss">text-shadow </span>
+        <span class="valueCss">1px 1px 20px yellow</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="15" id="draggable15">
+        <span class="propCss">margin</span>
+        <span class="valueCss">10px 0</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="16" id="draggable16">
+        <span class="propCss">background-color:</span>
+        <span class="valueCss">gainsboro</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="17" id="draggable17">
+        <input id ="input17" type="text" placeholder="propriete" style="width: 40%">
+        <span class="propCss"> : </span>
+        <span class="valueCss">underline</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="18" id="draggable18">
+        <span class="propCss">color:</span>
+        <span class="valueCss">#020202</span>;
+    </div>
+
+    <div class="draggable text-center" data-id="19" id="draggable19">
+        <span class="propCss">display:</span>
+        <span class="valueCss">inline-block</span>;
+    </div>
+
+
 
 {% endblock %}
 
 {% block code_html %}
 
-    <p class="text-white">&lt;!DOCTYPE html&gt;</p>
-    <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-    <div><span class="balise">&lt;html&gt;</span></div>
-    <div><span class="balise">&lt;head&gt;</span></div>
-    <div>
-        <span class="balise">&lt;title&gt;</span>
-        Ma page
-        <span class="balise">&lt;/title&gt;</span>
-    </div>
-    <div><span class="balise">&lt;/head&gt;</span></div>
-    <div><span class="balise">&lt;body&gt;</span></div>
-    <div class="d-flex align-items-center" id="blockA">
-        <span class="balise">&lt;h1&nbsp;</span>
-        <span class="baliseCss hide" id="block5">class=<span class="baliseTxt">"title2"</span></span>
-        <span class="droppable" id="droppable5"></span>
-        &gt;Ma page
-        <span class="balise">&lt;/h1&gt;</span><i class="fas fa-check hide baliseCss" id="check5"></i>
-    </div>
-    <div>
-        <span class="balise">&lt;p <span class="baliseCss">id=<span class="baliseTxt">"pRed"</span></span>&gt;</span>
-        Mon paragraphe rouge
-        <span class="balise">&lt;/p&gt;</span>
-    </div>
-    <div><span class="balise">&lt;/body&gt;</span></div>
-    <div><span class="balise">&lt;/html&gt;</span></div>
+    {#*    *****************************************************#}
+
+{#HEADER#}
+<div>
+    <span class="balise">&lt;header&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-5 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"title"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;h1&gt;</span>BATMAN<span class="balise">&lt;h1&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">p&gt;</span>Bruce Wayne<span class="balise">&lt;/p&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div>
+    <span class="balise">&lt;/header&gt;</span>
+</div>
+
+{#MAIN#}
+
+<div>
+    <span class="balise">&lt;main&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;img&nbsp;</span>
+    <span class="baliseCss">src=<span class="baliseTxt">"images/logo.jpg"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"logo"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;h2&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"hover litTitle"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Infos</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;p&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"p"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Afin de lutter activement contre le crime, Bruce Wayne devient un justicier masqué qui agit principalement la nuit. Il est reconnaissable grâce à son costume constitué d'une cape en forme d'ailes de chauve-souris et d'un
+		    masque aux oreilles pointues. S'il ne possède pas de super-pouvoirs, il compense par une grande dextérité dans les arts martiaux et par son équipement technologique ultra-sophistiqué (exemple : la Batmobile).</span>
+    <span class="balise">&lt;/p&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;span&nbsp;</span>
+    <span class="baliseCss hide" id="block1">id=<span class="propCss">"hist"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Historique du personnage :</span>
+    <span class="balise">&lt;/span&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;a&nbsp;</span>
+    <span class="baliseCss hide" id="block1">href=<span class="propCss">"https://fr.wikipedia.org/wiki/Batman"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">ici</span>
+    <span class="balise">&lt;/a&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+{#CAPACITE#}
+
+<div class="d-flex align-items-center ml-5 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"capa"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;img&nbsp;</span>
+    <span class="baliseCss">src=<span class="baliseTxt">"images/logo.jpg"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"logo"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;h2&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"hover litTitle"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Capacités</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;ul&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Excellente condition physique<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Détective de génie<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Maître en arts martiaux<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Accès à un équipement de très haute technologie<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Excellente condition physique<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Expert en technologie et en informatique<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Multilingue<span class="balise">&lt;li&gt;</span>
+</div>
+<div class="ml-7">
+    <span class="balise">&lt;li&gt;</span>Condition mentale supérieure<span class="balise">&lt;li&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;/ul&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+{#TABLE#}
+
+<div class="ml-5">
+    <span class="balise">&lt;table&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;thead&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;th&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Amis Connus</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;th&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Ennemis Connus</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;/thead&gt;</span>
+</div>
+
+{#TBODY#}
+
+<div class="ml-6">
+    <span class="balise">&lt;tbody&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Robin</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Bane</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Alfred Pennyworth</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Black Mask</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Red Hood</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Double-Face</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Lucius Fox</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Harley Quinn</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Commissaire James Gordon</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Pingouin</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;tr&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"amis"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Catwoman</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;td&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"vs"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Mr Freeze</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/tr&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;/tbody&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/table&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;img&nbsp;</span>
+    <span class="baliseCss">src=<span class="baliseTxt">"images/logo.jpg"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"logo"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;h2&nbsp;</span>
+    <span class="baliseCss hide" id="block1">class=<span class="propCss">"hover litTitle"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Caracteristique</span>
+    <span class="balise">&lt;/h2&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+{#FORM#}
+
+<div class="d-flex align-items-center ml-6 my-1">
+    <span class="balise">&lt;form&nbsp;</span>
+    <span class="baliseCss">methode=<span class="baliseTxt">"post"&nbsp;</span></span>
+    <span class="baliseCss">action=<span class="baliseTxt">"#"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-7 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"row-form"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"force"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"force"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Force</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"for"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"force"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"endu"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"endu"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Endurance</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"endu"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"endu"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"intelligence"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"intel"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Intelligence</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"int"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"intel"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"sagesse"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"sag"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Sagesse</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"sag"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"sag"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+{#ROW 2 FORM#}
+
+<div class="d-flex align-items-center ml-7 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"row-form"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"agilite"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"agi"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Agilité</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"agi"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"agi"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"cha"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"cha"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Charisme</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"cha"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"cha"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-8 my-1">
+    <span class="balise">&lt;div&nbsp;</span>
+    <span class="baliseCss">class=<span class="baliseTxt">"sectForm"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;label&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"vitesse"</span></span>
+    <span class="baliseCss">for=<span class="baliseTxt">"vit"</span></span>
+    <span class="balise">&gt;</span>
+    <span class="text-white">Vitesse</span>
+    <span class="balise">&lt;/label&gt;</span>
+</div>
+
+<div class="ml-9">
+    <span class="balise">&lt;br&gt;</span>
+</div>
+
+<div class="d-flex align-items-center ml-9 my-1">
+    <span class="balise">&lt;input&nbsp;</span>
+    <span class="baliseCss">id=<span class="baliseTxt">"vit"&nbsp;</span></span>
+    <span class="baliseCss">name=<span class="baliseTxt">"vit"</span></span>
+    <span class="baliseCss">class=<span class="baliseTxt">"inputBatman"</span></span>
+    <span class="baliseCss">type=<span class="baliseTxt">"number"</span></span>
+    <span class="balise">&gt;</span>
+</div>
+
+<div class="ml-8">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="ml-7">
+    <span class="balise">&lt;/div&gt;</span>
+</div>
+
+<div class="ml-6">
+    <span class="balise">&lt;/form&gt;</span>
+</div>
+
+<div class="ml-5">
+    <span class="balise">&lt;/main&gt;</span>
+</div>
+
+    {#**********************************************************#}
+
 
 {% endblock %}
 
 {% block code_css %}
 
-    <pre class="text-white">
+<div class="text-white">
+    <div>
+        <span class="balise">header</span>{
+        <div class="solution1 hide ml-5">
+            <span class="propCss">width: </span>
+            <span class="valueCss">100%</span>;
+            <br>
+            <span class="propCss">background: </span>
+            <span class="valueCss"> url</span>
+            (<span class="baliseTxt">'image/batman.jpg'</span>);
+            <br>
+            <span class="propCss">background-size: </span>
+            <span class="valueCss">contain</span>;
+            <br>
+            <span class="propCss">background-repeat: </span>
+            <span class="valueCss"> no repeat</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable1"></div>
+        <div class="droppable ml-5" id="droppable2"></div>
+        <div class="droppable ml-5" id="droppable3"></div>
+        <div class="droppable ml-5" id="droppable4"></div>
+        }
+    </div>
 
-<i class="fas fa-check hide baliseCss" id="check9"></i><span class="baliseCss">.title2</span>{
-    <div class="hide" id="block9"></div>
-    <div class="droppable" id="droppable9"></div>
-}
+    <div>
+        <span class="baliseCss">.p, #capa, caracteristiques</span>{
+        <div class="solution1 hide ml-5">
+            <span class="propCss">font-family: </span>
+            <span class="valueCss">Tahoma, Geneva, sans-serif</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable5"></div>
+        }
+    </div>
 
-<span class="baliseCss">#pRed</span>{
-    color : red;
-}
+    <div>
+        <span class="balise">h2</span>{
+        <div class="solution2 hide ml-5">
+            <span class="propCss">font-family: </span>
+            <span class="valueCss">Stencil, Arial, sans-serif</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable6"></div>
+        }
+    </div>
 
-    </pre>
+    <div>
+        <span class="baliseCss">#title<br></span>{
+        <br>
+        <span class="ml-5">
+            <span class="propCss">position: :</span>
+            <span class="valueCss">absolute</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">right :</span>
+            <span class="valueCss">3%</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">top :</span>
+            <span class="valueCss">4%</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">color :</span>
+            <span class="valueCss">white</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">font-size :</span>
+            <span class="valueCss">30px</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">font-family :</span>
+            <span class="valueCss">Stencil</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">text-shadow :</span>
+            <span class="valueCss">1px 1px 20px yellow</span>;</span>
+        <br>
+        <span class="ml-5">
+            <span class="propCss">text-align : </span>
+            <span class="valueCss">center</span>;</span>
+        <br>
+        }
+    </div>
 
-{% endblock %}
+    <div>
+        <span class="baliseCss">.hover</span>{
+        <div class="solution2 hide ml-5">
+            <span class="propCss">color: </span>
+            <span class="valueCss">grey</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable7"></div>
+        <span class="ml-5">
+            <span class="propCss">text-shadow :</span>
+            <span class="valueCss">2px 2px 100px yellow</span>;</span>
+        }
+    </div>
 
-{% block nextlevel %}
-    <form action="{{ path('exercice', {slug : 'niveau-'~exercice.level.number~'-exercice'~next}) }}"
-          method="post">
-        <input type="hidden" name='token' value="{{ csrf_token('next-token') }}">
-        <input type="hidden" name='exFinish' value="{{ exercice.id }}">
-        <button class="btn p-4" id="next">Exercice suivant -></button>
-    </form>
+    <div>
+        <span class="baliseCss">.sect</span>&nbsp;<span class="balise">form</span>{
+        <div class="solution2 hide ml-5">
+            <span class="propCss">text-align: </span>
+            <span class="valueCss">center</span>;
+            <br>
+            <span class="propCss">padding: </span>
+            <span class="valueCss">10%</span>;
+            <br>
+            <span class="propCss" id="sol10"></span>
+            <span class="propCss"> : </span>
+            <span class="valueCss">left</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable8"></div>
+        <div class="droppable ml-5" id="droppable9"></div>
+        <div class="droppable ml-5" id="droppable10"></div>
+        }
+    </div>
+
+    <div>
+        <span class="balise">table th,</span>&nbsp;
+        <span class="balise">table tr,</span>&nbsp;
+        <span class="balise">table td</span>{
+        <div class="solution3 hide ml-5">
+            <span class="propCss">border: </span>
+            <span class="valueCss">1px solid grey</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable11"></div>
+        }
+    </div>
+
+    <div>
+        <span class="balise">table</span>{
+        <div class="solution3 hide ml-5">
+            <span class="propCss">text-align: </span>
+            <span class="valueCss">center</span>;
+            <br>
+            <span class="propCss">box-shadow </span>
+            <span class="valueCss">1px 1px 20px yellow</span>;
+            <br>
+            <span class="propCss">text-shadow </span>
+            <span class="valueCss">1px 1px 20px yellow</span>;
+            <br>
+            <span class="propCss">margin</span>
+            <span class="valueCss">10px 0</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable12"></div>
+        <div class="droppable ml-5" id="droppable13"></div>
+        <div class="droppable ml-5" id="droppable14"></div>
+        <div class="droppable ml-5" id="droppable15"></div>
+        }
+    </div>
+    <div>
+        <span class="baliseCss">.vs</span>{
+        <div class="solution4 hide ml-5">
+            <span class="propCss">background-color:</span>
+            <span class="valueCss">gainsboro</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable16"></div>
+        }
+    </div>
+    <div>
+        <span class="baliseCss">#hist</span>{
+        <div class="solution4 hide ml-5">
+            <span id ="sol17" type="text"></span>
+            <span class="propCss"> : </span>
+            <span class="valueCss">underline</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable17"></div>
+        <span class="ml-5">
+            <span class="propCss">color : </span>
+            <span class="valueCss">gray</span>;</span>
+        <br>
+        }
+        }
+    </div>
+    <div>
+        <span class="baliseCss">.amis</span>{
+        <div class="solution4 hide ml-5">
+            <span class="propCss">color:</span>
+            <span class="valueCss">#020202</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable18"></div>
+
+        }
+    </div>
+
+    <div>
+        <span class="baliseCss">.logo</span>{
+        <br>
+        <span class="ml-5">
+            <span class="propCss">display : </span>
+            <span class="valueCss">none</span>;</span>
+        <br>
+        <div class="solution4 hide ml-5">
+            <span class="propCss">display:</span>
+            <span class="valueCss">inline-block</span>;
+        </div>
+        <div class="droppable ml-5" id="droppable19"></div>
+
+        }
+    </div>
+
+</div>
+
 {% endblock %}
 
 {% block trophy %}
@@ -121,13 +979,13 @@
     <div class="col-12">
         <div id="info" class="section">
             <div class="d-flex justify-content-center align-items-center">
-                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
-                <h2 class="litTitle">Infos</h2>
+                <img class="logo" src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+                <h2 class="hover litTitle">Infos</h2>
             </div>
             <p class="p">
                 Afin de lutter activement contre le crime, Bruce Wayne devient un justicier masqué qui agit principalement la nuit. Il est reconnaissable grâce à son costume constitué d'une cape en forme d'ailes de chauve-souris et d'un
                 masque aux oreilles pointues. S'il ne possède pas de super-pouvoirs, il compense par une grande dextérité dans les arts martiaux et par son équipement technologique ultra-sophistiqué (exemple : la Batmobile).<br>
-                <span id="hist">Historique du personnage<span> : <a href="https://fr.wikipedia.org/wiki/Batman">ici</a>
+                <span id="hist">Historique du personnage</span> : <a href="https://fr.wikipedia.org/wiki/Batman">ici</a>
             </p>
         </div>
     </div>
@@ -137,8 +995,8 @@
     <div class="col-12">
         <div id="capa" class="section">
             <div class="d-flex justify-content-center align-items-center">
-                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
-                <h2 class="litTitle">Capacités</h2>
+                <img class="logo" src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+                <h2 class="hover litTitle">Capacités</h2>
             </div>
             <ul>
                 <li>Excellente condition physique</li>
@@ -157,101 +1015,108 @@
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
         <table>
-            <tr>
-                <th class="amis">Amis connus</th>
-                <th class="vs">Ennemis connus</th>
-            </tr>
-            <tr>
-                <td class="amis">Robin</td>
-                <td class="vs">Bane</td>
-            </tr>
-            <tr>
-                <td class="amis">Alfred Pennyworth </td>
-                <td class="vs">Black Mask</td>
-            </tr>
-            <tr>
-                <td class="amis">Red Hood</td>
-                <td class="vs">Double-Face</td>
-            </tr>
-            <tr>
-                <td class="amis">Lucius Fox </td>
-                <td class="vs">Harley Quinn</td>
-            </tr>
-            <tr>
-                <td class="amis">Commissaire James Gordon</td>
-                <td class="vs">Pingouin</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th class="amis">Amis connus</th>
+                    <th class="vs">Ennemis connus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="amis">Robin</td>
+                    <td class="vs">Bane</td>
+                </tr>
+                <tr>
+                    <td class="amis">Alfred Pennyworth </td>
+                    <td class="vs">Black Mask</td>
+                </tr>
+                <tr>
+                    <td class="amis">Red Hood</td>
+                    <td class="vs">Double-Face</td>
+                </tr>
+                <tr>
+                    <td class="amis">Lucius Fox </td>
+                    <td class="vs">Harley Quinn</td>
+                </tr>
+                <tr>
+                    <td class="amis">Commissaire James Gordon</td>
+                    <td class="vs">Pingouin</td>
+                </tr>
 
-            <tr>
-                <td class="amis">Catwoman</td>
-                <td class="vs">Mr Freeze</td>
-            </tr>
-
+                <tr>
+                    <td class="amis">Catwoman</td>
+                    <td class="vs">Mr Freeze</td>
+                </tr>
             </tbody>
         </table>
     </div>
 </div>
 
-    <div class="row">
-        <div class="col-12 d-flex flex-column align-items-center">
-            <div class="d-flex justify-content-center align-items-center">
-                <img src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
-                <h2 class="litTitle">Caracteristiques</h2>
-            </div>
-
-            <div id="can" style="width: 400px; height: 400px;">
-                <canvas id="myChart" width="300" height="300"></canvas>
-            </div>
-
-            <form  method="post" action="#">
-                <div class="row-form">
-
-                    <div class="sectForm">
-                        <label id="force">Force</label><br>
-                        <input id="for" type="number" name="force" class="inputBatman" max="100" min="0">
-                    </div>
-
-                    <div class="sectForm">
-                        <label>Endurance</label><br>
-                        <input id="endu" type="number" name="endurance" class="inputBatman" max="100" min="0">
-                    </div>
-
-                    <div class="sectForm">
-                        <label>Intelligence</label><br>
-                        <input id="int" type="number" name="intelligence" class="inputBatman" max="100" min="0">
-                    </div>
-
-                    <div class="sectForm">
-                        <label id="sagesse">Sagesse</label><br>
-                        <input id="sag" type="number" name="sagesse" class="inputBatman" max="100" min="0">
-                    </div>
-                </div><br>
-
-                <div class="row-form">
-                    <div class="sectForm" id="agi">
-                        <label id="agil">Agilité</label><br>
-                        <input id="agilite" type="number" name="agilite" class="inputBatman" max="100" min="0">
-                    </div>
-
-                    <div class="sectForm">
-                        <label>Charisme</label><br>
-                        <input id="cha" type="number" name="charisme" class="inputBatman" max="100" min="0">
-                    </div>
-
-                    <div class="sectForm">
-                        <label>Vitesse</label><br>
-                        <input id="vit" type="number" name="vitesse" class="inputBatman" max="100" min="0">
-                    </div>
-                </div>
-            </form>
+<div class="row">
+    <div class="col-12 d-flex flex-column align-items-center">
+        <div class="d-flex justify-content-center align-items-center">
+            <img class="logo" src="{{ asset('uploads/image/exercice10/logo.jpg') }}" width="80px" height="80px">
+            <h2 class="hover litTitle" id="caracteristiques">Caracteristiques</h2>
         </div>
+
+        <div id="can" style="width: 400px; height: 400px;">
+            <canvas id="myChart" width="300" height="300"></canvas>
+        </div>
+
+        <form  method="post" action="#">
+            <div class="row-form">
+
+                <div class="sectForm">
+                    <label id="force">Force</label><br>
+                    <input id="for" type="number" name="force" class="inputBatman" max="100" min="0">
+                </div>
+
+                <div class="sectForm">
+                    <label>Endurance</label><br>
+                    <input id="endu" type="number" name="endurance" class="inputBatman" max="100" min="0">
+                </div>
+
+                <div class="sectForm">
+                    <label>Intelligence</label><br>
+                    <input id="int" type="number" name="intelligence" class="inputBatman" max="100" min="0">
+                </div>
+
+                <div class="sectForm">
+                    <label id="sagesse">Sagesse</label><br>
+                    <input id="sag" type="number" name="sagesse" class="inputBatman" max="100" min="0">
+                </div>
+            </div><br>
+
+            <div class="row-form">
+                <div class="sectForm" id="agi">
+                    <label id="agil">Agilité</label><br>
+                    <input id="agilite" type="number" name="agilite" class="inputBatman" max="100" min="0">
+                </div>
+
+                <div class="sectForm">
+                    <label>Charisme</label><br>
+                    <input id="cha" type="number" name="charisme" class="inputBatman" max="100" min="0">
+                </div>
+
+                <div class="sectForm">
+                    <label>Vitesse</label><br>
+                    <input id="vit" type="number" name="vitesse" class="inputBatman" max="100" min="0">
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+
 {% endblock %}
 
 
 {% block javascriptsExt %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+
+    <script>
+
+    </script>
+
     <script>
         let force = 50;
         let endu = 50;

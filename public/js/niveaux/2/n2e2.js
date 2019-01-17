@@ -45,32 +45,29 @@ $( function() {
                   TODO Mettre val a la place de la valeur manquante
                   TODO Modifier la classe, selecteur ou id affecté
                 */
+                if ($(this).attr('id') === 'droppable1'){
+                    $('#myTit').css('text-align', 'center');
+                }
                 if ($(this).attr('id') === 'droppable2'){
-                    $('.title').css('font-size', val);
-                    $('#solInput1').html(val);
+                    $('#monPremierParagraphe').css('font-size', '12px');
                 }
+                if ($(this).attr('id') === 'droppable3'){
+                    $('#monSecondParagraphe').css('font-style', 'italic');
+                }
+
+                if ($(this).attr('id') === 'droppable4'){
+                    $('#tomate').addClass('hover');
+                }
+
                 if ($(this).attr('id') === 'droppable5'){
-                    $('#paragraphe').css('font-weight', val);
-                    $('#solInput2').html(val);
+                    $('.myClass').css('text-decoration', 'underline');
                 }
-                if ($(this).attr('id') === 'droppable9'){
-                    $('.span').css('font-family', val);
-                    $('#paragraphe').css('color', 'blue');
-                    $('#solInput3').html(val);
+                    check(id);
+
+                    console.log('finish',finish);
+
                 }
-
-                // if ($(this).attr('id') === 'droppableA'){
-                //     $('.title2').css(val, '1px solid black');
-                // }
-                // if ($(this).attr('id') === 'droppableB'){
-                //     $('div').css('background-image', 'url("erererr")');
-                // }
-                check(id);
-
-                console.log('finish',finish);
-
-            }
-        });
+            });
     });
 
     function check (id){
@@ -80,27 +77,19 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 3){// Verification de la fin de l'exercice.
+        if (finish.length === 5){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
                 $('.solution1').show('explode', 1000);
                 finishAudio.play()
             }, 1000);
-            setTimeout(()=>{
-                $('.solution2').show('explode', 1000);
-                finishAudio.play()
-            }, 2000);
-            setTimeout(()=>{
-                $('.solution3').show('explode', 1000);
-                finishAudio.play()
-            }, 3000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 endLevel.play();
-            }, 4000);
+            }, 2000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative
