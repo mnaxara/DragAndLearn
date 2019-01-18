@@ -3,53 +3,57 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e2.css') }}">{% endblock %}
 
 {% block lecons %}
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <ul class="text-white">
+    <br>
+        <li>Il existe six niveaux de titres dans une page HTML, de <span class="balise">&lt;h1&gt;</span> à <span class="balise">&lt;h6&gt;</span>, du plus important <span class="balise">(&lt;h1&gt;)</span> au moins important<span class="balise">(&lt;h6&gt;)</span>.
+        </li>
+    <br>
+        <li>L'élément <span class="balise">&lt;br&gt;</span> permet le retour à la ligne, il  peut être utilisé autant de fois que l'on souhaite. Il s'utilise seul, il n'est pas nécessaire de fermer la balise.
+        </li>
+    <br>
+        <li>L'élément <span class="balise">&lt;hr&gt;</span>, est une balise unique orpheline comme <span class="balise">&lt;br&gt;</span>, elle permet de définir un changement de thématique avec un retour à la ligne.
+        </li>
+    </ul>
+    
 {% endblock %}
 
 
 {% block elements %}
+    <br>
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
-    <div class="draggable text-center my-1" data-id="1" id="draggable1">
-        <span class="balise">&lt;head&gt;</span>
-    </div>
-
+   
     <div class="draggable text-center my-1" data-id="5" id="draggable5">
         <span class="balise">&lt;h2&gt;</span>Titre moins important <span class="balise">&lt;/h2&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="2" id="draggable2">
         <span class="balise">&lt;body&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center ml-1" data-id="3" id="draggable4">
         <span class="balise">&lt;div&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="4" id="draggable3">
         <span class="balise">&lt;h1&gt;</span>Titre important <span class="balise">&lt;/h1&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="6" id="draggable6">
         <span class="balise">&lt;br&gt;</span>
     </div>
-
+    <br>
+    <div class="draggable text-center my-1" data-id="1" id="draggable1">
+        <span class="balise">&lt;head&gt;</span>
+    </div>
+    <br>
     <div class="draggable text-center my-1" data-id="8" id="draggable8">
         <span class="balise">&lt;hr&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="7" id="draggable7">
           <span class="balise">&lt;h3&gt;</span>Titre un peu moins important<span class="balise">&lt;/h3&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="12" id="draggable12">
         <span class="balise">&lt;\br&gt;</span>
     </div>
