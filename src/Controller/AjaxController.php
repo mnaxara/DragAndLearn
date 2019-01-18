@@ -313,6 +313,21 @@ class AjaxController extends AbstractController
         }
 
         return new Response($theme);
+     /**
+     *@Route("/ajax/delete/user/{id}", name="deleteUser", requirements={"id"="\d+"})
+     */
+    public function deleteArticle(User $user){
+
+        //récupération de l'entity manager, nécessaire pour la suppression
+        $entityManager = $this->getDoctrine()->getManager();
+        //je veux supprimer cet article
+        $entityManager->remove($user);
+        //pour valider la suppression
+        $entityManager->flush();
+
+        //génération d'un message flash
+        $this->addFlash('warning', 'Profil supprimé');
+
 
     }
 }

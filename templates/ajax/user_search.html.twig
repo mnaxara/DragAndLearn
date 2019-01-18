@@ -14,7 +14,7 @@
             <td><img class="avatar_table" src="{{ asset('uploads/image/avatar/' ~ user.avatar)}}"></td>
             <td>{{ user.username }}</td>
             <td class="update" data-id="{{ user.id }}"><i class="fas fa-edit"></i></td>
-            <td><i class="fas fa-trash"></i></td>
+            <td class="delete" data-id="{{ user.id }}"><i class="fas fa-trash"></i></td>
         </tr>
 
     {% endfor %}
