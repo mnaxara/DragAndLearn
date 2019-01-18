@@ -961,6 +961,8 @@
 {% endblock %}
 
 {% block trophy %}
+    <p class="text-center">Vous avez debloqué le trophée : Niveau 2 !</p>
+    <img src="{{ asset('uploads/image/trophy/trophy_two.png') }}" alt="trophée 2" width="80px" height="80px">
 {% endblock %}
 
 {% block apercu %}
@@ -1150,9 +1152,6 @@
         $('.inputBatman').change(()=>{
             createChart (force, endu, vit, int, agi, sag, cha);
         });
-
-
-
 
 
         function createChart (force, endu, vit, int, agi, sag, cha){

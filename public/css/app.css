@@ -51,3 +51,7 @@ footer ul{
 .progress {
     width: 50%;
 }
+
+.hide{
+    display: none;
+}

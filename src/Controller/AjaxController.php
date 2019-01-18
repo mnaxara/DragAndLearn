@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Exercice;
@@ -88,8 +89,12 @@ class AjaxController extends AbstractController
     }
 
 
-//                          TIMER
-        /**
+
+    /*
+    /                         TIMER
+    */
+    
+    /**
      * @Route("/ajax/timer", name="ajaxTimer")
      */
     public function setTimer(Request $request)
@@ -114,6 +119,27 @@ class AjaxController extends AbstractController
     }
 
 
+    /**
+     * @Route("/ajax/trophy", name="ajaxTrophy")
+     */
+    public function setTrophy(Request $request)
+    {
+        $trophy = $request->request->get('trophy');
+        $userId = $request->request->get('user');
+
+        $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle($trophy);
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneById($userId);
+
+        $user->addTrophy($trophy);
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        return new Response ('kiki trophy');
+    }
+
+
 //                          EXERCICE
     /**
      * @Route("/ajax/exercice", name="ajaxExercice")
@@ -134,6 +160,7 @@ class AjaxController extends AbstractController
         $search = $request->request->get('search');
         $exercices = $this->getDoctrine()->getRepository(Exercice::class)->lookForExercice($search);
         return $this->render('ajax/exercice_search.html.twig', ['exercices'=>$exercices]);
+
 
     }
 

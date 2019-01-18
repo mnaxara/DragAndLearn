@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Trophy;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
