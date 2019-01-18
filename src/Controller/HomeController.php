@@ -41,7 +41,27 @@ class HomeController extends AbstractController
      */
     public function classement()
     {
-        return $this->render('home/classement.html.twig');
+        // ON recupere le nombre de level du site
+        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
+        $nbLevel = $repositoryL->countLevel();
+
+        // Pour chaque niveau on recupere les 10 meilleurs temps
+
+        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
+
+        $topTenByLevel=[];
+
+        for($i = 1; $i <= $nbLevel; $i++){
+
+        $topTenByLevel[$i] = $repositoryU->getTopTimerByLevel($i);
+
+        }
+
+        dd($topTenByLevel);
+
+
+
+        return $this->render('home/classement.html.twig', ['topTen' => $topTenByLevel]);
     }
 
 
