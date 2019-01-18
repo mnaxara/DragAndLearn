@@ -63,17 +63,21 @@ class AppFixtures extends Fixture
             $manager->persist($theme);
         }
 
-        $user = New User();
-        $user->setUsername('kiki');
-        $user->setEmail('kiki@admin.com');
-        $user->setRoles(['ROLE_ADMIN']);
-        $plainPassword = 'kiki';
-        $encodedPassword = $this->encoder->encodePassword($user, $plainPassword);
-        $user->setPassword($encodedPassword);
-        $user->setTheme($themes[0]);
-        $user->setAvatar('default.png');
+        $users = [];
 
-        $manager->persist($user);
+        for ($i = 0; $i < 5; $i++) {
+            $user = New User();
+            $user->setUsername('kiki'.$i);
+            $user->setEmail('kiki'.$i.'@admin.com');
+            $user->setRoles(['ROLE_ADMIN']);
+            $plainPassword = 'kiki';
+            $encodedPassword = $this->encoder->encodePassword($user, $plainPassword);
+            $user->setPassword($encodedPassword);
+            $user->setTheme($themes[0]);
+            $user->setAvatar('default.png');
+            $users[] = $user;
+            $manager->persist($user);
+        }
 
 
         $levels = [];
@@ -118,17 +122,21 @@ class AppFixtures extends Fixture
         }
 
 
-        for ($i = 0; $i < 20; $i++){
-            $number = $exercices[$i]->getNumber();
-            $level= $exercices[$i]->getLevel()->getNumber();
-            $value = $level.$number;
-            $save = new UserHasExercices();
-            $save->setExercices($exercices[$i]);
-            $save->setUsers($user);
-            $save->setFinish(true);
-            $save->setValue($value);
-            $save->setTime(new \DateTime('00:00:00'));
-            $manager->persist($save);
+        foreach ($users as $user) {
+            for ($i = 0; $i < 20; $i++) {
+                $number = $exercices[$i]->getNumber();
+                $level = $exercices[$i]->getLevel()->getNumber();
+                $value = $level . $number;
+                $save = new UserHasExercices();
+                $save->setExercices($exercices[$i]);
+                $save->setUsers($user);
+                $save->setFinish(true);
+                $save->setValue($value);
+                $m = rand(0, 50);
+                $s = rand(0, 59);
+                $save->setTime(new \DateTime('00:' . $m . ':' . $s));
+                $manager->persist($save);
+            }
         }
 
 

@@ -14,7 +14,7 @@
 {% block header %}
 <header>
     <!--Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-{{ defaut_theme.theme }}">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,12 +59,20 @@
         <div class="col12">
             <div class="row bg-dark text-white">
                 <div class="col-12 d-flex justify-content-around align-items-center">
-                    {% set progress = last_exercice.2 * 10 %}
+                    {{ dump(last_exercice) }}
+                    {% if last_exercice is same as(null) %}
+                        {% set exercice = 0 %}
+                        {% set niveau = 1 %}
+                    {% else %}
+                        {% set exercice = last_exercice.2%}
+                        {% set niveau = last_exercice.1 %}
+                    {% endif %}
+                    {% set progress = exercice * 10 %}
 
                     <p class="my-2">
                         Nom : <span class="px-2">{{ app.user.username }}</span>
-                        <span class="px-2"> Niveau : </span><span class="px-2">{{ last_exercice.1 }}</span>
-                        Exercice : <span class="px-2">{{ last_exercice.2 + 1 }}/10</span>
+                        <span class="px-2"> Niveau : </span><span class="px-2">{{ niveau }}</span>
+                        Exercice : <span class="px-2">{{ (exercice + 1) }}/10</span>
                     </p>
 
                     <div class="progress" id="progress">

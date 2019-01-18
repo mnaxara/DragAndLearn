@@ -10,7 +10,11 @@ class Theme{
 
     public function __construct(TokenStorageInterface $tokenStorage){
 
-//        $this->theme = $tokenStorage->getToken()->getUser()->getTheme()->getColor();
+        $connectedAsk = $tokenStorage->getToken();
+
+        if($connectedAsk != null && $connectedAsk->getUser() != 'anon.'){
+            $this->theme = $connectedAsk->getUser()->getTheme()->getColor();
+        }
 
     }
 

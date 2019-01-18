@@ -60,6 +60,7 @@
             <div class="row justify-content-around">
                 {% for tab in exerciceByLevel %}
                     <div class="col-4">
+                        <h3 class="text-center">Niveau {{ tab[1].levelNumber }}</h3>
                         <table class="table table-striped">
                             <thead>
                             <th class="text-center" scope="col">exercices</th>
@@ -111,21 +112,19 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-12">
-                    <div id="theme" class="text-center">
-                        <form>
-                            <div class="d-flex justify-content-around mx-3" id="themeTab">
-                                {% for choice in themes %}
-                                    <div class="form_choice">
-                                        <label for="{{ choice.id }}">{{ choice.name }}
-                                            <div id="{{ choice.name }}" class="choice{{ choice.id }} color bg-{{ choice.color }} my-2"></div>
-                                            <input type="radio" id="{{ choice.id }}" class="m-auto inputTheme" name="theme" value="{{ choice.color }}">
-                                        </label>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </form>
-                    </div>
+                <div id="theme" class="col-12 text-center">
+                    <form>
+                        <div class="row justify-content-around mx-3" id="themeTab">
+                            {% for choice in themes %}
+                                <div class="col-4 form_choice">
+                                    <label for="{{ choice.id }}">{{ choice.name }}
+                                        <div id="{{ choice.name }}" class="choice{{ choice.id }} color bg-{{ choice.color }} my-2"></div>
+                                        <input type="radio" id="{{ choice.id }}" class="m-auto inputTheme" name="theme" value="{{ choice.color }}">
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

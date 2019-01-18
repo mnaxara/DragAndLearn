@@ -298,11 +298,12 @@ class AjaxController extends AbstractController
     /**
      * @Route("/ajax/user/theme", name="ajaxUserTheme")
      */
-    public function UserTheme(Request $request){
+    public function UserTheme(Request $request)
+    {
 
         $theme = $request->request->get('theme');
 
-        if($theme != null){
+        if ($theme != null) {
             $user = $this->getUser();
             $theme_repo = $this->getDoctrine()->getRepository(Theme::class);
             $themeChoose = $theme_repo->findOneByColor($theme);
@@ -313,6 +314,7 @@ class AjaxController extends AbstractController
         }
 
         return new Response($theme);
+    }
      /**
      *@Route("/ajax/delete/user/{id}", name="deleteUser", requirements={"id"="\d+"})
      */

@@ -74,6 +74,15 @@ class ExerciceController extends AbstractController
 
                 $number = $finishExercice->getNumber();
                 $level = $finishExercice->getLevel()->getNumber();
+
+                // TODO CREER NEXT SAVE
+                // On crée la sauvegarde pour l'exercice suivant
+//                $actualValue = $finishExercice->getNumber();
+//                $nextExercice = $this->getDoctrine()->getRepository(Exercice::class)->findOneByValue($finishId);
+//
+//                $newSave = new UserHasExercices();
+
+
                 $entityManager = $this->getDoctrine()->getManager();
 
                 if($number === 9 && $level === 1){

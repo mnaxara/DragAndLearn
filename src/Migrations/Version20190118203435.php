@@ -8,15 +8,14 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190110182412 extends AbstractMigration
+final class Version20190118203435 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE exercice ADD slug VARCHAR(128) NOT NULL');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_E418C74D989D9B62 ON exercice (slug)');
+        $this->addSql('ALTER TABLE user ADD reset_token VARCHAR(255) DEFAULT NULL, CHANGE avatar avatar VARCHAR(80) NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -24,7 +23,6 @@ final class Version20190110182412 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP INDEX UNIQ_E418C74D989D9B62 ON exercice');
-        $this->addSql('ALTER TABLE exercice DROP slug');
+        $this->addSql('ALTER TABLE user DROP reset_token, CHANGE avatar avatar VARCHAR(50) NOT NULL COLLATE utf8mb4_unicode_ci');
     }
 }

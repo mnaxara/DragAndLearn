@@ -81,7 +81,10 @@ body{
     height: 75px;
     border: 5px solid lightgrey;
     border-radius: 15px;
+
 }
 .form_choice {
-    display: inline-grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

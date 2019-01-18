@@ -18,7 +18,7 @@ class FileUploader{
         //transfert du fichier
         $file->move($this->directory . $sousdossier, $filename);
 
-        if($oldfilename && file_exists($this->directory .$sousdossier . '/' . $oldfilename)){
+        if($oldfilename&& $oldfilename !== 'default.png' && file_exists($this->directory .$sousdossier . '/' . $oldfilename)){
             unlink($this->directory .$sousdossier . '/' . $oldfilename);
         }
 

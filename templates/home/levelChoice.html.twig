@@ -56,87 +56,95 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice1'}) }}">
-                                            <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html1.png') }}); background-size: contain">div/span/p</div>
+                                            <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html1.png') }}); background-size: cover">div/span/p</div>
                                         </a>
                                     </div>
+                                    {% if last_exercice is same as(null) %}
+                                        {% set exercice = -1 %}
+                                        {% set niveau = 1 %}
+                                    {% else %}
+                                        {% set exercice = last_exercice.2 %}
+                                        {% set niveau = last_exercice.1 %}
+                                    {% endif %}
+                                    {% set exercice = exercice * 10 %}
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice2'}) }}">
-                                            {% if last_exercice.2 >= 0 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html2.png') }}); background-size: contain">h1/br/hr</div>
+                                            {% if exercice >= 0 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html2.png') }}); background-size: cover">h1/br/hr</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html2.png') }}); background-size: contain; opacity: 0.2">h1/br/hr</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html2.png') }}); background-size: cover; opacity: 0.2">h1/br/hr</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice3'}) }}">
-                                            {% if last_exercice.2 >= 1 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html3.png') }}); background-size: contain">a/button</div>
+                                            {% if exercice >= 1 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html3.png') }}); background-size: cover">a/button</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html3.png') }}); background-size: contain; opacity: 0.2">a/button</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html3.png') }}); background-size: cover; opacity: 0.2">a/button</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice4'}) }}">
-                                            {% if last_exercice.2 >= 2 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html4.png') }}); background-size: contain">img</div>
+                                            {% if exercice >= 2 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html4.png') }}); background-size: cover">img</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html4.png') }}); background-size: contain; opacity: 0.2">img</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html4.png') }}); background-size: cover; opacity: 0.2">img</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice5'}) }}">
-                                            {% if last_exercice.2 >= 3 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html5.png') }}); background-size: contain">ol/ul</div>
+                                            {% if exercice >= 3 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html5.png') }}); background-size: cover">ol/ul</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html5.png') }}); background-size: contain; opacity: 0.2">ol/ul</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html5.png') }}); background-size: cover; opacity: 0.2">ol/ul</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice6'}) }}">
-                                            {% if last_exercice.2 >= 4 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html6.png') }}); background-size: contain">table</div>
+                                            {% if exercice >= 4 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html6.png') }}); background-size: cover">table</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html6.png') }}); background-size: contain; opacity: 0.2">table</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html6.png') }}); background-size: cover; opacity: 0.2">table</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice7'}) }}">
-                                            {% if last_exercice.2 >= 5 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html7.png') }}); background-size: contain">form</div>
+                                            {% if exercice >= 5 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html7.png') }}); background-size: cover">form</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html7.png') }}); background-size: contain; opacity: 0.2">form</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html7.png') }}); background-size: cover; opacity: 0.2">form</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice8'}) }}">
-                                            {% if last_exercice.2 >= 6 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html8.png') }}); background-size: contain">multi 1</div>
+                                            {% if exercice >= 6 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html8.png') }}); background-size: cover">multi 1</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html8.png') }}); background-size: contain; opacity: 0.2">multi 1</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html8.png') }}); background-size: cover; opacity: 0.2">multi 1</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice9'}) }}">
-                                            {% if last_exercice.2 >= 7 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html9.png') }}); background-size: contain">multi 2</div>
+                                            {% if exercice >= 7 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html9.png') }}); background-size: cover">multi 2</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html9.png') }}); background-size: contain; opacity: 0.2">multi 2</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html9.png') }}); background-size: cover; opacity: 0.2">multi 2</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice10'}) }}">
-                                            {% if last_exercice.2 >= 8 and last_exercice.1 >=1 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html10.png') }}); background-size: contain">CV</div>
+                                            {% if exercice >= 8 and niveau >=1 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html10.png') }}); background-size: cover">CV</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html10.png') }}); background-size: contain; opacity: 0.2">CV</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/html10.png') }}); background-size: cover; opacity: 0.2">CV</div>
                                             {% endif %}
                                         </a>
                                     </div>
@@ -172,91 +180,91 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice1'}) }}">
-                                            {% if last_exercice.2 >= 0 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css1.png') }}); background-size: contain">class/id</div>
+                                            {% if (exercice == 9 and niveau == 1) or niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css1.png') }}); background-size: cover">class/id</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css1.png') }}); background-size: contain; opacity: 0.2">class/id</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css1.png') }}); background-size: cover; opacity: 0.2">class/id</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice2'}) }}">
-                                            {% if last_exercice.2 >= 0 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css2.png') }}); background-size: contain">select</div>
+                                            {% if exercice >= 0 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css2.png') }}); background-size: cover">select</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css2.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css2.png') }}); background-size: cover; opacity: 0.2">select</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice3'}) }}">
-                                            {% if last_exercice.2 >= 1 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css3.png') }}); background-size: contain">color</div>
+                                            {% if exercice >= 1 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css3.png') }}); background-size: cover">color</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css3.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css3.png') }}); background-size: cover; opacity: 0.2">color</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice4'}) }}">
-                                            {% if last_exercice.2 >= 2 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css4.png') }}); background-size: contain">font</div>
+                                            {% if exercice >= 2 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css4.png') }}); background-size: cover">font</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css4.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css4.png') }}); background-size: cover; opacity: 0.2">font</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice5'}) }}">
-                                            {% if last_exercice.2 >= 3 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css5.png') }}); background-size: contain">border</div>
+                                            {% if exercice >= 3 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css5.png') }}); background-size: cover">border</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css5.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css5.png') }}); background-size: cover; opacity: 0.2">border</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice6'}) }}">
-                                            {% if last_exercice.2 >= 4 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css6.png') }}); background-size: contain">margin</div>
+                                            {% if exercice >= 4 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css6.png') }}); background-size: cover">margin</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css6.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css6.png') }}); background-size: cover; opacity: 0.2">margin</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice7'}) }}">
-                                            {% if last_exercice.2 >= 5 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css7.png') }}); background-size: contain">width</div>
+                                            {% if exercice >= 5 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css7.png') }}); background-size: cover">width</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css7.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css7.png') }}); background-size: cover; opacity: 0.2">width</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice8'}) }}">
-                                            {% if last_exercice.2 >= 6 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css8.png') }}); background-size: contain">background</div>
+                                            {% if exercice >= 6 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css8.png') }}); background-size: cover">background</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css8.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css8.png') }}); background-size: cover; opacity: 0.2">background</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice9'}) }}">
-                                            {% if last_exercice.2 >= 7 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css9.png') }}); background-size: contain">position</div>
+                                            {% if exercice >= 7 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css9.png') }}); background-size: cover">position</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css9.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css9.png') }}); background-size: cover; opacity: 0.2">position</div>
                                             {% endif %}
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-css-exercice10'}) }}">
-                                            {% if last_exercice.2 >= 8 and last_exercice.1 >= 2 %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css10.png') }}); background-size: contain">Batman</div>
+                                            {% if exercice >= 8 and niveau >= 2 %}
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css10.png') }}); background-size: cover">Batman</div>
                                             {% else %}
-                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css10.png') }}); background-size: contain; opacity: 0.2">select</div>
+                                                <div class="gif-slide" style="background-image: url({{ asset('uploads/image/ExThumbnails/css10.png') }}); background-size: cover; opacity: 0.2">Batman</div>
                                             {% endif %}
                                         </a>
                                     </div>
