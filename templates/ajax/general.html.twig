@@ -1,0 +1,16 @@
+<h2 class="text-center py-3">Themes</h2>
+
+<div id="theme" class="text-center">
+    <form>
+        <div class="d-flex justify-content-around mx-3">
+            {% for choice in themes %}
+                <div class="form_choice">
+                    <label for="{{ choice.id }}">{{ choice.name }}
+                        <div class="color bg-{{ choice.color }} my-2"></div>
+                        <input type="radio" id="{{ choice.id }}" class="m-auto" name="theme" value="{{ choice.color }}">
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>

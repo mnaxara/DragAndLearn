@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Level;
+use App\Entity\Theme;
 use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\ExerciceType;
@@ -219,4 +220,78 @@ class AjaxController extends AbstractController
         return $this->render('ajax/classement.html.twig', ['topTen' => $topTenByLevel]);
     }
 
+
+//                          Admin.General
+    /**
+     * @Route("/ajax/general", name="ajaxGeneral")
+     */
+    public function general()
+    {
+
+        $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
+        return $this->render('ajax/general.html.twig', ['themes' => $themes]);
+
+    }
+
+    /**
+     * @Route("/ajax/profile/username", name="ajaxProfileUsername")
+     */
+    public function setUsernameByProfile(Request $request)
+    {
+        $username = $request->request->get('username');
+        $userId = $request->request->get('user');
+
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneById($userId);
+
+        $user->setUsername($username);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        return new Response ($username);
+
+    }
+
+    /**
+     * @Route("/ajax/profile/avatar", name="ajaxProfileAvatar")
+     */
+    public function setAvatarByProfile(Request $request,  FileUploader $fileuploader)
+    {
+        $fileName = $this->getUser()->getAvatar();
+
+        $files = $request->files->all();
+
+        if (!empty($files)){
+
+            $file = $files[0];
+
+            $fileName = $file ? $fileuploader->upload($file, $this->getParameter('user_image_directory'),$fileName) : '';
+
+            $this->getUser()->setAvatar($fileName);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+
+        }
+
+
+        return new Response ($fileName);
+
+    }
+
+     /**
+     * @Route("/ajax/general/theme", name="ajaxTheme")
+     */
+    public function generalTheme(Request $request){
+
+        $theme = $request->query->get('theme');
+        if($theme != null){
+            $theme_repo = $this->getDoctrine()->getRepository(Theme::class);
+            $defaut = $theme_repo->findOneByName('Defaut');
+            $defaut->setColor($theme);
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return new Response($theme);
+
+    }
 }

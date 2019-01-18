@@ -40,7 +40,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/profile", name="profile")
      */
-    public function profile(Request $request): Response
+    public function profile(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
 
         $user = $this->getUser();
@@ -64,31 +64,45 @@ class SecurityController extends AbstractController
         }
 
         // GESTION DU CHANGEMENT DE MOT DE PASSE
-
         $entityManager = $this->getDoctrine()->getManager();
 
         $form = $this->createForm(UserProfileType::class, $user);
 
+        $mdpSend = $request->request->get('mdpActu');
+        $mdpActu = $user->getPassword();
+
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if (password_verify($mdpSend, $mdpActu)){
 
-            $user = $form->getData();
+            if($form->isSubmitted() && $form->isValid()){
 
-            $entityManager->persist($user);
+                $user = $form->getData();
 
-            $entityManager->flush();
+                $new = $user->getPlainPassword();
 
-            $this->addFlash('success', 'Mot de passe modifié');
+                $encoded = $encoder->encodePassword($user, $new);
 
-            return $this->render('security/profile.html.twig', [
-                'user' => $user,
-                'theme' => $theme,
-                'last_exercice' => $lastSave,
-                'exerciceByLevel' => $exerciceByLevel,
-                'userPassForm'=>$form->createView()
-            ]);
+                $user->setPassword($encoded);
 
+                $entityManager->persist($user);
+
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Mot de passe modifié');
+
+                return $this->render('security/profile.html.twig', [
+                    'user' => $user,
+                    'theme' => $theme,
+                    'last_exercice' => $lastSave,
+                    'exerciceByLevel' => $exerciceByLevel,
+                    'userPassForm'=>$form->createView()
+                ]);
+            }
+        }
+        else if (!empty($mdpSend))
+        {
+            $this->addFlash('danger', 'Mot de passe incorrect');
         }
 
         //**************************************
