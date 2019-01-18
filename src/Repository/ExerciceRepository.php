@@ -70,7 +70,6 @@ class ExerciceRepository extends ServiceEntityRepository
                 $this->createQueryBuilder('e')->expr()->like('e.libelle',
                     $this->createQueryBuilder('e')->expr()->literal('%'.$valeur.'%'))
             ))
-            ->orderBy('e.libelle', 'ASC')
             ->getQuery()
             ->getResult();
 

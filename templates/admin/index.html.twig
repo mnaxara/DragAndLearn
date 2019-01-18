@@ -62,7 +62,7 @@
     <ul class="panel justify-content-around bg-dark text-light">
         <li id="user" class="py-3">Utilisateur</li>
         <li id="exercice" class="py-3">Exercice</li>
-        <li id="class" class="py-3">Classement</li>
+        <li id="classement" class="py-3">Classement</li>
         <li id="general" class="py-3">Admin. général</li>
     </ul>
 
@@ -76,6 +76,8 @@
 
 </main>
 {% endblock %}
+
+{% block footer %}{% endblock %}
 
 {% block javascripts %}
     {#USER#}
@@ -146,6 +148,7 @@
 
             })
 
+            //FORM UPDATE USER
             $(".main").on('click', '.btn_update', function(e){
                 e.preventDefault();
 
@@ -210,6 +213,74 @@
 
             })
 
+            //RESULT2_2
+            $(".main").on('click', '.update2', function(e){
+                e.preventDefault();
+
+                let url = "{{ path('ajaxUpdateExercice', {id: '0'}) }}";
+
+                console.log($(this).attr('data-id'));
+                url = url.replace('0', $(this).attr('data-id'));
+                console.log(url);
+
+                $.ajax({
+                    type:'get',
+                    url: url,
+                    dataType: 'html',
+                    success: function(data){
+                        $('#result2_2').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
+
+            //FORM UPDATE EXERCICE
+            $(".main").on('click', '.btn_update2', function(e){
+                e.preventDefault();
+
+                let url = "{{ path('ajaxUpdateExercice', {id: '0'}) }}";
+                url = url.replace('0', $(this).attr('data-id'));
+
+                let datas = $('#form_update2').serialize();
+                console.log( datas );
+
+                $.ajax({
+                    type:'post',
+                    url: url,
+                    data: datas,
+                    success: function(data){
+                        $('#result2_2').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
+
+        {# CLASSEMENT #}
+
+            //RESULT1
+            $("#classement").on('click', function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:'get',
+                    url: '{{ path('ajaxClassement') }}',
+                    dataType: 'html',
+                    success: function(data){
+                        $('#result2_1').empty();
+                        $('#result2_2').empty();
+                        $('#result1').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
         })
     </script>
 {% endblock %}

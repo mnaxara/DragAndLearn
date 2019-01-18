@@ -69,6 +69,11 @@ class Exercice
      */
     private $instruction;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $lesson;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -184,6 +189,18 @@ class Exercice
     public function setInstruction(string $instruction): self
     {
         $this->instruction = $instruction;
+
+        return $this;
+    }
+
+    public function getLesson(): ?string
+    {
+        return $this->lesson;
+    }
+
+    public function setLesson(?string $lesson): self
+    {
+        $this->lesson = $lesson;
 
         return $this;
     }
