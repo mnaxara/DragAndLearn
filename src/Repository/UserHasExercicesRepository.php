@@ -129,15 +129,15 @@ class UserHasExercicesRepository extends ServiceEntityRepository
         //on stocke la requête dans une variable
 
         $sql = '
-            SELECT MIN(u.time), e.number as exoNumber, us.avatar, us.username as levelNumber
-            FROM user_has_exercices u INNER JOIN exercice e ON e.id = u.exercices_id 
-            INNER JOIN level l ON e.level_id = l.id 
-            INNER JOIN user us ON us.id = u.users_id
-            WHERE l.number = :levelNumber
-            AND u.finish = true
-            GROUP BY exoNumber
-            ORDER BY exoNumber ASC
-            LIMIT 10
+            SELECT exercices_id, time, users_id, username, exercice.number as number, avatar
+            FROM `user_has_exercices`
+            INNER JOIN user ON user.id = `user_has_exercices`.`users_id`
+            INNER JOIN exercice ON `user_has_exercices`.exercices_id = `exercice`.id
+            INNER JOIN level ON level.id = exercice.level_id
+            WHERE level.number = :levelNumber
+            AND finish = 1
+            AND time IN ( SELECT MIN(time) FROM `user_has_exercices` GROUP BY exercices_id )
+            ORDER BY number
           ';
         $select = $connexion->prepare($sql);
         $select->bindValue(':levelNumber', $levelNumber);

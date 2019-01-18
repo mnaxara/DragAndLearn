@@ -57,10 +57,6 @@ class HomeController extends AbstractController
 
         }
 
-        dd($topTenByLevel);
-
-
-
         return $this->render('home/classement.html.twig', ['topTen' => $topTenByLevel]);
     }
 
