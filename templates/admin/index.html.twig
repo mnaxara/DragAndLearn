@@ -281,6 +281,47 @@
                 })
 
             })
+
+        {# ADMIN_GENERAL #}
+
+            //RESULT1
+            $("#general").on('click', function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:'get',
+                    url: '{{ path('ajaxGeneral') }}',
+                    dataType: 'html',
+                    success: function(data){
+                        $('#result2_1').empty();
+                        $('#result2_2').empty();
+                        $('#result1').html(data);
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            })
+
+            //UPDATE COLOR
+            $(".main").on('click', 'input', function(e){
+                e.preventDefault();
+
+                let theme = ($(this).val());
+                console.log(theme);
+
+                $.ajax({
+                    type:'get',
+                    url: '{{ path('ajaxTheme') }}',
+                    data: {"theme": theme},
+                    dataType: 'html',
+                    success: function(theme){
+                        $('.navbar').attr('class', 'navbar navbar-expand-lg navbar-dark bg-'+theme);
+                    }
+                })
+
+            })
+
         })
     </script>
 {% endblock %}

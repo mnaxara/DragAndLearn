@@ -1,6 +1,6 @@
 <h2 class="text-center pt-3">Classements</h2>
 
-<div class="container">
+<div class="container py-3">
     <div class="row">
         {% set i = 0 %}
         {% for level in topTen %}
@@ -17,7 +17,7 @@
                     {% for exercice in level %}
                         <tr>
                             <td class="text-center">
-                                {{ exercice.exoNumber + 1 }}
+                                {{ exercice.number + 1 }}
                             </td>
                             <td class="text-center">
                                 <img class="rounded-circle" src="{{ asset('uploads/image/avatar/'~exercice.avatar) }}" alt="avatar" width="30px" height="30px">

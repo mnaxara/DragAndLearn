@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Level;
+use App\Entity\Theme;
 use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\ExerciceType;
@@ -219,4 +220,33 @@ class AjaxController extends AbstractController
         return $this->render('ajax/classement.html.twig', ['topTen' => $topTenByLevel]);
     }
 
+
+//                          Admin.General
+    /**
+     * @Route("/ajax/general", name="ajaxGeneral")
+     */
+    public function general()
+    {
+
+        $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
+        return $this->render('ajax/general.html.twig', ['themes' => $themes]);
+
+    }
+
+    /**
+     * @Route("/ajax/general/theme", name="ajaxTheme")
+     */
+    public function generalTheme(Request $request){
+
+        $theme = $request->query->get('theme');
+        if($theme != null){
+            $theme_repo = $this->getDoctrine()->getRepository(Theme::class);
+            $defaut = $theme_repo->findOneByName('Defaut');
+            $defaut->setColor($theme);
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return new Response($theme);
+
+    }
 }
