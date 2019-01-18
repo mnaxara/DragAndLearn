@@ -3,16 +3,16 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e5.css') }}">{% endblock %}
 
 {% block lecons %}
-    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</span>
-    <span class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</span>
+    <ul class="text-white">
+        <br>
+        <li>
+            La propriété CSS <span class="propCss">border</span> permet d'appliquer des bordures de couleurs, d'épaisseurs ou de types différents aux éléments HTML sélectionnés.
+        </li>
+        <br>
+        <li>
+           La propriété CSS <span class="propCss">border-image</span> dessine une image sur la bordure d'un élément. Selon les cas, <span class="propCss">border</span> doit être présente si <span class="propCss">border-image</span> est utilisée.
+        </li>
+    </ul>
 {% endblock %}
 
 
@@ -115,7 +115,7 @@
 
     <div class="text-white">
 
-            <span class="baliseCss ml-5">.brd</span>{
+            <span class="baliseCss">.brd</span>{
                 <div class="hide">
                 border: 1rem solid;
                  </div>
@@ -130,13 +130,13 @@
                 </span>
                 <div class="droppable" id="droppable7"> </div>
                 <div class="solution2 hide ml-5"><span class="baliseCss">h1</span></div>
-             {<span class="baliseCss ml-5 propCss">border-style: dotted;</span>
+             {<br><span class="baliseCss ml-5 propCss">border-style: dotted;</span>
              <br>
             }
 
-<br>
+<br><br>
 
-        <span class="baliseCss ml-5">p</span>{
+        <span class="baliseCss">p</span>{
                 <div class="hide">
                  border: 1px dashed black;
                 </div>
@@ -145,8 +145,8 @@
             }
         
 
-<br>
-            <span class="baliseCss ml-5">#rainbow</span>{
+<br><br>
+            <span class="baliseCss">#rainbow</span>{
                 <div class="hide" id="block">
                 border: 25px solid;
                  </div>

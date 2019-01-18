@@ -3,36 +3,51 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e5.css') }}">{% endblock %}
 
 {% block lecons %}
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-    asperiores aspernatur
-    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-    nobis
-    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <br>
+    <div class="text-white">
+        <p>
+            Les listes HTML vont nous permettre d’ordonner du contenu et d'apporter de la clarté à nos documents.<br>
+            Il existe deux grand types de liste en HTML : <span>les listes ordonnées</span> et <span>les listes non-ordonnées</span>.<br>
+            Un troisième type, un peu particulier et moins utilisé vient s'y rajouter : les listes de définitions.</p><br>
+        <ul>
+            <li>
+               <p>
+                  <span class="text-info">Les listes non ordonnées :</span><br>
+                    Elles sont utilisés pour lister des éléments sans hiérarchie ni ordre logique. Si je veux, par exemple,
+                    lister les mots "patates", "bilboquet" et "chaussure" sans plus de contexte, j'utiliserai, une liste non ordonnée.
+                    Pour la mettre en place, nous avons besoin d'une balise <span class="balise">&lt;ul&gt;</span> (unordered list) qui va ouvrir la liste qu'on fermera
+                    avec la balise <span class="balise">&lt;/ul&gt;</span>. A l'intérieur, on intègrera les éléments avec la balise <span class="balise">&lt;li&gt;</span>
+                    qu'il faudra fermer aussi (<span class="balise">&lt;/li&gt;</span>).
+               </p>
+
+
+                 <span class="balise">&lt;ul&gt;</span><br>
+                                 <span class="balise ml-5">&lt;li&gt;</span> patates <span class="balise">&lt;/li&gt;</span><br>
+                                 <span class="balise ml-5">&lt;li&gt;</span> bilboquet <span class="balise">&lt;/li&gt;</span><br>
+                                 <span class="balise ml-5">&lt;li&gt;</span> chaussure <span class="balise">&lt;li&gt;</span><br>
+                <span class="balise">&lt;/ul&gt;</span><br>
+            </li><br>
+
+            <li>
+                <p>
+
+                <span class="text-info">Les listes ordonnées :</span><br>
+                   Au contraire des listes non-ordonnées, on utilise des listes ordonnées quand il y a une notion d'ordre ou de progression logique entre
+                   les éléments de celle-ci. Par exemple, pour lister des étapes naturelles ou créer un sommaire.
+                   Nous allons, cette fois-ci la mettre en place avec la balise <span class="balise">&lt;ol&gt;</span> ( <span class="balise">&lt;/ol&gt;</span> pour fermer) et à nouveau des élément <span class="balise">&lt;li&gt;</span> .
+                </p>
+
+                <span class="balise">&lt;ol&gt;</span><br>
+                   <span class="balise ml-5">&lt;li&gt;</span> Introduction <span class="balise">&lt;/li&gt;</span><br>
+                   <span class="balise ml-5">&lt;li&gt;</span> Partie I <span class="balise">&lt;/li&gt;</span><br>
+                   <span class="balise ml-5">&lt;li&gt;</span> Partie II <span class="balise">&lt;li&gt;</span><br>
+                   <span class="balise ml-5">&lt;li&gt;</span> Conclusion <span class="balise">&lt;li&gt;</span><br>
+               <span class="balise">&lt;/ol&gt;</span>
+           </li>
+        </ul>
+    </div>
+
+
 {% endblock %}
 
 
@@ -43,60 +58,60 @@
     <div class="draggable text-center my-1" data-id="20" id="draggable20">
         <span class="balise">&lt;lo&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="6" id="draggable6">
         <span class="balise">&lt;/ul&gt;</span>
     </div>
 
-
+    <br>
 
     <div class="draggable text-center my-1 liClass" data-id="2" id="draggable2">
         <span class="balise free">&lt;li&gt;</span>de mon meilleur éditeur de texte<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="11" id="draggable11">
         <span class="balise">&lt;li&gt;</span>apprendre le HTML pour structurer et donner du sens à son contenu<span class="balise">&lt;/li&gt;</span>
     </div>
 
-
+    <br>
 
 
     <div class="draggable text-center my-1" data-id="13" id="draggable13">
         <span class="balise">&lt;li&gt;</span>plus tard, apprendre le Javascript pour rendre mon application dynamique<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="14" id="draggable14">
         <span class="balise">&lt;li&gt;</span>Et apprendre un langage Back tel que PHP pour pouvoir communiquer avec la base de donnée<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="15" id="draggable15">
        <span class="balise">&lt;/ol&gt;</span>
     </div>
-
+    <br>
 
 
     <div class="draggable text-center my-1 liClass" data-id="3" id="draggable3">
         <span class="balise">&lt;li&gt;</span>d'une connexion à Internet<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1 liClass" data-id="5" id="draggable5">
         <span class="balise">&lt;li&gt;</span>de faire les exercices sur Drag&Learn, mon site préféré<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
 
     <div class="draggable text-center my-1" data-id="1" id="draggable1">
        <span class="balise">&lt;ul&gt;</span>
     </div>
-
+    <br>
 
     <div class="draggable text-center my-1 liClass" data-id="4" id="draggable4">
         <span class="balise">&lt;li&gt;</span>de mon pc chéri<span class="balise">&lt;/li&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="7" id="draggable7">
         <span class="balise">&lt;ol&gt;</span>
     </div>
-
+    <br>
     <div class="draggable text-center my-1" data-id="12" id="draggable12">
         <span class="balise">&lt;li&gt;</span>apprendre le css pour pouvoir mettre en forme mon contenu (couleur, positionnement, police, taille des caractères...)<span class="balise">&lt;/li&gt;</span>
     </div>

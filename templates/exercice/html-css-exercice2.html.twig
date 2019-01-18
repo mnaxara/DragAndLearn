@@ -3,16 +3,56 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e2.css') }}">{% endblock %}
 
 {% block lecons %}
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+   <br>
+
+    <ul class="text-white">
+
+        <li>
+               Nous allons voir ici comment "sélectionner" un élément HTML pour pouvoir lui appliquer
+                un style en CSS.
+        </li>
+            <br>
+        <li>
+            Il existe deux types de sélecteurs pour cibler un élément HTML : les selecteurs dis "simples" et ceux dis "complexes".
+            Les sélecteurs simples ou "sélecteurs éléments" reprennent tout simplement le nom du type d'élément à cibler.
+                Si l'on souhaite, par exemple appliquer un style à tous les paragraphes, nous utiliserons le sélecteur p.
+
+            On utilisera la structure suivante: <br><br>
+                <span class="font-italic">
+                    Sélecteur {</span>
+                    <br>
+            <span class="propCss">Propriété :</span><span class="valueCss"> valeur</span>;<br>
+                }<br><br>
+
+            Si on désire, par exemple changer la couleur de tous les paragraphes : <br><br>
+
+                    <span class="balise">p</span> {
+            <br>
+            <span class="propCss ml-3">Color :</span><span class="valueCss"> blue</span>;<br>
+            }
+        </li>
+
+        <li>
+            Les sélecteurs id et class vont nous permettre de cibler un élément en particulier plutôt qu’un type d’élément.
+            Nous allons tout simplement écrire nos attributs id et / ou class à l’intérieur de la balise ouvrante d’un élément HTML et leur attribuer une valeur.
+            Nous allons ensuite cibler cet élément en CSS en réutilisant cette même valeur.<br>
+            Il existe une différence notable entre les deux attributs class et id : chaque id doit avoir une valeur unique tandis que plusieurs attributs class peuvent posséder la même valeur.
+            <br>Par exemple: <br><br>
+            Coté HTML: <br>
+            <span class="balise">&lt;h1
+            <span class="baliseCss">id=</span>
+            <span class="baliseCss">"monJoliTitre"</span>
+            &gt;
+            </span>
+            <br><br>
+            Coté CSS:<br>
+            <span class="baliseCss">#monJoliTitre</span>{<br>
+            <span class="propCss ml-3">Color :</span><span class="valueCss"> blue</span>;<br>
+            }
+
+
+        </li>
+    </ul>
 {% endblock %}
 
 
@@ -21,20 +61,45 @@
     <div class="draggable text-center" data-id="2" id="draggable2">
         <span class="text-white"><span class="propCss">font-size:</span><span class="valueCss"> 12px</span>;
     </div>
-
+    <br>
+    <div class="draggable text-center" data-id="27" id="draggable27">
+        <span class="baliseCss">#myClass</span>
+    </div>
+    <br>
     <div class="draggable text-center" data-id="4" id="draggable4">
         <span class="baliseCss">#tomate</span>
         <span class="text-white">:</span>
         <span class="baliseTxt">hover</span>
     </div>
+    <br>
+    <div class="draggable text-center" data-id="2" id="draggable2">
+        <span class="text-white"><span class="propCss">font-syze:</span><span class="valueCss"> 12px</span>;
+    </div>
+    <br>
+    <div class="draggable text-center" data-id="25" id="draggable25">
+        <span class="text-white"><span class="propCss">fond-style:</span><span class="valueCss"> italic</span>;
+    </div>
+    <br>
 
     <div class="draggable text-center" data-id="5" id="draggable5">
         <span class="baliseCss">.myClass</span>
     </div>
 
+    <br>
+
+    <div class="draggable text-center" data-id="26" id="draggable26">
+        <span class="baliseCss">#tomate</span>
+        <span class="text-white">;</span>
+        <span class="baliseTxt">over</span>
+    </div>
+
+    <br>
+
     <div class="draggable text-center" data-id="1" id="draggable1">
         <span class="balise">h2</span>
     </div>
+
+    <br>
 
     <div class="draggable text-center" data-id="3" id="draggable3">
         <span class="text-white"><span class="propCss">font-style:</span><span class="valueCss"> italic</span>;
