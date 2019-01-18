@@ -5,7 +5,7 @@
 
 
 {% block lecons %}
-{# consigne :
+{# consigne : TODO
     -Dans cette exercice vous allez devoir deplacer les balises <img> dans la zone correspondante en associant les bons attributs
 attention il est parfois nessecaire de completer les balises avant de les positionner
 #}
@@ -13,28 +13,32 @@ attention il est parfois nessecaire de completer les balises avant de les positi
     <div>
         <ul class="text-white">
             <br>
-            <li>L’insertion d’images en HTML va se faire au moyen de l’élément HTML <img>.</li>
+            <li>L’insertion d’images en HTML va se faire au moyen de l’élément HTML <span class="balise">&lt;img&gt;</span>.</li>
             <br>
-            <li>Au sein de l’élément <img>, nous allons obligatoirement devoir préciser deux attributs : les attributs ‘src’ et ‘alt’.</li>
+            <li>Au sein de l’élément <span class="balise">&lt;img&gt;</span> , nous allons obligatoirement devoir préciser deux attributs : les attributs <span class="baliseCss">src</span> et ‘<span class="baliseCss">alt</span>.</li>
             <br>
-            <li>L’attribut ‘src’ (pour source) va prendre comme valeur l’adresse de l’image (adresse relative ou absolue) tandis que l’attribut ‘alt’ (pour alternative) va contenir un texte alternatif décrivant l’image. ‘alt’ designe le texte qui vas etre afficher si l’image ne peut pas l’etre pour differentes raisons et sert egalement au lecteur d’ecrant pour les personnes non voyante.
+            <li>L’attribut <span class="baliseCss">src</span> (pour source) va prendre comme valeur l’adresse de l’image (adresse relative ou absolue) tandis que l’attribut <span class="baliseCss">alt</span> (pour alternative) va contenir un texte alternatif décrivant l’image. <span class="baliseCss">alt</span> designe le texte qui vas etre afficher si l’image ne peut pas l’etre pour differentes raisons et sert egalement au lecteur d’ecrant pour les personnes non voyante.
             </li>
             <br>
-            <li>L’attribut ‘src’ fonctionne de la meme maniere  que ‘href’ pour un lien.</li>
+            <li>L’attribut <span class="baliseCss">src</span> fonctionne de la meme maniere  que <span class="baliseCss">href</span> pour un lien.</li>
             <br>
-            <li>Il est egalement possible d’utiliser une source dite ’absolue ‘ provenant d’un autre site ex : https://www.pierre-giraud.com/html-css/cours-complet/imgs/attributs-src-alt-image-html.png
+            <li>Il est egalement possible d’utiliser une source dite ’absolue‘ provenant d’un autre site ex : https://www.pierre-giraud.com/html-css/cours-complet/imgs/attributs-src-alt-image-html.png
             </li>
             <br>
             <li>Vous pouvez essayer avec n’importe quelle image sur le web, cela fonctionnera. Faites cependant attention à bien récupérer l’URL complète de l’image ainsi qu’aux droits d’auteur ! Notez également qu'il est généralement déconseillé d'utiliser des images provenant d'autres sites car si ces sites les suppriment, elles ne s'afficheront plus non plus sur le vôtre.</li>
             <br>
-            <li>Vous pouvez aussi ajouter un attribut  ‘title’ aux images, pour fournir un supplément d’information si nécessaire.
+            <li>Vous pouvez aussi ajouter un attribut  <span class="baliseCss">title</span> aux images, pour fournir un supplément d’information si nécessaire.
             </li>
             <br>
             <li>La liste des attributs possible <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Img#Attributs">ici </a></li>
             <br>
-            <li>la documentation complete <a target="_blank" href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Multimedia_and_embedding/Images_in_HTML">ici </a> </li>
+            
         </ul>
     </div>
+
+    {# TODO 
+        ASTUCE : <li>la documentation complete <a target="_blank" href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Multimedia_and_embedding/Images_in_HTML">ici </a> </li>
+     #}
 
 {% endblock %}
 
