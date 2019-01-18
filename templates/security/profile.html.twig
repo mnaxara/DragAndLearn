@@ -18,41 +18,25 @@
 
             {# user #}
             <div class="row" id="userTitle">
-                <h3>
-                 <img src="{{ asset('uploads/image/avatar/' ~ user.avatar) }}" class="w-25">
-                    <span id="userName">{{ user.username }}</span>
-                    <form action="">
-
-                    </form>
+                <div class="col-12 d-flex align-items-center">
+                    <img class="rounded-circle" src="{{ asset('uploads/image/avatar/' ~ user.avatar) }}" id="avatar">
+                    <span id="userName" class="">{{ user.username }}</span>
+                    <div class="hide w-50" id="formName">
+                        <input type="text" class="bg-transparent border-light" id="newUsername" value="{{ user.username }}">
+                    </div>
                     <i class="fas fa-pen" id="nameUpdate"></i>
-                </h3>
+                    <input class="hide" type="file" id="file" name="file" multiple />
+                </div>
             </div>
+
+
+
+
 
             {# trophées #}
             <div class="row">
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-md-2">
-                    <div class="trophy"></div>
+                <div class="col-md-2 text-center">
+                    <img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="">
                 </div>
                 <div class="col-md-2">
                     <div class="trophy"></div>
@@ -93,7 +77,6 @@
                     </div>
                 {% endfor %}
             </div>
-
         </div>
 
         {# colonne droite formulaire modif #}
@@ -137,15 +120,91 @@
                     {% endfor %}
                 </div>
             </div>
-
-
-
-
-
         </div>
-
     </div>
-
 </div>
 {% endblock %}
+
+{% block javascripts %}
+<script>
+
+    $(function(){
+
+        $('#nameUpdate').click(() =>{
+
+            $('#formName').show();
+            $('#userName').hide();
+
+        });
+
+        $('#newUsername').focus(()=>{
+            window.addEventListener('keydown',(e) => {
+                if (e['key'] === 'Enter') {
+
+                    let username = $('#newUsername').val();
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '{{ path("ajaxProfileUsername") }}',
+                        data: {'username': username, 'user': '{{ app.user.id }}'},
+                        timeout: 8000,
+                        dataType: 'html',
+                        success: function (data) {
+                            console.log(data);
+                            $('#userName').html(data);
+                            $('#formName').hide();
+                            $('#userName').show();
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    });
+
+                }
+            })
+        });
+
+        //***********************************GESTION UPDATE AVATAR*************************//
+
+        $('#avatar').on('click', () =>{
+            $('#file').trigger('click');
+        });
+
+        $('#file').on('change', function () {
+            files = event.target.files;
+            event.stopPropagation(); // Stop stuff happening
+            event.preventDefault(); // Totally stop stuff happening
+            //Create a formdata object and add the files
+            var data = new FormData();
+            $.each(files, function(key, value) {
+                data.append(key, value);
+            });
+
+            $.ajax({
+                url: '{{ path("ajaxProfileAvatar") }}',
+                type: 'POST',
+                data: data,
+                cache: false,
+                dataType: 'html',
+                processData: false, // Don't process the files
+                contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+                success: function(data) {
+
+                    $('#avatar').attr('src', "uploads/image/avatar/"+data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    //Handle errors here
+                    alert('ERRORS: ' + textStatus);
+                }
+            });
+        });
+
+        //*********************************************************************************//
+        //*********************************************************************************//
+
+    })
+
+</script>
+{% endblock %}
+
 

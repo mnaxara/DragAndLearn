@@ -3,16 +3,36 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e1.css') }}">{% endblock %}
 
 {% block lecons %}
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
+    <br>
+    <ul class="text-white">
+        <li>
+    Les attributs Class et id permettent de sélectionner un élément précis plutôt qu'un type d'élément.
+    Côté HTML, nous écrivons l'attribut dans la balise ouvrante d'un élément et lui attribuons une valeur.
+        </li>
+        <br>
+        <li>
+            Coté HTML: <br>
+            <span class="balise">&lt;p
+            <span class="baliseCss">id=</span>
+            <span class="baliseTxt">"monPlusBeauParagraphe"</span>
+            &gt;
+            </span>
+            <br><br>
+            Coté CSS:<br>
+            <span class="baliseCss">#monPlusBeauParagraphe</span>{<br>
+            <span class="propCss ml-3">font-size :</span><span class="valueCss"> 30px</span>;<br>
+            }
+        </li>
+        <li>
+            Les liens sont du texte permettant, au clic d'atterir sur une autre page. On peut faire un lien d'une page
+            a.html vers une page b.html mais aussi vers un autre site (par exemple, http://www.autreSite.com).<br>
+        </li>
+        <br>
+
+            Structure:<br>
+            <span class="balise">&lt;a </span> href=<span class="baliseCss">"monLien"</span><span class="balise">&gt</span>Mon site préféré<span class="balise">&lt;/a&gt; </span>
+
+    </ul>
 {% endblock %}
 
 
@@ -58,21 +78,21 @@
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
     <div><span class="balise">&lt;html&gt;</span></div>
     <div><span class="balise">&lt;head&gt;</span></div>
-    <div>
+    <div class="text-white">
         <span class="balise">&lt;title&gt;</span>
         Ma page
         <span class="balise">&lt;/title&gt;</span>
     </div>
     <div><span class="balise">&lt;/head&gt;</span></div>
     <div><span class="balise">&lt;body&gt;</span></div>
-    <div class="d-flex align-items-center" id="blockA">
+    <div class="d-flex align-items-center text-white" id="blockA">
         <span class="balise">&lt;h1&nbsp;</span>
         <span class="baliseCss hide" id="block5">class=<span class="baliseTxt">"title2"</span></span>
         <span class="droppable" id="droppable5"></span>
-        &gt;Ma page
+        <span class="balise">&gt</span> Ma page
         <span class="balise">&lt;/h1&gt;</span><i class="fas fa-check hide baliseCss" id="check5"></i>
     </div>
-    <div>
+    <div class="text-white">
         <span class="balise">&lt;p <span class="baliseCss">id=<span class="baliseTxt">"pRed"</span></span>&gt;</span>
         Mon paragraphe rouge
         <span class="balise">&lt;/p&gt;</span>
