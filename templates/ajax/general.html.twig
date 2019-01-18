@@ -6,7 +6,7 @@
             {% for choice in themes %}
                 <div class="form_choice">
                     <label for="{{ choice.id }}">{{ choice.name }}
-                        <div id="{{ choice.name }}" class="choice{{ choice.id }} color bg-{{ choice.color }} my-2"></div>
+                        <div id="{{ choice.name }}" class="color bg-{{ choice.color }} my-2"></div>
                         <input type="radio" id="{{ choice.id }}" class="m-auto" name="theme" value="{{ choice.color }}">
                     </label>
                 </div>
