@@ -100,7 +100,7 @@
                     }
                 })
 
-            })
+            });
 
             //RESULT2_1
             $(".main").on('keyup', '#search', function(e){
@@ -122,7 +122,7 @@
                     }
                 });
 
-            })
+            });
 
             //RESULT2_2
             $(".main").on('click', '.update', function(e){
@@ -146,7 +146,7 @@
                     }
                 })
 
-            })
+            });
 
             //FORM UPDATE USER
             $(".main").on('click', '.btn_update', function(e){
@@ -170,7 +170,28 @@
                     }
                 })
 
-            })
+            });
+
+            //DELETE USER
+            $(".main").on('click', '.delete', function(e){
+                e.preventDefault();
+
+                let url = "{{ path('deleteUser', {id: '0'}) }}";
+                url = url.replace('0', $(this).attr('data-id'));
+
+                $.ajax({
+                    type:'get',
+                    url: url,
+                    success: function(data){
+                        console.log('ok');
+                    },
+                    error : function(error){
+                        console.log(error)
+                    }
+                })
+
+            });
+
 
     {#EXERCICE#}
             //RESULT1
@@ -190,7 +211,7 @@
                     }
                 })
 
-            })
+            });
 
             //RESULT2_1
             $(".main").on('keyup','#search2', function(e){
@@ -211,7 +232,7 @@
                     }
                 });
 
-            })
+            });
 
             //RESULT2_2
             $(".main").on('click', '.update2', function(e){
@@ -235,7 +256,7 @@
                     }
                 })
 
-            })
+            });
 
             //FORM UPDATE EXERCICE
             $(".main").on('click', '.btn_update2', function(e){
@@ -259,7 +280,7 @@
                     }
                 })
 
-            })
+            });
 
         {# CLASSEMENT #}
 
@@ -280,7 +301,7 @@
                     }
                 })
 
-            })
+            });
 
         {# ADMIN_GENERAL #}
 
@@ -301,7 +322,7 @@
                     }
                 })
 
-            })
+            });
 
             //UPDATE COLOR
             $(".main").on('click', 'input', function(e){
@@ -309,8 +330,6 @@
 
                 let theme = ($(this).val());
                 console.log(theme);
-                let defaut = $(this).before().attr('id');
-                console.log(defaut);
 
                 $.ajax({
                     type:'get',
@@ -319,11 +338,11 @@
                     dataType: 'html',
                     success: function(theme){
                         $('.navbar').attr('class', 'navbar navbar-expand-lg navbar-dark bg-'+theme);
-                        
+                        $('#Defaut').attr('class', 'color bg-' + theme + ' my-2')
                     }
                 })
 
-            })
+            });
 
         })
     </script>
