@@ -309,6 +309,8 @@
 
                 let theme = ($(this).val());
                 console.log(theme);
+                let defaut = $(this).before().attr('id');
+                console.log(defaut);
 
                 $.ajax({
                     type:'get',
@@ -317,6 +319,7 @@
                     dataType: 'html',
                     success: function(theme){
                         $('.navbar').attr('class', 'navbar navbar-expand-lg navbar-dark bg-'+theme);
+                        
                     }
                 })
 
