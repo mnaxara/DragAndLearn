@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Level;
 use App\Entity\UserHasExercices;
+use App\Form\UserProfileType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
@@ -39,7 +40,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/profile", name="profile")
      */
-    public function profile(): Response
+    public function profile(Request $request): Response
     {
 
         $user = $this->getUser();
@@ -62,19 +63,44 @@ class SecurityController extends AbstractController
             }
         }
 
+        // GESTION DU CHANGEMENT DE MOT DE PASSE
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(UserProfileType::class, $user);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $user = $form->getData();
+
+            $entityManager->persist($user);
+
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Mot de passe modifié');
+
+            return $this->render('security/profile.html.twig', [
+                'user' => $user,
+                'theme' => $theme,
+                'last_exercice' => $lastSave,
+                'exerciceByLevel' => $exerciceByLevel,
+                'userPassForm'=>$form->createView()
+            ]);
+
+        }
+
+        //**************************************
 
 
-
-
-
-
-
-
-
-
-
-
-        return $this->render('security/profile.html.twig', ['user' => $user, 'theme' => $theme, 'last_exercice' => $lastSave, 'exerciceByLevel' => $exerciceByLevel]);
+        return $this->render('security/profile.html.twig', [
+            'user' => $user,
+            'theme' => $theme,
+            'last_exercice' => $lastSave,
+            'exerciceByLevel' => $exerciceByLevel,
+            'userPassForm'=>$form->createView()
+        ]);
 
     }
 

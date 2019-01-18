@@ -13,7 +13,7 @@
     {# grosse row principale #}
     <div class="row" id="bigRow">
 
-        {# colonne trophés #}
+        {# colonne gauche #}
         <div class="col-12 col-md-8" id="gain">
 
             {# user #}
@@ -21,7 +21,10 @@
                 <h3>
                  <img src="{{ asset('uploads/image/avatar/' ~ user.avatar) }}" class="w-25">
                     <span id="userName">{{ user.username }}</span>
-                    <i class="fas fa-pen"></i>
+                    <form action="">
+
+                    </form>
+                    <i class="fas fa-pen" id="nameUpdate"></i>
                 </h3>
             </div>
 
@@ -70,62 +73,57 @@
 
             <h3 id="perf">Performances</h3>
 
-        <div class="row justify-content-around">
-            {% for tab in exerciceByLevel %}
-                <div class="col-4">
-                    <table class="table table-striped">
-                        <thead>
-                        <th class="text-center" scope="col">exercices</th>
-                        <th class="text-center" scope="col">Temps</th>
-                        </thead>
-                        <tbody>
-                        {% for exercice in tab %}
-                            <tr>
-                                <td class="text-center">{{ exercice.exoNumber + 1 }}</td>
-                                <td class="text-center">{{ exercice.time }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            {% endfor %}
+            <div class="row justify-content-around">
+                {% for tab in exerciceByLevel %}
+                    <div class="col-4">
+                        <table class="table table-striped">
+                            <thead>
+                            <th class="text-center" scope="col">exercices</th>
+                            <th class="text-center" scope="col">Temps</th>
+                            </thead>
+                            <tbody>
+                            {% for exercice in tab %}
+                                <tr>
+                                    <td class="text-center">{{ exercice.exoNumber + 1 }}</td>
+                                    <td class="text-center">{{ exercice.time }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endfor %}
+            </div>
+
         </div>
 
-
-        </div>
-
-        {# colonne formulaire modif #}
+        {# colonne droite formulaire modif #}
         <div class="col-12 col-md-4">
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
 
             <div class="row" id="modifTitle">
                 <h3 class="m-auto">Modifier son profil</h3>
             </div>
 
-            <form method="" action="">
 
-                <div class="form-group w-50 m-auto">
-                    <label>Mot de passe actuel</label>
-                    <input type="password" name="mdpActu" class="form-control">
-                </div>
+            {{ form_start(userPassForm) }}
+            <div class="form-group w-50 m-auto">
+                <label>Mot de passe actuel</label>
+                <input type="password" name="mdpActu" class="form-control">
+            </div>
+            {{ form_widget(userPassForm, {'attr': {'class' : 'w-50 m-auto'}})}}
+            <div class="text-center my-4">
+                <button class="balise border border-balise btn btn-dark" type="submit">Modifier</button>
+            </div>
+            {{ form_end(userPassForm) }}
 
-                <div class="form-group w-50 m-auto">
-                    <label>Nouveau mot de passe</label>
-                    <input type="password" name="newMdp" class="form-control">
-                </div>
-
-                <div class="form-group w-50 m-auto">
-                    <label>Répéter mot de passe</label>
-                    <input type="password" name="newMdp2" class="form-control">
-                </div>
-
-                <div class="text-center my-4">
-                   <button class="balise border border-balise btn btn-dark" type="submit">Modifier</button>
-                </div>
-
-
-            </form>
             <hr>
-
 
             <div id="theme" class="text-center">
                 <h3>Thème couleur</h3>

@@ -16,14 +16,19 @@ Classement
 				<div class="col-4">
 					<table class="table table-striped">
 						<h3 class="text-center">Niveau {{ i }}</h3>
-						<thead>
-							<th class="text-center" scope="col">Exercice</th>
-							<th class="text-center" scope="row" colspan="2">Learner</th>
-							<th class="text-center" scope="col">Temps</th>
-						</thead>
+							<thead>
+								<th class="text-center" scope="col">Exercice</th>
+								<th class="text-center" scope="row" colspan="2">Learner</th>
+								<th class="text-center" scope="col">Temps</th>
+							</thead>
 						<tbody>
 						{% for exercice in level %}
-							<tr>
+							<tr
+
+								{% if exercice.username == app.user.username %}
+								style="background: gold"
+								{% endif %}
+							>
 								<td class="text-center">
 									{{ exercice.number + 1 }}
 								</td>
