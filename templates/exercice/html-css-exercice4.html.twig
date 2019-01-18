@@ -3,22 +3,26 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e4.css') }}">{% endblock %}
 
 {% block lecons %}
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
-    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-        asperiores aspernatur
-        cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-        nobis
-        officia officiis quas, repellat saepe suscipit voluptatem!</p>
-        {# TODO lien documentation vers proprieter existante voir avec Rémi
-                -specifier que la typo choisie doit etre une de base de windows
-                -mettre fontsize sur titre
-                -mettre fontweight sur p
-                -mettre font family sur span
-         #} 
+
+    {#consigne
+            -dans cette exercice vous allez devoir appliquer une nouvelle taille de  police au
+            titre( il est important de choisir une police native a windows c’esta dire une déjà presente sur votre ordinateur , changer la police utiliser par le span
+             ainsi que de modifier le poids de nos textes(mettre en gras ou reduire cette valeur).
+    #}
+<div>
+    <ul class="text-white"><br>
+        <li>La propriété CSS <span class="propCss">font-family</span> va nous permettre de définir la police de notre texte.(si vous utiliser une police n’etant pas presente sur votre ordinateur , <span class="propCss">font-family</span>   ne fonctionnera pas) plus de detail
+            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font-family">ici</a>.</li>
+        <br>
+        <li>La propriete <span class="propCss">font-size</span> vas nous permettre de modifier la taille du texte (il est necessaire d’utiliser une uniter de messure avec la valeur) vous trouverez
+            <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/CSS/font-size">ici</a> une documentation plus complete sur les valeurs possible.</li>
+        <br>
+        <li>La proprieter <span class="propCss">Font-weight</span> permet de modifier le poid du texte passer un texte en gras par exemple ou faire l’inverse en reduisant la valeur. Vous trouverez une documentation plus complete
+            <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/CSS/font-weight">ici</a> sur les valeurs possible.</li>
+
+    </ul>
+</div>
+
 {% endblock %}
 
 
@@ -26,51 +30,51 @@
 
     {# false #}
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span>fonte-size : <input id ="input1" type="text" placeholder="Valeur"></span>
+        <span class="propCss">fonte-size</span> : <input id ="input1" type="text" placeholder="Valeur">
     </div>   
 
     {# true #}
     <div class="draggable text-center" data-id="2" id="draggable2">
-        <span>font-size : <input id ="input2" type="text" placeholder="Valeur"></span>
+        <span class="propCss">font-size</span> : <input id ="input2" type="text" placeholder="Valeur">
     </div>
 
     {# false #}
     <div class="draggable text-center" data-id="3" id="draggable3">
-        <span>fontsize : <input id ="input3" type="text" placeholder="Valeur"></span>
+        <span class="propCss">fontsize</span> : <input id ="input3" type="text" placeholder="Valeur">
     </div>
 
     {# false #}
     <div class="draggable text-center" data-id="4" id="draggable4">
-        <span>font-wieght : <input id ="input4" type="text" placeholder="Valeur"></span>
+        <span class="propCss">font-wieght</span> : <input id ="input4" type="text" placeholder="Valeur">
     </div>
 
     {# true #}
     <div class="draggable text-center" data-id="5" id="draggable5">
-        <span>font-weight : <input id ="input5" type="text" placeholder="Valeur"></span>
+        <span class="propCss">font-weight</span> : <input id ="input5" type="text" placeholder="Valeur">
     </div>
 
     
 
     {# false #}
     <div class="draggable text-center" data-id="6" id="draggable6">
-        <span>fonteweight : <input id ="input6" type="text" placeholder="Valeur"></span>
+        <span class="propCss">fonteweight </span>: <input id ="input6" type="text" placeholder="Valeur">
     </div>
     
     
 
     {# false #}
     <div class="draggable text-center" data-id="7" id="draggable7">
-        <span>fonte-family : <input id ="input7" type="text" placeholder="Valeur"></span>
+        <span class="propCss">fonte-family</span> : <input id ="input7" type="text" placeholder="Valeur">
     </div>
 
     {# false #}
     <div class="draggable text-center" data-id="8" id="draggable8">
-        <span>font-famille : <input id ="input8" type="text" placeholder="Valeur"></span>
+        <span class="propCss">font-famille</span> : <input id ="input8" type="text" placeholder="Valeur">
     </div>
 
     {# true #}
     <div class="draggable text-center" data-id="9" id="draggable9">
-        <span>font-family : <input id ="input9" type="text" placeholder="Valeur"></span>
+        <span class="propCss">font-family </span>: <input id ="input9" type="text" placeholder="Valeur">
     </div>
 
 {% endblock %}
