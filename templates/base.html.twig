@@ -28,7 +28,7 @@
                     </a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto nav-flex-icons">
+            <ul class="navbar-nav ml-auto nav-flex-icons align-items-center">
                 <li class="nav-item avatar">
                     <a class="nav-link p-0" href="#">
                         <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
@@ -42,7 +42,7 @@
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
                         <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
-                        <a class="dropdown-item" href="#">Classement</a>
+                        <a class="dropdown-item" href="{{ path('classement') }}">Classement</a>
                         {% endif %}
                         {% if is_granted('ROLE_ADMIN') %}
                         <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
@@ -121,10 +121,6 @@
         </div>
     </div>
 </footer>
-
-
-
-
 {% endblock %}
 
 

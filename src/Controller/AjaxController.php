@@ -137,6 +137,7 @@ class AjaxController extends AbstractController
         $entityManager->flush();
 
         return new Response ('kiki trophy');
+    }
 
 
 //                          EXERCICE
