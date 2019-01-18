@@ -101,7 +101,8 @@
             })
 
             //RESULT2_1
-            $(".main").keyup('#search', function(){
+            $(".main").on('keyup', '#search', function(e){
+                e.preventDefault();
 
                 let search = ($('#search').val());
 
@@ -189,8 +190,8 @@
             })
 
             //RESULT2_1
-            $(".main").keyup('#search2', function(){
-
+            $(".main").on('keyup','#search2', function(e){
+                e.preventDefault();
                 let search = ($('#search2').val());
 
                 $.ajax({
