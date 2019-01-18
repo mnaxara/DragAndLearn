@@ -46,7 +46,7 @@ $( function() {
                   TODO Modifier la classe, selecteur ou id affecté
                 */
                 if ($(this).attr('id') === 'droppable9'){
-                    $('.title2').css('border', val);
+                    $('.title2').css('color', val);
                 }
                 if ($(this).attr('id') === 'droppableA'){
                     $('.title2').css(val, '1px solid black');
@@ -70,7 +70,7 @@ $( function() {
             finish.push("#droppable"+id);// Compte comme terminé pour l'exercice
         }
         //TODO Modifier la longueur necessaire a la victoire
-        if (finish.length === 3){// Verification de la fin de l'exercice.
+        if (finish.length === 2){// Verification de la fin de l'exercice.
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
