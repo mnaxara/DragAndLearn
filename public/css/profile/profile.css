@@ -38,7 +38,7 @@ body{
     margin-top: 10%;
 }
 
-#choice{
+.choice{
     width: 70px;
     height: 70px;
     border: 1px solid transparent;

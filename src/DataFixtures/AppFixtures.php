@@ -50,12 +50,12 @@ class AppFixtures extends Fixture
 
 
 
-        $name = ['Defaut', 'Vert', 'Bleu', 'Rouge'];
-        $color= ['dark', 'success', 'primary', 'alert'];
+        $name = ['Defaut', 'Vert','Noir', 'Bleu', 'Rouge', 'Gris', 'Jaune', 'Turquoise'];
+        $color= ['dark', 'success','dark', 'primary', 'danger', 'secondary', 'warning', 'info'];
 
         $themes = [];
 
-        for ($i = 0; $i < 3; $i++){
+        for ($i = 0; $i < 8; $i++){
             $theme = new Theme();
             $theme->setName($name[$i]);
             $theme->setColor($color[$i]);

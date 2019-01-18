@@ -6,7 +6,7 @@
 
 {% block lecons %}
 
-    {# consigne
+    {# consigne TODO
         - dans cette exercice vous allez devoir placer les balises ‘input’ correspondante au label.
     #}
     <div>
@@ -14,35 +14,44 @@
             <br>
             <li>Les formulaires vont nous permettre de recueillir des informations envoyées par nos utilisateurs. Nous allons par exemple utiliser des formulaires HTML pour créer des formulaires d’inscription, des formulaires de contact, etc.</li>
             <br>
-            <li>un formulaire ce place entre les deux balise <form></form></li>
+            <li>un formulaire ce place entre les deux balise <span class="balise">&lt;form&gt;&lt;/form&gt;</span></li>
             <br>
             <li>Les formulaires vont être l’occasion pour nous d’aborder de nombreux éléments html. Voici la liste des type d’input que nous allons aborder dans la partie suivante :</li>
             <br>
-            <li>&lt;input name=’*correspond au label*’ type=’*correspond au type d’input*’&gt;</li>
+            <li><span class="balise">&lt;input</span>  <span class="baliseCss"> name</span>=<span class="baliseTxt">"*correspond au label*"</span> <span class="baliseCss">type</span>=<span class="baliseTxt">"*correspond au type d’input*"</span><span class="balise">&gt;</span></li>
             <br>
-            <li>type="Password" -> Definit un champ pour un mot de passe</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"Password"</span> -> Definit un champ pour un mot de passe</li>           
             <br>
-            <li>type="Input" -> Définit un champ de données pour l’utilisateur</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"checkbox"</span> -> Definit une case a choix multiple</li>
             <br>
-            <li>type="Label" -> Définit une légende pour un élément input</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"text"</span> -> Definit un champ de texte</li>
             <br>
-            <li>type="Checkbox" -> Definit une case a choix multiple</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"radio"</span> -> Definit une case a choix unique</li>
             <br>
-            <li>type="Select" -> Définit une liste de choix deroulante</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"email"</span> -> Definit un champ d’email</li>
             <br>
-            <li>type="text" -> Definit un champ de texte</li>
+            <li><span class="baliseCss">type</span>=<span class="baliseTxt">"date"</span> -> Definit un champ pour choisir une date</li>
             <br>
-            <li>type="radio" -> Definit une case a choix unique</li>
+            <li><span class="balise">&lt;textarea&gt;</span> permet de creer une zone de texte plus grande (la taille de la boite de texte peut etre modifier avec la souris)</li>
             <br>
-            <li>type="Email" -> Definit un champ d’email</li>
+            <li>
+                <span class="balise">&lt;select&gt;</span><br>
+                    <span class="balise ml-4">&lt;option&gt;</span> option n°1<span class="balise">&lt;/option&gt;</span><br>
+                    <span class="balise ml-4">&lt;option&gt;</span> option n°2<span class="balise">&lt;/option&gt;</span><br>
+                    <span class="balise ml-4">&lt;option&gt;</span> option n°3<span class="balise">&lt;/option&gt;</span><br>
+                <span class="balise">&lt;/select&gt;</span><br><br>
+                <span class="balise">&lt;select&gt;</span> Permet la creation d'une liste deroulante avec differentes option determiner par la balise <span class="balise">&lt;option&gt;</span>
+            </li>
             <br>
-            <li>type="Date" -> Definit un champ pour choisir une date</li>
-            <br>
-            <li>la liste complete des type d'input <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input#Les_diff%C3%A9rents_types_de_champs_%3Cinput%3E">ici </a> </li>
-            <li>la documentation complete <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input">ici </a> </li>
+            <li>la liste complete des types d'input <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input#Les_diff%C3%A9rents_types_de_champs_%3Cinput%3E">ici </a> </li>
+
+            
         </ul>
     </div>
-
+        {# TODO
+            astuce : <li>la documentation complete <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input">ici </a> </li>
+        
+         #}
 {% endblock %}
 
 

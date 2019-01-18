@@ -55,11 +55,11 @@ $( function() {
                         finishAudio.play()
                     }, 2000);
                     setTimeout(()=>{
-                        $('.solution6').show('explode', 1000);
+                        $('.solution3').show('explode', 1000);
                         finishAudio.play()
                     }, 3000);
                     setTimeout(()=>{
-                        $('.solution7').show('explode', 1000);
+                        $('.solution4').show('explode', 1000);
                         finishAudio.play()
                     }, 4000);
                     setTimeout(() =>{
@@ -67,7 +67,7 @@ $( function() {
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', $bar);// Augmentation de la jauge.
                         endLevel.play();
-                    }, 10000);
+                    }, 5000);
                     // recupération de la hauteur de la fenetre en cours
                     let $height = window.innerHeight;
                     // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative

@@ -1,198 +1,38 @@
 <h2 class="text-center pt-3">Classements</h2>
 
-<div class="container py-5">
+<div class="container py-3">
     <div class="row">
-        <div class="col-12 col-md-4">
-            <h3 class="text-center">Niveau 1</h3>
-            <table class="table table-striped">
-                <thead>
-                <tr>
+        {% set i = 0 %}
+        {% for level in topTen %}
+            {% set i = i + 1 %}
+            <div class="col-4">
+                <table class="table table-striped">
+                    <h3 class="text-center">Niveau {{ i }}</h3>
+                    <thead>
                     <th class="text-center" scope="col">Exercice</th>
-                    <th class="text-center" scope="row">Pseudo</th>
+                    <th class="text-center" scope="row" colspan="2">Learner</th>
                     <th class="text-center" scope="col">Temps</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>2</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>3</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>4</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>5</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>6</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>7</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>8</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>9</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>10</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-12 col-md-4">
-            <h3 class="text-center">Niveau 2</h3>
-            <table class="table table-striped">
-                <thead>
-                <tr class="text-center">
-                    <th class="text-center"scope="col">Exercice</th>
-                    <th class="text-center" scope="row">Pseudo</th>
-                    <th class="text-center" scope="col">Temps</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>2</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>3</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>4</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>5</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>6</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>7</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>8</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>9</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>10</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-12 col-md-4">
-            <h3 class="text-center">Niveau 3</h3>
-            <table class="table table-striped">
-                <thead>
-                <tr class="text-center">
-                    <th class="text-center" scope="col">Exercice</th>
-                    <th class="text-center" scope="row">Pseudo</th>
-                    <th class="text-center" scope="col">Temps</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center">
-                    <td>1</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>2</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>3</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>4</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>5</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>6</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>7</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>8</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>9</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                <tr class="text-center">
-                    <td>10</td>
-                    <td>kiki</td>
-                    <td>00:02:30</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
+                    </thead>
+                    <tbody>
+                    {% for exercice in level %}
+                        <tr>
+                            <td class="text-center">
+                                {{ exercice.number + 1 }}
+                            </td>
+                            <td class="text-center">
+                                <img class="rounded-circle" src="{{ asset('uploads/image/avatar/'~exercice.avatar) }}" alt="avatar" width="30px" height="30px">
+                            </td>
+                            <td class="text-center">
+                                {{ exercice.username }}
+                            </td>
+                            <td class="text-center">
+                                {{ exercice.time }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
     </div>
+</div>

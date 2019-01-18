@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Level;
+use App\Entity\Theme;
 use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\ExerciceType;
@@ -197,10 +199,37 @@ class AjaxController extends AbstractController
     /**
      * @Route("/ajax/classement", name="ajaxClassement")
      */
-    public function selectClassement()
+    public function classement()
+    {
+        // ON recupere le nombre de level du site
+        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
+        $nbLevel = $repositoryL->countLevel();
+
+        // Pour chaque niveau on recupere les 10 meilleurs temps
+
+        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
+
+        $topTenByLevel=[];
+
+        for($i = 1; $i <= $nbLevel; $i++){
+
+            $topTenByLevel[$i] = $repositoryU->getTopTimerByLevel($i);
+
+        }
+
+        return $this->render('ajax/classement.html.twig', ['topTen' => $topTenByLevel]);
+    }
+
+
+//                          Admin.General
+    /**
+     * @Route("/ajax/general", name="ajaxGeneral")
+     */
+    public function general()
     {
 
-        return $this->render('ajax/classement.html.twig');
+        $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
+        return $this->render('ajax/general.html.twig', ['themes' => $themes]);
 
     }
 
@@ -249,4 +278,20 @@ class AjaxController extends AbstractController
 
     }
 
+     /**
+     * @Route("/ajax/general/theme", name="ajaxTheme")
+     */
+    public function generalTheme(Request $request){
+
+        $theme = $request->query->get('theme');
+        if($theme != null){
+            $theme_repo = $this->getDoctrine()->getRepository(Theme::class);
+            $defaut = $theme_repo->findOneByName('Defaut');
+            $defaut->setColor($theme);
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return new Response($theme);
+
+    }
 }

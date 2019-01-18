@@ -31,11 +31,10 @@ class HomeController extends AbstractController
 
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
         $lastSave = $repositoryU->getLastSave($user);
-
         return $this->render('home/levelChoice.html.twig', ['last_exercice' => $lastSave]);
     }
 
-        /**
+    /**
      * @Route("/classement", name="classement")
      * 
      */

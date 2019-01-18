@@ -4,7 +4,7 @@
 
 {% block lecons %}
 
-    {#consigne
+    {#consigne TODO
             -dans cette exercice vous allez devoir appliquer une nouvelle taille de  police au
             titre( il est important de choisir une police native a windows c’esta dire une déjà presente sur votre ordinateur , changer la police utiliser par le span
              ainsi que de modifier le poids de nos textes(mettre en gras ou reduire cette valeur).
@@ -19,9 +19,13 @@
         <br>
         <li>La proprieter <span class="propCss">Font-weight</span> permet de modifier le poid du texte passer un texte en gras par exemple ou faire l’inverse en reduisant la valeur. Vous trouverez une documentation plus complete
             <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/CSS/font-weight">ici</a> sur les valeurs possible.</li>
-
     </ul>
 </div>
+
+    {# TODO
+    astuce : -> https://www.pierre-giraud.com/html-css/cours-complet/proprietes-css-font.php
+
+     #}
 
 {% endblock %}
 
@@ -32,27 +36,27 @@
     <div class="draggable text-center" data-id="1" id="draggable1">
         <span class="propCss">fonte-size</span> : <input id ="input1" type="text" placeholder="Valeur">
     </div>   
-
+<br>
     {# true #}
     <div class="draggable text-center" data-id="2" id="draggable2">
         <span class="propCss">font-size</span> : <input id ="input2" type="text" placeholder="Valeur">
     </div>
-
+<br>
     {# false #}
     <div class="draggable text-center" data-id="3" id="draggable3">
         <span class="propCss">fontsize</span> : <input id ="input3" type="text" placeholder="Valeur">
     </div>
-
+<br>
     {# false #}
     <div class="draggable text-center" data-id="4" id="draggable4">
         <span class="propCss">font-wieght</span> : <input id ="input4" type="text" placeholder="Valeur">
     </div>
-
+<br>
     {# true #}
     <div class="draggable text-center" data-id="5" id="draggable5">
         <span class="propCss">font-weight</span> : <input id ="input5" type="text" placeholder="Valeur">
     </div>
-
+<br>
     
 
     {# false #}
@@ -61,17 +65,17 @@
     </div>
     
     
-
+<br>
     {# false #}
     <div class="draggable text-center" data-id="7" id="draggable7">
         <span class="propCss">fonte-family</span> : <input id ="input7" type="text" placeholder="Valeur">
     </div>
-
+<br>
     {# false #}
     <div class="draggable text-center" data-id="8" id="draggable8">
         <span class="propCss">font-famille</span> : <input id ="input8" type="text" placeholder="Valeur">
     </div>
-
+<br>
     {# true #}
     <div class="draggable text-center" data-id="9" id="draggable9">
         <span class="propCss">font-family </span>: <input id ="input9" type="text" placeholder="Valeur">
