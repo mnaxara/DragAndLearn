@@ -1,0 +1,9 @@
+<h2>Modifier exercice</h2>
+
+{{ form_start(exerciceUpdateForm, {'attr' : {'id': 'form_update2'}}) }}
+    {{ form_row(exerciceUpdateForm.libelle) }}
+    {{ form_row(exerciceUpdateForm.help, {'attr' : {'rows': '8'}}) }}
+    {{ form_row(exerciceUpdateForm.instruction, {'attr' : {'rows': '8'}}) }}
+    {{ form_row(exerciceUpdateForm.lesson, {'attr' : {'rows': '8'}}) }}
+    <button class="btn_update2 btn btn-dark mx-5" data-id="{{ exercice.id }}">Modifier</button>
+{{ form_end(exerciceUpdateForm) }}

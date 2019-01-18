@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Trophy;
 use App\Entity\User;
+use App\Form\ExerciceType;
 use App\Form\UserType;
 use App\Entity\Exercice;
 use App\Entity\UserHasExercices;
@@ -161,6 +162,45 @@ class AjaxController extends AbstractController
         $exercices = $this->getDoctrine()->getRepository(Exercice::class)->lookForExercice($search);
         return $this->render('ajax/exercice_search.html.twig', ['exercices'=>$exercices]);
 
+
+    }
+
+    /**
+     * @Route("/ajax/exercice/update/{id}", name="ajaxUpdateExercice", requirements={"id"="\d+"})
+     */
+    public function updateAjaxExercice(Request $request, Exercice $exercice)
+    {
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(ExerciceType::class, $exercice);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $exercice = $form->getData();
+
+            $entityManager->persist($exercice);
+
+            $entityManager->flush();
+
+            return new Response('<div class="alert alert-success">Exercice modifié</div>');
+
+        }
+
+        return $this->render("ajax/update_exercice.html.twig", ['exerciceUpdateForm'=>$form->createView(), 'exercice'=>$exercice]);
+    }
+
+
+//                          CLASSEMENT
+    /**
+     * @Route("/ajax/classement", name="ajaxClassement")
+     */
+    public function selectClassement()
+    {
+
+        return $this->render('ajax/classement.html.twig');
 
     }
 

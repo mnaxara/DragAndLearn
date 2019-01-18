@@ -2,8 +2,8 @@
     <thead>
     <tr class="border-bottom border-dark text-center">
         <th>Libelle</th>
-        <th>Aide</th>
-        <th>Instruction</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
     </tr>
     </thead>
     <tbody>
@@ -11,8 +11,8 @@
 
         <tr class="border-bottom border-dark text-center">
             <td>{{ exercice.libelle }}</td>
-            <td>{{ exercice.help }}</td>
-            <td>{{ exercice.instruction }}</td>
+            <td class="update2" data-id="{{ exercice.id }}"><i class="fas fa-edit"></i></td>
+            <td><i class="fas fa-trash"></i></td>
         </tr>
 
     {% endfor %}
