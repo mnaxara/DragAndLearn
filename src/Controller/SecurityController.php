@@ -45,7 +45,7 @@ class SecurityController extends AbstractController
 
         $user = $this->getUser();
 
-        $theme = $this->getDoctrine()->getRepository(Theme::class)->findAll();
+        $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
 
         //Recuperation de la save pour barre de progression
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
@@ -110,7 +110,7 @@ class SecurityController extends AbstractController
 
         return $this->render('security/profile.html.twig', [
             'user' => $user,
-            'theme' => $theme,
+            'themes' => $themes,
             'last_exercice' => $lastSave,
             'exerciceByLevel' => $exerciceByLevel,
             'userPassForm'=>$form->createView()

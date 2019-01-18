@@ -10,7 +10,7 @@ class Theme{
 
     public function __construct(TokenStorageInterface $tokenStorage){
 
-        $this->theme = $tokenStorage->getToken()->getUser()->getTheme()->getColor();
+//        $this->theme = $tokenStorage->getToken()->getUser()->getTheme()->getColor();
 
     }
 

@@ -294,4 +294,25 @@ class AjaxController extends AbstractController
         return new Response($theme);
 
     }
+
+    /**
+     * @Route("/ajax/user/theme", name="ajaxUserTheme")
+     */
+    public function UserTheme(Request $request){
+
+        $theme = $request->request->get('theme');
+
+        if($theme != null){
+            $user = $this->getUser();
+            $theme_repo = $this->getDoctrine()->getRepository(Theme::class);
+            $themeChoose = $theme_repo->findOneByColor($theme);
+
+
+            $user->setTheme($themeChoose);
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return new Response($theme);
+
+    }
 }
