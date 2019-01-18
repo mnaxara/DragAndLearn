@@ -89,6 +89,9 @@ class UserHasExercicesRepository extends ServiceEntityRepository
             ->select('(l.number)', '(e.number)')
             ->andWhere('u.finish = true')
             ->orderBy('u.value', 'DESC')
+            ->andWhere('u.users = :user')
+            ->setParameter('user', $user)
+            ->orderBy('u.value', 'DESC')
             ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult();
@@ -98,18 +101,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
     }
 
     public function getResults(User $user)
-    {/*return $this->createQueryBuilder('u')
-            ->innerJoin('u.exercices', 'e')
-            ->addselect('u.time, e.number')
-            ->innerJoin('e.level', 'l')
-            ->addSelect('l.number')
-            ->andWhere('u.users = :user')
-            ->setParameter('user', $user)
-            ->getQuery()
-            ->getResult()
-            ;
-    */
-
+    {
         //on récupère l'équivalent de l'objet de connexion à pdo que l'on utilisait
         $connexion = $this->getEntityManager()->getConnection();
         //on stocke la requête dans une variable
@@ -124,10 +116,41 @@ class UserHasExercicesRepository extends ServiceEntityRepository
         $select->bindValue(':id', $user->getId());
         $select->execute();
 
-        //je renvoie un tableau de tableaux d'articles
+        //je renvoie un tableau de tableaux de timer
         return $select->fetchAll();
 
     }
+
+    public function getTopTimerByLevel($levelNumber)
+    {
+
+        //on récupère l'équivalent de l'objet de connexion à pdo que l'on utilisait
+        $connexion = $this->getEntityManager()->getConnection();
+        //on stocke la requête dans une variable
+
+        $sql = '
+            SELECT MIN(u.time), e.number as exoNumber, us.avatar, us.username as levelNumber
+            FROM user_has_exercices u INNER JOIN exercice e ON e.id = u.exercices_id 
+            INNER JOIN level l ON e.level_id = l.id 
+            INNER JOIN user us ON us.id = u.users_id
+            WHERE l.number = :levelNumber
+            AND u.finish = true
+            GROUP BY exoNumber
+            ORDER BY exoNumber ASC
+            LIMIT 10
+          ';
+        $select = $connexion->prepare($sql);
+        $select->bindValue(':levelNumber', $levelNumber);
+        $select->execute();
+
+        //je renvoie un tableau de tableaux de timer
+        return $select->fetchAll();
+    }
+
+
+
+
+
     // /**
     //  * @return UserHasExercices[] Returns an array of UserHasExercices objects
     //  */
