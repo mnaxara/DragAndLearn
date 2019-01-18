@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Level;
 use App\Entity\Trophy;
 use App\Entity\User;
 use App\Form\ExerciceType;
@@ -197,11 +198,25 @@ class AjaxController extends AbstractController
     /**
      * @Route("/ajax/classement", name="ajaxClassement")
      */
-    public function selectClassement()
+    public function classement()
     {
+        // ON recupere le nombre de level du site
+        $repositoryL = $this->getDoctrine()->getRepository(Level::class);
+        $nbLevel = $repositoryL->countLevel();
 
-        return $this->render('ajax/classement.html.twig');
+        // Pour chaque niveau on recupere les 10 meilleurs temps
 
+        $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
+
+        $topTenByLevel=[];
+
+        for($i = 1; $i <= $nbLevel; $i++){
+
+            $topTenByLevel[$i] = $repositoryU->getTopTimerByLevel($i);
+
+        }
+
+        return $this->render('ajax/classement.html.twig', ['topTen' => $topTenByLevel]);
     }
 
 }
