@@ -85,7 +85,7 @@
                                 <p>Votre temps : </p>
                                 {% set next = exercice.number+2 %}
                                 {% set nextLevel = false %}
-                                {% if next >= 10 %}
+                                {% if next > 10 %}
                                     {% set nextLevel = true %}
                                 {% endif %}
                                 {% if nextLevel == true %}

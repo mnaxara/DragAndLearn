@@ -46,6 +46,17 @@ class ExerciceVoter extends Voter
             return true;
         }
 
+        if ($level === 2 && $exNumber === 0) {
+            $save = $this->em
+                ->getRepository(UserHasExercices::class)
+                ->getLastSave($user);
+            $save = implode('', $save);
+            if ($save == 19){
+                return true;
+            }
+        }
+
+
 
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {

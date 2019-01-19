@@ -66,7 +66,6 @@
                                         {% set exercice = last_exercice.2 %}
                                         {% set niveau = last_exercice.1 %}
                                     {% endif %}
-                                    {% set exercice = exercice * 10 %}
                                     <div class="swiper-slide">
                                         <a href="{{ path('exercice', {"slug":'html-exercice2'}) }}">
                                             {% if exercice >= 0 and niveau >=1 %}
