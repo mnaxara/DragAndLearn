@@ -92,3 +92,12 @@ li#soundLi {
     margin-left: -24px;
     width: 30px;
 }
+
+.footCol{
+    border-left: 1px solid #ff7242;
+    border-right: 1px solid #ff7242;
+}
+
+#avatarMenu{
+    cursor: pointer;
+}

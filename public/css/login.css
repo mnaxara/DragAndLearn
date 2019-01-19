@@ -73,3 +73,7 @@ img.rounded-circle.z-depth-0 {
 strong{
 	font-weight: normal;
 }
+
+#avatarMenuLogin{
+	cursor: pointer;
+}

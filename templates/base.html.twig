@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse pt-3" id="navbarSupportedContent-333">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" id="avatarMenu">
                 <li class="nav-item active">
                     <a id="siteName" class="nav-link" href="{{ path('levelChoice') }}">Drag & Learn
                         <span class="sr-only">(current)</span>
@@ -101,26 +101,23 @@
 {% block footer %}
 <footer class="footer_general bg-dark text-white">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-12 col-md-4">
-                <div class="text-center">
-                    <br>
-                    <span>Mentions legales</span><br>
-                    <span>Contact</span><br>
-                    <br>
-                    <i class="fas fa-envelope-square"></i><br>
-                    <span>draglearn@gmail.com</span>
-                    <br>
-                    <i class="fas fa-building"></i><br>
-                    <span>66 rue abbé de l'épée</span>
-                    <br>
-                    <i class="fas fa-mobile-alt"></i><br>
-                    <span>06 66 66 66 66</span>                           
+        <div class="row">
+            <div class="col-12 col-md-4 d-flex flex-column my-3 footCol">
+                <span class="align-self-center balise">&lt;Contacts&gt</span>
+                <div class="pl-5">
+                    <i class="fas fa-envelope-square mr-2"></i><span>draglearn@gmail.com</span>
+                </div>
+                <div class="pl-5">
+                    <i class="fas fa-building mr-2"></i><span>66 rue abbé de l'épée</span>
+                </div>
+                <div class="pl-5">
+                    <i class="fas fa-mobile-alt mr-2"></i><span>06 66 66 66 66</span>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <ul>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center my-3 footCol">
+                <ul class="d-flex flex-column align-items-center m-0 p-0">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="dropdown-item_custom balise" href="{{ path('logout') }}">&lt;Deconnexion&gt</a>
                             <a class="dropdown-item_custom" href="{{ path('levelChoice') }}">Accueil</a>
                             <a class="dropdown-item_custom " href="{{ path('profile') }}">Profil</a>
                             <a class="dropdown-item_custom" href="{{ path('classement') }}">Classement</a>
@@ -129,21 +126,18 @@
                             <a class="dropdown-item_custom" href="{{ path('admin') }}">Admin</a>
                         {% endif %}
 
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a class="dropdown-item_custom" href="{{ path('logout') }}">Deconnexion</a>
-                        {% else %}
-                            <a class="dropdown-item_custom" href="{{ path('app_login') }}" id="connexion">Connexion</a>
+                        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="dropdown-item_custom balise pt-0" href="{{ path('app_login') }}" id="connexion">&lt;Connexion&gt</a>
                         {% endif %}
                     <li><i class="fab fa-facebook-square"></i>  <i class="fab fa-twitter-square"></i></li>
+                    <li>Mentions legales</li>
                 </ul>
             </div>
-            <div class="col-12 col-md-4">
-                <ul>
-                    <li>Michaël</li>
-                    <li>Benjamin</li>
-                    <li>Christophe</li>
-                    <li>Clément</li>
-                    <li>Rémi</li>
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center my-3 footCol">
+                <span class="balise">&lt;Notre équipe&gt;</span>
+                <ul class="p-0">
+                    <li>Michaël - Rémi - Benjamin</li>
+                    <li class="text-center">Clément - Christophe</li>
                 </ul>
             </div>
         </div>
