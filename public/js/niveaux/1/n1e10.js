@@ -28,7 +28,7 @@ $( function() {
         $("#droppable7").droppable({
             accept: ".color",
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $('#success7').css('color', '#1d8dc0');
                 check(id);
             }
@@ -36,7 +36,7 @@ $( function() {
         $("#droppable15").droppable({
             accept: ".color",
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $('#success15').css('color', '#1d8dc0');
                 check(id);
             }
@@ -44,7 +44,7 @@ $( function() {
         $("#droppable19").droppable({
             accept: ".color",
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $('#success19').css('color', '#1d8dc0');
                 check(id);
             }
@@ -52,7 +52,7 @@ $( function() {
         $("#droppable26").droppable({
             accept: ".color",
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $('#success26').css('color', '#1d8dc0');
                 check(id);
             }
@@ -70,7 +70,7 @@ $( function() {
                 accept: "#draggable" + id,    // Chaque zone n'accueil que la cellule qui lui est attribué
 
                 drop: function () { // Lorsque la cellule est dropé
-                    playSound();
+                    soundStatus ? playSound() : '';
                     $('#success' + id).show(); // Affiche la bonne div
                     $(this).addClass("ui-state-highlight"); // Mise en forme
                     $(this).addClass('finish');/* // Compte comme terminé pour l'exercice*/
@@ -140,7 +140,7 @@ $( function() {
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
-                endLevel.play();
+                soundStatus ? endLevel.play() : '';
             }, 10000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;

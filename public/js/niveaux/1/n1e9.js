@@ -32,7 +32,7 @@ $( function() {
             accept: "#draggable"+id,    // Chaque zone n'accueil que la cellule qui lui est attribué
 
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $('#success'+id).show(); // Affiche la bonne div
 
                 if ($(this).attr('id') === 'droppable3'){ // Cellule speciale necessitant un traitement d'input
@@ -69,7 +69,7 @@ $( function() {
                         $('#successEnd').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', $bar);// Augmentation de la jauge.
-                        endLevel.play();
+                        soundStatus ? endLevel.play() : '';
                     }, 4000);
                     // recupération de la hauteur de la fenetre en cours
                     let $height = window.innerHeight;
