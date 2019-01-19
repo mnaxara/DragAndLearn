@@ -148,20 +148,8 @@ footer {
   color : #61e9ff;
 }
 
-@media screen and (max-width: 1280px){
-  #dragdrop {
-    min-height: 200%;
-  }
-}
-@media screen and (max-height: 720px){
-  #dragdrop {
-    min-height: 200%;
-  }
-}
-@media screen and (max-height: 560px){
-  #dragdrop {
-    min-height: 280%;
-  }
+#dragdrop {
+    min-height: max-content;
 }
 
 

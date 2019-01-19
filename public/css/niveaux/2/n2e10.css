@@ -87,7 +87,7 @@ table{
 }
 
 #dragdrop {
-    height: 330%;
+    min-height: max-content;
 }
 
 .ml-8{
@@ -110,3 +110,4 @@ table{
 .hover2:hover{
     color: gray;
 }
+

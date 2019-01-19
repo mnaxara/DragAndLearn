@@ -1,9 +1,7 @@
 $( function() {
-
     let datacontent;
     let finish = [];
     let finishAudio = new Audio('../audio/finish1.mp3');
-    let finishAudio2 = new Audio('../audio/finish2.mp3');
     let endLevel = new Audio('../audio/endLevel.mp3');
     let dropSound = new Audio('../audio/drop.mp3');
     dropSound.preload = 'auto';
@@ -30,7 +28,8 @@ $( function() {
             accept: "#draggable"+id,    // Chaque zone n'accueil que la cellule qui lui est attribué
 
             drop: function() { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
+
                 $('#success'+id).show(); // Affiche la bonne div
                 $( this ).addClass( "ui-state-highlight" ); // Mise en forme
                 $( this ).addClass('finish')/* // Compte comme terminé pour l'exercice
@@ -58,7 +57,7 @@ $( function() {
                         $('#successEnd').show();
                         $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                         $('#bar').css('width', $bar);// Augmentation de la jauge.
-                        endLevel.play();
+                        soundStatus ? endLevel.play() : '';
                     }, 3000);
                     // recupération de la hauteur de la fenetre en cours
                     let $height = window.innerHeight;

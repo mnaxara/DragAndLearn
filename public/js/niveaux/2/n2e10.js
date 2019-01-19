@@ -3,7 +3,6 @@ $( function() {
     let datacontent
     let finish = [];
     let finishAudio = new Audio('../audio/finish1.mp3');
-    let finishAudio2 = new Audio('../audio/finish2.mp3');
     let endLevel = new Audio('../audio/endLevel.mp3');
     let dropSound = new Audio('../audio/drop.mp3');
     dropSound.preload = 'auto';
@@ -21,7 +20,6 @@ $( function() {
         datacontent = $(this).data('content');  // remplissage de la variable data
         let id = $(this).data('id'); // recupération de l'id drag
         let val = $("#input"+id).val(); // variable recuperant la valeur saisi
-        console.log(datacontent, id, $('#success'+id));
 
         // JQUERY UI option retour au depart si non droppé
         $( "#draggable"+id ).draggable({ revert: "invalid", containment: "#dragdrop", scroll: true });
@@ -33,7 +31,7 @@ $( function() {
             accept: "#draggable" + id,    // Chaque zone n'accueil que la cellule qui lui est attribué
 
             drop: function () { // Lorsque la cellule est dropé
-                playSound();
+                soundStatus ? playSound() : '';
                 $(this).addClass("ui-state-highlight"); // Mise en forme
                 $(this).addClass('finish');/* // Compte comme terminé pour l'exercice*/
                 $( "#draggable"+id ).addClass('dropped');
@@ -74,13 +72,16 @@ $( function() {
                         break;
                     case 'droppable8':
                         $('.sectForm').css('text-align', 'center');
+                        $('#look').animate({scrollTop: $(".sectForm").offset().top}, 50);
                         break;
                     case 'droppable9':
                         $('.sectForm').css('padding', '10px');
+                        $('#look').animate({scrollTop: $(".sectForm").offset().top}, 50);
                         break;
                     case 'droppable10':
                         $('.sectForm').css(val, 'left');
                         $('#sol10').html(val);
+                        $('#look').animate({scrollTop: $(".sectForm").offset().top}, 50);
                         break;
                     case 'droppable11':
                         $('table th').css('border', '1px solid gray');
@@ -154,7 +155,7 @@ $( function() {
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
-                endLevel.play();
+                soundStatus ? endLevel.play() : '';
             }, 6000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;

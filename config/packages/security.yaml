@@ -38,3 +38,5 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/classement, roles: ROLE_USER }
+         - { path: ^/exercice, roles: ROLE_USER }

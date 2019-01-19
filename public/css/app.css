@@ -82,3 +82,13 @@ i.fas.fa-trophy {
     background-color: transparent;
     border: 0;
 }
+
+.balise {
+    color: #ff7242;
+}
+
+li#soundLi {
+    margin-right: 10px;
+    margin-left: -24px;
+    width: 30px;
+}
