@@ -47,11 +47,11 @@ $( function() {
                     $(".draggable").hide('clip', 1000);
                     setTimeout(()=>{
                         $('.solution1').show('explode', 1000);
-                        finishAudio.play()
+                        soundStatus ? finishAudio.play() : '';
                     }, 1000);
                     setTimeout(()=>{
                         $('.solution2').show('explode', 1000);
-                        finishAudio.play()
+                        soundStatus ? finishAudio.play() : '';
                     }, 2000);
                     setTimeout(() =>{
                         $('#successEnd').show();

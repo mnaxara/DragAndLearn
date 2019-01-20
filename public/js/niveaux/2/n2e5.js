@@ -80,19 +80,19 @@ $( function() {
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
                 $('.solution1').show('explode', 1000);
-                finishAudio.play()
+                soundStatus ? finishAudio.play() : '';
             }, 1000);
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
-                finishAudio.play()
+                soundStatus ? finishAudio.play() : '';
             }, 2000);
             setTimeout(()=>{
                 $('.solution3').show('explode', 1000);
-                finishAudio.play()
+                soundStatus ? finishAudio.play() : '';
             }, 3000);
             setTimeout(()=>{
                 $('.solution4').show('explode', 1000);
-                finishAudio.play()
+                soundStatus ? finishAudio.play() : '';
             }, 4000);
             
             setTimeout(() =>{
