@@ -21,6 +21,7 @@
 
 {% block body %}
     <div class="account_log">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <nav class="mb-1 navbar navbar-expand-lg">      
             <ul class="navbar-nav ml-auto nav-flex-icons" id="avatarMenuLogin">
                 <li class="nav-item avatar dropdown">
@@ -29,24 +30,18 @@
                         <img src="uploads/image/avatar/default2.png" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
-                            <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
-                            <a class="dropdown-item" href="#">Classement</a>
-                        {% endif %}
+                        <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
+                        <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
+                        <a class="dropdown-item" href="#">Classement</a>
                         {% if is_granted('ROLE_ADMIN') %}
                             <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
                         {% endif %}
-
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <a class="dropdown-item" href="{{ path('logout') }}">Deconnexion</a>
-                        {% else %}
-                            <a class="dropdown-item" href="{{ path('app_login') }}" id="connexion">Connexion</a>
-                        {% endif %}
                     </div>
                 </li>
             </ul>
         </nav>
+        {% endif %}
     </div>
 
     <div class="container" id="loginContainer">
@@ -66,6 +61,9 @@
                                 {# a #}
                             </div>
                         {{ form_end(registrationForm) }}
+                        <div id="connexion">
+                            <a href="#"><span class="balise">&lt;Je possède un compte&gt;</span></a>
+                        </div>
                     </div>
 
                     {# LOGIN FORM#}
@@ -123,7 +121,8 @@
         <div class="row ">
             <div class="col-8 offset-2 ">
                 <div class="justify-content-center text-center mt-4">
-                    <iframe class="video_player" width="550" height="300" src="https://www.youtube.com/embed/wYT1Qq6mo4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video src="{{asset('uploads/video/accueil.mp4')}}" autoplay controls preload="metadata" height="300px"></video>
+                    {#<iframe class="video_player" width="550" height="300" src="https://www.youtube.com/embed/wYT1Qq6mo4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
                 </div>
             </div>
         </div>
