@@ -152,6 +152,10 @@ footer {
     min-height: max-content;
 }
 
+.trophyName{
+  font-size: 2rem;
+}
+
 
 /*.ui-droppable-active{
   background: #757982;

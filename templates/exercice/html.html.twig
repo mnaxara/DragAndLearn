@@ -43,7 +43,7 @@
                 <div class="row" id="lesson">
                     <div class="col-12">
                         <h2 class="text-center">Instructions</h2>
-                        {{ exercice.instruction }}
+                        {{ exercice.instruction|raw}}
                     </div>
                     <button class="btn btn-dark balise mx-auto" id="tips">Astuces et solutions</button>
                 </div>
@@ -134,7 +134,8 @@
                         <div class="row">
                             <div class="col-12 col-12 d-flex flex-column align-items-center">
                                 <h2 class="text-center">Felicitations vous avez débloqué le trophée secret :</h2>
-                                <p><b>Petit fouineur ! (Vous avez ouvert la console)</b></p>
+                                <p class="trophyName"><b>Petit curieux !</b></p>
+                                <p>(Vous avez ouvert la console)</p>
                             </div>
                         </div>
                         <div class="row" id="trophy">

@@ -7,7 +7,7 @@
                 <div class="form_choice">
                     <label for="{{ choice.id }}">{{ choice.name }}
                         <div id="{{ choice.name }}" class="color bg-{{ choice.color }} my-2"></div>
-                        <input type="radio" id="{{ choice.id }}" class="m-auto" name="theme" value="{{ choice.color }}">
+                        <input type="radio" id="{{ choice.id }}" class="m-auto colorTheme" name="theme" value="{{ choice.color }}">
                     </label>
                 </div>
             {% endfor %}
