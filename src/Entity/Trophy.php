@@ -38,6 +38,11 @@ class Trophy
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $non_obtain_icone;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -106,6 +111,18 @@ class Trophy
         if ($this->user->contains($user)) {
             $this->user->removeElement($user);
         }
+
+        return $this;
+    }
+
+    public function getNonObtainIcone(): ?string
+    {
+        return $this->non_obtain_icone;
+    }
+
+    public function setNonObtainIcone(string $non_obtain_icone): self
+    {
+        $this->non_obtain_icone = $non_obtain_icone;
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Level;
+use App\Entity\Trophy;
 use App\Entity\UserHasExercices;
 use App\Form\UserProfileType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -46,6 +47,11 @@ class SecurityController extends AbstractController
         $user = $this->getUser();
 
         $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
+
+        $trophies = $this->getDoctrine()->getRepository(Trophy::class)->findAll();
+
+        $hasTrophies = $user->getTrophies();
+
 
         //Recuperation de la save pour barre de progression
         $repositoryU = $this->getDoctrine()->getRepository(UserHasExercices::class);
@@ -94,6 +100,8 @@ class SecurityController extends AbstractController
                 return $this->render('security/profile.html.twig', [
                     'user' => $user,
                     'theme' => $theme,
+                    'trophies' => $trophies,
+                    'hasTrophies' => $hasTrophies,
                     'last_exercice' => $lastSave,
                     'exerciceByLevel' => $exerciceByLevel,
                     'userPassForm'=>$form->createView()
@@ -111,6 +119,8 @@ class SecurityController extends AbstractController
         return $this->render('security/profile.html.twig', [
             'user' => $user,
             'themes' => $themes,
+            'trophies' => $trophies,
+            'hasTrophies' => $hasTrophies,
             'last_exercice' => $lastSave,
             'exerciceByLevel' => $exerciceByLevel,
             'userPassForm'=>$form->createView()
