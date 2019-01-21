@@ -30,9 +30,6 @@
             </div>
 
 
-
-
-
             {# trophées #}
             <div class="row">
                 {% for trophy in trophies %}
@@ -46,24 +43,6 @@
                         </div>
                     {% endif %}
                 {% endfor %}
-                {#<div class="col-md-2 text-center">#}
-                    {#<img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="">#}
-                {#</div>#}
-                {#<div class="col-md-2">#}
-                    {#<div class="trophy"></div>#}
-                {#</div>#}
-                {#<div class="col-md-2">#}
-                    {#<div class="trophy"></div>#}
-                {#</div>#}
-                {#<div class="col-md-2">#}
-                    {#<div class="trophy"></div>#}
-                {#</div>#}
-                {#<div class="col-md-2">#}
-                    {#<div class="trophy"></div>#}
-                {#</div>#}
-                {#<div class="col-md-2">#}
-                    {#<div class="trophy"></div>#}
-                {#</div>#}
             </div>
 
             <h3 id="perf">Performances</h3>
@@ -122,6 +101,16 @@
                     {{ form_end(userPassForm) }}
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ form_start(userEmailForm) }}
+                    {{ form_widget(userEmailForm, {'attr': {'class' : 'w-50 m-auto'}})}}
+                    <div class="text-center my-4">
+                        <button class="balise border border-balise btn btn-dark" type="submit">Modifier</button>
+                    </div>
+                    {{ form_end(userEmailForm) }}
+                </div>
+            </div>
 
             <div class="row">
                 <div id="theme" class="col-12 text-center">
@@ -148,6 +137,7 @@
 <script>
 
     $(function(){
+        //***********************************GESTION UPDATE USERNAME*************************//
 
         $('#nameUpdate').click(() =>{
 
@@ -169,10 +159,11 @@
                         timeout: 8000,
                         dataType: 'html',
                         success: function (data) {
-                            console.log(data);
                             $('#userName').html(data);
                             $('#formName').hide();
                             $('#userName').show();
+                            $('#newUsername').blur();
+
                         },
                         error: function (error) {
                             console.log(error)

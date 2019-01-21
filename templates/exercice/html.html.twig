@@ -112,7 +112,9 @@
                             <div class="col-12 d-flex align-items-center flex-column mt-5">
                                 <p>Félicitations !</p>
                                 <p>Vous avez fini l'exercice !</p>
-                                <p>Votre temps : </p>
+                                {% if retry is null %}
+                                <p>Votre temps : <span id="finishTime"></span></p>
+                                {% endif %}
                                 {% set next = exercice.number+2 %}
                                 {% set nextLevel = false %}
                                 {% if next > 10 %}
@@ -161,7 +163,7 @@
                         </div>
                         <div class="row" id="trophy">
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('uploads/image/trophy/trophy_three.png') }}" alt="">
+                                <img src="{{ asset('uploads/image/trophy/obtain/trophy_three.png') }}" alt="">
                             </div>
                         </div>
                         <div class="row" id="trophy">

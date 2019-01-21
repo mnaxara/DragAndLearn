@@ -16,7 +16,8 @@
 }
 
 #dragdrop {
-    height: 300%;
+    min-height: max-content;
+    height: 330%;
 }
 
 #success17{
