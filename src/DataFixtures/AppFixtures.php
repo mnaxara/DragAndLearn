@@ -30,6 +30,7 @@ class AppFixtures extends Fixture
             $trophy = new Trophy();
             $trophy->setLibelle('Niveau 1');
             $trophy->setIcone('trophy_one.png');
+            $trophy->setNonObtainIcone('trophy_one_non_obtain.png');
             $trophy->setHidden(false);
             $trophyTab[] = $trophy;
             $manager->persist($trophy);
@@ -37,6 +38,7 @@ class AppFixtures extends Fixture
             $trophy = new Trophy();
             $trophy->setLibelle('Niveau 2');
             $trophy->setIcone('trophy_two.png');
+            $trophy->setNonObtainIcone('trophy_two_non_obtain.png');
             $trophy->setHidden(false);
             $trophyTab[] = $trophy;
             $manager->persist($trophy);
@@ -44,10 +46,34 @@ class AppFixtures extends Fixture
             $trophy = new Trophy();
             $trophy->setLibelle('F12');
             $trophy->setIcone('trophy_three.png');
+            $trophy->setNonObtainIcone('trophy_hidden.png');
             $trophy->setHidden(true);
             $trophyTab[] = $trophy;
             $manager->persist($trophy);
 
+            $trophy = new Trophy();
+            $trophy->setLibelle('Niveau 4');
+            $trophy->setIcone('trophy_hidden.png');
+            $trophy->setNonObtainIcone('trophy_hidden.png');
+            $trophy->setHidden(false);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
+
+            $trophy = new Trophy();
+            $trophy->setLibelle('Niveau 5');
+            $trophy->setIcone('trophy_hidden.png');
+            $trophy->setNonObtainIcone('trophy_hidden.png');
+            $trophy->setHidden(false);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
+
+            $trophy = new Trophy();
+            $trophy->setLibelle('Niveau 6');
+            $trophy->setIcone('trophy_hidden.png');
+            $trophy->setNonObtainIcone('trophy_hidden.png');
+            $trophy->setHidden(false);
+            $trophyTab[] = $trophy;
+            $manager->persist($trophy);
 
 
         $name = ['Defaut', 'Vert','Noir', 'Bleu', 'Rouge', 'Gris', 'Jaune', 'Turquoise'];

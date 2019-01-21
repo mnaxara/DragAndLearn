@@ -35,24 +35,35 @@
 
             {# trophées #}
             <div class="row">
-                <div class="col-md-2 text-center">
-                    <img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="">
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
-                <div class="col-md-2">
-                    <div class="trophy"></div>
-                </div>
+                {% for trophy in trophies %}
+                    {% if trophy in hasTrophies %}
+                        <div class="col-md-2 text-center">
+                            <img src="{{ asset('uploads/image/trophy/obtain/'~trophy.icone)}}" alt="">
+                        </div>
+                    {% else %}
+                        <div class="col-md-2 text-center">
+                            <img src="{{ asset('uploads/image/trophy/non_obtain/'~trophy.nonobtainicone)}}" alt="">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {#<div class="col-md-2 text-center">#}
+                    {#<img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="col-md-2">#}
+                    {#<div class="trophy"></div>#}
+                {#</div>#}
+                {#<div class="col-md-2">#}
+                    {#<div class="trophy"></div>#}
+                {#</div>#}
+                {#<div class="col-md-2">#}
+                    {#<div class="trophy"></div>#}
+                {#</div>#}
+                {#<div class="col-md-2">#}
+                    {#<div class="trophy"></div>#}
+                {#</div>#}
+                {#<div class="col-md-2">#}
+                    {#<div class="trophy"></div>#}
+                {#</div>#}
             </div>
 
             <h3 id="perf">Performances</h3>
@@ -111,7 +122,7 @@
                     {{ form_end(userPassForm) }}
                 </div>
             </div>
-            <hr>
+
             <div class="row">
                 <div id="theme" class="col-12 text-center">
                     <form>
