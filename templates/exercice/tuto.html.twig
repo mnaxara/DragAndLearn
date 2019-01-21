@@ -4,8 +4,10 @@
 {% block title %}Tutoriel{% endblock %}
 
 {% block body %}
-    {% block progressBar %}
-    {% endblock %}
+{% block progressBar %}
+{% endblock %}
+
+
 <main>
     <div class="container-fluid">
         <div class="row">
@@ -13,12 +15,31 @@
                 <div class="row" id="lesson">
                     <div class="col-12">
                         <h2 class="text-center">Instructions</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum, eaque excepturi
-                            expedita mollitia nesciunt quibusdam reiciendis rerum sed temporibus. Consectetur cupiditate
-                            eligendi illum quae? Ea ipsa nostrum obcaecati quo.</p>
+                        <p>Faites glisser les éléments de bases d'une page HTML suivant la leçon.</p>
+                        <p>Rajoutez un titre 'h1' et un paragraphe personalisé dans le body</p>
                     </div>
                     <button class="btn btn-primary mx-auto" id="tips">Astuces et solutions</button>
                 </div>
+                {#ASTUCE CACHEE#}
+                <div id="tipsDiv" class="row hide">
+                    <div class="tips col-12 d-flex flex-column align-items-center justify-content-between py-3">
+                        <p>
+                            L'ordre de base est : html - head - body, les balises se ferme ave un '/'
+                        </p>
+                        <div>
+                            <button id="solution" class="bg-dark balise">Solutions</button>
+                            <button id="closeTips" class="bg-dark balise">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+                {#*************#}
+                {#DIV caché gif solutions#}
+                <div class="row">
+                    <div class="col-12 text-center hide" id="div_sol">
+                        <img src="{{ asset('uploads/solutions/tuto.gif')}}" class = "" alt="solution">
+                    </div>
+                </div>
+                {#***********************#}
                 <div class="row">
                     <div class="col-4 ml-1 py-2">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -36,28 +57,33 @@
                 <div class="row" id="dragdrop">
                     <div class="col-4" id="drag-zone">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="lecon" role="tabpanel"
+                            <div class="tab-pane fade show active text-white" id="lecon" role="tabpanel"
                                  aria-labelledby="lecon-tab">
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                                    asperiores aspernatur
-                                    cum deleniti dolorem harum illo in maiores, natus necessitatibus nesciunt nihil,
-                                    nobis
-                                    officia officiis quas, repellat saepe suscipit voluptatem!</p>
+                                <p>
+                                    Les pages HTML s'organisent toutes à partir de la même structure de base.
+                                    <br>
+                                    L'ouverture se fait toujours par la balise <span class="text-white">&lt;!DOCTYPE html&gt;</span>
+                                    permettant au naviagateur de savoir le langage qui sera utilisé.
+                                    <br>
+                                    Puis tout le code sera compris entre les balise <span class="balise">&lt;html&gt;</span> et
+                                    <span class="balise">&lt;/html&gt;</span>.
+                                    <br>
+                                    A l'interieur, le code sera decomposé en deux parties :
+                                </p>
+                                <ul>
+                                    <li><span class="balise">&lt;head&gt;</span></li>
+                                    <li><span class="balise">&lt;body&gt;</span></li>
+                                </ul>
+                                <p>
+                                   Le <span class="balise">&lt;head&gt;</span> contiendra tous les éléments de l’en-tête de votre document.
+                                   L’en-tête de votre document, compris entre les balises, il doit obligatoirement contenir un titre.
+                                   <br>
+                                   Il peut également contenir des scripts, des styles, des balises meta et bien plus encore.
+                                    <br>
+                                    <p>
+                                    le <span class="balise">&lt;body&gt;</span> définit la partie principale du document, qui contient les informations destinées à être affichées.
+                                </p>
+                                </p>
                                 <button class="btn btn-success" id="start">Démarrer !</button>
                             </div>
                             <div class="tab-pane fade" id="morceaux" role="tabpanel" aria-labelledby="morceaux-tab">
@@ -121,7 +147,13 @@
                                     class="balise">&lt;/h1&gt;</span></div>
 
                         <div class="droppable ml-5 my-3" id="droppable9"></div>
-                        <div class="solution3 hide pl-4"><span class="balise"><p id="pSolution"></p></span></div>
+                        <div class="solution3 hide pl-4">
+                            <span class="balise">&lt;p&gt;</span>
+                            <span class="balise">
+                                <span id="pSolution" class="text-white"></span>
+                            </span>
+                            <span class="balise">&lt;/p&gt;</span>
+                        </div>
 
                         <div class="droppable ml-3 my-3" id="droppable7"></div>
                         <div class="solution3 hide"><span class="balise">&lt;/body&gt;</span></div>
@@ -144,9 +176,9 @@
                                 <p>Félicitation !</p>
                                 <p>Vous avez passez le tutoriel !</p>
                                 {% if app.user == null %}
-                                    <a href="{{ path('app_login') }}" class="btn btn-dark balise">S'inscrire !</a>
+                                    <a href="{{ path('app_login') }}"><button class="bg-dark balise" id="next">S'inscrire</button></a>
                                 {% else %}
-                                    <a href="{{ path('exercice', {slug : 'html-exercice1'}) }}" class="btn btn-dark balise">Niveau 1</a>
+                                    <a href="{{ path('exercice', {slug : 'html-exercice1'}) }}"><button class="bg-dark balise" id="next">Niveau 1</button></a>
                                 {% endif %}
                             </div>
                         </div>
@@ -166,13 +198,8 @@
     </div>
 </main>
 
-    {#<footer style="height: 100px" class="bg-dark">#}
-        {#<div class="row">#}
-            {#<div class="col-12 text-center">#}
-                {#<p class="text-white">Kikoo Footer</p>#}
-            {#</div>#}
-        {#</div>#}
-    {#</footer>#}
+{% block footer %}
+{% endblock %}
 
 {% endblock %}
 
@@ -180,7 +207,21 @@
     <script>
         $('#start').click(() => {
             $('#morceaux-tab').removeClass('disabled');
-        })
+            $('#morceaux-tab').trigger('click');
+            $('html,body, #game').animate({scrollTop: $("#morceaux-tab").offset().top}, 'slow');
+        });
+        $('#tips').click(() => {
+            $('#tipsDiv').show();
+        });
+        $('#closeTips').click(() => {
+            $('#tipsDiv').hide();
+        });
+        $('#solution').click(() => {
+            $('#tipsDiv').hide();
+            $('#div_sol').show();
+        });
+
+        tipsDiv
     </script>
 
     <script src={{ asset('js/tutoriel.js')}}></script>

@@ -156,6 +156,30 @@ footer {
   font-size: 2rem;
 }
 
+.tips{
+  font-family: "Arvo", Helvetica, Arial, sans-serif;
+  width: 400px;
+  height: 550px;
+  background: #FFF url('../uploads/image/background_general.png') ;
+  background-size: cover;
+  border: 2px solid #343A40;
+  z-index: 99;
+  opacity: 1;
+  padding: 10px;
+  margin: 10px 5px 20px;
+  border-radius: 8px;
+
+  position : absolute;
+  left : 50%;
+  margin-left: -200px;
+  top : 50%;
+  margin-top : -275px;
+}
+
+#div_sol{
+  background: #FFF url('../uploads/image/background_general.png') ;
+}
+
 
 /*.ui-droppable-active{
   background: #757982;

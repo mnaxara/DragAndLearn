@@ -24,6 +24,11 @@
 
 {% endblock %}
 
+{% block astuces %}{% endblock %}
+
+{% block solution %}
+    <img src="{{ asset('uploads/solutions/tuto.gif')}}" class = "" alt="solution">
+{% endblock %}
 
 {% block elements %}
     <div class="draggable text-center" data-id="1" id="draggable1">
@@ -612,7 +617,7 @@
 
 {% block trophy %}
     <p class="text-center">Vous avez debloqué le trophée : Niveau 1 !</p>
-    <img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="trophée 1" width="80px" height="80px">
+    <img src="{{ asset('uploads/image/trophy/obtain/trophy_one.png') }}" alt="trophée 1" width="80px" height="80px">
 {% endblock %}
 
 {% block apercu %}

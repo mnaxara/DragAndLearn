@@ -96,7 +96,7 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 2000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant

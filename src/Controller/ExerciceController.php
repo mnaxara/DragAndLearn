@@ -14,11 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExerciceController extends AbstractController
 {
     /**
-     * @Route("/exercice/tutoriel", name="tutoriel")
+     * @Route("/tutoriel", name="tutoriel")
      */
     public function tutoriel()
     {
-//        $exercice = $this->getDoctrine()->getRepository(Exercice::class)->findByNumber(1, 1);
         return $this->render('exercice/tuto.html.twig');
     }
 
@@ -65,6 +64,7 @@ class ExerciceController extends AbstractController
                     $nextExercice = $exerciceRepository->findByNumber(0, 2);
                     $nextValue = '20';
                     $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle('Niveau 1');
+                    dd($trophy);
                     $user->addTrophy($trophy);
                     $entityManager->persist($user);
                 }

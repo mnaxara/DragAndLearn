@@ -123,19 +123,19 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 2000);
             setTimeout(()=>{
                 $('.solution3').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 3000);
             setTimeout(()=>{
                 $('.solution4').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 4000);
             setTimeout(()=>{
                 $('.solution5').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 5000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
