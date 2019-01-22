@@ -90,7 +90,7 @@ footer {
   display: none;
 }
 
-.solution1, .solution2, .solution3{
+.solution1, .solution2, .solution3, .solution4, .solution5{
   color: #FFF;
 }
 @font-face {
@@ -146,6 +146,7 @@ footer {
 
 #dragdrop {
     min-height: max-content;
+    height: 100%;
 }
 
 .trophyName{
