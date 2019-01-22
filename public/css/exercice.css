@@ -146,6 +146,7 @@ footer {
 
 #dragdrop {
     min-height: max-content;
+    height: 100%;
 }
 
 .trophyName{

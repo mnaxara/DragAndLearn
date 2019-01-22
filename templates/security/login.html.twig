@@ -32,7 +32,7 @@
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
                         <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
-                        <a class="dropdown-item" href="#">Classement</a>
+                        <a class="dropdown-item" href="{{ path('classement') }}">Classement</a>
                         {% if is_granted('ROLE_ADMIN') %}
                             <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
                         {% endif %}
