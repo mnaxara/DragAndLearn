@@ -160,6 +160,7 @@
                         dataType: 'html',
                         success: function (data) {
                             $('#userName').html(data);
+                            $('#usernameBar').html(data);
                             $('#formName').hide();
                             $('#userName').show();
                             $('#newUsername').blur();
@@ -215,7 +216,6 @@
             e.preventDefault();
 
             let theme = ($(this).val());
-            console.log(theme);
 
             $.ajax({
                 type:'POST',
