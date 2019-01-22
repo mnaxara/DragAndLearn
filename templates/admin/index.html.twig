@@ -7,35 +7,34 @@
 {% block header %}
     <header>
         <!--Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-{{defaut_theme.theme }}">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse pt-3" id="navbarSupportedContent-333">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto" id="avatarMenu">
                     <li class="nav-item active">
                         <a id="siteName" class="nav-link" href="{{ path('levelChoice') }}">Drag & Learn
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-                    <li class="nav-item avatar">
-                        <a class="nav-link p-0" href="#">
-                            <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                        </a>
+                <ul class="navbar-nav ml-auto nav-flex-icons align-items-center" id="avatarMenu">
+                    <li id="soundLi">
+                        <span id="sound"><i class="fas fa-volume-off fa-2x text-white"></i></span>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
+                            <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
                                 <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
-                                <a class="dropdown-item" href="#">Classement</a>
+                                <a class="dropdown-item" href="{{ path('classement') }}">Classement</a>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
@@ -44,7 +43,7 @@
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <a class="dropdown-item" href="{{ path('logout') }}">Deconnexion</a>
                             {% else %}
-                                <a class="dropdown-item" href="{{ path('app_login') }}">connexion</a>
+                                <a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
                             {% endif %}
                         </div>
                     </li>

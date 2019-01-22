@@ -79,9 +79,9 @@
                         <input type="password" name="password" id="inputPassword" class="form-control my-2" placeholder="Password" required>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="checkbox mb-3">
-                            <label>
-                                <input class="balise" type="checkbox" name="_remember_me">Se souvenir de moi
-                            </label>
+                            {#<label>#}
+                                {#<input class="balise" type="checkbox" name="_remember_me">Se souvenir de moi#}
+                            {#</label>#}
                         </div>
                         <button class="border border-balise btn btn-dark" type="submit">
                             Connexion
