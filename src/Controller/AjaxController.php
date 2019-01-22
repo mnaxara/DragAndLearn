@@ -330,6 +330,8 @@ class AjaxController extends AbstractController
         //génération d'un message flash
         $this->addFlash('warning', 'Profil supprimé');
 
+        return new Response('<div class="alert alert-danger w-25 mx-5">Utilisateur supprimé</div>');
+
 
     }
 }
