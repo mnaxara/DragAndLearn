@@ -25,7 +25,7 @@ class Exercice
      * @Assert\NotBlank
      * @Assert\Length(
      * min = 2,
-     * max = 15,
+     * max = 25,
      * minMessage = "Le Titre de l'exercice doit faire minimum 2 caractere",
      * maxMessage = "Le Titre de l'exercice doit faire 15 caractères maximum"
      * )

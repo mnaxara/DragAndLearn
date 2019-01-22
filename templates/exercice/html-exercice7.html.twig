@@ -7,7 +7,7 @@
 {% block lecons %}
 
     {# consigne TODO
-        - dans cette exercice vous allez devoir placer les balises ‘input’ correspondante au label.
+        - Dans cette exercice vous allez devoir placer les balises ‘input’ correspondante au label.
     #}
     <div>
         <ul class="text-white">
@@ -50,21 +50,36 @@
             
         </ul>
     </div>
-        {# TODO
-            astuce : <li>la documentation complete <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input">ici </a> </li>
-        
-         #}
 {% endblock %}
 
+{% block astuces %}
+    <p>
+        les <span class="balise">&lt;input&gt;</span> sont toujours lié à leur <span class="balise">&lt;label&gt;</span> grâce au "for" et au "name".
+        <br>
+        Les attributs sont toujours en anglais.
+        <br>
+        Consultez la documentation si besoin : <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input">Ici</a>
+    </p>
+{% endblock %}
+
+{% block solution %}
+    <img src="{{ asset('uploads/solutions/html_7.gif')}}" class = "" alt="solution">
+{% endblock %}
 
 {% block elements %}
     <!--Devra etre généré si possible en php depuis la BDD des exercice-->
 
-    
-
     {# false #}
     <div class="draggable text-center" data-id="1" id="draggable1">
-        <span class="balise">&lt;input  <span class="baliseCss">name</span>=<span class="baliseTxt">"text"</span> <span class="baliseCss"> type</span>=<span class="baliseTxt">"text"</span>&gt;</span>
+        <span class="balise">&lt;input
+            <span class="baliseCss">name</span>
+            =
+            <span class="baliseTxt">"text"</span>
+            <span class="baliseCss"> type</span>
+            =
+            <span class="baliseTxt">"text"</span>
+            &gt;
+        </span>
     </div>
     <br>
 

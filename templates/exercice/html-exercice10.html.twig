@@ -4,7 +4,7 @@
 
 {% block lecons %}
 {# TODO
-    consigne : dans cette exercice vous allez devoir mettre TOUTES les conpetences des exercice HTML precedant a l'oeuvre 
+    consigne : Dans cet exercice vous allez devoir mettre en application TOUTES les compétences acquises dans les exercices HTML précédents
  #}
 
  <div>
@@ -24,6 +24,26 @@
 
 {% endblock %}
 
+{% block astuces %}
+<p>
+ les Etudes et Formations sont sous forme de liste non ordonnées
+    <br>
+ Respectez le format d'un CV, les dates sont en ordre decroissantes, sautez des ligne entre chaque !
+    <br>
+    Mettez les titres en bleu 1d8dc0 !
+</p>
+{% endblock %}
+
+{% block solution %}
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ asset('uploads/solutions/n1e10.png')}}" width="100%" alt="solution">
+        </div>
+        <div class="col-6">
+            <img src="{{ asset('uploads/solutions/n1e10_2.png')}}" width="100%" alt="solution">
+        </div>
+    </div>
+{% endblock %}
 
 {% block elements %}
     <div class="draggable text-center" data-id="1" id="draggable1">
@@ -586,15 +606,15 @@
     <div class="ml-8"><span class="balise">&lt;ul&gt;</span></div>
 
     <div class="droppable ml-9 my-1" id="droppable27"></div>
-    <div class="solution5 ml-9">
+    <div class="solution5 text-white ml-9">
         <span class="balise">&lt;li&gt;</span>Juillet-Août 2013 : Stage au cinéma d'arts et d'essais le Cratère à Toulouse(2 mois)<span class="balise">&lt;li&gt;</span>
     </div>
     <div class="droppable ml-9 my-1" id="droppable28"></div>
-    <div class="solution5 ml-9">
+    <div class="solution5 text-white ml-9">
         <span class="balise">&lt;li&gt;</span>2012-2013 : Bénévolat au refuge des Batignolles de Toulouse<span class="balise">&lt;li&gt;</span>
     </div>
     <div class="droppable ml-9 my-1" id="droppable29"></div>
-    <div class="solution5 ml-9">
+    <div class="solution5 text-white ml-9">
         <span class="balise">&lt;li&gt;</span>Intérêts : Rugby, Cinéma, Informatique<span class="balise">&lt;li&gt;</span>
     </div>
 
@@ -612,7 +632,7 @@
 
 {% block trophy %}
     <p class="text-center">Vous avez debloqué le trophée : Niveau 1 !</p>
-    <img src="{{ asset('uploads/image/trophy/trophy_one.png') }}" alt="trophée 1" width="80px" height="80px">
+    <img src="{{ asset('uploads/image/trophy/obtain/trophy_one.png') }}" alt="trophée 1" width="80px" height="80px">
 {% endblock %}
 
 {% block apercu %}

@@ -59,6 +59,7 @@ $( function() {
                 }
                 //TODO Modifier la longueur necessaire a la victoire
                 if (finish.length === 12){// Verification de la fin de l'exercice.
+                    $('#finishTime').html($('#chronotime').val());
                     $(".droppable").hide('clip', 1000);
                     $(".draggable").hide('clip', 1000);
                     setTimeout(()=>{

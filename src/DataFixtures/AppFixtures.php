@@ -159,7 +159,7 @@ class AppFixtures extends Fixture
                 $save->setFinish(true);
                 $save->setValue($value);
                 $m = rand(0, 50);
-                $s = rand(0, 59);
+                $s = rand(1, 59);
                 $save->setTime(new \DateTime('00:' . $m . ':' . $s));
                 $manager->persist($save);
             }

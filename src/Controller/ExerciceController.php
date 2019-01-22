@@ -14,11 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExerciceController extends AbstractController
 {
     /**
-     * @Route("/exercice/tutoriel", name="tutoriel")
+     * @Route("/tutoriel", name="tutoriel")
      */
     public function tutoriel()
     {
-//        $exercice = $this->getDoctrine()->getRepository(Exercice::class)->findByNumber(1, 1);
         return $this->render('exercice/tuto.html.twig');
     }
 
@@ -30,6 +29,8 @@ class ExerciceController extends AbstractController
     public function generateExercice(Request $request, Exercice $exercice)
     {
         $entityManager = $this->getDoctrine()->getManager();
+        $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
+        $exerciceRepository = $this->getDoctrine()->getRepository(Exercice::class);
 
 
         // On récupere le token de securité venant de la requete, id de l'exercice fini
@@ -42,10 +43,6 @@ class ExerciceController extends AbstractController
         // Si le token est bon
 
         if ($this->isCsrfTokenValid('next-token', $submittedToken)) {
-
-            $saveRepository = $this->getDoctrine()->getRepository(UserHasExercices::class);
-            $exerciceRepository = $this->getDoctrine()->getRepository(Exercice::class);
-
 
             // On recupere l'exercice terminé
             $finishExercice = $this->getDoctrine()->getRepository(Exercice::class)->find($finishId);
@@ -65,6 +62,7 @@ class ExerciceController extends AbstractController
                     $nextExercice = $exerciceRepository->findByNumber(0, 2);
                     $nextValue = '20';
                     $trophy = $this->getDoctrine()->getRepository(Trophy::class)->findOneByLibelle('Niveau 1');
+                    dd($trophy);
                     $user->addTrophy($trophy);
                     $entityManager->persist($user);
                 }
@@ -111,6 +109,8 @@ class ExerciceController extends AbstractController
 
         }
 
+        $retry = $saveRepository->getFinishSave($user, $exercice);
+
         //*********************************************************
 
         // ON VERIFIE LES TROPHEE CACHE
@@ -135,7 +135,8 @@ class ExerciceController extends AbstractController
         return $this->render('exercice/'.$page.'.html.twig',
             ['exercice' => $exercice,
             'timer'=>$timer,
-            'f12'=>$f12
+            'f12'=>$f12,
+            'retry' => $retry
             ]);
     }
 

@@ -47,13 +47,14 @@ $( function() {
                 */
                 if ($(this).attr('id') === 'droppable9'){
                     $('.title2').css('color', val);
+                    $('#sol_input9').html(val);
                 }
-                if ($(this).attr('id') === 'droppableA'){
-                    $('.title2').css(val, '1px solid black');
-                }
-                if ($(this).attr('id') === 'droppableB') {
-                    $('div').css('background-image', 'url("erererr")');
-                }
+                // if ($(this).attr('id') === 'droppableA'){
+                //     $('.title2').css(val, '1px solid black');
+                // }
+                // if ($(this).attr('id') === 'droppableB') {
+                //     $('div').css('background-image', 'url("erererr")');
+                // }
 
                 check(id);
 
@@ -71,6 +72,7 @@ $( function() {
         }
         //TODO Modifier la longueur necessaire a la victoire
         if (finish.length === 2){// Verification de la fin de l'exercice.
+            $('#finishTime').html($('#chronotime').val());
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
@@ -80,25 +82,13 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution3').show('explode', 1000);
-                soundStatus ? finishAudio.play() : '';
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution4').show('explode', 1000);
-                soundStatus ? finishAudio.play() : '';
-            }, 1000);
-            setTimeout(()=>{
-                $('.solution5').show('explode', 1000);
-                soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 2000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant
                 $('#bar').css('width', $bar);// Augmentation de la jauge.
                 soundStatus ? endLevel.play() : '';
-            }, 10000);
+            }, 3000);
             // recupération de la hauteur de la fenetre en cours
             let $height = window.innerHeight;
             // recuperation de la valeur de la hauteur du menu pour futur calcul de la marge negative

@@ -11,19 +11,35 @@
      <ul class="text-white">
          <li>Vous etes grand maintenant !</li>
          <br>
-         <li>Nous avons inclu dans cet exercice du JAVASCRIPT , il sert nottament a dynamiser un site web. </li>
+         <li>Nous avons inclus dans cet exercice du JAVASCRIPT , il sert nottament a dynamiser un site web. </li>
          <br>
-         <li>Ici le javascript rend dynamique la gestion des statistiques de votre hero , jouez avec différentes valeurs et regardez ce qu'il se passe !</li>
+         <li>Ici le javascript rend dynamique la gestion des statistiques de votre heros , jouez avec différentes valeurs et regardez ce qu'il se passe !</li>
          <br>
      </ul>
  </div>
 
-{# TODO 
-    astuce : -> vous etes assez grand maintenant pour chercher vos reponces vous meme ,c'est le coeur du metier de developpeur web
-                il existe nottament deux gros sites :
-                ->https://www.w3schools.com/ en Anglais mais la W3corporation registre les normes et conventions du html est sert donc de referent.
-                ->https://developer.mozilla.org/fr/ en grande partie en Francais.  
-  #}
+
+{% endblock %}
+
+{% block astuces %}
+    <p>
+        Vous etes assez grand maintenant pour chercher vos réponses vous meme ,c'est le coeur du metier de developpeur web !
+        il existe notamment deux gros sites :<br>
+        <a href="https://www.w3schools.com/">W3C</a>, en Anglais mais la W3corporation registre les normes et conventions du html est sert donc de referent.
+        <br>
+        <a href="https://developer.mozilla.org/fr/">MDN</a> en grande partie en Francais.
+    </p>
+{% endblock %}
+
+{% block solution %}
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ asset('uploads/solutions/n2e10.png')}}" width="100%" alt="solution">
+        </div>
+        <div class="col-6">
+            <img src="{{ asset('uploads/solutions/n2e10_2.png')}}" width="100%" alt="solution">
+        </div>
+    </div>
 {% endblock %}
 
 
@@ -938,7 +954,6 @@
             <span class="valueCss">gray</span>;</span>
         <br>
         }
-        }
     </div>
     <div>
         <span class="baliseCss">.amis</span>{
@@ -973,7 +988,7 @@
 
 {% block trophy %}
     <p class="text-center">Vous avez debloqué le trophée : Niveau 2 !</p>
-    <img src="{{ asset('uploads/image/trophy/trophy_two.png') }}" alt="trophée 2" width="80px" height="80px">
+    <img src="{{ asset('uploads/image/trophy/obtain/trophy_two.png') }}" alt="trophée 2" width="80px" height="80px">
 {% endblock %}
 
 {% block apercu %}

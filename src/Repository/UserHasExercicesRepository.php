@@ -137,6 +137,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
             WHERE level.number = :levelNumber
             AND finish = 1
             AND time IN ( SELECT MIN(time) FROM `user_has_exercices` GROUP BY exercices_id )
+            GROUP BY exercices_id
             ORDER BY number
           ';
         $select = $connexion->prepare($sql);

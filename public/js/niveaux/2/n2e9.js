@@ -87,6 +87,7 @@ $( function() {
         }
         //TODO Modifier la longueur necessaire a la victoire
         if (finish.length === 6){// Verification de la fin de l'exercice.
+            $('#finishTime').html($('#chronotime').val());
             $(".droppable").hide('clip', 1000);
             $(".draggable").hide('clip', 1000);
             setTimeout(()=>{
@@ -96,7 +97,7 @@ $( function() {
             setTimeout(()=>{
                 $('.solution2').show('explode', 1000);
                 soundStatus ? finishAudio.play() : '';
-            }, 1000);
+            }, 2000);
             setTimeout(() =>{
                 $('#successEnd').show();
                 $('#next').removeAttr('hidden'); // Apparition du boutton suivant

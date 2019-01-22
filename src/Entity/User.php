@@ -46,13 +46,17 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=80, unique=true)
      */
     private $email;
 
     /**
      * @var string le token qui servira lors de l'oubli de mot de passe
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Email(
+     *     message = "Email invalide",
+     *     checkMX = true
+     * )
      */
     protected $resetToken;
  

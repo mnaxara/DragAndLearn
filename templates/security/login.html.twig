@@ -50,6 +50,9 @@
                 <div class="part_one">
                     <div id="registrate">
                     <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
                         {{ form_start(registrationForm,
                             {"action": path('app_register')} ) }}
 
@@ -69,9 +72,6 @@
                     {# LOGIN FORM#}
 
                     <form method="post" class="hide" id="loginForm">
-                        {% if error %}
-                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                        {% endif %}
                         <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
                         <label for="inputUsername" class="balise">&lt;Username&gt;</label>
                         <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control my-2" placeholder="Username" required autofocus>

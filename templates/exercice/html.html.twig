@@ -47,6 +47,27 @@
                     </div>
                     <button class="btn btn-dark balise mx-auto" id="tips">Astuces et solutions</button>
                 </div>
+                {#ASTUCE CACHEE#}
+                <div id="tipsDiv" class="row hide">
+                    <div class="tips col-12 d-flex flex-column align-items-center justify-content-between py-3">
+                        <div>
+                            {% block astuces %}{% endblock %}
+                        </div>
+                        <div>
+                            <button id="solution" class="bg-dark balise">Solutions</button>
+                            <button id="closeTips" class="bg-dark balise">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+                {#*************#}
+                {#DIV caché gif solutions#}
+                <div class="row">
+                    <div class="col-12 text-center hide" id="div_sol">
+                        {% block solution %}
+                        {% endblock %}
+                    </div>
+                </div>
+                {#***********************#}
                 <div class="row">
                     <div class="col-4 ml-1 py-2">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -91,7 +112,9 @@
                             <div class="col-12 d-flex align-items-center flex-column mt-5">
                                 <p>Félicitations !</p>
                                 <p>Vous avez fini l'exercice !</p>
-                                <p>Votre temps : </p>
+                                {% if retry is null %}
+                                <p>Votre temps : <span id="finishTime"></span></p>
+                                {% endif %}
                                 {% set next = exercice.number+2 %}
                                 {% set nextLevel = false %}
                                 {% if next > 10 %}
@@ -140,7 +163,7 @@
                         </div>
                         <div class="row" id="trophy">
                             <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('uploads/image/trophy/trophy_three.png') }}" alt="">
+                                <img src="{{ asset('uploads/image/trophy/obtain/trophy_three.png') }}" alt="">
                             </div>
                         </div>
                         <div class="row" id="trophy">
@@ -181,12 +204,22 @@
 
 
 {% block javascripts %}
+
     <script>
-
+        $('#tips').click(() => {
+            $('#tipsDiv').show();
+        });
+        $('#closeTips').click(() => {
+            $('#tipsDiv').hide();
+        });
+        $('#solution').click(() => {
+            $('#tipsDiv').hide();
+            $('#div_sol').show();
+        });
+    </script>
+    {#TROPHEE#}
+    <script>
        let f12 = '{{ f12 }}';
-
-
-
        window.addEventListener('keydown',(e) => {
            if(e['key'] === 'F12'){
                if(f12 != 1) {
@@ -218,7 +251,7 @@
        });
 
     </script>
-
+{#****************#}
 
     <script>
         window.addEventListener("beforeunload", function (e) {
@@ -243,8 +276,8 @@
                 }
             });
         });
+        {#Script lié au TIMER#}
     </script>
-    {#Script lié au TIMER#}
     <script>
 
     let startValue = false;

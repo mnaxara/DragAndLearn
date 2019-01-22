@@ -11,90 +11,89 @@
 
 </head>
 
+<body>
 {% block header %}
-<header>
-    <!--Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-{{ defaut_theme.theme }}">
+    <header>
+        <!--Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-{{defaut_theme.theme }}">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-                aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse pt-3" id="navbarSupportedContent-333">
-            <ul class="navbar-nav ml-auto" id="avatarMenu">
-                <li class="nav-item active">
-                    <a id="siteName" class="nav-link" href="{{ path('levelChoice') }}">Drag & Learn
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto nav-flex-icons align-items-center" id="avatarMenu">
-                <li id="soundLi">
-                    <span id="sound"><i class="fas fa-volume-off fa-2x text-white"></i></span>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
-                        <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
-                        <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
-                        <a class="dropdown-item" href="{{ path('classement') }}">Classement</a>
-                        {% endif %}
-                        {% if is_granted('ROLE_ADMIN') %}
-                        <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
-                        {% endif %}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pt-3" id="navbarSupportedContent-333">
+                <ul class="navbar-nav ml-auto" id="avatarMenu">
+                    <li class="nav-item active">
+                        <a id="siteName" class="nav-link" href="{{ path('levelChoice') }}">Drag & Learn
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons align-items-center" id="avatarMenu">
+                    <li id="soundLi">
+                        <span id="sound"><i class="fas fa-volume-off fa-2x text-white"></i></span>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="dropdown-item" href="{{ path('levelChoice') }}">Accueil</a>
+                                <a class="dropdown-item" href="{{ path('profile') }}">Profil</a>
+                                <a class="dropdown-item" href="{{ path('classement') }}">Classement</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="dropdown-item" href="{{ path('admin') }}">Admin</a>
+                            {% endif %}
 
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="dropdown-item" href="{{ path('logout') }}">Deconnexion</a>
-                        {% else %}
-                        <a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
-                        {% endif %}
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        {% block progressBar %}
-        <div class="col12">
-            <div class="row bg-dark text-white">
-                <div class="col-12 d-flex justify-content-around align-items-center">
-                    {% if last_exercice is same as(null) %}
-                        {% set exercice = 0 %}
-                        {% set niveau = 1 %}
-                    {% else %}
-                        {% set exercice = last_exercice.2%}
-                        {% set niveau = last_exercice.1 %}
-                    {% endif %}
-                    {% set progress = exercice * 10 %}
-
-                    <p class="my-2">
-                        <span class="balise">&lt;Nom :&gt;</span>
-                        <span class="px-2">{{ app.user.username }}</span>
-                        <span class="balise px-2">&lt;Niveau : &gt;</span>
-                        <span class="px-2">{{ niveau }}</span>
-                        <span class="balise">&lt;Exercice :&gt;</span>
-                        <span class="px-2">{{ (exercice + 1) }}/10</span>
-                    </p>
-
-                    <div class="progress" id="progress">
-                        <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <i class="fas fa-trophy"></i>
-                </div>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="dropdown-item" href="{{ path('logout') }}">Deconnexion</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        {% endblock %}
-    </div>
-</header>
+        </nav>
+        <div class="container-fluid">
+            {% block progressBar %}
+                <div class="col12">
+                    <div class="row bg-dark text-white">
+                        <div class="col-12 d-flex justify-content-around align-items-center">
+                            {% if last_exercice is same as(null) %}
+                                {% set exercice = 0 %}
+                                {% set niveau = 1 %}
+                            {% else %}
+                                {% set exercice = last_exercice.2%}
+                                {% set niveau = last_exercice.1 %}
+                            {% endif %}
+                            {% set progress = exercice * 10 %}
 
+                            <p class="my-2">
+                                <span class="balise">&lt;Nom :&gt;</span>
+                                <span class="px-2">{{ app.user.username }}</span>
+                                <span class="balise px-2">&lt;Niveau : &gt;</span>
+                                <span class="px-2">{{ niveau }}</span>
+                                <span class="balise">&lt;Exercice :&gt;</span>
+                                <span class="px-2">{{ (exercice + 1) }}/10</span>
+                            </p>
+
+                            <div class="progress" id="progress">
+                                <div id="bar" class="progress-bar bg-success" role="progressbar" style="width: {{ progress }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </header>
 {% endblock %}
 
-<body>
 {% block body %}
 {% endblock %}
 
@@ -163,6 +162,7 @@
             soundStatus = true;
             $('#sound').html('<i class="fas fa-volume-up fa-2x text-white"></i>');
         }
+        console.log(soundStatus);
     });
 </script>
 {% block javascripts %}{% endblock %}

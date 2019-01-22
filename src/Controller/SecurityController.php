@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Level;
 use App\Entity\Trophy;
 use App\Entity\UserHasExercices;
+use App\Form\UserEmailType;
 use App\Form\UserProfileType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\User;
@@ -115,6 +116,15 @@ class SecurityController extends AbstractController
 
         //**************************************
 
+        // Modif email
+        $formEmail = $this->createForm(UserEmailType::class, $user);
+        $formEmail->handleRequest($request);
+        $user = $formEmail->getData();
+        $entityManager->flush();
+
+
+        //****************
+
 
         return $this->render('security/profile.html.twig', [
             'user' => $user,
@@ -123,7 +133,8 @@ class SecurityController extends AbstractController
             'hasTrophies' => $hasTrophies,
             'last_exercice' => $lastSave,
             'exerciceByLevel' => $exerciceByLevel,
-            'userPassForm'=>$form->createView()
+            'userPassForm'=>$form->createView(),
+            'userEmailForm'=>$formEmail->createView(),
         ]);
 
     }

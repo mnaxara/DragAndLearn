@@ -15,6 +15,9 @@ class Theme{
         if($connectedAsk != null && $connectedAsk->getUser() != 'anon.'){
             $this->theme = $connectedAsk->getUser()->getTheme()->getColor();
         }
+        else{
+            $this->theme = 'dark';
+        }
 
     }
 
