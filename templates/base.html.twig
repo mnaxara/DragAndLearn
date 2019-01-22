@@ -36,7 +36,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <img src="{{ asset('uploads/image/avatar/default.png') }}" class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                            <img src="{{ asset('uploads/image/avatar/'~app.user.avatar) }}" class="rounded-circle z-depth-0" alt="avatar image" height="35" id="avatarBar">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}

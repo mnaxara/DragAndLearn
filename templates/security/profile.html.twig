@@ -12,7 +12,6 @@
 
     {# grosse row principale #}
     <div class="row" id="bigRow">
-
         {# colonne gauche #}
         <div class="col-12 col-md-8" id="gain">
 
@@ -25,6 +24,7 @@
                         <input type="text" class="bg-transparent border-light" id="newUsername" value="{{ user.username }}">
                     </div>
                     <i class="fas fa-pen" id="nameUpdate"></i>
+                    <span id="flash" class="hide"></span>
                     <input class="hide" type="file" id="file" name="file" multiple />
                 </div>
             </div>
@@ -73,17 +73,16 @@
 
         {# colonne droite formulaire modif #}
         <div class="col-12 col-md-4">
-
-            {% for label, messages in app.flashes %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ label }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-
             <div class="row">
                 <div class="col-12">
+                    {% for label, messages in app.flashes %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ label }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+
                     <h3 class="m-auto text-center">Modifier son profil</h3>
                 </div>
             </div>
@@ -159,11 +158,21 @@
                         timeout: 8000,
                         dataType: 'html',
                         success: function (data) {
-                            $('#userName').html(data);
-                            $('#usernameBar').html(data);
-                            $('#formName').hide();
-                            $('#userName').show();
-                            $('#newUsername').blur();
+                            console.log(data);
+                            if (data !='utilisateur existant'){
+                                $('#userName').html(data);
+                                $('#usernameBar').html(data);
+                                $('#formName').hide();
+                                $('#userName').show();
+                                $('#newUsername').blur();
+                                $('#flash').hide();
+                            }
+                            else{
+                                $('#flash').html(data);
+                                $('#flash').addClass('alert-danger');
+                                $('#flash').show();
+                            }
+
 
                         },
                         error: function (error) {
@@ -200,8 +209,8 @@
                 processData: false, // Don't process the files
                 contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                 success: function(data) {
-
                     $('#avatar').attr('src', "uploads/image/avatar/"+data);
+                    $('#avatarBar').attr('src', "uploads/image/avatar/"+data);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     //Handle errors here

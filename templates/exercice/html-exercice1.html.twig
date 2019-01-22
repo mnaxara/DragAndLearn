@@ -3,31 +3,34 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e1.css') }}">{% endblock %}
 
 {% block lecons %}
-    <ul class="text-white">
-        <br>
-        <li>Pour commencer, il faut préciser le doctype du document, pour démarrer une page html, il faut donc entrer &lt;!DOCTYPE html&gt; au début de la page.</li>
-        <br>
-        <li>Ensuite, notre page doit être incluse entre deux balises :  une balise ouvrante <span class="balise">&lt;html&gt;</span> en début de page et une balise fermante <span class="balise">&lt;/html&gt;</span> en bas de page.</li>
-        <br>
-        <li>Dans l'élément html, il faut indiquer deux autres éléments: 
-            <p>- l'élément <span class="balise">&lt;head&gt;</span>qui va contenir les informations générales relatives à la page,  comme le titre ou l'encodage utilisé</p>
-            <p>- l'élément <span class="balise">&lt;body&gt;</span>qui va contenir le texte, les images ou encore les liens qui seront  affichés sur la page.</p>
-        </li>
-        <br> 
-        <li>L'élément HTML <span class="balise">&lt;div&gt;</span> a une fonction de conteneur, souvent utilisé afin de grouper d'autres éléments au sein de celle-ci. </li>
-        <br> 
-        <li>L'élément HTML <span class="balise">&lt;span&gt;</span>  sert principalement à insérér du contenu de type texte, il peut être utilisé pour cibler une portion de texte à l'intérieur d'un élément.
-        </li>
-        <br> 
-        <li>L'élément HTML <span class="balise">&lt;p&gt;</span> représente un paragraphe de texte, un retour est à la ligne est créé automatiquement à chaque nouveau paragraphe.</li>
-        <br>
-    </p>
+    {{ exercice.lesson|raw }}
+    {#<ul class="text-white">#}
+        {#<br>#}
+        {#<li>Pour commencer, il faut préciser le doctype du document, pour démarrer une page html, il faut donc entrer &lt;!DOCTYPE html&gt; au début de la page.</li>#}
+        {#<br>#}
+        {#<li>Ensuite, notre page doit être incluse entre deux balises :  une balise ouvrante <span class="balise">&lt;html&gt;</span> en début de page et une balise fermante <span class="balise">&lt;/html&gt;</span> en bas de page.</li>#}
+        {#<br>#}
+        {#<li>Dans l'élément html, il faut indiquer deux autres éléments: #}
+            {#<p>- l'élément <span class="balise">&lt;head&gt;</span>qui va contenir les informations générales relatives à la page,  comme le titre ou l'encodage utilisé</p>#}
+            {#<p>- l'élément <span class="balise">&lt;body&gt;</span>qui va contenir le texte, les images ou encore les liens qui seront  affichés sur la page.</p>#}
+        {#</li>#}
+        {#<br> #}
+        {#<li>L'élément HTML <span class="balise">&lt;div&gt;</span> a une fonction de conteneur, souvent utilisé afin de grouper d'autres éléments au sein de celle-ci. </li>#}
+        {#<br> #}
+        {#<li>L'élément HTML <span class="balise">&lt;span&gt;</span>  sert principalement à insérér du contenu de type texte, il peut être utilisé pour cibler une portion de texte à l'intérieur d'un élément.#}
+        {#</li>#}
+        {#<br> #}
+        {#<li>L'élément HTML <span class="balise">&lt;p&gt;</span> représente un paragraphe de texte, un retour est à la ligne est créé automatiquement à chaque nouveau paragraphe.</li>#}
+        {#<br>#}
+    {#</p>#}
 {% endblock %}
 
-{% block astuces %}{% endblock %}
+{% block astuces %}
+{{ exercice.help|raw }}
+{% endblock %}
 
 {% block solution %}
-    <img src="{{ asset('uploads/solutions/tuto.gif')}}" class = "" alt="solution">
+    <img src="{{ asset('uploads/solutions/html1.gif')}}" class = "" alt="solution">
 {% endblock %}
 
 {% block elements %}

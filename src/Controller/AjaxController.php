@@ -242,12 +242,19 @@ class AjaxController extends AbstractController
         $userId = $request->request->get('user');
 
         $user = $this->getDoctrine()->getRepository(User::class)->findOneById($userId);
+        $lastUsername = $user->getUsername();
+        $checkUsername = $this->getDoctrine()->getRepository(User::class)->findOneByUsername($username);
 
-        $user->setUsername($username);
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->flush();
+        if(empty($checkUsername) || $checkUsername->getUsername() == $lastUsername){
+            $user->setUsername($username);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
 
-        return new Response ($username);
+            return new Response ($username);
+
+        }else{
+            return new Response ('utilisateur existant');
+        }
 
     }
 

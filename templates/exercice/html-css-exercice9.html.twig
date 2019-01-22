@@ -3,30 +3,31 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/2/n2e9.css') }}">{% endblock %}
 
 {% block lecons %}
-     <ul class="text-white">
-    <br>
-        <li>La propriété <span class="propCss">position</span> définit la façon dont un élément est positionné dans un document. Elle comprend quatre valeurs différentes :
-            <br>
-            - static
-            <br>
-            - relative
-            <br>
-            - fixed
-            <br>
-            - absolute
-            <br>
-        </li>
-        <br>
-        <li>La propriété CSS <span class="propCss">float</span> permet de spécifier qu'un élément flotte à gauche, à droite ou pas du tout au sein de son élément conteneur. 
-        </li>
-      
-    </ul>
+    {{ exercice.lesson|raw }}
+     {#<ul class="text-white">#}
+    {#<br>#}
+        {#<li>La propriété <span class="propCss">position</span> définit la façon dont un élément est positionné dans un document. Elle comprend quatre valeurs différentes :#}
+            {#<br>#}
+            {#- static#}
+            {#<br>#}
+            {#- relative#}
+            {#<br>#}
+            {#- fixed#}
+            {#<br>#}
+            {#- absolute#}
+            {#<br>#}
+        {#</li>#}
+        {#<br>#}
+        {#<li>La propriété CSS <span class="propCss">float</span> permet de spécifier qu'un élément flotte à gauche, à droite ou pas du tout au sein de son élément conteneur. #}
+        {#</li>#}
+      {##}
+    {#</ul>#}
 {% endblock %}
 
 {% block astuces %}
-
-    <p> N'oubliez pas qu'un élément en position absolu se place par rapport à son premier parent relatif</p>
-    <p>Consultez la documentation : <a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">Ici</a></p>
+{{ exercice.help|raw }}
+    {#<p> N'oubliez pas qu'un élément en position absolu se place par rapport à son premier parent relatif</p>#}
+    {#<p>Consultez la documentation : <a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">Ici</a></p>#}
 
 {% endblock %}
 

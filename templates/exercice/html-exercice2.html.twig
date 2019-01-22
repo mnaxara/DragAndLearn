@@ -3,21 +3,24 @@
 {% block perso_css %}<link rel="stylesheet" href="{{ asset('css/niveaux/1/n1e2.css') }}">{% endblock %}
 
 {% block lecons %}
-    <ul class="text-white">
-    <br>
-        <li>Il existe six niveaux de titres dans une page HTML, de <span class="balise">&lt;h1&gt;</span> à <span class="balise">&lt;h6&gt;</span>, du plus important <span class="balise">(&lt;h1&gt;)</span> au moins important<span class="balise">(&lt;h6&gt;)</span>.
-        </li>
-    <br>
-        <li>L'élément <span class="balise">&lt;br&gt;</span> permet le retour à la ligne, il  peut être utilisé autant de fois que l'on souhaite. Il s'utilise seul, il n'est pas nécessaire de fermer la balise.
-        </li>
-    <br>
-        <li>L'élément <span class="balise">&lt;hr&gt;</span>, est une balise unique orpheline comme <span class="balise">&lt;br&gt;</span>, elle permet de définir un changement de thématique avec un retour à la ligne.
-        </li>
-    </ul>
+    {{ exercice.lesson|raw }}
+    {#<ul class="text-white">#}
+    {#<br>#}
+        {#<li>Il existe six niveaux de titres dans une page HTML, de <span class="balise">&lt;h1&gt;</span> à <span class="balise">&lt;h6&gt;</span>, du plus important <span class="balise">(&lt;h1&gt;)</span> au moins important<span class="balise">(&lt;h6&gt;)</span>.#}
+        {#</li>#}
+    {#<br>#}
+        {#<li>L'élément <span class="balise">&lt;br&gt;</span> permet le retour à la ligne, il  peut être utilisé autant de fois que l'on souhaite. Il s'utilise seul, il n'est pas nécessaire de fermer la balise.#}
+        {#</li>#}
+    {#<br>#}
+        {#<li>L'élément <span class="balise">&lt;hr&gt;</span>, est une balise unique orpheline comme <span class="balise">&lt;br&gt;</span>, elle permet de définir un changement de thématique avec un retour à la ligne.#}
+        {#</li>#}
+    {#</ul>#}
     
 {% endblock %}
 
-{% block astuces %}{% endblock %}
+{% block astuces %}
+{{ exercice.help }}
+{% endblock %}
 
 {% block solution %}
     <img src="{{ asset('uploads/solutions/tuto.gif')}}" class = "" alt="solution">
