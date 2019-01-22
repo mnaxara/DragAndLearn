@@ -93,8 +93,8 @@ class AppFixtures extends Fixture
 
         for ($i = 0; $i < 5; $i++) {
             $user = New User();
-            $user->setUsername('kiki'.$i);
-            $user->setEmail('kiki'.$i.'@admin.com');
+            $user->setUsername('Learner'.$i);
+            $user->setEmail('learner'.$i.'@admin.com');
             $user->setRoles(['ROLE_ADMIN']);
             $plainPassword = 'kiki';
             $encodedPassword = $this->encoder->encodePassword($user, $plainPassword);
