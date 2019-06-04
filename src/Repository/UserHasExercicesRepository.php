@@ -108,8 +108,7 @@ class UserHasExercicesRepository extends ServiceEntityRepository
 
         $sql = '
             SELECT u.time, e.number as exoNumber, l.number as levelNumber
-            FROM exercice e
-            INNER JOIN user_has_exercices u ON e.id = u.exercices_id 
+            FROM exercice e INNER JOIN user_has_exercices u ON e.id = u.exercices_id 
             INNER JOIN level l ON e.level_id = l.id 
             WHERE u.users_id = :id 
           ';

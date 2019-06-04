@@ -178,7 +178,7 @@ class SecurityController extends AbstractController
                 ->setFrom('g.ponty@dev-web.io')
                 ->setTo($user->getEmail())
                 ->setBody(
-                    "toto: <a href='". $url ."'>Cliquez ici !</a>",
+                    "blablabla voici le token pour reseter votre mot de passe : <a href='". $url ."'>Cliquez ici !</a>",
                     'text/html'
                 );
 
@@ -197,27 +197,27 @@ class SecurityController extends AbstractController
      */
     public function resetPassword(Request $request, string $token, UserPasswordEncoderInterface $passwordEncoder)
     {
-
+ 
         if ($request->isMethod('POST')) {
             $entityManager = $this->getDoctrine()->getManager();
-
+ 
             $user = $entityManager->getRepository(User::class)->findOneByResetToken($token);
             /* @var $user User */
-
+ 
             if ($user === null) {
                 $this->addFlash('danger', 'Token Inconnu');
                 return $this->redirectToRoute('app_login');
             }
-
+ 
             $user->setResetToken(null);
             $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
             $entityManager->flush();
-
+ 
             $this->addFlash('notice', 'Mot de passe mis à jour');
-
+ 
             return $this->redirectToRoute('app_login');
         }else {
-
+ 
             return $this->render('security/reset_password.html.twig', ['token' => $token]);
         }
 
