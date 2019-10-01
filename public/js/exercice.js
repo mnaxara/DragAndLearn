@@ -1,5 +1,6 @@
 $( function() {
     //**********************FONCTIONNALITES / Regles du HTML***********************//
+
     /* L'element glissable doit porter une classe 'draggable'
      * Il doit avoir une data-id numerique
      * il doit avoir un id de type draggable + Data-id (draggable1)
@@ -16,6 +17,7 @@ $( function() {
      * Les element de solution placés sous les zone droppable doivent etre divisé est nommé
      *
      * Remplace le JS de la formation divisé en 10 pour le niveau 1
+     * Author: Michaël Naxara
     //*******************************************************************************/
 
     let finish = [];
